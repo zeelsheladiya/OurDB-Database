@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/Errors/error_variable.h
+B:/project/OurDB/OurDB-Database/OurDB_Database/Errors/error_variable.h
 iostream
 -
 string
 -
 
-F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/OurDB_Database.h
+B:/project/OurDB/OurDB-Database/OurDB_Database/OurDB_Database.h
 iostream
 -
 string
@@ -22,47 +22,51 @@ algorithm
 vector
 -
 query_process.h
-F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/query_process.h
+B:/project/OurDB/OurDB-Database/OurDB_Database/query_process.h
 cctype
 -
 
-F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/Parth_module/create_database/create_database.h
+B:/project/OurDB/OurDB-Database/OurDB_Database/Parth_module/create_database/create_database.h
+iostream
+-
+string
+-
+bits/stdc++.h
+-
+
+B:/project/OurDB/OurDB-Database/OurDB_Database/Parth_module/delete_database/delete_database.h
 iostream
 -
 string
 -
 
-F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/Parth_module/delete_database/delete_database.h
-iostream
--
-string
--
-
-F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/console.cpp
+B:/project/OurDB/OurDB-Database/OurDB_Database/console.cpp
 OurDB_Database.h
-F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/OurDB_Database.h
+B:/project/OurDB/OurDB-Database/OurDB_Database/OurDB_Database.h
 iostream
 -
 string
 -
 
-F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/query_process.h
+B:/project/OurDB/OurDB-Database/OurDB_Database/query_process.h
 iostream
 -
 string
 -
 Errors/error_variable.h
-F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/Errors/error_variable.h
+B:/project/OurDB/OurDB-Database/OurDB_Database/Errors/error_variable.h
 variables/query_variables.h
-F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/variables/query_variables.h
+B:/project/OurDB/OurDB-Database/OurDB_Database/variables/query_variables.h
 Parth_module/create_database/create_database.h
-F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/Parth_module/create_database/create_database.h
+B:/project/OurDB/OurDB-Database/OurDB_Database/Parth_module/create_database/create_database.h
 Parth_module/delete_database/delete_database.h
-F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/Parth_module/delete_database/delete_database.h
+B:/project/OurDB/OurDB-Database/OurDB_Database/Parth_module/delete_database/delete_database.h
 
-F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/variables/query_variables.h
+B:/project/OurDB/OurDB-Database/OurDB_Database/variables/query_variables.h
 iostream
 -
 string
+-
+regex
 -
 

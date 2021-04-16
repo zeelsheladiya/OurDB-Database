@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/console.cpp" "F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/cmake-build-debug/CMakeFiles/OurDB_Database.dir/console.cpp.obj"
+  "B:/project/OurDB/OurDB-Database/OurDB_Database/console.cpp" "B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/CMakeFiles/OurDB_Database.dir/console.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -66,10 +66,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.1\bin\cmake\win\bin\cmake.exe" -E rm
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = F:\ZEEL_DATA\Projects\OurDB\OurDB_Database
+CMAKE_SOURCE_DIR = B:\project\OurDB\OurDB-Database\OurDB_Database
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = F:\ZEEL_DATA\Projects\OurDB\OurDB_Database\cmake-build-debug
+CMAKE_BINARY_DIR = B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -98,9 +98,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start F:\ZEEL_DATA\Projects\OurDB\OurDB_Database\cmake-build-debug\CMakeFiles F:\ZEEL_DATA\Projects\OurDB\OurDB_Database\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\CMakeFiles B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start F:\ZEEL_DATA\Projects\OurDB\OurDB_Database\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
