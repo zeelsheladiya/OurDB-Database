@@ -11,7 +11,7 @@ int main() {
 
     while(true) {
 
-        cout << "Enter your query :  ";
+        cout << "Enter Your query :  ";
         getline(cin, s);
         cout << run_query(s) << endl;
 
