@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include <string>
+#include <regex>
 
 using namespace std;
 
@@ -11,10 +12,13 @@ using namespace std;
 
 //character for splitting the string into string array
 char split_char = ' ';
-
+// string and char for validating database name
+char first_char;
+string fir;
 //size of query
 int query_size = 0;
-
+// for regex
+regex rg("[a-zA-Z]{1}");
 //create variable
 string create_query[2] = {"create","make"};
 
