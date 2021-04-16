@@ -1,0 +1,44 @@
+
+====================  syntax format ================================================
+// - syntax for header file source
+
+====================================================================================
+
+1. create queries :-
+
+    words for create :
+    ->create
+    ->make
+
+    --------------------------------------------------------
+    -> create database database_name // -> in parth module
+    -> create table table_name
+
+
+2. insert queries :-
+
+
+
+
+
+3. update queries :-
+
+
+
+
+
+
+4. delete queries :-
+
+        words for delete
+        ->delete
+        ->destroy
+
+        -------------------------------------------------------------
+        -> delete database database_name // parth module
+        -> delete table table_name
+
+
+
+
+5. select queries :-

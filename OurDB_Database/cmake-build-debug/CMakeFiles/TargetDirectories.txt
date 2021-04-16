@@ -1,0 +1,3 @@
+F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/cmake-build-debug/CMakeFiles/OurDB_Database.dir
+F:/ZEEL_DATA/Projects/OurDB/OurDB_Database/cmake-build-debug/CMakeFiles/edit_cache.dir
