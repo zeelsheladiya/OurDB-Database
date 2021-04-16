@@ -33,6 +33,10 @@ string
 -
 bits/stdc++.h
 -
+iostream
+-
+direct.h
+-
 
 B:/project/OurDB/OurDB-Database/OurDB_Database/Parth_module/delete_database/delete_database.h
 iostream

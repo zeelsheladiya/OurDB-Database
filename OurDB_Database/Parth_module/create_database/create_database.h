@@ -5,7 +5,8 @@
 #include <iostream>
 #include <string>
 #include<bits/stdc++.h>
-
+#include <iostream>
+#include <direct.h>
 
 using namespace std;
 
@@ -14,19 +15,16 @@ using namespace std;
 
 string createDatabase(string databaseName)
 {
-    
-          first_char =  databaseName.front();
-            fir += first_char;
-       if(regex_match(fir,rg) == 1)
+
+       first_char =  databaseName.front();
+       fir += first_char;
+       if((regex_match(fir,rg) == 1) || databaseName!="con")
        {
-           bool m = regex_match(databaseName,rg);
-           cout<<m<<endl;
+         if(mkdir(databaseName.c_str()) == 1)
            return "database created";
        }
        else
        {
-           int l = 2;
-           cout<<l<<endl;
            return syntaxOfCreateDatabase[0];
        }
 
