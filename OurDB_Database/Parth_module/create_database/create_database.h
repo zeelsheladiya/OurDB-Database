@@ -24,8 +24,7 @@ string createDatabase(string databaseName)
           databaseName = "../../OurDB_Database/Databases/" + databaseName;
          if(mkdir(databaseName.c_str()) == -1)
          {
-             return "error creating data";
-
+             return errorCreatingDatabase[0];
          }else{
              return "database created";
          }
