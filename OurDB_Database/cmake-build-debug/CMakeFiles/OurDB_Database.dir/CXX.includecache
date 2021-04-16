@@ -31,8 +31,6 @@ iostream
 -
 string
 -
-bits/stdc++.h
--
 iostream
 -
 direct.h

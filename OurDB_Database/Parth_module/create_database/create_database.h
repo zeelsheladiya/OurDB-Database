@@ -4,9 +4,9 @@
 
 #include <iostream>
 #include <string>
-#include<bits/stdc++.h>
 #include <iostream>
 #include <direct.h>
+
 
 using namespace std;
 
@@ -18,10 +18,18 @@ string createDatabase(string databaseName)
 
        first_char =  databaseName.front();
        fir += first_char;
-       if((regex_match(fir,rg) == 1) || databaseName!="con")
+       if(regex_match(fir,rg) == 1)
        {
-         if(mkdir(databaseName.c_str()) == 1)
-           return "database created";
+
+          databaseName = "../../OurDB_Database/Databases/" + databaseName;
+         if(mkdir(databaseName.c_str()) == -1)
+         {
+             return "error creating data";
+
+         }else{
+             return "database created";
+         }
+
        }
        else
        {

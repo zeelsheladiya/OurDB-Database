@@ -4,27 +4,27 @@
 	<Project>
 		<Option title="OurDB_Database"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="gcc"/>
+		<Option compiler="msvc8"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="OurDB_Database">
@@ -32,20 +32,21 @@
 				<Option working_dir="B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="c:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.0.0/../../../../include/c++/9.0.0"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.0.0/../../../../include/c++/9.0.0/x86_64-w64-mingw32"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.0.0/../../../../include/c++/9.0.0/backward"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.0.0/include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.0.0/include-fixed"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.0.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.28.29333\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 OurDB_Database"/>
-					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 OurDB_Database"/>
+					<CompileFile command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="OurDB_Database/fast">
@@ -53,30 +54,31 @@
 				<Option working_dir="B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="c:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.0.0/../../../../include/c++/9.0.0"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.0.0/../../../../include/c++/9.0.0/x86_64-w64-mingw32"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.0.0/../../../../include/c++/9.0.0/backward"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.0.0/include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.0.0/include-fixed"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/x86_64-w64-mingw32/9.0.0/../../../../x86_64-w64-mingw32/include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.28.29333\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 OurDB_Database/fast"/>
-					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 OurDB_Database/fast"/>
+					<CompileFile command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f B:\project\OurDB\OurDB-Database\OurDB_Database\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
