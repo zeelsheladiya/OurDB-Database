@@ -24,4 +24,5 @@ string ExtraWordInDeleteSyntax[2] = {"Error index := 4 , Error := there are some
 // secend word of syntax is wrong
 string syntaxOfDeleteError[2] = {"Error index := 5 , Error := invalid word in create query syntax","5"};
 
+string syntaxOfCreateDatabase[2] = {"Error index := 6 , Error := invalid name for creating database ","6"};
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H
