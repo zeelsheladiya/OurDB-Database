@@ -15,21 +15,18 @@ using namespace std;
 
 string createDatabase(string databaseName)
 {
-       first_char =  databaseName.front();
-       fir += first_char;
-       if(regex_match(fir,rg) == 1)
+
+       cm = databaseName.front();
+
+      if((cm >= 'a' && cm <='z') || (databaseName != "con"))
        {
              databaseName = "../../OurDB_Database/Databases/" + databaseName;
              if(mkdir(databaseName.c_str()) == -1)
              {
-
                  return errorCreatingDatabase[0];
-
              }else{
-
                  return SuccessCreatingDatabaseMsg;
              }
-
        }
        else
        {

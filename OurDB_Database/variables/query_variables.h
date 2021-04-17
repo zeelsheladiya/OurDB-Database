@@ -12,17 +12,11 @@ using namespace std;
 
 //character for splitting the string into string array
 char split_char = ' ';
-// string and char for validating database name
-char first_char;
-string fir;
 //size of query
 int query_size = 0;
-// for regex
-regex rg("[a-zA-Z]{1}");
-//for yes or no..
-char dat[2];
-char Y[2]="Y";
-char N[2]="N";
+
+//for storing first letter of database name;
+char cm;
 //create variable
 string create_query[2] = {"create","make"};
 
