@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <string>
-#include <iostream>
+#include <fstream>
 #include <direct.h>
 
 
@@ -20,12 +20,12 @@ string createDatabase(string databaseName)
        fir += first_char;
        if(regex_match(fir,rg) == 1)
        {
-
           databaseName = "../../OurDB_Database/Databases/" + databaseName;
          if(mkdir(databaseName.c_str()) == -1)
          {
              return errorCreatingDatabase[0];
          }else{
+
              return "database created";
          }
 
@@ -35,9 +35,8 @@ string createDatabase(string databaseName)
            return syntaxOfCreateDatabase[0];
        }
 
-
-
-
 }
+
+
 
 #endif //OURDB_DATABASE_CREATE_DATABASE_H
