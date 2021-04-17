@@ -31,4 +31,6 @@ string syntaxOfCreateDatabase[2] = {"Error index := 6 , Error := invalid name fo
 string errorCreatingDatabase[2] = {"Error index := 7 , Error := database creation failed. ","7"};
 
 string errorDeletingDatabase[2] = {"Error index := 8 , Error := unable to delete database. ","8"};
+
+string errorSpecialchaDatabase[2] = {"Error index := 9 , Error := special character not allowed. ","9"};
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

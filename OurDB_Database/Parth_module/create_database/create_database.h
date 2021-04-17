@@ -31,20 +31,23 @@ void FileTabel(string nm)
 string createDatabase(string databaseName)
 {
        cm = databaseName.front();
-      if((cm >= 'a' && cm <='z') || (databaseName != "con"))
+       unsigned char cn = databaseName.back();
+      if(cm >= 97 && cm <= 122)
        {
-             databaseName = "../../OurDB_Database/Databases/" + databaseName;
-             if(mkdir(databaseName.c_str()) == -1)
-             {
-
-                 return errorCreatingDatabase[0];
-             }else{
-                 databaseName = databaseName + "/deafault.Ourdb";
-                 FileTabel(databaseName);
-                 return SuccessCreatingDatabaseMsg;
-             }
+          if((cn >= 32 && cn <= 96)  || (cn >= 123 && cn <= 126)) {
+              return errorSpecialchaDatabase[0];
+          }else{
+                  databaseName = "../../OurDB_Database/Databases/" + databaseName;
+                  if (mkdir(databaseName.c_str()) == -1) {
+                      return errorCreatingDatabase[0];
+                  } else {
+                      databaseName = databaseName + "/deafault.Ourdb";
+                      FileTabel(databaseName);
+                      return SuccessCreatingDatabaseMsg;
+                  }
+          }
        }
-       else
+       else if(!(cm >= 97 && cm <= 122))
        {
            return syntaxOfCreateDatabase[0];
        }
