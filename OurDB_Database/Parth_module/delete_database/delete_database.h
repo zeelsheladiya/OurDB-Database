@@ -13,7 +13,15 @@ using namespace std;
 
 string deleteDatabase(string databaseName)
 {
-    return "database deleted";
+        databaseName = "../../OurDB_Database/Databases/" + databaseName;
+           if (_rmdir(databaseName.c_str()) == -1) {
+                return "unable to delete database";
+            } else {
+                return "database deleted";
+            }
+
+
+
 }
 
 

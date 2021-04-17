@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="B:/project/OurDB/OurDB-Database/OurDB_Database/Success_Messages/Success_Msg.h">
+			<Option target="OurDB_Database"/>
+		</Unit>
 		<Unit filename="B:/project/OurDB/OurDB-Database/OurDB_Database/console.cpp">
 			<Option target="OurDB_Database"/>
 		</Unit>

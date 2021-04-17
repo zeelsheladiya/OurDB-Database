@@ -19,6 +19,10 @@ string fir;
 int query_size = 0;
 // for regex
 regex rg("[a-zA-Z]{1}");
+//for yes or no..
+char dat[2];
+char Y[2]="Y";
+char N[2]="N";
 //create variable
 string create_query[2] = {"create","make"};
 

@@ -6,7 +6,7 @@
 #include <string>
 #include <fstream>
 #include <direct.h>
-
+#include <conio.h>
 
 using namespace std;
 
@@ -15,19 +15,20 @@ using namespace std;
 
 string createDatabase(string databaseName)
 {
-
        first_char =  databaseName.front();
        fir += first_char;
        if(regex_match(fir,rg) == 1)
        {
-          databaseName = "../../OurDB_Database/Databases/" + databaseName;
-         if(mkdir(databaseName.c_str()) == -1)
-         {
-             return errorCreatingDatabase[0];
-         }else{
+             databaseName = "../../OurDB_Database/Databases/" + databaseName;
+             if(mkdir(databaseName.c_str()) == -1)
+             {
+                 cout<<databaseName.c_str()<<"0"<<endl;
+                 return errorCreatingDatabase[0];
 
-             return "database created";
-         }
+             }else{
+                 cout<<databaseName<<"1"<<endl;
+                 return "database created";
+             }
 
        }
        else
