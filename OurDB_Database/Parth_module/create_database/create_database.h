@@ -30,9 +30,7 @@ void FileTabel(string nm)
 
 string createDatabase(string databaseName)
 {
-
        cm = databaseName.front();
-
       if((cm >= 'a' && cm <='z') || (databaseName != "con"))
        {
              databaseName = "../../OurDB_Database/Databases/" + databaseName;
