@@ -22,12 +22,12 @@ string createDatabase(string databaseName)
              databaseName = "../../OurDB_Database/Databases/" + databaseName;
              if(mkdir(databaseName.c_str()) == -1)
              {
-                 cout<<databaseName.c_str()<<"0"<<endl;
+
                  return errorCreatingDatabase[0];
 
              }else{
-                 cout<<databaseName<<"1"<<endl;
-                 return "database created";
+
+                 return SuccessCreatingDatabaseMsg;
              }
 
        }

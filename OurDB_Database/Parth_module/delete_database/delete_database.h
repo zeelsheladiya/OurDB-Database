@@ -15,14 +15,11 @@ string deleteDatabase(string databaseName)
 {
         databaseName = "../../OurDB_Database/Databases/" + databaseName;
            if (_rmdir(databaseName.c_str()) == -1) {
-                return "unable to delete database";
+                return errorDeletingDatabase[0];
             } else {
-                return "database deleted";
+                return SuccessDeletingDatabaseMsg;
             }
-
-
-
-}
+ }
 
 
 #endif //OURDB_DATABASE_DELETE_DATABASE_H
