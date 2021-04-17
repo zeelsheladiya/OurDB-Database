@@ -78,4 +78,5 @@ string run_query(string query)
 
 }
 
+
 #endif //OURDB_DATABASE_OURDB_DATABASE_H

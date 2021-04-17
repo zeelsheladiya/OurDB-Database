@@ -13,6 +13,21 @@ using namespace std;
 #ifndef OURDB_DATABASE_CREATE_DATABASE_H
 #define OURDB_DATABASE_CREATE_DATABASE_H
 
+void FileTabel(string nm)
+{
+    fstream tb;
+    tb.open(nm,ios::in | ios::out | ios::trunc );
+    if(!tb.is_open())
+    {
+        cout<<"error while opening file"<<endl;
+    }else
+    {
+        cout<<"success"<<endl;
+    }
+    tb.close();
+
+}
+
 string createDatabase(string databaseName)
 {
 
@@ -23,8 +38,11 @@ string createDatabase(string databaseName)
              databaseName = "../../OurDB_Database/Databases/" + databaseName;
              if(mkdir(databaseName.c_str()) == -1)
              {
+
                  return errorCreatingDatabase[0];
              }else{
+                 databaseName = databaseName + "/deafault.Ourdb";
+                 FileTabel(databaseName);
                  return SuccessCreatingDatabaseMsg;
              }
        }
@@ -33,7 +51,9 @@ string createDatabase(string databaseName)
            return syntaxOfCreateDatabase[0];
        }
 
+
 }
+
 
 
 
