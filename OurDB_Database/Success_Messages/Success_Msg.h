@@ -7,5 +7,5 @@
 
 string SuccessCreatingDatabaseMsg = " database Created";
 
-string SuccessDeletingDatabaseMsg = " database Created";
+string SuccessDeletingDatabaseMsg = " database deleted";
 #endif //OURDB_DATABASE_SUCCESS_MSG_H
