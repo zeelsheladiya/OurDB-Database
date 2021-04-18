@@ -15,7 +15,6 @@ string deleteDatabase(string databaseName)
 {
          databaseName = strPath[0] + databaseName;
            if (!(filesystem::remove_all(databaseName))) {
-               cout<<databaseName.c_str()<<endl;
                 return errorDeletingDatabase[0];
             } else {
                 return SuccessDeletingDatabaseMsg;
