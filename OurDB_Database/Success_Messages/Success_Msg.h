@@ -8,4 +8,6 @@
 string SuccessCreatingDatabaseMsg = " database Created";
 
 string SuccessDeletingDatabaseMsg = " database deleted";
+
+string SuccessCreatingFileMsg = " file created";
 #endif //OURDB_DATABASE_SUCCESS_MSG_H

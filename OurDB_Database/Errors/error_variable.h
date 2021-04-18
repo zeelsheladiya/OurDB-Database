@@ -33,4 +33,6 @@ string errorCreatingDatabase[2] = {"Error index := 7 , Error := database creatio
 string errorDeletingDatabase[2] = {"Error index := 8 , Error := unable to delete database. ","8"};
 
 string errorSpecialchaDatabase[2] = {"Error index := 9 , Error := special character not allowed. ","9"};
+
+string errorCreatingFile[2] = {"Error index := 10 , Error := unable to create file ","10"};
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

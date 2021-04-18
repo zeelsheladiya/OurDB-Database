@@ -15,16 +15,16 @@ using namespace std;
 
 void FileTabel(string nm)
 {
-    fstream tb;
-    tb.open(nm,ios::in | ios::out | ios::trunc );
-    if(!tb.is_open())
+    fstream tb; // creats the object of class "fstream"...   here "tb" obj is created
+    tb.open(nm,ios::in | ios::out | ios::trunc ); // in for writing , out for writing and trunc
+    if(!tb.is_open()) // is_open is defined in "fstream" which check file is created or not if created then open it
     {
-        cout<<"error while opening file"<<endl;
+        cout<<errorCreatingFile[0]<<endl; // defined in Errors/error_variable.h
     }else
     {
-        cout<<"success"<<endl;
+        cout<<SuccessCreatingFileMsg<<endl; // defined in "Success_Messages/Success_Msg.h"..
     }
-    tb.close();
+    tb.close(); // closes the file
 
 }
 
@@ -35,21 +35,21 @@ string createDatabase(string databaseName)
       if(cm >= 97 && cm <= 122)   // check whether the first character is between "a to z" or not
        {
           if((cn >= 32 && cn <= 47)  ||(cn >= 58 && cn <= 92) || (cn >= 123 && cn <= 126)) { // check for special character
-              return errorSpecialchaDatabase[0];
+              return errorSpecialchaDatabase[0]; // defined in Errors/error_variable.h
           }else{
-                  databaseName = strPath[0] + databaseName;
-                  if (mkdir(databaseName.c_str()) == -1) {
-                      return errorCreatingDatabase[0];
+                  databaseName = strPath[0] + databaseName; //strpath[0]="path" defined in  variables/query_variables.h
+                  if (mkdir(databaseName.c_str()) == -1) { // cretae directory, mkdir function defined in direct.h header file
+                      return errorCreatingDatabase[0]; // defined in Errors/error_variable.h
                   } else {
-                      databaseName = databaseName + "/deafault.Ourdb";
-                      FileTabel(databaseName);
-                      return SuccessCreatingDatabaseMsg;
+                      databaseName = databaseName + "/deafault.Ourdb"; //it takes file path from above and add the path to file
+                      FileTabel(databaseName); //creats file called default.Ourdb from above defined function
+                      return SuccessCreatingDatabaseMsg; // Success_Messages/Success_Msg.h
                   }
           }
        }
-       else if(!(cm >= 97 && cm <= 122))
+       else if(!(cm >= 97 && cm <= 122)) // check if character is not between "a to z"...
        {
-           return syntaxOfCreateDatabase[0];
+           return syntaxOfCreateDatabase[0]; // defined in Errors/error_variable.h
        }
 
 

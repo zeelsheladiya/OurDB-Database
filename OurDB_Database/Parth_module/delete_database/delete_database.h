@@ -13,11 +13,12 @@ using namespace std;
 
 string deleteDatabase(string databaseName)
 {
-         databaseName = strPath[0] + databaseName;
-           if (!(filesystem::remove_all(databaseName))) {
-                return errorDeletingDatabase[0];
+         databaseName = strPath[0] + databaseName; // strPath[0] is path to database folder where database stored..
+         // strpath[0] is stored in variables/query_variable.h
+           if (!(filesystem::remove_all(databaseName))) { //from the filesystem function to remove directory
+                return errorDeletingDatabase[0]; // errorDeletingDatabase[0] defined in   Errors/error_variable.h
             } else {
-                return SuccessDeletingDatabaseMsg;
+                return SuccessDeletingDatabaseMsg; // SuccessDeletingDatabaseMsg defined in Success_Messages/Success_Msg.h
             }
  }
 
