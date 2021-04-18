@@ -29,4 +29,7 @@ string table[1] = {"table"};
 //delete variable
 string delete_query[2] = {"delete","destroy"};
 
+//path for string...
+string strPath[1] = {"../../OurDB_Database/Databases/"};
+
 #endif //OURDB_DATABASE_QUERY_VARIABLES_H

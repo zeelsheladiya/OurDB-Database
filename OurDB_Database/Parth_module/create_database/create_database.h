@@ -30,14 +30,14 @@ void FileTabel(string nm)
 
 string createDatabase(string databaseName)
 {
-       cm = databaseName.front();
-       unsigned char cn = databaseName.back();
-      if(cm >= 97 && cm <= 122)
+       cm = databaseName.front();  //store the first character of string
+       unsigned char cn = databaseName.back(); // stores last character of string
+      if(cm >= 97 && cm <= 122)   // check whether the first character is between "a to z" or not
        {
-          if((cn >= 32 && cn <= 96)  || (cn >= 123 && cn <= 126)) {
+          if((cn >= 32 && cn <= 47)  ||(cn >= 58 && cn <= 92) || (cn >= 123 && cn <= 126)) { // check for special character
               return errorSpecialchaDatabase[0];
           }else{
-                  databaseName = "../../OurDB_Database/Databases/" + databaseName;
+                  databaseName = strPath[0] + databaseName;
                   if (mkdir(databaseName.c_str()) == -1) {
                       return errorCreatingDatabase[0];
                   } else {

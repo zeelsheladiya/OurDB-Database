@@ -5,7 +5,7 @@
 
 #include <iostream>
 #include <string>
-
+#include <filesystem>
 using namespace std;
 
 #ifndef OURDB_DATABASE_DELETE_DATABASE_H
@@ -13,8 +13,9 @@ using namespace std;
 
 string deleteDatabase(string databaseName)
 {
-        databaseName = "../../OurDB_Database/Databases/" + databaseName;
-           if (_rmdir(databaseName.c_str()) == -1) {
+         databaseName = strPath[0] + databaseName;
+           if (!(filesystem::remove_all(databaseName))) {
+               cout<<databaseName.c_str()<<endl;
                 return errorDeletingDatabase[0];
             } else {
                 return SuccessDeletingDatabaseMsg;
