@@ -13,7 +13,7 @@ using namespace std;
 #ifndef OURDB_DATABASE_CREATE_DATABASE_H
 #define OURDB_DATABASE_CREATE_DATABASE_H
 
-void FileTabel(string nm)
+/*void FileTabel(string nm)
 {
     fstream tb; // creats the object of class "fstream"...   here "tb" obj is created
     tb.open(nm,ios::in | ios::out | ios::trunc ); // in for writing , out for writing and trunc
@@ -22,12 +22,12 @@ void FileTabel(string nm)
         cout<<errorCreatingFile[0]<<endl; // defined in Errors/error_variable.h
     }else
     {
-        cout<<SuccessCreatingFileMsg<<endl; // defined in "Success_Messages/Success_Msg.h"..
+        cout<<SuccessCreatingFileMsg[0]<<endl; // defined in "Success_Messages/Success_Msg.h"..
     }
     tb.close(); // closes the file
 
 }
-
+*/
 string createDatabase(string databaseName)
 {
        cm = databaseName.front();  //store the first character of string
@@ -42,8 +42,8 @@ string createDatabase(string databaseName)
                       return errorCreatingDatabase[0]; // defined in Errors/error_variable.h
                   } else {
                       databaseName = databaseName + "/deafault.Ourdb"; //it takes file path from above and add the path to file
-                      FileTabel(databaseName); //creats file called default.Ourdb from above defined function
-                      return SuccessCreatingDatabaseMsg; // Success_Messages/Success_Msg.h
+                    //  FileTabel(databaseName); //creats file called default.Ourdb from above defined function
+                      return SuccessCreatingDatabaseMsg[0]; // Success_Messages/Success_Msg.h
                   }
           }
        }

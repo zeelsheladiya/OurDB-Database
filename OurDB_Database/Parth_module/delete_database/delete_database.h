@@ -18,7 +18,7 @@ string deleteDatabase(string databaseName)
            if (!(filesystem::remove_all(databaseName))) { //from the filesystem function to remove directory
                 return errorDeletingDatabase[0]; // errorDeletingDatabase[0] defined in   Errors/error_variable.h
             } else {
-                return SuccessDeletingDatabaseMsg; // SuccessDeletingDatabaseMsg defined in Success_Messages/Success_Msg.h
+                return SuccessDeletingDatabaseMsg[0]; // SuccessDeletingDatabaseMsg defined in Success_Messages/Success_Msg.h
             }
  }
 
