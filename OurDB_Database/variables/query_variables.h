@@ -1,5 +1,5 @@
 //
-// Created by zeel,mihir,parth on 13/04/2021.
+// Created by zeel,mihir,parth,pranav on 13/04/2021.
 //
 #include <iostream>
 #include <string>
@@ -12,11 +12,13 @@ using namespace std;
 
 //character for splitting the string into string array
 char split_char = ' ';
+
 //size of query
 int query_size = 0;
 
 //for storing first letter of database name;
 char cm;
+
 //create variable
 string create_query[2] = {"create","make"};
 
