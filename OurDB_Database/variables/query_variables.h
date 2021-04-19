@@ -32,4 +32,7 @@ string delete_query[2] = {"delete","destroy"};
 //path for string...
 string strPath[1] = {"../../OurDB_Database/Databases/"};
 
+// for validation
+unsigned char cn;
+
 #endif //OURDB_DATABASE_QUERY_VARIABLES_H
