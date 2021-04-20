@@ -13,4 +13,7 @@ string SuccessDeletingDatabaseMsg[2] = {"Success index := 102 , Success := datab
 
 //success creation of table...
 string SuccessCreatingFileMsg[2] = {"Success index := 103 , Success := table created","103"};
+
+// database selected success
+string SuccessDatabaseSelected[2] = {"Success index := 104 , Success := database selected named : ","104"};
 #endif //OURDB_DATABASE_SUCCESS_MSG_H

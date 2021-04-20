@@ -4,12 +4,13 @@
 #include <iostream>
 #include <string>
 #include <filesystem>
+#include "../../variables/query_variables.h"
 using namespace std;
 
 #ifndef OURDB_DATABASE_SELECT_DATABASE_H
 #define OURDB_DATABASE_SELECT_DATABASE_H
 
-
+// this function helps for validation..
 string validation(string dbname,string ferror,string serror)
 {
     cm = dbname.front();  //store the first character of string
@@ -18,16 +19,16 @@ string validation(string dbname,string ferror,string serror)
     {
         if((cn >= 32 && cn <= 47)  ||(cn >= 58 && cn <= 92) || (cn >= 123 && cn <= 126)) // check for special character
         {
-            return ferror; // defined in Errors/error_variable.h
+            return ferror; // returns ferror variable
 
         }else{
 
-            return "true_true";
+            return "true_true"; // return true_true for execution of these block
         }
     }
     else if(!(cm >= 97 && cm <= 122)) // check if character is not between "a to z"...
     {
-        return serror; // defined in Errors/error_variable.h
+        return serror; // returns serror variable
     }
 
 }
@@ -36,25 +37,33 @@ string selectDatabase(string databaseName)
 {
 
  if(validation("databaseName",errorSpecialchaDatabase[0],syntaxOfCreateDatabase[0])=="true_true") {
-     databaseName = strPath[0] + databaseName;
-     if (filesystem::exists(databaseName.c_str())) {
-         if(!(databaseSelectGlobal == databaseName)) {
-             databaseSelectGlobal = databaseName;
-             return databaseSelectGlobal + " selected..";
+     //the validation function calls and if it returns true_true then goes in these block
+
+     dummy = databaseName;  //stores the databasename to dummy variable
+
+     databaseName = strPath[0] + databaseName; // concatnat the databasename with path..
+
+     if (filesystem::exists(databaseName.c_str())) { // it checks whether directory exist or not
+
+         if(!(databaseSelectGlobal == dummy)) { // check if dummy variable != databaseGlobal then execute these..
+
+             databaseSelectGlobal = dummy; // if above condition is right then dummy assigned to databasesSlectGlobal
+
+             return  SuccessDatabaseSelected[0] + dummy; //it returns string selected..
          }else
          {
-             return databaseAlreadySelected[0];
+             return databaseAlreadySelected[0]; // it returns error already selected
          }
 
      } else {
-         databaseSelectGlobal = "";
-         return errDatabaseNotFound[0];
+
+         return errDatabaseNotFound[0]; // if database it not there then returns not found..
      }
 
  }
  else
  {
-     return "error";
+     return SysUnRecognizedError[0]; // if validation some how fails this shows.
  }
 }
 

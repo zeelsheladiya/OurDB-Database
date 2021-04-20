@@ -13,6 +13,8 @@ using namespace std;
 //global variable for selecting database
  string databaseSelectGlobal = "";
 
+ //dummy variable for stroing dbname
+ string dummy = "";
 //character for splitting the string into string array
 char split_char = ' ';
 
