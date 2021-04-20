@@ -15,6 +15,7 @@ inline string databaseSelectGlobal = "";
 
  //dummy variable for stroing dbname
 inline string storeDatabaseName = "";
+
 //character for splitting the string into string array
 inline char split_char = ' ';
 

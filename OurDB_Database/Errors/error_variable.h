@@ -56,4 +56,5 @@ inline string databaseAlreadySelected[2] = {"Error index := 15 , Error := databa
 
 // error when validation function fails system unrecognized error occurs
 inline string SysUnRecognizedError[2] = {"Error index := 16 , Error := system unrecognized error","16"};
+
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H
