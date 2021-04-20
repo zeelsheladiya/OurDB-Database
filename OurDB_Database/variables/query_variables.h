@@ -10,6 +10,9 @@ using namespace std;
 #ifndef OURDB_DATABASE_QUERY_VARIABLES_H
 #define OURDB_DATABASE_QUERY_VARIABLES_H
 
+//global variable for selecting database
+ string databaseSelectGlobal = "";
+
 //character for splitting the string into string array
 char split_char = ' ';
 
@@ -30,6 +33,9 @@ string table[1] = {"table"};
 
 //delete variable
 string delete_query[2] = {"delete","destroy"};
+
+//selecting  database
+string select_db_query[2] = {"select","choose"};
 
 //path for string...
 string strPath[1] = {"../../OurDB_Database/Databases/"};

@@ -70,7 +70,6 @@ string createDatabase(string databaseName)
            return syntaxOfCreateDatabase[0]; // defined in Errors/error_variable.h
        }
 
-
 }
 
 

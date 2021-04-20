@@ -42,4 +42,11 @@ string errorCreatingFile[2] = {"Error index := 10 , Error := unable to create fi
 //error occur id that named database is already exist
 string errorDatatbaseExists[2] = {"Error index := 11 , Error := database already exist ","11"};
 
+string errorSelectingDatabase[2] = {"Error index := 12 , Error := error selecting database ","12"};
+
+string ExtraWordInselectDatabaseSyntax[2] = {"Error index := 13 , Error := there are some extra words and invalid world in select database syntax","13"};
+
+string errDatabaseNotFound[2] = {"Error index := 14 , Error := database not found","14"};
+
+string databaseAlreadySelected[2] = {"Error index := 15 , Error := database already selected","15"};
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

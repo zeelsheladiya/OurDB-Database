@@ -8,7 +8,7 @@
 #include "Success_Messages/Success_Msg.h"
 #include "Parth_module/create_database/create_database.h"
 #include "Parth_module/delete_database/delete_database.h"
-
+#include "Parth_module/select_database/select_database.h"
 using namespace std;
 
 #ifndef OURDB_DATABASE_QUERY_PROCESS_H
@@ -62,6 +62,24 @@ string query_process(vector<string> query)
         }
         else{
             return ExtraWordInDeleteSyntax[0];
+        }
+
+    }
+    else if(syntaxCompare(query[0],select_db_query))
+    {
+        if(query_size == 3) {
+
+            if (syntaxCompare(query[1], database))//check for database's word
+            {
+                return selectDatabase(query[2]);
+
+            } else {
+
+                return errorSelectingDatabase[0];
+            }
+        }
+        else{
+            return ExtraWordInselectDatabaseSyntax[0];
         }
 
     }
