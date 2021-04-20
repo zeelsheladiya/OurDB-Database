@@ -42,3 +42,11 @@
 
 
 5. select queries :-
+
+      words for select
+        ->select
+        ->choose
+        ->pick
+        -------------------------------------------------------------
+        -> select database database_name
+        -> choose table table_name
