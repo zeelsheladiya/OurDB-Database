@@ -1,0 +1,8 @@
+//
+// Created by dabhe on 29-Apr-21.
+//
+
+#ifndef OURDB_DATABASE_RENAME_DATABASE_H
+#define OURDB_DATABASE_RENAME_DATABASE_H
+
+#endif //OURDB_DATABASE_RENAME_DATABASE_H
