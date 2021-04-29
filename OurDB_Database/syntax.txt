@@ -49,7 +49,7 @@
              -> select database database_name // parth module
              -> choose table table_name
 
- 6 rename database : -
+6 rename database : -
          words for rename
           ->rename
           ->retitle
