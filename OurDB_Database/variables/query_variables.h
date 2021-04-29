@@ -37,7 +37,10 @@ string table[1] = {"table"};
 string delete_query[2] = {"delete","destroy"};
 
 //selecting  database
-string select_db_query[2] = {"select","choose"};
+string select_db_query[3] = {"select","choose","pick"};
+
+//rename database
+string rename_database_query[2] = {"rename","retitle"};
 
 //path for string...
 string strPath[1] = {"../../OurDB_Database/Databases/"};

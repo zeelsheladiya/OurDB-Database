@@ -83,6 +83,22 @@ string query_process(vector<string> query)
             return ExtraWordInselectDatabaseSyntax[0];
         }
 
+    }else if(syntaxCompare(query[0],rename_database_query)){
+        if(query_size == 3) {
+
+            if (syntaxCompare(query[1], database))//check for database's word
+            {
+                return renameDatabase(query[2]);
+
+            } else {
+
+                return errrenameDatabase[0];
+            }
+        }
+        else{
+            return ExtraWordInselectDatabaseSyntax[0];
+        }
+
     }
     else
     {

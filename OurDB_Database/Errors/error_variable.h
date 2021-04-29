@@ -51,4 +51,6 @@ string errDatabaseNotFound[2] = {"Error index := 14 , Error := database not foun
 string databaseAlreadySelected[2] = {"Error index := 15 , Error := database already selected","15"};
 
 string SysUnRecognizedError[2] = {"Error index := 16 , Error := system unrecognized error","16"};
+
+string errrenameDatabase[2] = {"Error index := 17 ,Error := renaming database","17"};
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H
