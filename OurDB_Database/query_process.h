@@ -9,6 +9,7 @@
 #include "Parth_module/create_database/create_database.h"
 #include "Parth_module/delete_database/delete_database.h"
 #include "Parth_module/select_database/select_database.h"
+#include "mihir_module/rename_database/rename_database.h"
 using namespace std;
 
 #ifndef OURDB_DATABASE_QUERY_PROCESS_H
