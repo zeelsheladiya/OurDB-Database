@@ -42,3 +42,18 @@
 
 
 5. select queries :-
+             words for delete
+             ->select
+             ->choose
+             -------------------------------------------------------------
+             -> select database database_name // parth module
+             -> choose table table_name
+
+ 6 rename database : -
+         words for rename
+          ->rename
+          ->retitle
+          ----------------------------------------------------------------
+           ->rename database database_name
+
+      note: - database must be selected before renaming...
