@@ -42,15 +42,30 @@ string errorCreatingFile[2] = {"Error index := 10 , Error := unable to create fi
 //error occur id that named database is already exist
 string errorDatatbaseExists[2] = {"Error index := 11 , Error := database already exist ","11"};
 
+// error selecting database
 string errorSelectingDatabase[2] = {"Error index := 12 , Error := error selecting database ","12"};
 
+// extrawords in database syntax..
 string ExtraWordInselectDatabaseSyntax[2] = {"Error index := 13 , Error := there are some extra words and invalid world in select database syntax","13"};
 
+// error when database is not there
 string errDatabaseNotFound[2] = {"Error index := 14 , Error := database not found","14"};
 
+// when database already and you try to create with same name
 string databaseAlreadySelected[2] = {"Error index := 15 , Error := database already selected","15"};
 
+// it is unknown error
 string SysUnRecognizedError[2] = {"Error index := 16 , Error := system unrecognized error","16"};
 
-string errrenameDatabase[2] = {"Error index := 17 ,Error := renaming database","17"};
+// error in syntax of rename database
+string syntaxErrRenameDatabase[2] = {"Error index := 17 ,Error := syntax of rename database is wrong.. ","17"};
+
+// giving wrong name to database
+string errrenameDatabase[2] = {"Error index := 18 ,Error :=  renaming database error ","18"};
+
+// when someone rename the database he new to select the database for further process..
+string SelectTheDatabase[2] = {"Error index := 19 ,Error :=  First select the database ","19"};
+
+// when you try to rename the old database with same new name database.
+string sameNameDatabaseErr[2]= {"Error index := 20 ,Error :=  Same name of old and new database.. \",\"19\""};
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

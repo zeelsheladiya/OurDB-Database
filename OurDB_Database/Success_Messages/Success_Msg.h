@@ -16,4 +16,7 @@ string SuccessCreatingFileMsg[2] = {"Success index := 103 , Success := table cre
 
 // database selected success
 string SuccessDatabaseSelected[2] = {"Success index := 104 , Success := database selected named : ","104"};
+
+// database rename success
+string SuccessRenamingDatabaseMsg[2] = {"Success index := 105 , Success := database renamed success : ","105"};
 #endif //OURDB_DATABASE_SUCCESS_MSG_H

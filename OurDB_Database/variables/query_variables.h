@@ -13,8 +13,11 @@ using namespace std;
 //global variable for selecting database
  string databaseSelectGlobal = "";
 
- //dummy variable for stroing dbname
- string dummy = "";
+ // whole database path gets value while renaming, made for renameing only....
+string databaseSavePath = "";
+
+ //dName variable for stroing dbname
+ string dName = "";
 //character for splitting the string into string array
 char split_char = ' ';
 

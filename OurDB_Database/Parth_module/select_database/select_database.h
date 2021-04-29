@@ -39,17 +39,17 @@ string selectDatabase(string databaseName)
  if(validation("databaseName",errorSpecialchaDatabase[0],syntaxOfCreateDatabase[0])=="true_true") {
      //the validation function calls and if it returns true_true then goes in these block
 
-     dummy = databaseName;  //stores the databasename to dummy variable
+     dName = databaseName;  //stores the databasename to dummy variable
 
      databaseName = strPath[0] + databaseName; // concatnat the databasename with path..
 
-     if (filesystem::exists(databaseName.c_str())) { // it checks whether directory exist or not
+     if (filesystem::exists(databaseName.c_str()))  // it checks whether directory exist or not
+     {
+         if(!(databaseSelectGlobal == dName)) { // check if dummy variable != databaseGlobal then execute these..
 
-         if(!(databaseSelectGlobal == dummy)) { // check if dummy variable != databaseGlobal then execute these..
-
-             databaseSelectGlobal = dummy; // if above condition is right then dummy assigned to databasesSlectGlobal
-
-             return  SuccessDatabaseSelected[0] + dummy; //it returns string selected..
+             databaseSelectGlobal = dName; // if above condition is right then dummy assigned to databasesSlectGlobal
+             databaseSavePath = databaseName;
+             return  SuccessDatabaseSelected[0] + dName; //it returns string selected..
          }else
          {
              return databaseAlreadySelected[0]; // it returns error already selected

@@ -92,7 +92,7 @@ string query_process(vector<string> query)
 
             } else {
 
-                return errrenameDatabase[0];
+                return syntaxErrRenameDatabase[0];
             }
         }
         else{
