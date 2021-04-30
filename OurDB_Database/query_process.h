@@ -9,6 +9,7 @@
 #include "Parth_module/create_database/create_database.h"
 #include "Parth_module/delete_database/delete_database.h"
 #include "Parth_module/select_database/select_database.h"
+#include "mihir_module/rename_database/rename_database.h"
 using namespace std;
 
 #ifndef OURDB_DATABASE_QUERY_PROCESS_H
@@ -76,6 +77,22 @@ string query_process(vector<string> query)
             } else {
 
                 return errorSelectingDatabase[0];
+            }
+        }
+        else{
+            return ExtraWordInselectDatabaseSyntax[0];
+        }
+
+    }else if(syntaxCompare(query[0],rename_database_query)){
+        if(query_size == 3) {
+
+            if (syntaxCompare(query[1], database))//check for database's word
+            {
+                return renameDatabase(query[2]);
+
+            } else {
+
+                return syntaxErrRenameDatabase[0];
             }
         }
         else{

@@ -11,39 +11,44 @@ using namespace std;
 #define OURDB_DATABASE_QUERY_VARIABLES_H
 
 //global variable for selecting database
-inline string databaseSelectGlobal = "";
+ string databaseSelectGlobal = "";
 
- //dummy variable for stroing dbname
-inline string storeDatabaseName = "";
+ // whole database path gets value while renaming, made for renameing only....
+string databaseSavePath = "";
 
+ //dName variable for stroing dbname
+ string dName = "";
 //character for splitting the string into string array
-inline char split_char = ' ';
+char split_char = ' ';
 
 //size of query
-inline int query_size = 0;
+int query_size = 0;
 
-//for storing first letter of database name(for validation purpose);
-inline char firstLetterStore;
+//for storing first letter of database name;
+char cm;
 
 //create variable
-inline string create_query[2] = {"create","make"};
+string create_query[2] = {"create","make"};
 
 //database variable
-inline string database[1] = {"database"};
+string database[1] = {"database"};
 
 //table variable
-inline string table[1] = {"table"};
+string table[1] = {"table"};
 
 //delete variable
-inline string delete_query[2] = {"delete","destroy"};
+string delete_query[2] = {"delete","destroy"};
 
 //selecting  database
-inline string select_db_query[3] = {"select","choose","pick"};
+string select_db_query[3] = {"select","choose","pick"};
+
+//rename database
+string rename_database_query[2] = {"rename","retitle"};
 
 //path for string...
-inline string strPath[1] = {"../../OurDB_Database/Databases/"};
+string strPath[1] = {"../../OurDB_Database/Databases/"};
 
-// for storing last letter of database name(for validation purpose);
-inline unsigned char lastLetterStore;
+// for validation
+unsigned char cn;
 
 #endif //OURDB_DATABASE_QUERY_VARIABLES_H
