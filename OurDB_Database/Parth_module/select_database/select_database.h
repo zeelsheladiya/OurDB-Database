@@ -13,11 +13,11 @@ using namespace std;
 // this function helps for validation..
 string validation(string dbname,string ferror,string serror)
 {
-    cm = dbname.front();  //store the first character of string
-    cn = dbname.back(); // stores last character of string
-    if(cm >= 97 && cm <= 122)   // check whether the first character is between "a to z" or not
+    firstLetterStore = dbname.front();  //store the first character of string
+    lastLetterStore = dbname.back(); // stores last character of string
+    if(firstLetterStore >= 97 && firstLetterStore <= 122)   // check whether the first character is between "a to z" or not
     {
-        if((cn >= 32 && cn <= 47)  ||(cn >= 58 && cn <= 92) || (cn >= 123 && cn <= 126)) // check for special character
+        if((lastLetterStore >= 32 && lastLetterStore <= 47)  ||(lastLetterStore >= 58 && lastLetterStore <= 92) || (lastLetterStore >= 123 && lastLetterStore <= 126)) // check for special character
         {
             return ferror; // returns ferror variable
 
@@ -26,7 +26,7 @@ string validation(string dbname,string ferror,string serror)
             return "true_true"; // return true_true for execution of these block
         }
     }
-    else if(!(cm >= 97 && cm <= 122)) // check if character is not between "a to z"...
+    else if(!(firstLetterStore >= 97 && firstLetterStore <= 122)) // check if character is not between "a to z"...
     {
         return serror; // returns serror variable
     }

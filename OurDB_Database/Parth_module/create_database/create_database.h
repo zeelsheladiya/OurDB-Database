@@ -33,11 +33,11 @@ using namespace std;
 
 string createDatabase(string databaseName)
 {
-    cm = databaseName.front();  //store the first character of string
-    cn = databaseName.back(); // stores last character of string
-      if(cm >= 97 && cm <= 122)   // check whether the first character is between "a to z" or not
+    firstLetterStore = databaseName.front();  //store the first character of string
+    lastLetterStore = databaseName.back(); // stores last character of string
+      if(firstLetterStore >= 97 && firstLetterStore <= 122)   // check whether the first character is between "a to z" or not
        {
-          if((cn >= 32 && cn <= 47)  ||(cn >= 58 && cn <= 92) || (cn >= 123 && cn <= 126)) // check for special character
+          if((lastLetterStore >= 32 && lastLetterStore <= 47)  ||(lastLetterStore >= 58 && lastLetterStore <= 92) || (lastLetterStore >= 123 && lastLetterStore <= 126)) // check for special character
           {
 
               return errorSpecialchaDatabase[0]; // defined in Errors/error_variable.h
@@ -65,7 +65,7 @@ string createDatabase(string databaseName)
                    }
           }
        }
-       else if(!(cm >= 97 && cm <= 122)) // check if character is not between "a to z"...
+       else if(!(firstLetterStore >= 97 && firstLetterStore <= 122)) // check if character is not between "a to z"...
        {
            return syntaxOfCreateDatabase[0]; // defined in Errors/error_variable.h
        }
