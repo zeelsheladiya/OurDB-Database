@@ -11,6 +11,7 @@
 #include "Parth_module/select_database/select_database.h"
 #include "mihir_module/rename_database/rename_database.h"
 #include "mihir_module/database_list/database_list.h"
+#include "mihir_module/current_database/current_database.h"
 
 using namespace std;
 
@@ -104,16 +105,40 @@ string query_process(vector<string> query)
     }
     else if(syntaxCompare(query[0],database_list_query))
     {
-        if(query_size == 3)
+        if(query_size == 3)     //checks query length (must be 3)
         {
-            if(syntaxCompare(query[1],"all"))
+            if(syntaxCompare(query[1],all))     //checks if second word in query is 'all'
             {
-                if(syntaxCompare(query[2],database))
+                if(syntaxCompare(query[2],database))    //checks if user wants to select a database (or a table)
                 {
                     return databaseList();
                 }
+                else
+                {
+                    return syntaxErrDatabaseList[0];
+                }
+            }
+            else
+            {
+                return syntaxErrDatabaseList[0];
             }
         }
+        else
+            return errExtraWordInDatabaseListSyntax[0];
+    }
+    else if(syntaxCompare(query[0],current))
+    {
+        if(query_size == 2)     //checks query length (must be 2)
+        {
+            if(syntaxCompare(query[1],database))    //checks if user wants to check current database
+            {
+                return currentDatabase();
+            }
+            else
+                return syntaxErrCurrentDatabase[0];
+        }
+        else
+            return syntaxErrCurrentDatabase[0];
     }
     else
     {

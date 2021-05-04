@@ -67,6 +67,21 @@ inline string errrenameDatabase[2] = {"Error index := 18 ,Error :=  renaming dat
 inline string SelectTheDatabase[2] = {"Error index := 19 ,Error :=  First select the database ","19"};
 
 // when you try to rename the old database with same new name database.
-inline string sameNameDatabaseErr[2]= {"Error index := 20 ,Error :=  Same name of old and new database.. \",\"19\""};
+inline string sameNameDatabaseErr[2]= {"Error index := 20 ,Error :=  Same name of old and new database.." ,"20"};
+
+// error in syntax of show all database
+inline string syntaxErrDatabaseList[2] = {"Error index := 21 ,Error := Syntax of displaying database list is wrong..\n \tSyntax : show/view/display all database ","21"};
+
+//extra words in delete query syntax
+inline string errExtraWordInDatabaseListSyntax[2] = {"Error index := 22 , Error := there are some extra words or invalid word in show database list syntax","22"};
+
+//if no database exist and the list is empty
+inline string errDatabaseListIsEmpty[2] = {"Error index := 23 ,Error := No database exists!! Please create a database and then try again..","23"};
+
+// when user tries to ask what is current selected database but no database has been selected
+inline string errDatabaseNotSelected[2] = {"Error index := 24 ,Error := No database selected!! Please select a database first..","24"};
+
+// error in syntax of current database
+inline string syntaxErrCurrentDatabase[2] = {"Error index := 25 ,Error := Syntax of current database is wrong..\n \tSyntax : current/present database ","25"};
 
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

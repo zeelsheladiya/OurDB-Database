@@ -32,7 +32,7 @@ inline char firstLetterStore;
 inline string create_query[2] = {"create","make"};
 
 //database variable
-inline string database[1] = {"database"};
+inline string database[2] = {"database","db"};
 
 //table variable
 inline string table[1] = {"table"};
@@ -47,7 +47,13 @@ inline string select_db_query[3] = {"select","choose","pick"};
 inline string rename_database_query[2] = {"rename","retitle"};
 
 //displaying all databases
-string database_list_query[3] = {"view","show","display"};
+inline string database_list_query[3] = {"view","show","display"};
+
+//'all' variable to check all keyword in displaying all database/table syntax
+inline string all[1] = {"all"};
+
+//'current' variable to check if user ask to view their current/present database or table
+inline string current[2] = {"current","present"};
 
 //path for string...
 inline string strPath[1] = {"../../OurDB_Database/Databases/"};

@@ -57,3 +57,21 @@
            ->rename database database_name
 
       note: - database must be selected before renaming...
+
+
+7. database list :-
+        words :
+        -> show
+        -> display
+        -> view
+        -------------------------------------------------------------------
+        syntax :- show all db
+               :- show all table
+
+8. current database :-
+        words :
+        -> current
+        -> present
+        ---------------------------------------------------------------------
+        syntax :- current database
+               :- present db
