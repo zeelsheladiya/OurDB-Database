@@ -10,6 +10,8 @@
 #include "Parth_module/delete_database/delete_database.h"
 #include "Parth_module/select_database/select_database.h"
 #include "mihir_module/rename_database/rename_database.h"
+#include "mihir_module/database_list/database_list.h"
+
 using namespace std;
 
 #ifndef OURDB_DATABASE_QUERY_PROCESS_H
@@ -99,6 +101,19 @@ string query_process(vector<string> query)
             return ExtraWordInselectDatabaseSyntax[0];
         }
 
+    }
+    else if(syntaxCompare(query[0],database_list_query))
+    {
+        if(query_size == 3)
+        {
+            if(syntaxCompare(query[1],"all"))
+            {
+                if(syntaxCompare(query[2],database))
+                {
+                    return databaseList();
+                }
+            }
+        }
     }
     else
     {

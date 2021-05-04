@@ -45,6 +45,9 @@ string select_db_query[3] = {"select","choose","pick"};
 //rename database
 string rename_database_query[2] = {"rename","retitle"};
 
+//displaying all databases
+string database_list_query[3] = {"view","show","display"};
+
 //path for string...
 string strPath[1] = {"../../OurDB_Database/Databases/"};
 
