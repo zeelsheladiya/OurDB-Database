@@ -19,6 +19,9 @@ inline string databaseSavePath = "";
 //dName variable for stroing dbname
 inline string dName = "";
 
+//tbname variable stroing the table name
+inline string tbname = "";
+
 //character for splitting the string into string array
 inline char split_char = ' ';
 
@@ -30,6 +33,7 @@ inline char firstLetterStore;
 
 //create variable
 inline string create_query[2] = {"create","make"};
+
 
 //database variable
 inline string database[2] = {"database","db"};

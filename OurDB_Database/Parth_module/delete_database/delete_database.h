@@ -29,18 +29,23 @@ string deleteDatabase(string databaseName)
         }else{
 
             databaseName = strPath[0] + databaseName; //strpath[0]="path" defined in  variables/query_variables.h
+         if(filesystem::exists(databaseName.c_str())) {
+             if (!(filesystem::remove_all(databaseName)))  //from the filesystem function to remove directory
+             {
 
-            if (!(filesystem::remove_all(databaseName)))  //from the filesystem function to remove directory
-            {
+                 return errorDeletingDatabase[0]; // errorDeletingDatabase[0] defined in   Errors/error_variable.h
 
-                return errorDeletingDatabase[0]; // errorDeletingDatabase[0] defined in   Errors/error_variable.h
+             } else {
+                 databaseSelectGlobal = ""; // reset the global variable in ,defined in variables/query_variables.h
+                 databaseSavePath = " "; // reset the databaseSave path...
+                 return SuccessDeletingDatabaseMsg[0]; // SuccessDeletingDatabaseMsg defined in Success_Messages/Success_Msg.h
 
-            } else {
-                databaseSelectGlobal = ""; // reset the global variable in ,defined in variables/query_variables.h
-                databaseSavePath = " "; // reset the databaseSave path...
-                return SuccessDeletingDatabaseMsg[0]; // SuccessDeletingDatabaseMsg defined in Success_Messages/Success_Msg.h
-
-            }
+             }
+         }
+         else
+         {
+             return errDatabaseListIsEmpty[0];
+         }
         }
     }
     else if(!(firstLetterStore >= 97 && firstLetterStore <= 122)) // check if character is not between "a to z"...

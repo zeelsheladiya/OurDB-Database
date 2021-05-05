@@ -12,6 +12,7 @@
 #include "mihir_module/rename_database/rename_database.h"
 #include "mihir_module/database_list/database_list.h"
 #include "mihir_module/current_database/current_database.h"
+#include "Parth_module/create_table/create_table.h"
 
 using namespace std;
 
@@ -38,8 +39,10 @@ string query_process(vector<string> query)
             { //for create database
                 return createDatabase(query[2]); // parth's part
 
-            } else if (syntaxCompare(query[1], table)) {
-                //for create table
+            } else if (syntaxCompare(query[1], table)) { //check for table name
+
+                return createTable(query[2]); // return table creation
+
             } else {
                 // else part of create query
                 return syntaxOfCreateError[0];
@@ -86,7 +89,9 @@ string query_process(vector<string> query)
             return ExtraWordInselectDatabaseSyntax[0];
         }
 
-    }else if(syntaxCompare(query[0],rename_database_query)){
+    }
+    else if(syntaxCompare(query[0],rename_database_query))
+    {
         if(query_size == 3) {
 
             if (syntaxCompare(query[1], database))//check for database's word
@@ -123,8 +128,9 @@ string query_process(vector<string> query)
                 return syntaxErrDatabaseList[0];
             }
         }
-        else
-            return errExtraWordInDatabaseListSyntax[0];
+        else {
+              return errExtraWordInDatabaseListSyntax[0];
+        }
     }
     else if(syntaxCompare(query[0],current))
     {

@@ -84,4 +84,14 @@ inline string errDatabaseNotSelected[2] = {"Error index := 24 ,Error := No datab
 // error in syntax of current database
 inline string syntaxErrCurrentDatabase[2] = {"Error index := 25 ,Error := Syntax of current database is wrong..\n \tSyntax : current/present database ","25"};
 
+// error in special character in table while creating
+inline string errorSpecialchaTable[2] = {"Error index := 26 , Error := special character not allowed in table. ","26"};
+
+// table creation failed
+inline string syntaxOfCreateTable[2] = {"Error index := 27 , Error := table creation failed. ","27"};
+
+// if table already exists then it will gives error..
+inline string errTableAlreadyExist[2] = {"Error index := 28 , Error := table already exists.", "28"};
+
+
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

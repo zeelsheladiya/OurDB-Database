@@ -5,41 +5,23 @@
 #include <string>
 #include <filesystem>
 #include "../../variables/query_variables.h"
+#include "../../global_functions/global_function.h"
 using namespace std;
 
 #ifndef OURDB_DATABASE_SELECT_DATABASE_H
 #define OURDB_DATABASE_SELECT_DATABASE_H
 
 // this function helps for validation..
-string validation(string dbname,string ferror,string serror)
-{
-    firstLetterStore = dbname.front();  //store the first character of string
-    lastLetterStore = dbname.back(); // stores last character of string
-    if(firstLetterStore >= 97 && firstLetterStore <= 122)   // check whether the first character is between "a to z" or not
-    {
-        if((lastLetterStore >= 32 && lastLetterStore <= 47)  ||(lastLetterStore >= 58 && lastLetterStore <= 92) || (lastLetterStore >= 123 && lastLetterStore <= 126)) // check for special character
-        {
-            return ferror; // returns ferror variable
 
-        }else{
-
-            return "true_true"; // return true_true for execution of these block
-        }
-    }
-    else if(!(firstLetterStore >= 97 && firstLetterStore <= 122)) // check if character is not between "a to z"...
-    {
-        return serror; // returns serror variable
-    }
-
-}
 
 string selectDatabase(string databaseName)
 {
 
- if(validation("databaseName",errorSpecialchaDatabase[0],syntaxOfCreateDatabase[0])=="true_true") {
+ if(validation(databaseName,errorSpecialchaDatabase[0],syntaxOfCreateDatabase[0])=="true_true")
+ {
      //the validation function calls and if it returns true_true then goes in these block
 
-     dName = databaseName;  //stores the databasename to dummy variable
+     dName = databaseName;  //stores the databasename to dname variable
 
      databaseName = strPath[0] + databaseName; // concatnat the databasename with path..
 
