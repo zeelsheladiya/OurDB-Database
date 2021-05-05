@@ -18,13 +18,14 @@ string createTable(string databasename)
 
              if ( validation(databasename,errorSpecialchaTable[0],syntaxOfCreateTable[0]) == "true_true")
              {
-                tbname = databaseSavePath +"/"+ databasename+".Ourdb";
-                 if(!(filesystem::exists(tbname.c_str())))
+                tbname = databaseSavePath +"/"+ databasename+".Ourdb"; // it adds the selected database path with tablename
+                // and also store in tbname
+                 if(!(filesystem::exists(tbname.c_str()))) // if file already exist then return error..
                  {
-                     FileTabel(tbname);
+                     FileTabel(tbname); // call the filetable function which is in global_function.h
 
                  } else{
-                     return errTableAlreadyExist[0];
+                     return errTableAlreadyExist[0]; // if table already exist then returns the error..
                  }
 
              }
@@ -38,7 +39,7 @@ string createTable(string databasename)
     else
     {
 
-        return SelectTheDatabase[0];
+        return SelectTheDatabase[0]; // if database is not select then returns the error.
     }
 
 
