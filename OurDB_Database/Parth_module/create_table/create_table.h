@@ -19,14 +19,24 @@ string createTable(string tablename)
         // variable for storing string value which is returned by validate function
              if ( validate == "true_true")
              {
-                tbname = databaseSavePath +"/"+ tablename+".Ourdb"; // it adds the selected database path with tablename
-                // and also store in tbname
-                 if(!(filesystem::exists(tbname.c_str()))) // if file already exist then return error..
+                 regex b("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
+                 if ( regex_match(tablename, b) ) {
+
+                     tbname = databaseSavePath +"/"+ tablename+".Ourdb"; // it adds the selected database path with tablename
+                     // and also store in tbname
+                      if(!(filesystem::exists(tbname.c_str()))) // if file already exist then return error..
+                      {
+                          FileTable(tbname); // call the filetable function which is in global_function.h
+                          validate = "";
+                          return  SuccessCreatingFileMsg[0];
+                      } else{
+                          return errTableAlreadyExist[0]; // if table already exist then returns the error..
+                      }
+
+                 }else
                  {
-                     FileTable(tbname); // call the filetable function which is in global_function.h
-                     return  SuccessCreatingFileMsg[0];
-                 } else{
-                     return errTableAlreadyExist[0]; // if table already exist then returns the error..
+                      return errorSpecialchaTable[0]; // error for special character found..
+
                  }
 
              }

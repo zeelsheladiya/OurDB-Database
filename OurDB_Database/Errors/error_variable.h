@@ -94,4 +94,6 @@ inline string syntaxOfCreateTable[2] = {"Error index := 27 , Error := syntax of 
 inline string errTableAlreadyExist[2] = {"Error index := 28 , Error := table already exists.", "28"};
 
 
+
+
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H
