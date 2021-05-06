@@ -34,16 +34,13 @@ inline string validation(string dbname,string ferror,string serror)
 
 }
 
-inline void FileTabel(string nm)
+inline void FileTable(string nm)
 {
     fstream tb; // creats the object of class "fstream"...   here "tb" obj is created
     tb.open(nm,ios::in | ios::out | ios::trunc ); // in for writing , out for writing and trunc
     if(!tb.is_open()) // is_open is defined in "fstream" which check file is created or not if created then open it
     {
         cout<<errorCreatingFile[0]<<endl; // defined in Errors/error_variable.h
-    }else
-    {
-        cout<<SuccessCreatingFileMsg[0]<<endl; // defined in "Success_Messages/Success_Msg.h"..
     }
     tb.close(); // closes the file
 

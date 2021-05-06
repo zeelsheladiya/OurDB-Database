@@ -10,28 +10,29 @@ using namespace std;
 #ifndef OURDB_DATABASE_CREATE_TABLE_H
 #define OURDB_DATABASE_CREATE_TABLE_H
 
-string createTable(string databasename)
+string createTable(string tablename)
 {
 
     if(!(databaseSelectGlobal == ""))
     {
-
-             if ( validation(databasename,errorSpecialchaTable[0],syntaxOfCreateTable[0]) == "true_true")
+         validate = validation(tablename,syntaxOfCreateTable[0],errorSpecialchaTable[0]);
+        // variable for storing string value which is returned by validate function
+             if ( validate == "true_true")
              {
-                tbname = databaseSavePath +"/"+ databasename+".Ourdb"; // it adds the selected database path with tablename
+                tbname = databaseSavePath +"/"+ tablename+".Ourdb"; // it adds the selected database path with tablename
                 // and also store in tbname
                  if(!(filesystem::exists(tbname.c_str()))) // if file already exist then return error..
                  {
-                     FileTabel(tbname); // call the filetable function which is in global_function.h
-
+                     FileTable(tbname); // call the filetable function which is in global_function.h
+                     return  SuccessCreatingFileMsg[0];
                  } else{
                      return errTableAlreadyExist[0]; // if table already exist then returns the error..
                  }
 
              }
-             else
+             else if(validate!="true_true")
              {
-                 return SysUnRecognizedError[0]; // if validation some how fails this shows.
+                 return validate; // if validation some how fails this shows.
 
              }
 

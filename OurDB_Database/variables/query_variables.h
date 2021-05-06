@@ -25,6 +25,9 @@ inline string tbname = "";
 //character for splitting the string into string array
 inline char split_char = ' ';
 
+//variable for storing string value which is returned by validate function
+inline string validate = "";
+
 //size of query
 inline int query_size = 0;
 

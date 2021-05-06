@@ -88,7 +88,7 @@ inline string syntaxErrCurrentDatabase[2] = {"Error index := 25 ,Error := Syntax
 inline string errorSpecialchaTable[2] = {"Error index := 26 , Error := special character not allowed in table. ","26"};
 
 // table creation failed
-inline string syntaxOfCreateTable[2] = {"Error index := 27 , Error := table creation failed. ","27"};
+inline string syntaxOfCreateTable[2] = {"Error index := 27 , Error := syntax of creating table is wrong. ","27"};
 
 // if table already exists then it will gives error..
 inline string errTableAlreadyExist[2] = {"Error index := 28 , Error := table already exists.", "28"};
