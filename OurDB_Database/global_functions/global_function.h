@@ -33,7 +33,7 @@ inline string validation(string dbname,string ferror,string serror)
 
     }else if(!(firstLetterStore >= 97 && firstLetterStore <= 122)){
 
-      return errorSpecialchaDatabase[0];
+      return errStartAndEndsWithDbName[0];
     }
 
 }

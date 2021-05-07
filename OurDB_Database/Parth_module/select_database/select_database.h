@@ -16,7 +16,7 @@ using namespace std;
 
 string selectDatabase(string databaseName)
 {
- validate = validation(databaseName,errLastCharName[0],errStartWithDbName[0]);
+ validate = validation(databaseName,errStartAndEndsWithDbName[0],errStartAndEndsWithDbName[0]);
  if(validate == "true_true")
  {
      //the validation function calls and if it returns true_true then goes in these block

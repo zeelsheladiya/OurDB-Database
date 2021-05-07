@@ -15,7 +15,7 @@ string createTable(string tablename)
 
     if(!(databaseSelectGlobal == ""))
     {
-         validate = validation(tablename,errLastCharName[0],errStartWithDbName[0]);
+         validate = validation(tablename,errStartAndEndsWithDbName[0],errStartAndEndsWithDbName[0]);
         // variable for storing string value which is returned by validate function
              if ( validate == "true_true")
              {
