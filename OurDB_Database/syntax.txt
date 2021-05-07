@@ -52,9 +52,10 @@
 6 rename database : -
          words for rename
           ->rename
-          ->retitle
+          ->update
           ----------------------------------------------------------------
-           ->rename database database_name
+           -> rename database database_name
+           -> rename table old_name new_name
 
       note: - database must be selected before renaming...
 

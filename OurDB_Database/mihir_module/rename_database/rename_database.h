@@ -14,46 +14,42 @@ string renameDatabase(string databaseName)
 {
     if(!(databaseSelectGlobal.empty()))
     {
-        firstLetterStore = databaseName.front();  //store the first character of string
-        lastLetterStore = databaseName.back(); // stores last character of string
-        if(firstLetterStore >= 97 && firstLetterStore <= 122)   // check whether the first character is between "a to z" or not
+        validate = validation(databaseName,errorSpecialchaDatabase[0],errFirstLetterNumeric[0]);
+        if(validate == "true_true")
         {
-                if((lastLetterStore >= 32 && lastLetterStore <= 47)  ||(lastLetterStore >= 58 && lastLetterStore <= 92) || (lastLetterStore >= 123 && lastLetterStore <= 126)) // check for special character
+            regex l("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
+            if ( regex_match(databaseName, l) )
+            {
+                databaseName = strPath[0] + databaseName; //strpath[0]="path" defined in  variables/query_variables.h
+                if (!(databaseSavePath == databaseName))
                 {
-                    return errorSpecialchaDatabase[0]; // defined in Errors/error_variable.h
-                }else{
-                    databaseName = strPath[0] + databaseName; //strpath[0]="path" defined in  variables/query_variables.h
-                    if(!(databaseSavePath==databaseName))
+                    if (rename(databaseSavePath.c_str(), databaseName.c_str()) != 0) // rename the directory
                     {
-                        if (!(rename(databaseSavePath.c_str(), databaseName.c_str()) == 0)) // rename the directory
-                        {
-
-                            return errrenameDatabase[0]; // defined in Errors/error_variable.h
-
-                        } else {
-                            databaseSelectGlobal = ""; // after renaming it has to be empty.. sp again have to select in order to rename
-                            return SuccessRenamingDatabaseMsg[0]; // Success_Messages/Success_Msg.h
-                        }
-                    }else
+                        return errrenameDatabase[0]; // defined in Errors/error_variable.h
+                    }
+                    else
                     {
-                        return sameNameDatabaseErr[0];
+                        databaseSelectGlobal = ""; // after renaming it has to be empty.. sp again have to select in order to rename
+                        return SuccessRenamingDatabaseMsg[0]; // Success_Messages/Success_Msg.h
                     }
                 }
+                else
+                {
+                    return sameNameDatabaseErr[0];
+                }
+            }
+            else
+            {
+                return  errorSpecialchaDatabase[0];
+            }
         }
-        else if(!(firstLetterStore >= 97 && firstLetterStore <= 122)) // check if character is not between "a to z"...
-        {
-            return syntaxOfCreateDatabase[0]; // defined in Errors/error_variable.h
-        }
-
-    }else{
-
+        else if(validate != "true_true")
+            return validate;
+    }
+    else
+    {
         return SelectTheDatabase[0]; // if database is not selected before renaming then it gives error..
     }
-
-
-
 }
-
-
 
 #endif //OURDB_DATABASE_RENAME_DATABASE_H

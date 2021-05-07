@@ -58,10 +58,10 @@ inline string databaseAlreadySelected[2] = {"Error index := 15 , Error := databa
 inline string SysUnRecognizedError[2] = {"Error index := 16 , Error := system unrecognized error","16"};
 
 // error in syntax of rename database
-inline string syntaxErrRenameDatabase[2] = {"Error index := 17 ,Error := syntax of rename database is wrong.. ","17"};
+inline string syntaxErrRenameDatabase[2] = {"Error index := 17 ,Error := syntax of rename database is wrong.. \n\t Syntax : rename database new_db_name ","17"};
 
 // giving wrong name to database
-inline string errrenameDatabase[2] = {"Error index := 18 ,Error :=  renaming database error ","18"};
+inline string errrenameDatabase[2] = {"Error index := 18 ,Error :=  Renaming database error! Same name database might exist!! ","18"};
 
 // when someone rename the database he new to select the database for further process..
 inline string SelectTheDatabase[2] = {"Error index := 19 ,Error :=  First select the database ","19"};
@@ -70,10 +70,10 @@ inline string SelectTheDatabase[2] = {"Error index := 19 ,Error :=  First select
 inline string sameNameDatabaseErr[2]= {"Error index := 20 ,Error :=  Same name of old and new database.." ,"20"};
 
 // error in syntax of show all database
-inline string syntaxErrDatabaseList[2] = {"Error index := 21 ,Error := Syntax of displaying database list is wrong..\n \tSyntax : show/view/display all database ","21"};
+inline string syntaxErrShowList[2] = {"Error index := 21 ,Error := Syntax of displaying database list is wrong..\n \tSyntax : show/view/display all database ","21"};
 
 //extra words in delete query syntax
-inline string errExtraWordInDatabaseListSyntax[2] = {"Error index := 22 , Error := there are some extra words or invalid word in show database list syntax","22"};
+inline string errExtraWordInShowListSyntax[2] = {"Error index := 22 , Error := there are some extra words or invalid word in show database list syntax","22"};
 
 //if no database exist and the list is empty
 inline string errDatabaseListIsEmpty[2] = {"Error index := 23 ,Error := No database exists!! Please create a database and then try again..","23"};
@@ -96,6 +96,25 @@ inline string errTableAlreadyExist[2] = {"Error index := 28 , Error := table alr
 //database name cant start with the numeric value
 inline string errFirstLetterNumeric[2] = {"Error index := 29 , Error := Name cannot start with numeric value! Only alphabets allowed.","29"};
 
+//if no table exist in current database and the list is empty
+inline string errTableListIsEmpty[2] = {"Error index := 30 ,Error := No tables exists in current database!! Please create a table or select another database..","30"};
 
+//extra word in rename table/database syntax
+inline string ExtraWordInRenameSyntax[2] = {"Error index := 30 ,Error := There is/are some extra words in rename query..","31"};
+
+// error in syntax of rename Table
+inline string syntaxErrRenameTable[2] = {"Error index := 31 ,Error := syntax of rename table is wrong.. \n\t Syntax : rename table old_name new_name ","32"};
+
+// not allowing to rename the default.Ourdb file
+inline string errRenamingDefaultTable[2] = {"Error index := 32 ,Error := You cannot rename default table!!","32"};
+
+// when you try to rename the old table with same new name table.
+inline string sameNameTableErr[2]= {"Error index := 33 ,Error := Same name of old and new table.." ,"33"};
+
+// Table renaming unknown error
+inline string errRenameTable[2] = {"Error index := 34 ,Error := Error renaming table! Same name table might exist already!! ","34"};
+
+// When user tries to rename table that doesnt exist in the database
+inline string errNoSuchTableExist[2] = {"Error index := 35 ,Error := No such table exist in the database!! ","35"};
 
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

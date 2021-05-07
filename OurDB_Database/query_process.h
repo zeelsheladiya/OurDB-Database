@@ -13,6 +13,9 @@
 #include "mihir_module/database_list/database_list.h"
 #include "mihir_module/current_database/current_database.h"
 #include "Parth_module/create_table/create_table.h"
+#include "mihir_module/table_list/table_list.h"
+#include "mihir_module/rename_table/rename_table.h"
+
 
 using namespace std;
 
@@ -90,46 +93,63 @@ string query_process(vector<string> query)
         }
 
     }
-    else if(syntaxCompare(query[0],rename_database_query))
+    else if(syntaxCompare(query[0],rename_query))
     {
-        if(query_size == 3) {
-
-            if (syntaxCompare(query[1], database))//check for database's word
+        if(query_size == 3)
+        {
+            if (syntaxCompare(query[1], database))      //check for database's word
             {
                 return renameDatabase(query[2]);
-
-            } else {
-
+            }
+            else
+            {
                 return syntaxErrRenameDatabase[0];
             }
         }
-        else{
-            return ExtraWordInselectDatabaseSyntax[0];
+        else if(query_size == 4)
+        {
+            if (syntaxCompare(query[1], table))     //check for table's word
+            {
+                return renameTable(query[2],query[3]);
+            }
+            else
+            {
+                return syntaxErrRenameTable[0];
+            }
+        }
+        else
+        {
+            return ExtraWordInRenameSyntax[0];
         }
 
     }
-    else if(syntaxCompare(query[0],database_list_query))
+    else if(syntaxCompare(query[0],list_query))
     {
         if(query_size == 3)     //checks query length (must be 3)
         {
             if(syntaxCompare(query[1],all))     //checks if second word in query is 'all'
             {
-                if(syntaxCompare(query[2],database))    //checks if user wants to select a database (or a table)
+                if(syntaxCompare(query[2],database))    //checks if user wants to display all databases
                 {
                     return databaseList();
                 }
+                else if(syntaxCompare(query[2],table))    //checks if user wants to display all tables
+                {
+                    return tableList();
+                }
                 else
                 {
-                    return syntaxErrDatabaseList[0];
+                    return syntaxErrShowList[0];
                 }
             }
             else
             {
-                return syntaxErrDatabaseList[0];
+                return syntaxErrShowList[0];
             }
         }
-        else {
-              return errExtraWordInDatabaseListSyntax[0];
+        else
+        {
+              return errExtraWordInShowListSyntax[0];
         }
     }
     else if(syntaxCompare(query[0],current))

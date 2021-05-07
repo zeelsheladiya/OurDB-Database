@@ -50,11 +50,11 @@ inline string delete_query[2] = {"delete","destroy"};
 //selecting  database
 inline string select_db_query[3] = {"select","choose","pick"};
 
-//rename database
-inline string rename_database_query[2] = {"rename","retitle"};
+//rename database/table
+inline string rename_query[2] = {"rename","update"};
 
 //displaying all databases
-inline string database_list_query[3] = {"view","show","display"};
+inline string list_query[3] = {"view","show","display"};
 
 //'all' variable to check all keyword in displaying all database/table syntax
 inline string all[1] = {"all"};
