@@ -93,7 +93,10 @@ inline string syntaxOfCreateTable[2] = {"Error index := 27 , Error := syntax of 
 // if table already exists then it will gives error..
 inline string errTableAlreadyExist[2] = {"Error index := 28 , Error := table already exists.", "28"};
 
+//database name cant start with the numeric value
+inline string errStartWithDbName[2] = {"Error index := 29 , Error := names cant starts with numeric value must use alphabet.","29"};
 
-
+// last letter can not be special character it can be alphabet or numeric...
+inline string errLastCharName[2]={"Error index :=30, Error := last character can not be special character","30"};
 
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

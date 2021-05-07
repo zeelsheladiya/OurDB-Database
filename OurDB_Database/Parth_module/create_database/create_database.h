@@ -58,7 +58,7 @@ string createDatabase(string databaseName)
 */
 string createDatabase(string databaseName)
 {
-    validate = validation(databaseName,syntaxOfCreateDatabase[0],errorSpecialchaDatabase[0]);
+    validate = validation(databaseName,errLastCharName[0],errStartWithDbName[0]);
      if( validate == "true_true")
      {
          regex l("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
@@ -90,7 +90,7 @@ string createDatabase(string databaseName)
          }
      }else if(validate != "true_true")
      {
-         return  errorSpecialchaDatabase[0];
+         return  validate;
      }
 }
 #endif //OURDB_DATABASE_CREATE_DATABASE_H

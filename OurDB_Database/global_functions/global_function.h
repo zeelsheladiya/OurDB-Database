@@ -27,9 +27,13 @@ inline string validation(string dbname,string ferror,string serror)
             return "true_true"; // return true_true for execution of these block
         }
     }
-    else if(!(firstLetterStore >= 97 && firstLetterStore <= 122)) // check if character is not between "a to z"...
+    else if((firstLetterStore >= 48 && firstLetterStore <= 57)) // check if character is not between "a to z"...
     {
         return serror; // returns serror variable
+
+    }else if(!(firstLetterStore >= 97 && firstLetterStore <= 122)){
+
+      return errorSpecialchaDatabase[0];
     }
 
 }

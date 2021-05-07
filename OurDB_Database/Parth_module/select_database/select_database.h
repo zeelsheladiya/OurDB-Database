@@ -16,8 +16,8 @@ using namespace std;
 
 string selectDatabase(string databaseName)
 {
-
- if(validation(databaseName,errorSpecialchaDatabase[0],syntaxOfCreateDatabase[0])=="true_true")
+ validate = validation(databaseName,errLastCharName[0],errStartWithDbName[0]);
+ if(validate == "true_true")
  {
      //the validation function calls and if it returns true_true then goes in these block
 
@@ -43,9 +43,9 @@ string selectDatabase(string databaseName)
      }
 
  }
- else
+ else if(validate!="true_true")
  {
-     return SysUnRecognizedError[0]; // if validation some how fails this shows.
+     return validate; // if validation some how fails this shows.
  }
 }
 
