@@ -34,7 +34,7 @@ inline string errorCreatingDatabase[2] = {"Error index := 7 , Error := database 
 inline string errorDeletingDatabase[2] = {"Error index := 8 , Error := unable to delete database. ","8"};
 
 //error occur when database name is not valid
-inline string errorSpecialchaDatabase[2] = {"Error index := 9 , Error := special character not allowed. ","9"};
+inline string errorSpecialchaDatabase[2] = {"Error index := 9 , Error := special character not allowed in database name. ","9"};
 
 //error occur when file (table) can not be created in database folder
 inline string errorCreatingFile[2] = {"Error index := 10 , Error := unable to create file ","10"};
@@ -85,7 +85,7 @@ inline string errDatabaseNotSelected[2] = {"Error index := 24 ,Error := No datab
 inline string syntaxErrCurrentDatabase[2] = {"Error index := 25 ,Error := Syntax of current database is wrong..\n \tSyntax : current/present database ","25"};
 
 // error in special character in table while creating
-inline string errorSpecialchaTable[2] = {"Error index := 26 , Error := special character not allowed in table. ","26"};
+inline string errorSpecialchaTable[2] = {"Error index := 26 , Error := special character not allowed in table name. ","26"};
 
 // table creation failed
 inline string syntaxOfCreateTable[2] = {"Error index := 27 , Error := syntax of creating table is wrong. ","27"};
@@ -94,7 +94,7 @@ inline string syntaxOfCreateTable[2] = {"Error index := 27 , Error := syntax of 
 inline string errTableAlreadyExist[2] = {"Error index := 28 , Error := table already exists.", "28"};
 
 //database name cant start with the numeric value
-inline string errStartAndEndsWithDbName[2] = {"Error index := 29 , Error := names can not  starts and ends with numeric value must use alphabet.","29"};
+inline string errFirstLetterNumeric[2] = {"Error index := 29 , Error := Name cannot start with numeric value! Only alphabets allowed.","29"};
 
 
 

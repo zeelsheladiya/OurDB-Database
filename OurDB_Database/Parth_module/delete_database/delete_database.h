@@ -57,7 +57,7 @@ string deleteDatabase(string databaseName)
 
 string deleteDatabase(string databaseName)
 {
-    validate = validation(databaseName,errStartAndEndsWithDbName[0],errStartAndEndsWithDbName[0]);
+    validate = validation(databaseName,errorSpecialchaDatabase[0],errFirstLetterNumeric[0]);
     if( validate == "true_true")
     {
         regex l("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..

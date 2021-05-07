@@ -20,7 +20,7 @@ inline string validation(string dbname,string ferror,string serror)
     {
         if((lastLetterStore >= 32 && lastLetterStore <= 47)  ||(lastLetterStore >= 58 && lastLetterStore <= 92) || (lastLetterStore >= 123 && lastLetterStore <= 126)) // check for special character
         {
-            return ferror; // returns ferror variable
+            return ferror; // returns ferror variable i.e. no spl char allowed in db/table name
 
         }else{
 
@@ -29,11 +29,11 @@ inline string validation(string dbname,string ferror,string serror)
     }
     else if((firstLetterStore >= 48 && firstLetterStore <= 57)) // check if character is not between "a to z"...
     {
-        return serror; // returns serror variable
+        return serror; // returns serror variable i.e. first letter cant be a numeric value
 
     }else if(!(firstLetterStore >= 97 && firstLetterStore <= 122)){
 
-      return errStartAndEndsWithDbName[0];
+      return ferror;  // returns ferror variable i.e. no spl char allowed in db/table name
     }
 
 }
