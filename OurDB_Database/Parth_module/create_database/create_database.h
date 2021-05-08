@@ -75,8 +75,9 @@ string createDatabase(string databaseName)
                  } else {
                      databaseName = databaseName +
                                     "/default.Ourdb"; //it takes file path from above and add the path to file
-                     FileTable(databaseName); //creats file called default.Ourdb from above defined function
+                     filetbReturnValue = FileTable(databaseName); //creats file called default.Ourdb from above defined function
 
+                    //return filetbReturnValue;
                      return SuccessCreatingDatabaseMsg[0]; // Success_Messages/Success_Msg.h
                  }
 

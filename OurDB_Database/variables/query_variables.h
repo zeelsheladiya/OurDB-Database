@@ -68,4 +68,6 @@ inline string strPath[1] = {"../../OurDB_Database/Databases/"};
 //for storing last letter of database name;
 inline unsigned char lastLetterStore;
 
+//it will stores the value which is returned by FileTable
+inline string filetbReturnValue = "";
 #endif //OURDB_DATABASE_QUERY_VARIABLES_H
