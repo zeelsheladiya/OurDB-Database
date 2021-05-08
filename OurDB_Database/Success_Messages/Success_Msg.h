@@ -23,7 +23,10 @@ inline string SuccessRenamingDatabaseMsg[2] = {"Success index := 105 , Success :
 //success creating Table
 inline string SuccessCreatingTable[2] = {"Success index := 106 , Success := success Table created. : ","106"};
 
-// database rename success
+// table rename success
 inline string SuccessRenamingTableMsg[2] = {"Success index := 107 , Success := Table renamed successfully :) : ","107"};
+
+// table rename success
+inline string SuccessDeletingTableMsg[2] = {"Success index := 108 , Success := Table deleted successfully :) : ","108"};
 
 #endif //OURDB_DATABASE_SUCCESS_MSG_H

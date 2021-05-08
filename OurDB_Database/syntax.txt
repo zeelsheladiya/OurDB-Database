@@ -36,7 +36,7 @@
 
         -------------------------------------------------------------
         -> delete database database_name // parth module
-        -> delete table table_name
+        -> delete table table_name // zeel module
 
 
 

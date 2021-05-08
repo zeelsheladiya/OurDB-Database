@@ -30,7 +30,7 @@ inline string syntaxOfCreateDatabase[2] = {"Error index := 6 , Error := invalid 
 //error occur during creating database directory
 inline string errorCreatingDatabase[2] = {"Error index := 7 , Error := database creation failed. ","7"};
 
-//error occur when database can not be created
+//error occur when database can not be deleted
 inline string errorDeletingDatabase[2] = {"Error index := 8 , Error := unable to delete database. ","8"};
 
 //error occur when database name is not valid
@@ -116,5 +116,11 @@ inline string errRenameTable[2] = {"Error index := 34 ,Error := Error renaming t
 
 // When user tries to rename table that doesnt exist in the database
 inline string errNoSuchTableExist[2] = {"Error index := 35 ,Error := No such table exist in the database!! ","35"};
+
+//error occur when table can not be deleted
+inline string errorDeletingTable[2] = {"Error index := 36 , Error := unable to delete table. ","36"};
+
+// not allowing to delete the default.Ourdb file
+inline string errDeletingDefaultTable[2] = {"Error index := 37 ,Error := You cannot delete default table!!","37"};
 
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

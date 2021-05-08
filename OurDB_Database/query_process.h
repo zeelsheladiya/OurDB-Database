@@ -15,6 +15,7 @@
 #include "Parth_module/create_table/create_table.h"
 #include "mihir_module/table_list/table_list.h"
 #include "mihir_module/rename_table/rename_table.h"
+#include "zeel_module/delete_table/delete_table.h"
 
 
 using namespace std;
@@ -65,6 +66,8 @@ string query_process(vector<string> query)
 
             } else if (syntaxCompare(query[1], table)) {
                 //for delete table
+                return deleteTable(query[2]);
+
             } else {
                 // else part of delete queries
                 return syntaxOfDeleteError[0];
