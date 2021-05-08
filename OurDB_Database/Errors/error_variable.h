@@ -70,7 +70,7 @@ inline string SelectTheDatabase[2] = {"Error index := 19 ,Error :=  First select
 inline string sameNameDatabaseErr[2]= {"Error index := 20 ,Error :=  Same name of old and new database.." ,"20"};
 
 // error in syntax of show all database
-inline string syntaxErrShowList[2] = {"Error index := 21 ,Error := Syntax of displaying database list is wrong..\n \tSyntax : show/view/display all database ","21"};
+inline string syntaxErrShowList[2] = {"Error index := 21 ,Error := Syntax of displaying database/table list is wrong..\n \tSyntax : show/view/display all database/table ","21"};
 
 //extra words in delete query syntax
 inline string errExtraWordInShowListSyntax[2] = {"Error index := 22 , Error := there are some extra words or invalid word in show database list syntax","22"};
