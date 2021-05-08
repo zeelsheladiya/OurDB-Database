@@ -20,8 +20,7 @@ inline string SuccessDatabaseSelected[2] = {"Success index := 104 , Success := d
 // database rename success
 inline string SuccessRenamingDatabaseMsg[2] = {"Success index := 105 , Success := database renamed success : ","105"};
 
-//success creating Table
-inline string SuccessCreatingTable[2] = {"Success index := 106 , Success := success Table created. : ","106"};
+
 
 // table rename success
 inline string SuccessRenamingTableMsg[2] = {"Success index := 107 , Success := Table renamed successfully :) : ","107"};

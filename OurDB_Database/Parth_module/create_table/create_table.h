@@ -26,9 +26,10 @@ string createTable(string tablename)
                      // and also store in tbname
                       if(!(filesystem::exists(tbname.c_str()))) // if file already exist then return error..
                       {
-                          FileTable(tbname); // call the filetable function which is in global_function.h
+                          filetbReturnValue = FileTable(tbname); // call the filetable function which is in global_function.h
                           validate = "";
-                          return  SuccessCreatingFileMsg[0];
+                          return filetbReturnValue;
+                          //return  SuccessCreatingFileMsg[0];
                       } else{
                           return errTableAlreadyExist[0]; // if table already exist then returns the error..
                       }
