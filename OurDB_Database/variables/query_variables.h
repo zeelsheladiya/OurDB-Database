@@ -62,6 +62,9 @@ inline string all[1] = {"all"};
 //'current' variable to check if user ask to view their current/present database or table
 inline string current[2] = {"current","present"};
 
+// symbol to check for columns in create table syntax
+inline string colSymbol[1] = {"@"};
+
 //path for string...
 inline string strPath[1] = {"../../OurDB_Database/Databases/"};
 

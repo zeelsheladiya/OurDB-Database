@@ -100,27 +100,30 @@ inline string errFirstLetterNumeric[2] = {"Error index := 29 , Error := Name can
 inline string errTableListIsEmpty[2] = {"Error index := 30 ,Error := No tables exists in current database!! Please create a table or select another database..","30"};
 
 //extra word in rename table/database syntax
-inline string ExtraWordInRenameSyntax[2] = {"Error index := 30 ,Error := There is/are some extra words in rename query..","31"};
+inline string ExtraWordInRenameSyntax[2] = {"Error index := 31 ,Error := There is/are some extra words in rename query..","31"};
 
 // error in syntax of rename Table
-inline string syntaxErrRenameTable[2] = {"Error index := 31 ,Error := syntax of rename table is wrong.. \n\t Syntax : rename table old_name new_name ","32"};
+inline string syntaxErrRenameTable[2] = {"Error index := 32 ,Error := syntax of rename table is wrong.. \n\t Syntax : rename table old_name new_name ","32"};
 
 // not allowing to rename the default.Ourdb file
-inline string errRenamingDefaultTable[2] = {"Error index := 32 ,Error := You cannot rename default table!!","32"};
+inline string errRenamingDefaultTable[2] = {"Error index := 33 ,Error := You cannot rename default table!!","33"};
 
 // when you try to rename the old table with same new name table.
-inline string sameNameTableErr[2]= {"Error index := 33 ,Error := Same name of old and new table.." ,"33"};
+inline string sameNameTableErr[2]= {"Error index := 34 ,Error := Same name of old and new table.." ,"34"};
 
 // Table renaming unknown error
-inline string errRenameTable[2] = {"Error index := 34 ,Error := Error renaming table! Same name table might exist already!! ","34"};
+inline string errRenameTable[2] = {"Error index := 35 ,Error := Error renaming table! Same name table might exist already!! ","35"};
 
 // When user tries to rename table that doesnt exist in the database
-inline string errNoSuchTableExist[2] = {"Error index := 35 ,Error := No such table exist in the database!! ","35"};
+inline string errNoSuchTableExist[2] = {"Error index := 36 ,Error := No such table exist in the database!! ","36"};
 
 //error occur when table can not be deleted
-inline string errorDeletingTable[2] = {"Error index := 36 , Error := unable to delete table. ","36"};
+inline string errorDeletingTable[2] = {"Error index := 37 , Error := unable to delete table. ","37"};
 
 // not allowing to delete the default.Ourdb file
-inline string errDeletingDefaultTable[2] = {"Error index := 37 ,Error := You cannot delete default table!!","37"};
+inline string errDeletingDefaultTable[2] = {"Error index := 38 ,Error := You cannot delete default table!!","38"};
+
+// error while naming columns win table
+inline string errNamingColumn[2] = {"Error index := 39 ,Error := Invalid name for column!!","39"};
 
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

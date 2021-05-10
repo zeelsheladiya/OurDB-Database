@@ -43,11 +43,42 @@ string query_process(vector<string> query)
             { //for create database
                 return createDatabase(query[2]); // parth's part
 
-            } else if (syntaxCompare(query[1], table)) { //check for table name
+            }
+            else
+            {
+                // else part of create query
+                return syntaxOfCreateError[0];
+            }
+        }
+        if(query_size > 3)
+        {
+            if (syntaxCompare(query[1], table))
+            { //check for table name
 
-                return createTable(query[2]); // return table creation
+                if(syntaxCompare(query[3],colSymbol))
+                {
+                    vector <string> a;
+                    int j = 4;
+                    int i = 0;
 
-            } else {
+                    for(i=0;i<query_size - 4;i++)
+                    {
+                        a.insert(a.end(),query[j]);
+                        j++;
+                    }
+                    //cout << a[0];
+
+                    return createTable(query[2],a); // return table creation
+                }
+                else
+                {
+                    // else part of create query
+                    return syntaxOfCreateError[0];
+                }
+
+            }
+            else
+            {
                 // else part of create query
                 return syntaxOfCreateError[0];
             }

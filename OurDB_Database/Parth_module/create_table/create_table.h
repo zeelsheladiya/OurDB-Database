@@ -6,34 +6,58 @@
 #include <filesystem>
 #include "../../variables/query_variables.h"
 #include "../../global_functions/global_function.h"
+
 using namespace std;
 #ifndef OURDB_DATABASE_CREATE_TABLE_H
 #define OURDB_DATABASE_CREATE_TABLE_H
 
-string createTable(string tablename)
+string createTable(string tablename ,vector <string> a)
 {
+    int i;
+    int count = 0;
 
-    if(!(databaseSelectGlobal == ""))
+    if(!(databaseSelectGlobal.empty()))
     {
          validate = validation(tablename,errorSpecialchaTable[0],errFirstLetterNumeric[0]);
         // variable for storing string value which is returned by validate function
              if ( validate == "true_true")
              {
                  regex b("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
-                 if ( regex_match(tablename, b) ) {
+                 if ( regex_match(tablename, b) )
+                 {
+                     for(i=0;i<a.size();i++)
+                     {
+                         validate = validation(a[i],errorSpecialchaTable[0],errFirstLetterNumeric[0]);
+                         if ( validate == "true_true")
+                         {
+                             regex c("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
+                             if (regex_match(tablename, c))
+                             {
+                                 count++;
+                             }
+                         }
+                     }
 
-                     tbname = databaseSavePath +"/"+ tablename+".Ourdb"; // it adds the selected database path with tablename
-                     // and also store in tbname
-                      if(!(filesystem::exists(tbname.c_str()))) // if file already exist then return error..
-                      {
-                          FileTable(tbname); // call the filetable function which is in global_function.h
-                          validate = "";
-                          return  SuccessCreatingFileMsg[0];
-                      } else{
-                          return errTableAlreadyExist[0]; // if table already exist then returns the error..
-                      }
-
-                 }else
+                     if(count == a.size())
+                     {
+                         tbname = databaseSavePath +"/"+ tablename+".Ourdb"; // it adds the selected database path with tablename
+                         // and also store in tbname
+                         if(!(filesystem::exists(tbname.c_str()))) // if file already exist then return error..
+                         {
+                             FileTable(tbname); // call the filetable function which is in global_function.h
+                             validate = "";
+                             return  SuccessCreatingFileMsg[0];
+                         } else
+                         {
+                             return errTableAlreadyExist[0]; // if table already exist then returns the error..
+                         }
+                     }
+                    else
+                     {
+                        return errNamingColumn[0];
+                     }
+                 }
+                 else
                  {
                       return errorSpecialchaTable[0]; // error for special character found..
 
