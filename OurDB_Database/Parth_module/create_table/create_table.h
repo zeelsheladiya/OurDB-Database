@@ -10,6 +10,7 @@
 #include "../../global_functions/global_function.h"
 #include "../../External_Libraries/json.hpp"
 #include "../../global_functions/encryption.h"
+#include "../../global_functions/decryption.h"
 
 using namespace std;
 using ourdb = nlohmann::json;

@@ -37,6 +37,8 @@ inline char firstLetterStore;
 //create variable
 inline string create_query[2] = {"create","make"};
 
+//variable for encryption and decryption
+inline string enc_dec = "";
 
 //database variable
 inline string database[2] = {"database","db"};

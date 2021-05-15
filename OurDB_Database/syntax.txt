@@ -11,8 +11,8 @@
     ->make
 
     --------------------------------------------------------
-    -> create database database_name // -> in parth module
-    -> create table table_name
+    -> create database <database_name> // -> in parth module
+    -> create table <table_name> @ <column1_name>  <column2_name> ...
 
 
 2. insert queries :-
@@ -35,8 +35,8 @@
         ->destroy
 
         -------------------------------------------------------------
-        -> delete database database_name // parth module
-        -> delete table table_name // zeel module
+        -> delete database <database_name> // parth module
+        -> delete table <table_name> // zeel module
 
 
 
@@ -46,16 +46,16 @@
              ->select
              ->choose
              -------------------------------------------------------------
-             -> select database database_name // parth module
-             -> choose table table_name
+             -> select database <database_name> // parth module
+             -> choose table <table_name>
 
 6 rename database : -
          words for rename
           ->rename
           ->update
           ----------------------------------------------------------------
-           -> rename database database_name
-           -> rename table old_name new_name
+           -> rename database <database_name>
+           -> rename table <old_name> <new_name>
 
       note: - database must be selected before renaming...
 
