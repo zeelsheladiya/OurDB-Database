@@ -59,9 +59,8 @@ string query_process(vector<string> query)
                 {
                     vector <string> a;
                     int j = 4;
-                    int i = 0;
 
-                    for(i=0;i<query_size - 4;i++)
+                    for(int i=0;i<query_size - 4;i++)
                     {
                         a.insert(a.end(),query[j]);
                         j++;
@@ -111,6 +110,7 @@ string query_process(vector<string> query)
     }
     else if(syntaxCompare(query[0],select_db_query))
     {
+        // select database query
         if(query_size == 3) {
 
             if (syntaxCompare(query[1], database))//check for database's word
@@ -129,6 +129,7 @@ string query_process(vector<string> query)
     }
     else if(syntaxCompare(query[0],rename_query))
     {
+        // for rename the database
         if(query_size == 3)
         {
             if (syntaxCompare(query[1], database))      //check for database's word
@@ -159,6 +160,7 @@ string query_process(vector<string> query)
     }
     else if(syntaxCompare(query[0],list_query))
     {
+        // for list of database
         if(query_size == 3)     //checks query length (must be 3)
         {
             if(syntaxCompare(query[1],all))     //checks if second word in query is 'all'
@@ -188,6 +190,7 @@ string query_process(vector<string> query)
     }
     else if(syntaxCompare(query[0],current))
     {
+        // query for see the current database
         if(query_size == 2)     //checks query length (must be 2)
         {
             if(syntaxCompare(query[1],database))    //checks if user wants to check current database

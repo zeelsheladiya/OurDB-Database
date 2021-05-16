@@ -75,4 +75,5 @@ inline unsigned char lastLetterStore;
 
 //it will stores the value which is returned by FileTable
 inline string filetbReturnValue = "";
+
 #endif //OURDB_DATABASE_QUERY_VARIABLES_H

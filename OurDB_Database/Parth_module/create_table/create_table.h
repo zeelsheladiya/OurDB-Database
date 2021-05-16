@@ -20,7 +20,6 @@ using ourdb = nlohmann::json;
 
 string createTable(string tablename ,vector <string> a)
 {
-    int i;
     int count = 0;
 
     if(!(databaseSelectGlobal.empty()))
@@ -32,7 +31,7 @@ string createTable(string tablename ,vector <string> a)
                  regex b("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
                  if ( regex_match(tablename, b) )
                  {
-                     for(i=0;i<a.size();i++)
+                     for(int i=0;i<a.size();i++)
                      {
                          validate = validation(a[i],errorSpecialchaTable[0],errFirstLetterNumeric[0]);
                          if ( validate == "true_true")

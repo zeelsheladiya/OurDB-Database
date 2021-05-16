@@ -20,12 +20,10 @@ inline string SuccessDatabaseSelected[2] = {"Success index := 104 , Success := d
 // database rename success
 inline string SuccessRenamingDatabaseMsg[2] = {"Success index := 105 , Success := database renamed success : ","105"};
 
-
+// table rename success
+inline string SuccessRenamingTableMsg[2] = {"Success index := 106 , Success := Table renamed successfully :) : ","106"};
 
 // table rename success
-inline string SuccessRenamingTableMsg[2] = {"Success index := 107 , Success := Table renamed successfully :) : ","107"};
-
-// table rename success
-inline string SuccessDeletingTableMsg[2] = {"Success index := 108 , Success := Table deleted successfully :) : ","108"};
+inline string SuccessDeletingTableMsg[2] = {"Success index := 107 , Success := Table deleted successfully :) : ","107"};
 
 #endif //OURDB_DATABASE_SUCCESS_MSG_H
