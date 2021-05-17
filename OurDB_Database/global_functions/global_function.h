@@ -1,5 +1,5 @@
 //
-// Created by zeel,mihir,parth,pranav on 05-May-21.
+// Created by zeel,mihir,parth on 05-May-21.
 //
 
 #include <iostream>
@@ -8,6 +8,7 @@
 #include <direct.h>
 #include <conio.h>
 #include <filesystem>
+
 using namespace std;
 #ifndef OURDB_DATABASE_GLOBAL_FUNCTION_H
 #define OURDB_DATABASE_GLOBAL_FUNCTION_H
@@ -21,7 +22,7 @@ using namespace std;
 // botharespacies function to check multiple spaces in string
 // split function for string into string array
 
-// ----------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------
 
 
 // string validation in terms of name

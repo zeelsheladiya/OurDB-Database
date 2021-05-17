@@ -53,13 +53,15 @@ string createTable(string tablename ,vector <string> a)
                              FileTable(tbname); // call the filetable function which is in global_function.h
 
                              ourdb col;     //json(ourdb) object to add column info
-                             col["col_data"]["total_cols"] = a.size();      //storing total cols
-                             col["col_data"]["col_names"] = a;      //storing column names
-                             ofstream o(tbname);        //
-                             o << col << endl;      // writing into table
+
+                             col["records"]["total_cols"] = a.size();      //storing total cols
+                             col["records"]["col_names"] = a;      //storing column names
+
+                             ofstream o(tbname);
+                             o << col << endl;      // writing col data into table
 
                              validate = "";
-                             return  SuccessCreatingFileMsg[0];
+                             return  SuccessCreatingFileMsg[0];     //successfully created table
                          }
                          else
                          {
@@ -68,7 +70,7 @@ string createTable(string tablename ,vector <string> a)
                      }
                     else
                      {
-                        return errNamingColumn[0];
+                        return errNamingColumn[0];      //error naming the columns
                      }
                  }
                  else

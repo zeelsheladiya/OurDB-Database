@@ -16,7 +16,7 @@ inline string querySyntaxError[2] = {"Error index := 1 , Error := your initial q
 inline string syntaxOfCreateError[2] = {"Error index := 2 , Error := invalid word in create query syntax","2"};
 
 //extra words in create query syntax
-inline string ExtraWordInCreateSyntax[2] = {"Error index := 3 , Error := there are some extra words and invalid world in create syntax","3"};
+inline string inSufficientWordInCreateSyntax[2] = {"Error index := 3 , Error := there are insufficient words and invalid world in create syntax","3"};
 
 //extra words in delete query syntax
 inline string ExtraWordInDeleteSyntax[2] = {"Error index := 4 , Error := there are some extra words and invalid world in delete syntax","4"};
@@ -125,5 +125,14 @@ inline string errDeletingDefaultTable[2] = {"Error index := 38 ,Error := You can
 
 // error while naming columns win table
 inline string errNamingColumn[2] = {"Error index := 39 ,Error := Invalid name for column!!","39"};
+
+//insufficient words in insert query syntax
+inline string inSufficientWordIninsertSyntax[2] = {"Error index := 40 , Error := there are insufficient words and invalid world in insert syntax","40"};
+
+// wrong syntax of insert query
+inline string ErrSyntaxInsertQuery[2] = {"Error index := 41 , Error := Wrong syntax of insert data query!\n\t Correct syntax : insert into <table_name> @ <col1_value> <col2_value> ...","41"};
+
+// invalid no of data while inserting i.e. data not matching no. of columns
+inline string ErrDataNotEqualToNoOfCols[2] = {"Error index := 42 , Error := No. of data entered does not equals to no. of columns in the table!","42"};
 
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

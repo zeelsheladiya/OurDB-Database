@@ -9,6 +9,7 @@
         -------------------------------------------------------------------------
         syntax :- insert into <table_name> @ <col1_value> <col2_value> ...
 
--> list of select database's tables
-        note :- selection of database will be must
+
+-> insert data done but adding data with space remaining!
+
 

@@ -37,6 +37,12 @@ inline char firstLetterStore;
 //create variable
 inline string create_query[2] = {"create","make"};
 
+//insert variable
+inline string insert_query[2] = {"insert","add"};
+
+//into variable
+inline string into[1] = {"into"};
+
 //variable for encryption and decryption
 inline string enc_dec = "";
 

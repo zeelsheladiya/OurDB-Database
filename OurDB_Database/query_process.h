@@ -16,7 +16,7 @@
 #include "mihir_module/table_list/table_list.h"
 #include "mihir_module/rename_table/rename_table.h"
 #include "zeel_module/delete_table/delete_table.h"
-
+#include "mihir_module/insert_into_table/insert_into_table.h"
 
 using namespace std;
 
@@ -83,7 +83,7 @@ string query_process(vector<string> query)
             }
         }
         else{
-            return ExtraWordInCreateSyntax[0];
+            return inSufficientWordInCreateSyntax[0];
         }
 
     } else if (syntaxCompare(query[0],delete_query)) {
@@ -202,6 +202,41 @@ string query_process(vector<string> query)
         }
         else
             return syntaxErrCurrentDatabase[0];
+    }
+    else if(syntaxCompare(query[0],insert_query))
+    {
+        if(query_size > 3)
+        {
+            if(syntaxCompare(query[1],into))
+            {
+                if(syntaxCompare(query[3],colSymbol))
+                {
+                    vector <string> a;
+                    int j = 4;
+
+                    for(int i=0;i<query_size - 4;i++)
+                    {
+                        a.insert(a.end(),query[j]);
+                        j++;
+                    }
+                    return insertIntoTable(query[2],a); // return table creation
+                }
+                else
+                {
+                    // else part of insert query
+                    return ErrSyntaxInsertQuery[0];
+                }
+            }
+            else
+            {
+                // else part of create query
+                return ErrSyntaxInsertQuery[0];
+            }
+        }
+        else
+        {
+            return inSufficientWordIninsertSyntax[0];
+        }
     }
     else
     {
