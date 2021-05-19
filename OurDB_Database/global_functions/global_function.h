@@ -8,6 +8,8 @@
 #include <direct.h>
 #include <conio.h>
 #include <filesystem>
+#include <numeric>
+#include "Errors/error_variable.h"
 
 using namespace std;
 #ifndef OURDB_DATABASE_GLOBAL_FUNCTION_H
@@ -100,6 +102,42 @@ inline void split(string const &str, const char delim,vector<string> &out)
         end = str.find(delim, start);
         out.push_back(str.substr(start, end - start));
     }
+}
+
+//separate the query after specific position (after '@' to be precise)
+vector <string> InputStringSeparation(vector <string> arr,int pos)
+{
+    string temp;        //string to store vector string array
+    temp = accumulate(begin(arr),end(arr),temp);        //stores vector string as string
+
+    temp = temp.substr(pos);        //cuts the part of string before mentioned position (here before @)
+
+    vector <string> data;       //vector string to return inserted data
+
+    regex words_regex("'(.*?)'");       //regex to remove ' ' from the data
+
+    for(sregex_iterator it = sregex_iterator(
+            temp.begin(), temp.end(), words_regex);
+        it != sregex_iterator(); it++)
+    {
+        smatch match = *it;
+        string match_str = match.str(1);
+        data.insert(data.end(),match_str);      //data inserted after separating into vector string
+    }
+
+    if(data.size() == arr.size() - pos)
+    {
+        return data;        //returning vector string that contains records for inserting
+    }
+    else
+    {
+        vector <string> error;
+        error.insert(error.end(),ErrImproperData[0]);   //error if improper insertion of data
+
+        return error;    //return error
+    }
+
+
 }
 
 #endif //OURDB_DATABASE_GLOBAL_FUNCTION_H

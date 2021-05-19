@@ -59,7 +59,7 @@ inline string delete_query[2] = {"delete","destroy"};
 inline string select_db_query[3] = {"select","choose","pick"};
 
 //rename database/table
-inline string rename_query[2] = {"rename","update"};
+inline string rename_query[1] = {"rename"};
 
 //displaying all databases
 inline string list_query[3] = {"view","show","display"};

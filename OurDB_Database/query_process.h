@@ -211,15 +211,15 @@ string query_process(vector<string> query)
             {
                 if(syntaxCompare(query[3],colSymbol))
                 {
-                    vector <string> a;
-                    int j = 4;
-
-                    for(int i=0;i<query_size - 4;i++)
+                    vector <string> a = InputStringSeparation(query,4); //vector string separated by ''
+                    if(a.empty() || a[0] == ErrImproperData[0])
                     {
-                        a.insert(a.end(),query[j]);
-                        j++;
+                        return ErrImproperData[0];    //error if there is improper data insertion
                     }
-                    return insertIntoTable(query[2],a); // return table creation
+                    else
+                    {
+                        return insertIntoTable(query[2],a); // return table creation
+                    }
                 }
                 else
                 {

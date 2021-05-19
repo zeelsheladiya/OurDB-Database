@@ -51,7 +51,7 @@ string insertIntoTable(string tbname,vector<string> a)
                     coldata["table_data"] += tbdata["table_data"];      //data appended to table from tbdata
                     ofstream o(path);
                     o<<coldata<<endl;
-                    SuccessInsertDataTableMsg[0];       //successfully inserted data into table
+                    return SuccessInsertDataTableMsg[0];       //successfully inserted data into table
                 }
                 else
                 {

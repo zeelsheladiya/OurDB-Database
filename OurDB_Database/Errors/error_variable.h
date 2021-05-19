@@ -130,9 +130,12 @@ inline string errNamingColumn[2] = {"Error index := 39 ,Error := Invalid name fo
 inline string inSufficientWordIninsertSyntax[2] = {"Error index := 40 , Error := there are insufficient words and invalid world in insert syntax","40"};
 
 // wrong syntax of insert query
-inline string ErrSyntaxInsertQuery[2] = {"Error index := 41 , Error := Wrong syntax of insert data query!\n\t Correct syntax : insert into <table_name> @ <col1_value> <col2_value> ...","41"};
+inline string ErrSyntaxInsertQuery[2] = {"Error index := 41 , Error := Wrong syntax of insert data query!\n\t Correct syntax : insert into <table_name> @ '<col1_value>' '<col2_value>' ...","41"};
 
 // invalid no of data while inserting i.e. data not matching no. of columns
 inline string ErrDataNotEqualToNoOfCols[2] = {"Error index := 42 , Error := No. of data entered does not equals to no. of columns in the table!","42"};
+
+// error if column data is insufficient or data irregularity
+inline string ErrImproperData[2] = {"Error index := 43 , Error := Improper or No data insertion!!","43"};
 
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H
