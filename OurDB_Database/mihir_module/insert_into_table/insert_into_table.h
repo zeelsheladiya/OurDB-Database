@@ -44,8 +44,8 @@ string insertIntoTable(string tbname,vector<string> a)
                     string tmp;
                     for(int i=0;i< a.size();i++)
                     {
-                        tmp = coldata["records"]["col_names"][i];      //temporary variable to store column related data
-                        tbdata["table_data"][tmp] = encryption(a[i]);       //data encrypted and added to tbdata
+                        //tmp = coldata["records"]["col_names"][i];      //temporary variable to store column related data
+                        tbdata["table_data"][to_string(i+1)] = encryption(a[i]);       //data encrypted and added to tbdata
 
                     }
                     coldata["table_data"] += tbdata["table_data"];      //data appended to table from tbdata

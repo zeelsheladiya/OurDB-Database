@@ -9,6 +9,7 @@
 #include <conio.h>
 #include <filesystem>
 #include <numeric>
+#include <algorithm>
 #include "Errors/error_variable.h"
 
 using namespace std;
@@ -108,9 +109,13 @@ inline void split(string const &str, const char delim,vector<string> &out)
 vector <string> InputStringSeparation(vector <string> arr,int pos)
 {
     string temp;        //string to store vector string array
-    temp = accumulate(begin(arr),end(arr),temp);        //stores vector string as string
 
-    temp = temp.substr(pos);        //cuts the part of string before mentioned position (here before @)
+    for(int i=0;i<arr.size();i++)
+    {
+        temp += arr[i] + " ";       //stores data into string after separating them by space
+    }
+
+    int count = std::count(temp.begin(), temp.end(), '\'');     //counts the number of occurrence of ' for separating data that is to be inserted
 
     vector <string> data;       //vector string to return inserted data
 
@@ -125,7 +130,7 @@ vector <string> InputStringSeparation(vector <string> arr,int pos)
         data.insert(data.end(),match_str);      //data inserted after separating into vector string
     }
 
-    if(data.size() == arr.size() - pos)
+    if(data.size() == (count/2))    //checks if the data is equal to no. of data inserted by user
     {
         return data;        //returning vector string that contains records for inserting
     }
