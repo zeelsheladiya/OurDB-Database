@@ -138,4 +138,7 @@ inline string ErrDataNotEqualToNoOfCols[2] = {"Error index := 42 , Error := No. 
 // error if column data is insufficient or data irregularity
 inline string ErrImproperData[2] = {"Error index := 43 , Error := Improper or No data insertion!!","43"};
 
+// error if two columns have same name (while creating the table and specifying col names)
+inline string ErrSameColName[2] = {"Error index := 44 , Error := Column name invalid! Another column with same name already exists!!","44"};
+
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

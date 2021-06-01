@@ -21,6 +21,7 @@ using ourdb = nlohmann::json;
 string createTable(string tablename ,vector <string> a)
 {
     int count = 0;
+    int samecol = 0;  //var to check if there is a col with same name as another col
 
     if(!(databaseSelectGlobal.empty()))
     {
@@ -36,10 +37,20 @@ string createTable(string tablename ,vector <string> a)
                          validate = validation(a[i],errorSpecialchaTable[0],errFirstLetterNumeric[0]);
                          if ( validate == "true_true")
                          {
-                             regex c("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
-                             if (regex_match(tablename, c))
+                             regex c("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
+                             if (regex_match(a[i], c))
                              {
-                                 count++;
+                                 for(int j=i+1;j<a.size();j++)
+                                 {
+                                     if(a[i] == a[j])
+                                     {
+                                         samecol++;
+                                     }
+                                 }
+                                 if(samecol==0)
+                                 {
+                                     count++;
+                                 }
                              }
                          }
                      }
@@ -68,7 +79,11 @@ string createTable(string tablename ,vector <string> a)
                              return errTableAlreadyExist[0]; // if table already exist then returns the error..
                          }
                      }
-                    else
+                     else if(samecol!=0)
+                     {
+                         return ErrSameColName[0];      // error if 2 or more cols have same name
+                     }
+                     else
                      {
                         return errNamingColumn[0];      //error naming the columns
                      }
