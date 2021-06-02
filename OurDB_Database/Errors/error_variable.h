@@ -115,7 +115,7 @@ inline string sameNameTableErr[2]= {"Error index := 34 ,Error := Same name of ol
 inline string errRenameTable[2] = {"Error index := 35 ,Error := Error renaming table! Same name table might exist already!! ","35"};
 
 // When user tries to rename table that doesnt exist in the database
-inline string errNoSuchTableExist[2] = {"Error index := 36 ,Error := No such table exist in the database!! ","36"};
+inline string errNoSuchTableExist[2] = {"Error index := 36 ,Error := No such table exists in the database!! ","36"};
 
 //error occur when table can not be deleted
 inline string errorDeletingTable[2] = {"Error index := 37 , Error := unable to delete table. ","37"};
@@ -156,5 +156,7 @@ inline string  ErrorDontHaveEnoughOperator[2] = {"Error index : 48 , Error := va
 // column does not exists...
 inline string  ErrColumnDoesNotExists[2] = {"Error index : 49, Error := columns are not exist into table","49"};
 
+// when user tries to insert/retrieve data to/from default table
+inline string  ErrDataManipulationInDefault[2] = {"Error index : 50, Error := Cannot add or retrieve data from default table!!","50"};
 
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

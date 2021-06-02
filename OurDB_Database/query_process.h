@@ -112,7 +112,7 @@ string query_process(vector<string> query)
                 {
                     StoreTempString += query[i];
                 }
-                return DeleteQuery(query[2],query[3],StoreTempString);
+//                return DeleteQuery(query[2],query[3],StoreTempString);
 
             }else
             {
@@ -228,10 +228,14 @@ string query_process(vector<string> query)
             {
                 if(syntaxCompare(query[3],colSymbol))
                 {
-                    vector <string> a = InputStringSeparation(query,4); //vector string separated by ''
+                    vector <string> a = InputStringSeparation(query); //vector string separated by ''
                     if(a.empty() || a[0] == ErrImproperData[0])
                     {
                         return ErrImproperData[0];    //error if there is improper data insertion
+                    }
+                    else if(a[0] == errNoSuchTableExist[0])
+                    {
+                        return errNoSuchTableExist[0];
                     }
                     else
                     {
@@ -246,7 +250,7 @@ string query_process(vector<string> query)
             }
             else
             {
-                // else part of create query
+                // else part of insert query
                 return ErrSyntaxInsertQuery[0];
             }
         }

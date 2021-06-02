@@ -23,51 +23,41 @@ string insertIntoTable(string tbname,vector<string> a)
 {
     if(!(databaseSelectGlobal.empty()))
     {
-        validate = validation(tbname,errorSpecialchaTable[0],errFirstLetterNumeric[0]);
-        // variable for storing string value which is returned by validate function
-        if ( validate == "true_true")
+        if(tbname == "default")
         {
-            regex b("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
-            if ( regex_match(tbname, b) )
+            return ErrDataManipulationInDefault[0];       //error if user tries to insert into default table
+        }
+        else
+        {
+            string path = databaseSavePath + "/" + tbname + ".Ourdb";       //path where table is stored
+
+            ifstream in(path);
+
+            ourdb coldata;
+            ourdb tbdata;
+
+            in >> coldata;
+
+            if (a.size() == coldata["records"]["total_cols"])       //checks if no. of data inserted is equals to no. of columns in the table
             {
-                string path = databaseSavePath +"/"+ tbname+".Ourdb";       //path where table is stored
-                ifstream in(path);
-
-                ourdb coldata;
-                ourdb tbdata;
-
-                in>>coldata;
-
-                if(a.size() == coldata["records"]["total_cols"])       //checks if no. of data inserted is equals to no. of columns in the table
+                string tmp;
+                for (int i = 0; i < a.size(); i++)
                 {
-
-                    string tmp;
-                    for(int i=0;i< a.size();i++)
-                    {
-                        //tmp = coldata["records"]["col_names"][i];      //temporary variable to store column related data
-                        tbdata["table_data"][to_string(i+1)] = encryption(a[i]);       //data encrypted and added to tbdata
-
-                    }
-                    coldata["table_data"] += tbdata["table_data"];      //data appended to table from tbdata
-                    ofstream o(path);
-                    o<<coldata<<endl;
-                    return SuccessInsertDataTableMsg[0];       //successfully inserted data into table
+                    tbdata["table_data"][to_string(i + 1)] = encryption(a[i]);       //data encrypted and added to tbdata
                 }
-                else
-                {
-                    return ErrDataNotEqualToNoOfCols[0];        //error if no. of cols isnt equal to no. of data inserted
-                }
+
+                coldata["table_data"] += tbdata["table_data"];      //data appended to table from tbdata
+                ofstream o(path);
+                o << coldata << endl;
+
+                return SuccessInsertDataTableMsg[0];       //successfully inserted data into table
             }
             else
             {
-                return errorSpecialchaTable[0]; // error for special character found..
+                return ErrDataNotEqualToNoOfCols[0];        //error if no. of cols isnt equal to no. of data inserted
             }
-        }
-        else if(validate!="true_true")
-        {
-            return validate; // if validation some how fails this shows.
-        }
 
+        }
     }
     else
     {
