@@ -42,6 +42,7 @@
         -------------------------------------------------------------
         -> delete database <database_name> // parth module
         -> delete table <table_name> // zeel module
+        -> delete @ <table_name> where <column_name> (=/!) <column_value>  (&/|) <column_name1> (=/!) <column_value1>
 
 
 

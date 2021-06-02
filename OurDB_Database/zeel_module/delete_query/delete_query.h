@@ -1,0 +1,8 @@
+//
+// Created by dabhe on 02-Jun-21.
+//
+
+#ifndef OURDB_DATABASE_DELETE_QUERY_H
+#define OURDB_DATABASE_DELETE_QUERY_H
+
+#endif //OURDB_DATABASE_DELETE_QUERY_H

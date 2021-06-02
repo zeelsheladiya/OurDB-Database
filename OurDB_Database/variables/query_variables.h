@@ -10,6 +10,10 @@ using namespace std;
 #ifndef OURDB_DATABASE_QUERY_VARIABLES_H
 #define OURDB_DATABASE_QUERY_VARIABLES_H
 
+//Note : make sure to empty it before use..
+//for storing temperory string in queryprocess.
+inline string StoreTempString="";
+
 //global variable for selecting database
 inline string databaseSelectGlobal = "";
 

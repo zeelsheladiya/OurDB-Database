@@ -141,4 +141,20 @@ inline string ErrImproperData[2] = {"Error index := 43 , Error := Improper or No
 // error if two columns have same name (while creating the table and specifying col names)
 inline string ErrSameColName[2] = {"Error index := 44 , Error := Column name invalid! Another column with same name already exists!!","44"};
 
+// occurs  error in syntax of delete query...
+inline string ErrdeleteQuerySyntax[2] = {"Error index := 45 , Error := error in syntax of delete query.. delete @ <table_name> where <column_name> (=/!) <column_value>  (&/|) <column_name1> (=/!) <column_value1>","45"};
+
+// column(key) and value are not same..
+inline string ErrInsufficientColumnValue[2] = {"Error index := 46 ,Error := insufficient condition with column","46"};
+
+//  conditions are not in order..
+inline string  ErrorConditionNotInAppropriateOrder[2] = {"Error index : 47 , Error := conditions are not in appropriate order","47"};
+
+// missing some operator in the query string..
+inline string  ErrorDontHaveEnoughOperator[2] = {"Error index : 48 , Error := value don't have sufficient oprator","48"};
+
+// column does not exists...
+inline string  ErrColumnDoesNotExists[2] = {"Error index : 49, Error := columns are not exist into table","49"};
+
+
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

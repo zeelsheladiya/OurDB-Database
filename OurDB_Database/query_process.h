@@ -103,6 +103,23 @@ string query_process(vector<string> query)
                 return syntaxOfDeleteError[0];
             }
         }
+        else if(query_size >= 6)
+        {
+            if(syntaxCompare(query[1],colSymbol))
+            {
+                StoreTempString = "";
+                for(int i=4;i<query_size;i++)
+                {
+                    StoreTempString += query[i];
+                }
+                return DeleteQuery(query[2],query[3],StoreTempString);
+
+            }else
+            {
+                 return ErrdeleteQuerySyntax[0];
+            }
+
+        }
         else{
             return ExtraWordInDeleteSyntax[0];
         }
