@@ -77,13 +77,21 @@ inline string current[2] = {"current","present"};
 // symbol to check for columns in create table syntax
 inline string colSymbol[1] = {"@"};
 
+// update table query
+inline string update[1] = {"update"};
+
 //path for string...
 inline string strPath[1] = {"../../OurDB_Database/Databases/"};
+
+// set for the update query purpose..
+inline string setx[2] = {"set","put"};
 
 //for storing last letter of database name;
 inline unsigned char lastLetterStore;
 
 //it will stores the value which is returned by FileTable
 inline string filetbReturnValue = "";
+
+
 
 #endif //OURDB_DATABASE_QUERY_VARIABLES_H

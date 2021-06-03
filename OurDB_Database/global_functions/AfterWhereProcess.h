@@ -8,16 +8,42 @@
 #include<algorithm>
 #include<iterator>
 #include<regex>
+#include<fstream>
 #include "Errors/error_variable.h"
+#include "Parth_module/update_into_table/ForUpdate.h"
+#include "./decryption.h"
+#include "External_Libraries/json.hpp"
 using namespace std;
-
+using json = nlohmann::json;
 #ifndef OURDB_DATABASE_AFTERWHEREPROCESS_H
 #define OURDB_DATABASE_AFTERWHEREPROCESS_H
 
 
 bool isColumnAvailable(string colname , string tablename)
 {
-    return true; //checks whether column is available in table or not..
+    json jason;
+    fstream fs1(tablename);
+    fs1 >> jason;
+    int counter = 0;
+    for(int i=0;i<jason["col_names"].size();i++)
+    {
+        if(decryption(jason["col_names"][i]) == colname)
+        {
+            counter = 1;
+        }else
+        {
+            counter = 0;
+        }
+    }
+
+    if(counter == 0)
+    {
+        return false;
+    }else if(counter == 1)
+    {
+        return true;
+    }
+
 }
 
 //checks whether operator are in order or not
@@ -65,6 +91,7 @@ bool isOpeatorsAreInOrder(vector<string> value)
     {
         n++;
 
+
     }else
     {
         return false;
@@ -87,9 +114,9 @@ int countMatchInRegex(string s, string re)
     auto words_begin = sregex_iterator(
             s.begin(), s.end(), words_regex);
     auto words_end = sregex_iterator();
-
-    return distance(words_begin, words_end);
     // it will return count (matches in string) using regex.
+    return distance(words_begin, words_end);
+
 }
 
 // it will trim a string from the left(remove space from left) using regex
@@ -113,10 +140,9 @@ void filterRegexInstring(string h , vector<string> &op , regex r , int filter)
     }
 }
 
-string  globalFuncForWhereClouse(string h , string table_name , vector<string> col_data,int mode)
+string  globalFuncForWhereClouse(string h , string table_name , map<string,string> set_data,int mode)
 {
-    //string h = "id!2 &adress=     katargam surat   "; // main string after 'where' keyword.
-    //cout << h << endl;
+
     regex regexForOperation("[&!=|]"); // regex  defined for operator..
 
     vector<string> operation; // vector string for storing operator.
@@ -137,8 +163,6 @@ string  globalFuncForWhereClouse(string h , string table_name , vector<string> c
         values[i] = l_regextrim(values[i]);//remove extra space from the left(trim from left)
         values[i] = r_regextrim(values[i]);//remove extra space from the right(trim from right)
     }
-
-
 
     filterRegexInstring(h,operation,regexForOperation,0); // defined in above function.
 
@@ -182,18 +206,27 @@ string  globalFuncForWhereClouse(string h , string table_name , vector<string> c
                         int tempForLogicalOp = 0;// tempForLogicalOp for the index value of vector string
                         int counterLogicalOp = 0;// counterLogicalOp for the index value of vector string
 
-                        int json = 5; // replacec it with json ojbject
+                        json jason;
+                        fstream  fs(table_name);
+                        fs >> jason;
 
 
                         // this will iterate through json["table_data"]
-                        for(int i = 0 ; i < json ; i++)
+                        for(int i = 0 ; i < jason["table_data"].size() ; i++)
                         {
                             for(int j = 0 ; j < compareOp.size() ; j++) // iterate through vector <string> compareOp
                             {
                                 if(compareOp[j].compare("=")) // compare (=) operator with the compareOp
                                 {
-                                    // json["table_data"]["values[tempForValue]"] == values[ tempForValue + 1 ]
-                                    if(json == 1) //ignore condition and use above one
+                                    string l ="";
+                                        for(int i=0;i<jason["col_names"].size();i++)
+                                        {
+                                            if(values[tempForValue] == jason["col_names"][i])
+                                            {
+                                                l = jason["col_names"][i];
+                                            }
+                                        }
+                                    if(decryption(jason["table_data"][l]) == values[ tempForValue + 1 ])
                                     {
                                         boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
                                     }
@@ -205,8 +238,15 @@ string  globalFuncForWhereClouse(string h , string table_name , vector<string> c
 
                                 if(compareOp[j].compare("!")) // compare (!) operator with the compareOp
                                 {
-                                    // json["table_data"]["values[tempForValue]"] != values[ tempForValue + 1 ]
-                                    if(json != 1)//ignore condition and use above one
+                                    string l ="";
+                                    for(int i=0;i<jason["col_names"].size();i++)
+                                    {
+                                        if(values[tempForValue] == jason["col_names"][i])
+                                        {
+                                            l = jason["col_names"][i];
+                                        }
+                                    }
+                                    if(decryption(jason["table_data"][l]) != values[ tempForValue + 1 ])//ignore condition and use above one
                                     {
                                         boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
                                     }
@@ -247,11 +287,11 @@ string  globalFuncForWhereClouse(string h , string table_name , vector<string> c
                                 switch(mode)
                                 {
                                     case 1:
-
+                                      ForUpdate(i,set_data,table_name);
                                         break;
 
                                     default:
-                                        break;
+                                      break;
                                 }
                             }
 
