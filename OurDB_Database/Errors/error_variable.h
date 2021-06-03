@@ -156,5 +156,16 @@ inline string  ErrorDontHaveEnoughOperator[2] = {"Error index : 48 , Error := va
 // column does not exists...
 inline string  ErrColumnDoesNotExists[2] = {"Error index : 49, Error := columns are not exist into table","49"};
 
+// insufficient word in update query suntax
+inline string insufficientWordInUpdateSyntax[2] = {"Error index := 50 , Error := there are insufficient words and invalid world in update syntax","50"};
+
+// error in update query syntx
+inline string ErrUpdateQuerySyntax[2] = {"Error index := 51 , Error := Error in update query syntax .. update into <table_name> @ set/put <table_field> <field_value> where <table_field1> <field_value1> ","51"};
+
+// table does not exists error
+inline string tableDoesNotExist[2] = {"Error index := 52 , Error := table does not exists  ","52"};
+
+//insufficient words in update query syntax
+inline string inSufficientWordInUpdateSyntax[2] = {"Error index := 53 , Error := there are insufficient words or invalid world in update syntax","53"};
 
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

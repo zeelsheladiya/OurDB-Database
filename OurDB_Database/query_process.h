@@ -17,6 +17,8 @@
 #include "mihir_module/rename_table/rename_table.h"
 #include "zeel_module/delete_table/delete_table.h"
 #include "mihir_module/insert_into_table/insert_into_table.h"
+#include "Parth_module/update_into_table/update_into_table.h"
+#include "Parth_module/update_into_table/ForUpdate.h"
 
 using namespace std;
 
@@ -112,7 +114,7 @@ string query_process(vector<string> query)
                 {
                     StoreTempString += query[i];
                 }
-                return DeleteQuery(query[2],query[3],StoreTempString);
+                //  return DeleteQuery(query[2],query[3],StoreTempString);
 
             }else
             {
@@ -254,6 +256,51 @@ string query_process(vector<string> query)
         {
             return inSufficientWordIninsertSyntax[0];
         }
+    }
+    else if(syntaxCompare(query[0],update))
+    {
+         if(query_size > 5)
+         {
+             if(syntaxCompare(query[1],into))
+             {
+                 if(syntaxCompare(query[3],colSymbol))
+                 {
+                     if(syntaxCompare(query[4],setx))
+                     {
+                         map <string,string> mx;
+
+                         StoreTempString = "";
+                         for(int i=4;i<query_size;i++)
+                         {
+                             StoreTempString += query[i];
+                         }
+                         for(int i = 5; i<query_size;i=i+2)
+                         {
+                             if(query[i]!="where") {
+                                 mx.insert(pair<string, string>(query[i], query[i + 1]));
+                             }
+                         }
+                         return updateTable(query[2],mx,StoreTempString);
+                     }
+                     else
+                     {
+                         return ErrUpdateQuerySyntax[0];
+                     }
+
+                 }else
+                 {
+                     return ErrUpdateQuerySyntax[0];
+                 }
+
+             }else
+             {
+                return ErrUpdateQuerySyntax[0];
+             }
+
+         }else
+         {
+            return inSufficientWordInUpdateSyntax[0];
+         }
     }
     else
     {
