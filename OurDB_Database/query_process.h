@@ -116,7 +116,18 @@ string query_process(vector<string> query)
                 }
                 //  return DeleteQuery(query[2],query[3],StoreTempString);
 
-            }else
+            }
+            else if(syntaxCompare(query[1],column))        //checks fro column's word
+            {
+                if(syntaxCompare(query[2],from))        //checks for 'from' word
+                {
+                    if(syntaxCompare(query[4],colSymbol))       //checks for colsymbol
+                    {
+                        //here goes return delete column/columns function
+                    }
+                }
+            }
+            else
             {
                  return ErrdeleteQuerySyntax[0];
             }
@@ -169,6 +180,19 @@ string query_process(vector<string> query)
             else
             {
                 return syntaxErrRenameTable[0];
+            }
+        }
+        else if(query_size == 7)
+        {
+            if (syntaxCompare(query[1], column))     //check for column's word
+            {
+                if(syntaxCompare(query[2],from))        //checks for 'from' word
+                {
+                    if(syntaxCompare(query[4],colSymbol))       //checks for colsymbol
+                    {
+                        //here goes return rename column function
+                    }
+                }
             }
         }
         else
