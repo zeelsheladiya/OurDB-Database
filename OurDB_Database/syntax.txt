@@ -23,6 +23,7 @@
 
     --------------------------------------------------------------------------
     -> insert into <table_name> @ '<col1_value>' '<col2_value>' .....
+    -> add col/column into <table_name> @ <col_name>
 
 
 
@@ -43,7 +44,7 @@
         -> delete database <database_name> // parth module
         -> delete table <table_name> // zeel module
         -> delete @ <table_name> where <column_name> (=/!) <column_value>  (&/|) <column_name1> (=/!) <column_value1>
-
+        -> delete column/col from <table_name> @ <col_name>
 
 
 
@@ -61,6 +62,7 @@
           ----------------------------------------------------------------
            -> rename database <database_name>
            -> rename table <old_name> <new_name>
+           -> rename column/col from <table_name> @ <old_col_name> <new_col_name>
 
       note: - database must be selected before renaming...
 

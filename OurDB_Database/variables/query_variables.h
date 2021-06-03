@@ -56,6 +56,9 @@ inline string database[2] = {"database","db"};
 //table variable
 inline string table[1] = {"table"};
 
+//column variable
+inline string column[2] = {"column","col"};
+
 //delete variable
 inline string delete_query[2] = {"delete","destroy"};
 
@@ -92,6 +95,7 @@ inline unsigned char lastLetterStore;
 //it will stores the value which is returned by FileTable
 inline string filetbReturnValue = "";
 
-
+//'from' variable (in syntax) to check from which table we want to manipulate the column/s
+inline string from[1] = {"from"};
 
 #endif //OURDB_DATABASE_QUERY_VARIABLES_H
