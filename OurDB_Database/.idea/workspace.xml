@@ -14,13 +14,8 @@
     <list default="true" id="8ff1e69a-c8e5-4df3-869b-e4be357b2f6b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Errors/error_variable.h" beforeDir="false" afterPath="$PROJECT_DIR$/Errors/error_variable.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parth_module/create_database/create_database.h" beforeDir="false" afterPath="$PROJECT_DIR$/Parth_module/create_database/create_database.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OurDB_Database.dir/console.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OurDB_Database.dir/console.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OurDB_Database.dir/vc140.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OurDB_Database.dir/vc140.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/OurDB_Database.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/OurDB_Database.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/OurDB_Database.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/OurDB_Database.ilk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/OurDB_Database.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/OurDB_Database.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/query_process.h" beforeDir="false" afterPath="$PROJECT_DIR$/query_process.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,11 +47,6 @@
     <property name="settings.editor.selected.configurable" value="CodeWithMe" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="OurDB_Database" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OurDB_Database" TARGET_NAME="OurDB_Database" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OurDB_Database" RUN_TARGET_NAME="OurDB_Database">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -77,6 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1618558459662</updated>
       <workItem from="1618558465920" duration="20738000" />
+      <workItem from="1622712632846" duration="1608000" />
     </task>
     <servers />
   </component>
@@ -93,6 +84,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
