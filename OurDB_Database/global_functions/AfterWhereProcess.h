@@ -11,7 +11,7 @@
 #include<fstream>
 #include "Errors/error_variable.h"
 #include "Parth_module/update_into_table/ForUpdate.h"
-#include "./decryption.h"
+#include "decryption.h"
 #include "External_Libraries/json.hpp"
 using namespace std;
 using json = nlohmann::json;
@@ -25,11 +25,12 @@ bool isColumnAvailable(string colname , string tablename)
     fstream fs1(tablename);
     fs1 >> jason;
     int counter = 0;
-    for(int i=0;i<jason["col_names"].size();i++)
+    for(int i=0;i<jason["records"]["col_names"].size();i++)
     {
-        if(decryption(jason["col_names"][i]) == colname)
+        if(jason["records"]["col_names"][i] == colname)
         {
             counter = 1;
+            break;
         }else
         {
             counter = 0;
@@ -39,7 +40,8 @@ bool isColumnAvailable(string colname , string tablename)
     if(counter == 0)
     {
         return false;
-    }else if(counter == 1)
+
+    }else
     {
         return true;
     }
@@ -59,42 +61,35 @@ bool isOpeatorsAreInOrder(vector<string> value)
         return false;
     }
 
-    for(int i=1;i<value.size()-1;i++)
-    {
-        if(i % 2 == 0) // at even position there should be (! =) comparision operator
-        {
-            if(value[i] == "!" || value[i] == "=")
+    if(value.size() > 1) {
+        for (int i = 1; i < value.size() - 1; i++) {
+            if (i % 2 == 0) // at even position there should be (! =) comparision operator
             {
-                n++; //increment n
+                if (value[i] == "!" || value[i] == "=") {
+                    n++; //increment n
+                } else {
+                    return false;
+                }
             }
-            else
-            {
-                return false;
-            }
-        }
 
-        if(i % 2 == 1)  //at odd position there should be (& |) logical operator
-        {
-            if(value[i] == "&" || value[i] == "|")
+            if (i % 2 == 1)  //at odd position there should be (& |) logical operator
             {
-                n++; //increment n
-            }
-            else
-            {
-                return false;
+                if (value[i] == "&" || value[i] == "|") {
+                    n++; //increment n
+                } else {
+                    return false;
+                }
             }
         }
-    }
 
 
-    if(value[value.size()-1] == "!" || value[value.size()-1] == "=") //at last position there should be (!=) comparision operator
-    {
-        n++;
-
-
-    }else
-    {
-        return false;
+        if (value[value.size() - 1] == "!" ||
+            value[value.size() - 1] == "=") //at last position there should be (!=) comparision operator
+        {
+            n++;
+        } else {
+            return false;
+        }
     }
 
     if(n == value.size()) // vector <string> value and variable n should be same
@@ -116,7 +111,6 @@ int countMatchInRegex(string s, string re)
     auto words_end = sregex_iterator();
     // it will return count (matches in string) using regex.
     return distance(words_begin, words_end);
-
 }
 
 // it will trim a string from the left(remove space from left) using regex
@@ -144,10 +138,8 @@ string  globalFuncForWhereClouse(string h , string table_name , map<string,strin
 {
 
     regex regexForOperation("[&!=|]"); // regex  defined for operator..
-
     vector<string> operation; // vector string for storing operator.
     vector<string> values; // vector string for storing actual value (column name and value as vector array).
-
     filterRegexInstring(h,values,regexForOperation,-1); //it will call the above defined function...
 
     for(int i = 0 ; i < values.size() ; i++)
@@ -181,7 +173,7 @@ string  globalFuncForWhereClouse(string h , string table_name , map<string,strin
                     int tempCheckForColumn = 0; // temp variable to count of available column
                     for(int i = 0; i < values.size() ; i+=2)
                     {
-                        if(isColumnAvailable(values[i],"table_name")) //check the column available in table or not
+                        if(isColumnAvailable(values[i],table_name)) //check the column available in table or not
                         {
                             tempCheckForColumn++;
                         }
@@ -210,23 +202,26 @@ string  globalFuncForWhereClouse(string h , string table_name , map<string,strin
                         fstream  fs(table_name);
                         fs >> jason;
 
-
                         // this will iterate through json["table_data"]
                         for(int i = 0 ; i < jason["table_data"].size() ; i++)
                         {
+
                             for(int j = 0 ; j < compareOp.size() ; j++) // iterate through vector <string> compareOp
                             {
-                                if(compareOp[j].compare("=")) // compare (=) operator with the compareOp
+
+                                if(compareOp[j] == "=") // compare (=) operator with the compareOp
                                 {
+
                                     string l ="";
-                                        for(int i=0;i<jason["col_names"].size();i++)
+                                        for(int k=0;k<jason["records"]["col_names"].size();k++)
                                         {
-                                            if(values[tempForValue] == jason["col_names"][i])
+                                            if(values[tempForValue] == jason["records"]["col_names"][k])
                                             {
-                                                l = jason["col_names"][i];
+                                                l = to_string((k+1));
                                             }
                                         }
-                                    if(decryption(jason["table_data"][l]) == values[ tempForValue + 1 ])
+
+                                    if(decryption(jason["table_data"][i][l]) == values[ tempForValue + 1 ])
                                     {
                                         boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
                                     }
@@ -236,18 +231,21 @@ string  globalFuncForWhereClouse(string h , string table_name , map<string,strin
                                     }
                                 }
 
-                                if(compareOp[j].compare("!")) // compare (!) operator with the compareOp
+                                if(compareOp[j]=="!") // compare (!) operator with the compareOp
                                 {
+
                                     string l ="";
-                                    for(int i=0;i<jason["col_names"].size();i++)
+                                    for(int m=0;m<jason["records"]["col_names"].size();m++)
                                     {
-                                        if(values[tempForValue] == jason["col_names"][i])
+                                        if(values[tempForValue] != jason["records"]["col_names"][m])
                                         {
-                                            l = jason["col_names"][i];
+
+                                            l = to_string(m+1);
                                         }
                                     }
-                                    if(decryption(jason["table_data"][l]) != values[ tempForValue + 1 ])//ignore condition and use above one
+                                    if(decryption(jason["table_data"][i][l]) == values[tempForValue + 1])
                                     {
+
                                         boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
                                     }
                                     else
@@ -266,6 +264,7 @@ string  globalFuncForWhereClouse(string h , string table_name , map<string,strin
                                 {
                                     if( boolStr[tempForLogicalOp] && boolStr[tempForLogicalOp + 1]) // it will check both the bool value are true then counterLogicalOp
                                     {
+
                                         counterLogicalOp++; // counterLogicalOp increment
                                     }
                                 }
@@ -287,7 +286,7 @@ string  globalFuncForWhereClouse(string h , string table_name , map<string,strin
                                 switch(mode)
                                 {
                                     case 1:
-                                      ForUpdate(i,set_data,table_name);
+                                        ForUpdate(i,set_data,table_name);
                                         break;
 
                                     default:
@@ -296,6 +295,7 @@ string  globalFuncForWhereClouse(string h , string table_name , map<string,strin
                             }
 
                         }
+                        return "success";
 
                     }
                     else
@@ -326,15 +326,12 @@ string  globalFuncForWhereClouse(string h , string table_name , map<string,strin
 
 }
 
-string  globalFuncForWhereClouse(string h , string table_name ,int mode)
+string globalFuncForWhereClouse(string h , string table_name ,int mode)
 {
-    //string h = "id!2 &adress=     katargam surat   "; // main string after 'where' keyword.
-    //cout << h << endl;
-    regex regexForOperation("[&!=|]"); // regex  defined for operator..
 
+    regex regexForOperation("[&!=|]"); // regex  defined for operator..
     vector<string> operation; // vector string for storing operator.
     vector<string> values; // vector string for storing actual value (column name and value as vector array).
-
     filterRegexInstring(h,values,regexForOperation,-1); //it will call the above defined function...
 
     for(int i = 0 ; i < values.size() ; i++)
@@ -345,13 +342,12 @@ string  globalFuncForWhereClouse(string h , string table_name ,int mode)
         }
     }
 
+
     for (int i = 0 ; i < values.size() ; i++)
     {
         values[i] = l_regextrim(values[i]);//remove extra space from the left(trim from left)
         values[i] = r_regextrim(values[i]);//remove extra space from the right(trim from right)
     }
-
-
 
     filterRegexInstring(h,operation,regexForOperation,0); // defined in above function.
 
@@ -359,6 +355,7 @@ string  globalFuncForWhereClouse(string h , string table_name ,int mode)
     for (auto const& s : operation) { opstring += s; } //it will convert vector string to string.
     int op1 = countMatchInRegex(opstring,"[|&]"); // it will count the logical operator in 'opstring'
     int op2 = countMatchInRegex(opstring,"[!=]"); // it will count the comparision operator in 'opstring'
+
     if(values.size()%2 == 0) // check the given vector sting is even is or not(column : value)
     {
         if(isOpeatorsAreInOrder(operation)) // defined above function check the order of operator
@@ -370,7 +367,7 @@ string  globalFuncForWhereClouse(string h , string table_name ,int mode)
                     int tempCheckForColumn = 0; // temp variable to count of available column
                     for(int i = 0; i < values.size() ; i+=2)
                     {
-                        if(isColumnAvailable(values[i],"table_name")) //check the column available in table or not
+                        if(isColumnAvailable(values[i],table_name)) //check the column available in table or not
                         {
                             tempCheckForColumn++;
                         }
@@ -395,18 +392,27 @@ string  globalFuncForWhereClouse(string h , string table_name ,int mode)
                         int tempForLogicalOp = 0;// tempForLogicalOp for the index value of vector string
                         int counterLogicalOp = 0;// counterLogicalOp for the index value of vector string
 
-                        int json = 5; // replacec it with json ojbject
+                        json jason;
+                        fstream  fs(table_name);
+                        fs >> jason;
 
 
-                        // this will iterate through json["table_data"]
-                        for(int i = 0 ; i < json ; i++)
+                        for(int i = 0 ; i < jason["table_data"].size();i++)
                         {
                             for(int j = 0 ; j < compareOp.size() ; j++) // iterate through vector <string> compareOp
                             {
                                 if(compareOp[j].compare("=")) // compare (=) operator with the compareOp
                                 {
-                                    // json["table_data"]["values[tempForValue]"] == values[ tempForValue + 1 ]
-                                    if(json == 1) //ignore condition and use above one
+                                    string l ="";
+                                    for(int k=0;k<jason["records"]["col_names"].size();k++)
+                                    {
+                                        if(values[tempForValue] == jason["records"]["col_names"][k])
+                                        {
+                                            l = to_string((k+1));
+                                        }
+                                    }
+
+                                    if(decryption(jason["table_data"][i][l]) == values[ tempForValue + 1 ])
                                     {
                                         boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
                                     }
@@ -418,9 +424,18 @@ string  globalFuncForWhereClouse(string h , string table_name ,int mode)
 
                                 if(compareOp[j].compare("!")) // compare (!) operator with the compareOp
                                 {
-                                    // json["table_data"]["values[tempForValue]"] != values[ tempForValue + 1 ]
-                                    if(json != 1)//ignore condition and use above one
+                                    string l ="";
+                                    for(int m=0;m<jason["records"]["col_names"].size();m++)
                                     {
+                                        if(values[tempForValue] != jason["records"]["col_names"][m])
+                                        {
+
+                                            l = to_string(m+1);
+                                        }
+                                    }
+                                    if(decryption(jason["table_data"][i][l]) == values[tempForValue + 1])
+                                    {
+
                                         boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
                                     }
                                     else
@@ -434,11 +449,11 @@ string  globalFuncForWhereClouse(string h , string table_name ,int mode)
 
                             for(int j = 0 ; j < logicalOp.size() ; j++) // for iterate through logicalOp.
                             {
-
                                 if(logicalOp[j].compare("&")) // compare (&) operator with the logicalop
                                 {
                                     if( boolStr[tempForLogicalOp] && boolStr[tempForLogicalOp + 1]) // it will check both the bool value are true then counterLogicalOp
                                     {
+
                                         counterLogicalOp++; // counterLogicalOp increment
                                     }
                                 }

@@ -92,6 +92,9 @@ inline string setx[2] = {"set","put"};
 //for storing last letter of database name;
 inline unsigned char lastLetterStore;
 
+//temporary storing table name
+inline string tname ="";
+
 //it will stores the value which is returned by FileTable
 inline string filetbReturnValue = "";
 

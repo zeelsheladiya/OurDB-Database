@@ -298,15 +298,16 @@ string query_process(vector<string> query)
                          map <string,string> mx;
 
                          StoreTempString = "";
-                         for(int i=4;i<query_size;i++)
+                         int j = 5;
+                         while(query[j] != "where")
+                         {
+                             mx.insert(pair<string,string>(query[j], query[j + 1]));
+                             j=j+2;
+                         }
+                          j++;
+                         for(int i = j; i<query_size;i++)
                          {
                              StoreTempString += query[i];
-                         }
-                         for(int i = 5; i<query_size;i=i+2)
-                         {
-                             if(query[i]!="where") {
-                                 mx.insert(pair<string, string>(query[i], query[i + 1]));
-                             }
                          }
                          return updateTable(query[2],mx,StoreTempString);
                      }
@@ -315,7 +316,8 @@ string query_process(vector<string> query)
                          return ErrUpdateQuerySyntax[0];
                      }
 
-                 }else
+                 }
+                 else
                  {
                      return ErrUpdateQuerySyntax[0];
                  }

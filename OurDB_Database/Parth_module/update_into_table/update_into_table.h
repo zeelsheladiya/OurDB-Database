@@ -28,6 +28,8 @@ string updateTable(string table_name,map<string,string> vc,string storedStringAf
            {
                tbname = "";
                tbname = databaseSavePath  + "/" + table_name + ".Ourdb";
+                  tname = "";
+                  tname=table_name;
                if(filesystem::exists(tbname.c_str()))
                {
                    if( table_name == "default")
@@ -57,6 +59,5 @@ string updateTable(string table_name,map<string,string> vc,string storedStringAf
     }
 
 }
-
 
 #endif //OURDB_DATABASE_UPDATE_INTO_TABLE_H
