@@ -171,4 +171,16 @@ inline string inSufficientWordInUpdateSyntax[2] = {"Error index := 53 , Error :=
 // when user tries to insert/retrieve data to/from default table
 inline string  ErrDataManipulationInDefault[2] = {"Error index : 54, Error := Cannot add or retrieve data from default table!!","54"};
 
+// error where keyword is not at its right place as per syntax
+inline string ErrWhereKeyword[2] = {"Error index : 55 Error := where keyword is not at its right place as per syntax","55"};
+
+//error that you cant delete anything from default table
+inline string ErrDeleteDefult[2] = {"Error index : 56 Error := can not perform any delete opration on default table","56"};
+
+//table does not have data to delete
+inline string ErrNoDataForDeleteInTable[2] = {"Error index : 57 := table does not have any data to perform delete operation","57"};
+
+//table does not have data to delete
+inline string ErrNoDataForUpdateInTable[2] = {"Error index : 58 := table does not have any data to perform update operation","58"};
+
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

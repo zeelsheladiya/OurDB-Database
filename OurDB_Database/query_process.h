@@ -19,6 +19,7 @@
 #include "mihir_module/insert_into_table/insert_into_table.h"
 #include "Parth_module/update_into_table/update_into_table.h"
 #include "Parth_module/update_into_table/ForUpdate.h"
+#include "zeel_module/delete_query/delete_query.h"
 
 using namespace std;
 
@@ -105,7 +106,7 @@ string query_process(vector<string> query)
                 return syntaxOfDeleteError[0];
             }
         }
-        else if(query_size >= 6)
+        else if(query_size >= 4)
         {
             if(syntaxCompare(query[1],colSymbol))
             {
@@ -114,7 +115,8 @@ string query_process(vector<string> query)
                 {
                     StoreTempString += query[i];
                 }
-                //  return DeleteQuery(query[2],query[3],StoreTempString);
+
+                return DeleteQuery(query[2],query[3],StoreTempString);
 
             }
             else if(syntaxCompare(query[1],column))        //checks fro column's word
