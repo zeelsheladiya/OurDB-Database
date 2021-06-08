@@ -120,7 +120,7 @@ vector <string> InputStringSeparation(vector <string> arr)
             temp += arr[i] + " ";       //stores data into string after separating them by space
         }
 
-        int count = std::count(temp.begin(), temp.end(), '\'');     //counts the number of occurrence of ' for separating data that is to be inserted
+        float count = std::count(temp.begin(), temp.end(), '\'');     //counts the number of occurrence of ' for separating data that is to be inserted
 
         vector <string> data;       //vector string to return inserted data
 
@@ -135,7 +135,7 @@ vector <string> InputStringSeparation(vector <string> arr)
             data.insert(data.end(),match_str);      //data inserted after separating into vector string
         }
 
-        if(data.size() == (count/2))    //checks if the data is equal to no. of data inserted by user
+        if(data.size() == count/2)    //checks if the data is equal to no. of data inserted by user
         {
             return data;        //returning vector string that contains records for inserting
         }
@@ -154,10 +154,8 @@ vector <string> InputStringSeparation(vector <string> arr)
 
         return error;    //return error
     }
-
-
-
-
 }
+
+
 
 #endif //OURDB_DATABASE_GLOBAL_FUNCTION_H
