@@ -1,15 +1,14 @@
 
--> insert query
-        words :
-            -> insert
-            -> put
+ --> replace searching operation by binary search in all of the programmes / for all member
 
-        note :- at the time of making this query you should make insert and into keyword as a variable
+ --> update query first table create error does not show / parth
 
-        -------------------------------------------------------------------------
-        syntax :- insert into <table_name> @ <col1_value> <col2_value> ...
+ --> update query set validation error / parth
 
+ --> update column name query remain / parth
 
--> insert data done but adding data with space remaining!
+ --> insert column into table remain / mihir
+
+ --> delete column into table remain / zeel
 
 
