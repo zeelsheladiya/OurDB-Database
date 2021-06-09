@@ -29,6 +29,11 @@
 
 3. update queries :-
 
+    words for update :
+    -> update
+
+    ------------------------------------------------------------------------------
+    update into <table_name> @ set/put <table_field> <field_value> where <table_field1> <field_value1>
 
 
 

@@ -20,10 +20,10 @@ void ForUpdate(int index,map<string,string>set_data,string table_name)
   ourdb odb;
   fstream fs1(table_name);
   fs1 >> odb;
-  cout<<table_name<<endl;
+  //cout<<table_name<<endl;
   if(remove(table_name.c_str()))
   {
-      cout<<"suc"<<endl;
+      //cout<<"suc"<<endl;
   }
     string svPth = databaseSavePath + "/" + tname + ".Ourdb";
 

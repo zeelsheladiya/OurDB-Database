@@ -237,11 +237,9 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                             // compare data with decryption
                                             if (decryption(jason["table_data"][i][l]) == values[tempForValue + 1]) {
                                                 counterCompareOp++;
-                                                boolStr.insert(boolStr.end(),
-                                                               true); // insert boolean value(true) in vector<bool>
+                                                boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
                                             } else {
-                                                boolStr.insert(boolStr.end(),
-                                                               false); // insert boolean value(false) in vector<bool>
+                                                boolStr.insert(boolStr.end(),false); // insert boolean value(false) in vector<bool>
                                             }
                                         }
 
@@ -276,7 +274,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                     for (int j = 0; j < logicalOp.size(); j++) // for iterate through logicalOp.
                                     {
 
-                                        if (logicalOp[j].compare("&")) // compare (&) operator with the logicalop
+                                        if (logicalOp[j] =="&") // compare (&) operator with the logicalop
                                         {
                                             if (boolStr[tempForLogicalOp] && boolStr[tempForLogicalOp +1]) // it will check both the bool value are true then counterLogicalOp
                                             {
@@ -284,7 +282,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                             }
                                         }
 
-                                        if (logicalOp[j].compare("|")) // compare (|) operator with the logicalop
+                                        if (logicalOp[j] == "|") // compare (|) operator with the logicalop
                                         {
                                             if (boolStr[tempForLogicalOp] || boolStr[tempForLogicalOp +1]) // it will check both the bool value are true then counterLogicalOp
                                             {
