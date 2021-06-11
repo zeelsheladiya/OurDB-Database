@@ -35,7 +35,8 @@ string DeleteColumnQuery(string table_name,string column_name)
                 {
                     if(j["records"]["col_names"][i] == column_name)
                     {
-                        column_index = i + 1;
+                        // getting column index
+                        column_index = i;
                         break;
                     }
                 }
@@ -43,7 +44,7 @@ string DeleteColumnQuery(string table_name,string column_name)
                 if(column_index > 0)
                 {
                     // column exist so process toward the delete column from the table
-                    return delete_column_query_logic_1(table_path,column_index);
+                    return delete_column_query_logic_1(table_path,column_name,column_index);
                 }
                 else
                 {

@@ -192,4 +192,10 @@ inline string ErrorColumnNotExist[2] = {"Error index : 60 := column does not exi
 // error if adding two new columns having same name (while adding new cols)
 inline string ErrAddingSameColName[2] = {"Error index := 61 , Error := Same column name error! Columns cant have same name!!","61"};
 
+// error if only one column is remaining in table while deleting column
+inline string ErrorOnlyOneColumnLeft[2] = {"Error index := 62 , only one column left into the table. So you should delete table instead of column","62"};
+
+// wrong syntax of add column query
+inline string ErrSyntaxAddColumn[2] = {"Error index := 63 , Error := Wrong syntax of add column query!\n\t Correct syntax : add col/column into <table_name> @ <new_col_name1> <new_col_name2>...","63"};
+
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

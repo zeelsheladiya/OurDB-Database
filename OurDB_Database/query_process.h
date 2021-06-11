@@ -340,12 +340,12 @@ string query_process(vector<string> query)
                     }
                     else
                     {
-                        //add col syntax error
+                        return ErrSyntaxAddColumn[0];
                     }
                 }
                 else
                 {
-                    //add col syntax error
+                    return ErrSyntaxAddColumn[0];
                 }
             }
             else
