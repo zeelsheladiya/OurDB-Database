@@ -372,7 +372,9 @@ string query_process(vector<string> query)
                          map <string,string> mx;
                          StoreTempString = "";
                          int j = 5;
-                         regex fb("[a-z0-9_]{0,}");
+                         regex fb("[a-z0-9_']{0,}");
+                         vector <string> cutter = InputStringSeparation(query);
+
                          int l = 0;
                          while(query[j] != "where")
                          {
@@ -380,24 +382,26 @@ string query_process(vector<string> query)
                            {
                                l++;
                                j++;
+
                            }else
                            {
-
                                return ErrUpdateQuerySyntax[0];
                            }
 
                          }
+                      if(l == cutter.size()) {
+                          if (cutter.size() % 2 == 0) {
+                              for (int jl = 0; jl < cutter.size(); jl = jl + 2) {
+                                  mx.insert(pair<string, string>(cutter[jl], cutter[jl + 1]));
+                              }
+                          } else {
+                              return ErrUpdateQuerySyntax[0];
+                          }
+                      }else
+                      {
+                          return ErrUpdateQuerySyntax[0];
+                      }
 
-                       if(l%2==0) {
-                           j = 5;
-                           while (query[j] != "where") {
-                               mx.insert(pair<string, string>(query[j], query[j + 1]));
-                               j = j + 2;
-                           }
-                       }else
-                       {
-                           return ErrUpdateQuerySyntax[0];
-                       }
                           j++;
                          for(int i = j; i<query_size;i++)
                          {
