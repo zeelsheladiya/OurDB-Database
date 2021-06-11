@@ -33,7 +33,7 @@
     -> update
 
     ------------------------------------------------------------------------------
-    update into <table_name> @ set/put <table_field> <field_value> where <table_field1> <field_value1>
+    update into <table_name> @ set/put <table_field> <field_value> where <table_field1>(=|!)<field_value1>
 
 
 

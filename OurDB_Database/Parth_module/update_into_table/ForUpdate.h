@@ -20,12 +20,8 @@ void ForUpdate(int index,map<string,string>set_data,string table_name)
   ourdb odb;
   fstream fs1(table_name);
   fs1 >> odb;
-  //cout<<table_name<<endl;
-  if(remove(table_name.c_str()))
-  {
-      //cout<<"suc"<<endl;
-  }
-    string svPth = databaseSavePath + "/" + tname + ".Ourdb";
+  remove(table_name.c_str());
+  string svPth = databaseSavePath + "/" + tname + ".Ourdb";
 
   map<string, string>::iterator itr;
   for( itr = set_data.begin(); itr != set_data.end(); ++itr) {
@@ -40,10 +36,10 @@ void ForUpdate(int index,map<string,string>set_data,string table_name)
 
       }
 
-  }
+    }
 
-    fstream fs2(svPth);
-    odb >> fs2;
-    fs2.close();
+   fstream fs2(svPth);
+   odb >> fs2;
+   fs2.close();
 }
 #endif //OURDB_DATABASE_FORUPDATE_H

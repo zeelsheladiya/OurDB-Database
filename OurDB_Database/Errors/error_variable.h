@@ -160,7 +160,7 @@ inline string  ErrColumnDoesNotExists[2] = {"Error index : 49, Error := columns 
 inline string insufficientWordInUpdateSyntax[2] = {"Error index := 50 , Error := there are insufficient words and invalid world in update syntax","50"};
 
 // error in update query syntx
-inline string ErrUpdateQuerySyntax[2] = {"Error index := 51 , Error := Error in update query syntax .. update into <table_name> @ set/put <table_field> <field_value> where <table_field1> <field_value1> ","51"};
+inline string ErrUpdateQuerySyntax[2] = {"Error index := 51 , Error := Error in update query syntax .. update into <table_name> @ set/put <table_field> <field_value> where <table_field1>(=/|)<field_value1> ","51"};
 
 // table does not exists error
 inline string tableDoesNotExist[2] = {"Error index := 52 , Error := table does not exists  ","52"};

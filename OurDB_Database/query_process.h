@@ -3,7 +3,10 @@
 //
 #include <iostream>
 #include <string>
+#include <regex>
+#include <vector>
 #include "Errors/error_variable.h"
+#include "parth_errors/parth_errors.h"
 #include "variables/query_variables.h"
 #include "Success_Messages/Success_Msg.h"
 #include "Parth_module/create_database/create_database.h"
@@ -20,6 +23,7 @@
 #include "Parth_module/update_into_table/update_into_table.h"
 #include "Parth_module/update_into_table/ForUpdate.h"
 #include "zeel_module/delete_query/delete_query.h"
+#include "Parth_module/rename_columns/rename_columns.h"
 
 using namespace std;
 
@@ -184,7 +188,7 @@ string query_process(vector<string> query)
                 return syntaxErrRenameTable[0];
             }
         }
-        else if(query_size == 7)
+        else if(query_size > 5)
         {
             if (syntaxCompare(query[1], column))     //check for column's word
             {
@@ -192,9 +196,33 @@ string query_process(vector<string> query)
                 {
                     if(syntaxCompare(query[4],colSymbol))       //checks for colsymbol
                     {
-                        //here goes return rename column function
+                        vector <string> vc;
+                        regex fb("[a-z0-9_]{0,}");
+                        for(int i = 5;i<query_size;i++)
+                        {
+                            if(regex_match(query[i].c_str(),fb)) {
+                                vc.insert(vc.end(), query[i]);
+                            }else
+                            {
+                                return ErrorInRenameQuery[0];
+                            }
+                        }
+                       if(vc.size()%2==0) {
+
+                           return rename_column(query[3], vc);
+                       }
+                       else
+                       {
+                           return ErrorInRenameQuery[0];
+                       }
+                    }else{
+                        return ErrorInRenameQuery[0];
                     }
+                }else{
+                    return ErrorInRenameQuery[0];
                 }
+            }else{
+                return ErrorInRenameQuery[0];
             }
         }
         else
@@ -298,20 +326,42 @@ string query_process(vector<string> query)
                      if(syntaxCompare(query[4],setx))
                      {
                          map <string,string> mx;
-
                          StoreTempString = "";
                          int j = 5;
+                         regex fb("[a-z0-9_]{0,}");
+                         int l = 0;
                          while(query[j] != "where")
                          {
-                             mx.insert(pair<string,string>(query[j], query[j + 1]));
-                             j=j+2;
+                           if(regex_match(query[j].c_str(),fb))
+                           {
+                               l++;
+                               j++;
+                           }else
+                           {
+
+                               return ErrUpdateQuerySyntax[0];
+                           }
+
                          }
+
+                       if(l%2==0) {
+                           j = 5;
+                           while (query[j] != "where") {
+                               mx.insert(pair<string, string>(query[j], query[j + 1]));
+                               j = j + 2;
+                           }
+                       }else
+                       {
+                           return ErrUpdateQuerySyntax[0];
+                       }
                           j++;
                          for(int i = j; i<query_size;i++)
                          {
                              StoreTempString += query[i];
                          }
-                         return updateTable(query[2],mx,StoreTempString);
+
+                             return updateTable(query[2], mx, StoreTempString);
+
                      }
                      else
                      {
