@@ -25,6 +25,7 @@
 #include "zeel_module/delete_query/delete_query.h"
 #include "Parth_module/rename_columns/rename_columns.h"
 #include "zeel_module/delete_column_query/delete_column_query.h"
+#include "mihir_module/add_column/add_column.h"
 
 using namespace std;
 
@@ -335,7 +336,7 @@ string query_process(vector<string> query)
                             a.insert(a.end(),query[i]);
                         }
 
-                        //return addColumn(query[3],a);
+                        return addColumn(query[3],a);
                     }
                     else
                     {
