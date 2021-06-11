@@ -25,78 +25,84 @@ string createTable(string tablename ,vector <string> a)
 
     if(!(databaseSelectGlobal.empty()))
     {
-         validate = validation(tablename,errorSpecialchaTable[0],errFirstLetterNumeric[0]);
+        validate = validation(tablename,errorSpecialchaTable[0],errFirstLetterNumeric[0]);
         // variable for storing string value which is returned by validate function
-             if ( validate == "true_true")
-             {
-                 regex b("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
-                 if ( regex_match(tablename, b) )
-                 {
-                     for(int i=0;i<a.size();i++)
-                     {
-                         validate = validation(a[i],errorSpecialchaTable[0],errFirstLetterNumeric[0]);
-                         if ( validate == "true_true")
-                         {
-                             regex c("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
-                             if (regex_match(a[i], c))
-                             {
-                                 for(int j=i+1;j<a.size();j++)
-                                 {
-                                     if(a[i] == a[j])
-                                     {
-                                         samecol++;
-                                     }
-                                 }
-                                 if(samecol==0)
-                                 {
-                                     count++;
-                                 }
-                             }
-                         }
-                     }
+        if ( validate == "true_true")
+        {
+            regex b("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
+            if ( regex_match(tablename, b) )
+            {
+                for(int i=0;i<a.size();i++)
+                {
+                    validate = validation(a[i],errorSpecialchaTable[0],errFirstLetterNumeric[0]);
+                    if ( validate == "true_true")
+                    {
+                        regex c("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
+                        if (regex_match(a[i], c))
+                        {
+                            for(int j=i+1;j<a.size();j++)
+                            {
+                                if(a[i] == a[j])
+                                {
+                                    samecol++;
+                                }
+                            }
+                            if(samecol==0)
+                            {
+                                count++;
+                            }
+                        }
+                    }
+                }
 
-                     if(count == a.size())
-                     {
-                         tbname = databaseSavePath +"/"+ tablename+".Ourdb"; // it adds the selected database path with tablename
-                         // and also store in tbname
-                         if(!(filesystem::exists(tbname.c_str()))) // if file already exist then return error..
-                         {
-                             FileTable(tbname); // call the filetable function which is in global_function.h
+                if(count == a.size())
+                {
+                    tbname = databaseSavePath +"/"+ tablename+".Ourdb"; // it adds the selected database path with tablename
+                    // and also store in tbname
+                    if(!(filesystem::exists(tbname.c_str()))) // if file already exist then return error..
+                    {
+                        FileTable(tbname); // call the filetable function which is in global_function.h
 
-                             ourdb col;     //json(ourdb) object to add column info
+                        ourdb col;     //json(ourdb) object to add column info
 
-                             col["records"]["total_cols"] = a.size();      //storing total cols
-                             col["records"]["col_names"] = a;      //storing column names
+                        for(int i=0;i<a.size();i++)
+                        {
+                            col["records"]["col_names"][to_string(i+1)] = a[i];      //storing column names
+                        }
 
-                             ofstream o(tbname);
-                             o << col << endl;      // writing col data into table
+                        col["records"]["total_cols"] = a.size();      //storing total cols
 
-                             validate = "";
-                             return  SuccessCreatingFileMsg[0];     //successfully created table
-                         }
-                         else
-                         {
-                             return errTableAlreadyExist[0]; // if table already exist then returns the error..
-                         }
-                     }
-                     else if(samecol!=0)
-                     {
-                         return ErrSameColName[0];      // error if 2 or more cols have same name
-                     }
-                     else
-                     {
-                        return errNamingColumn[0];      //error naming the columns
-                     }
-                 }
-                 else
-                 {
-                      return errorSpecialchaTable[0]; // error for special character found..
-                 }
-             }
-             else if(validate!="true_true")
-             {
-                 return validate; // if validation some how fails this shows.
-             }
+                        col["records"]["last_index"];
+
+                        ofstream o(tbname);
+                        o << col << endl;      // writing col data into table
+
+                        validate = "";
+                        return  SuccessCreatingFileMsg[0];     //successfully created table
+                    }
+                    else
+                    {
+                        return errTableAlreadyExist[0]; // if table already exist then returns the error..
+                    }
+                }
+                else if(samecol!=0)
+                {
+                    return ErrSameColName[0];      // error if 2 or more cols have same name
+                }
+                else
+                {
+                    return errNamingColumn[0];      //error naming the columns
+                }
+            }
+            else
+            {
+                return errorSpecialchaTable[0]; // error for special character found..
+            }
+        }
+        else if(validate!="true_true")
+        {
+            return validate; // if validation some how fails this shows.
+        }
     }
     else
     {

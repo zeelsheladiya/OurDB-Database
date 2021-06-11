@@ -321,6 +321,32 @@ string query_process(vector<string> query)
                     return ErrSyntaxInsertQuery[0];
                 }
             }
+            else if(syntaxCompare(query[1],column))
+            {
+                //add col/column into <table_name> @ <col_name>
+                if(syntaxCompare(query[2],into))
+                {
+                    if(syntaxCompare(query[4],colSymbol))
+                    {
+                        vector <string> a;
+
+                        for(int i=5;i < query_size;i++)
+                        {
+                            a.insert(a.end(),query[i]);
+                        }
+
+                        //return addColumn(query[3],a);
+                    }
+                    else
+                    {
+                        //add col syntax error
+                    }
+                }
+                else
+                {
+                    //add col syntax error
+                }
+            }
             else
             {
                 // else part of create query

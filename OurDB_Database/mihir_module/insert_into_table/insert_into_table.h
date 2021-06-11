@@ -41,9 +41,15 @@ string insertIntoTable(string tbname,vector<string> a)
             if (a.size() == coldata["records"]["total_cols"])       //checks if no. of data inserted is equals to no. of columns in the table
             {
                 string tmp;
+                vector <string> st;
+
+                for (auto& x : coldata["records"]["col_names"].items())
+                    st.insert(st.end(), x.key());
+
                 for (int i = 0; i < a.size(); i++)
                 {
-                    tbdata["table_data"][to_string(i + 1)] = encryption(a[i]);       //data encrypted and added to tbdata
+                    //tbdata["table_data"][to_string(i+1)] = encryption(a[i]);       //data encrypted and added to tbdata
+                    tbdata["table_data"][st[i]] = encryption(a[i]);       //data encrypted and added to tbdata
                 }
 
                 coldata["table_data"] += tbdata["table_data"];      //data appended to table from tbdata
