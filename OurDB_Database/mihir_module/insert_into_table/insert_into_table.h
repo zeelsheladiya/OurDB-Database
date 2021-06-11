@@ -43,8 +43,9 @@ string insertIntoTable(string tbname,vector<string> a)
                 string tmp;
                 vector <string> st;
 
-                for (auto& x : coldata["records"]["col_names"].items())
-                    st.insert(st.end(), x.key());
+                for (auto& x : coldata["records"]["col_index"].items())
+                    st.insert(st.end(), to_string(x.value()));
+
 
                 for (int i = 0; i < a.size(); i++)
                 {
