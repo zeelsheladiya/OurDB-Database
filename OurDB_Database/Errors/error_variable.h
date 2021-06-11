@@ -192,4 +192,7 @@ inline string ErrorColumnNotExist[2] = {"Error index : 60 := column does not exi
 // error if adding two new columns having same name (while adding new cols)
 inline string ErrAddingSameColName[2] = {"Error index := 61 , Error := Same column name error! Columns cant have same name!!","61"};
 
+//
+inline string ErrorOnlyOneColumnLeft[2] = {"Error index := 62 , only one column left into the table. So you should delete table instead of column","62"};
+
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

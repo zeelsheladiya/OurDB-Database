@@ -42,6 +42,6 @@ inline string SuccessAddColumnMsg[2] = {"Success index := 111 , Success := Colum
 inline string SuccessInRenamingColumn[2] = {"Success index := 113 , Success := table column renamed successfully :) : ","113"};
 
 //table column delete successfully
-inline string SuccessDeleteColumn[2] = {"Success index := 114 , Success := table column deleted successfully :) : ","114"};
+inline string SuccessDeleteColumn[2] = {"Success index := 112 , Success := table column deleted successfully :) : ","112"};
 
 #endif //OURDB_DATABASE_SUCCESS_MSG_H

@@ -47,7 +47,7 @@ string delete_column_query_logic_1(string table_path,string column_name,int colu
     else
     {
         // table has only one column
-        return ErrorOnlyOneCoulmnLeft[0];
+        return ErrorOnlyOneColumnLeft[0];
     }
 
 }
