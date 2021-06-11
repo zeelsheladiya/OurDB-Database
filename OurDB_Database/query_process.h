@@ -24,6 +24,7 @@
 #include "Parth_module/update_into_table/ForUpdate.h"
 #include "zeel_module/delete_query/delete_query.h"
 #include "Parth_module/rename_columns/rename_columns.h"
+#include "zeel_module/delete_column_query/delete_column_query.h"
 
 using namespace std;
 
@@ -125,12 +126,28 @@ string query_process(vector<string> query)
             }
             else if(syntaxCompare(query[1],column))        //checks fro column's word
             {
-                if(syntaxCompare(query[2],from))        //checks for 'from' word
+                if(query_size == 6)
                 {
-                    if(syntaxCompare(query[4],colSymbol))       //checks for colsymbol
+                    if (syntaxCompare(query[2], from))        //checks for 'from' word
                     {
-                        //here goes return delete column/columns function
+                        if (syntaxCompare(query[4], colSymbol))       //checks for colsymbol
+                        {
+                            //return delete column/columns function
+                            return DeleteColumnQuery(query[3],query[5]);
+                        }
+                        else
+                        {
+                            return ErrorDeleteColumnSyntax[0];
+                        }
                     }
+                    else
+                    {
+                        return ErrorDeleteColumnSyntax[0];
+                    }
+                }
+                else
+                {
+                    return ErrorDeleteColumnSyntax[0];
                 }
             }
             else

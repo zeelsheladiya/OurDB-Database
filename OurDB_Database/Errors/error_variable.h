@@ -183,4 +183,10 @@ inline string ErrNoDataForDeleteInTable[2] = {"Error index : 57 := table does no
 //table does not have data to delete
 inline string ErrNoDataForUpdateInTable[2] = {"Error index : 58 := table does not have any data to perform update operation","58"};
 
+//column does not have right syntax
+inline string ErrorDeleteColumnSyntax[2] = {"Error index : 59 := syntax error in delete column query \n Syntax := delete column/col from <table_name> @ <col_name>","59"};
+
+//column does not exist
+inline string ErrorColumnNotExist[2] = {"Error index : 60 := column does not exist into table ","60"};
+
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H
