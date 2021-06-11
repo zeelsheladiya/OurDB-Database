@@ -229,7 +229,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                             for (int k = 0; k < jason["records"]["col_names"].size(); k++) {
                                                 // compare column name from json file to query string
                                                 if (values[tempForValue] == jason["records"]["col_names"][k]) {
-                                                    l = to_string((k + 1));
+                                                    l = to_string(jason["records"]["col_index"][k]);
                                                     break;
                                                 }
                                             }
@@ -252,7 +252,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                                 // compare column name from json file to query string
                                                 if (values[tempForValue] == jason["records"]["col_names"][m])
                                                 {
-                                                    l = to_string(m + 1);
+                                                    l = to_string(jason["records"]["col_index"][m]);
                                                     break;
                                                 }
                                             }
@@ -463,7 +463,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                                     // compare column name from json file to query string
                                                     if (values[tempForValue] == jason["records"]["col_names"][k])
                                                     {
-                                                        l = to_string((k + 1));
+                                                        l = to_string(jason["records"]["col_index"][k]);
                                                         break;
                                                     }
                                                 }
@@ -486,7 +486,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                                     // compare column name from json file to query string
                                                     if (values[tempForValue] == jason["records"]["col_names"][m])
                                                     {
-                                                        l = to_string(m + 1);
+                                                        l = to_string(jason["records"]["col_index"][m]);
                                                         break;
                                                     }
                                                 }
