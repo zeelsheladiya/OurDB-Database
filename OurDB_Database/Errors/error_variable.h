@@ -189,4 +189,7 @@ inline string ErrorDeleteColumnSyntax[2] = {"Error index : 59 := syntax error in
 //column does not exist
 inline string ErrorColumnNotExist[2] = {"Error index : 60 := column does not exist into table ","60"};
 
+//you should delete table instead of column
+inline string ErrorOnlyOneCoulmnLeft[2] = {"Error index : 61 := only one column is left. you should delete table instead of delete column ","61"};
+
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H
