@@ -1,8 +1,5 @@
 
  --> replace searching operation by hash based search in all of the programmes / for all member
 
- --> insert column into table remain / mihir
-
- --> delete column into table remain / zeel
 
 

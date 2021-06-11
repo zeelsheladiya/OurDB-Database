@@ -198,4 +198,7 @@ inline string ErrorOnlyOneColumnLeft[2] = {"Error index := 62 , only one column 
 // wrong syntax of add column query
 inline string ErrSyntaxAddColumn[2] = {"Error index := 63 , Error := Wrong syntax of add column query!\n\t Correct syntax : add col/column into <table_name> @ <new_col_name1> <new_col_name2>...","63"};
 
+// error Can not use < and > with string value
+inline string ErrorShouldBeInt[2] = {"Error index := 64 , Error := Can not use < , > , <= , >= with string value ","64"};
+
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

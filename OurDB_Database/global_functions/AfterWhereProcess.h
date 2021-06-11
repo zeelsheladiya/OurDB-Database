@@ -55,7 +55,7 @@ bool isColumnAvailable(string colname , string tablepath)
 bool isOpeatorsAreInOrder(vector<string> value)
 {
     int n = 0;
-    if(value[0] == "!" || value[0] == "=") // first value should be of comparision operator
+    if(value[0] == "!" || value[0] == "=" || value[0] == ">" || value[0] == "<"  || value[0] == ">=" || value[0] == "<=") // first value should be of comparision operator
     {
         n++;  // it will increment the variable n
     }
@@ -68,7 +68,7 @@ bool isOpeatorsAreInOrder(vector<string> value)
         for (int i = 1; i < value.size() - 1; i++) {
             if (i % 2 == 0) // at even position there should be (! =) comparision operator
             {
-                if (value[i] == "!" || value[i] == "=") {
+                if (value[i] == "!" || value[i] == "=" || value[i] == ">" || value[i] == "<"  || value[i] == ">=" || value[i] == "<=") {
                     n++; //increment n
                 } else {
                     return false;
@@ -143,10 +143,11 @@ void filterRegexInstring(string h , vector<string> &op , regex r , int filter)
 string  globalFuncForWhereClouse(string h , string table_path , map<string,string> set_data,int mode)
 {
 
-    regex regexForOperation("[&!=|]"); // regex  defined for operator..
+    regex regexForOperation("[&!=|]|<=|>=|>|<"); // regex  defined for operator..
     vector<string> operation; // vector string for storing operator.
     vector<string> values; // vector string for storing actual value (column name and value as vector array).
     filterRegexInstring(h,values,regexForOperation,-1); //it will call the above defined function...
+    regex regexForInteger("[0-9]{0,}"); // regex for integer
 
     for(int i = 0 ; i < values.size() ; i++)
     {
@@ -168,7 +169,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
     string opstring; // store the value which are converted from vector to string
     for (auto const& s : operation) { opstring += s; } //it will convert vector string to string.
     int op1 = countMatchInRegex(opstring,"[|&]"); // it will count the logical operator in 'opstring'
-    int op2 = countMatchInRegex(opstring,"[!=]"); // it will count the comparision operator in 'opstring'
+    int op2 = countMatchInRegex(opstring,"[!=]|<=|>=|>|<"); // it will count the comparision operator in 'opstring'
 
     if(values.size()%2 == 0) // check the given vector sting is even is or not(column : value)
     {
@@ -264,6 +265,131 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                                 boolStr.insert(boolStr.end(),false); // insert boolean value(false) in vector<bool>
                                             }
                                         }
+
+                                        if (compareOp[j] == ">") // compare (!) operator with the compareOp
+                                        {
+
+                                            string l = "";
+                                            for (int m = 0; m < jason["records"]["col_names"].size(); m++)
+                                            {
+                                                // compare column name from json file to query string
+                                                if (values[tempForValue] == jason["records"]["col_names"][m])
+                                                {
+                                                    l = to_string(jason["records"]["col_index"][m]);
+                                                    break;
+                                                }
+                                            }
+
+                                            //check if value is integer
+                                            if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                            {
+                                                if (stoi(decryption(jason["table_data"][i][l])) > stoi(values[tempForValue + 1]))
+                                                {
+                                                    counterCompareOp++;
+                                                    boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
+                                                } else {
+                                                    boolStr.insert(boolStr.end(),false); // insert boolean value(false) in vector<bool>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                return ErrorShouldBeInt[0];
+                                            }
+                                        }
+
+                                        if (compareOp[j] == "<") // compare (!) operator with the compareOp
+                                        {
+
+                                            string l = "";
+                                            for (int m = 0; m < jason["records"]["col_names"].size(); m++)
+                                            {
+                                                // compare column name from json file to query string
+                                                if (values[tempForValue] == jason["records"]["col_names"][m])
+                                                {
+                                                    l = to_string(jason["records"]["col_index"][m]);
+                                                    break;
+                                                }
+                                            }
+
+                                            //check if value is integer
+                                            if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                            {
+                                                if (stoi(decryption(jason["table_data"][i][l])) < stoi(values[tempForValue + 1]))
+                                                {
+                                                    counterCompareOp++;
+                                                    boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
+                                                } else {
+                                                    boolStr.insert(boolStr.end(),false); // insert boolean value(false) in vector<bool>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                return ErrorShouldBeInt[0];
+                                            }
+                                        }
+
+                                        if (compareOp[j] == ">=") // compare (!) operator with the compareOp
+                                        {
+
+                                            string l = "";
+                                            for (int m = 0; m < jason["records"]["col_names"].size(); m++)
+                                            {
+                                                // compare column name from json file to query string
+                                                if (values[tempForValue] == jason["records"]["col_names"][m])
+                                                {
+                                                    l = to_string(jason["records"]["col_index"][m]);
+                                                    break;
+                                                }
+                                            }
+
+                                            //check if value is integer
+                                            if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                            {
+                                                if (stoi(decryption(jason["table_data"][i][l])) >= stoi(values[tempForValue + 1]))
+                                                {
+                                                    counterCompareOp++;
+                                                    boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
+                                                } else {
+                                                    boolStr.insert(boolStr.end(),false); // insert boolean value(false) in vector<bool>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                return ErrorShouldBeInt[0];
+                                            }
+                                        }
+
+                                        if (compareOp[j] == "<=") // compare (!) operator with the compareOp
+                                        {
+
+                                            string l = "";
+                                            for (int m = 0; m < jason["records"]["col_names"].size(); m++)
+                                            {
+                                                // compare column name from json file to query string
+                                                if (values[tempForValue] == jason["records"]["col_names"][m])
+                                                {
+                                                    l = to_string(jason["records"]["col_index"][m]);
+                                                    break;
+                                                }
+                                            }
+
+                                            //check if value is integer
+                                            if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                            {
+                                                if (stoi(decryption(jason["table_data"][i][l])) <= stoi(values[tempForValue + 1]))
+                                                {
+                                                    counterCompareOp++;
+                                                    boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
+                                                } else {
+                                                    boolStr.insert(boolStr.end(),false); // insert boolean value(false) in vector<bool>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                return ErrorShouldBeInt[0];
+                                            }
+                                        }
+
 
                                         tempForValue += 2; //temp value counter by 2
                                     }
@@ -373,10 +499,11 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
 string globalFuncForWhereClouse(string h , string table_name ,int mode)
 {
 
-    regex regexForOperation("[&!=|]"); // regex  defined for operator..
+    regex regexForOperation("[&!=|]|<=|>=|>|<"); // regex  defined for operator..
     vector<string> operation; // vector string for storing operator.
     vector<string> values; // vector string for storing actual value (column name and value as vector array).
     filterRegexInstring(h,values,regexForOperation,-1); //it will call the above defined function...
+    regex regexForInteger("[0-9]{0,}"); // regex for integer
 
     for(int i = 0 ; i < values.size() ; i++)
     {
@@ -397,7 +524,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
     string opstring; // store the value which are converted from vector to string
     for (auto const& s : operation) { opstring += s; } //it will convert vector string to string.
     int op1 = countMatchInRegex(opstring,"[|&]"); // it will count the logical operator in 'opstring'
-    int op2 = countMatchInRegex(opstring,"[!=]"); // it will count the comparision operator in 'opstring'
+    int op2 = countMatchInRegex(opstring,"[!=]|<=|>=|>|<"); // it will count the comparision operator in 'opstring'
 
     if(values.size()%2 == 0) // check the given vector sting is even is or not(column : value)
     {
@@ -498,6 +625,132 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                                     boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
                                                 } else {
                                                     boolStr.insert(boolStr.end(),false); // insert boolean value(false) in vector<bool>
+                                                }
+                                            }
+
+
+                                            if (compareOp[j] == ">") // compare (!) operator with the compareOp
+                                            {
+
+                                                string l = "";
+                                                for (int m = 0; m < jason["records"]["col_names"].size(); m++)
+                                                {
+                                                    // compare column name from json file to query string
+                                                    if (values[tempForValue] == jason["records"]["col_names"][m])
+                                                    {
+                                                        l = to_string(jason["records"]["col_index"][m]);
+                                                        break;
+                                                    }
+                                                }
+
+                                                //check if value is integer
+                                                if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                                {
+                                                    if (stoi(decryption(jason["table_data"][i][l])) > stoi(values[tempForValue + 1]))
+                                                    {
+                                                        counterCompareOp++;
+                                                        boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
+                                                    } else {
+                                                        boolStr.insert(boolStr.end(),false); // insert boolean value(false) in vector<bool>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    return ErrorShouldBeInt[0];
+                                                }
+                                            }
+
+                                            if (compareOp[j] == "<") // compare (!) operator with the compareOp
+                                            {
+
+                                                string l = "";
+                                                for (int m = 0; m < jason["records"]["col_names"].size(); m++)
+                                                {
+                                                    // compare column name from json file to query string
+                                                    if (values[tempForValue] == jason["records"]["col_names"][m])
+                                                    {
+                                                        l = to_string(jason["records"]["col_index"][m]);
+                                                        break;
+                                                    }
+                                                }
+
+                                                //check if value is integer
+                                                if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                                {
+                                                    if (stoi(decryption(jason["table_data"][i][l])) < stoi(values[tempForValue + 1]))
+                                                    {
+                                                        counterCompareOp++;
+                                                        boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
+                                                    } else {
+                                                        boolStr.insert(boolStr.end(),false); // insert boolean value(false) in vector<bool>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    return ErrorShouldBeInt[0];
+                                                }
+                                            }
+
+
+                                            if (compareOp[j] == ">=") // compare (!) operator with the compareOp
+                                            {
+
+                                                string l = "";
+                                                for (int m = 0; m < jason["records"]["col_names"].size(); m++)
+                                                {
+                                                    // compare column name from json file to query string
+                                                    if (values[tempForValue] == jason["records"]["col_names"][m])
+                                                    {
+                                                        l = to_string(jason["records"]["col_index"][m]);
+                                                        break;
+                                                    }
+                                                }
+
+                                                //check if value is integer
+                                                if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                                {
+                                                    if (stoi(decryption(jason["table_data"][i][l])) >= stoi(values[tempForValue + 1]))
+                                                    {
+                                                        counterCompareOp++;
+                                                        boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
+                                                    } else {
+                                                        boolStr.insert(boolStr.end(),false); // insert boolean value(false) in vector<bool>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    return ErrorShouldBeInt[0];
+                                                }
+                                            }
+
+                                            if (compareOp[j] == "<=") // compare (!) operator with the compareOp
+                                            {
+
+                                                string l = "";
+                                                for (int m = 0; m < jason["records"]["col_names"].size(); m++)
+                                                {
+                                                    // compare column name from json file to query string
+                                                    if (values[tempForValue] == jason["records"]["col_names"][m])
+                                                    {
+                                                        l = to_string(jason["records"]["col_index"][m]);
+                                                        break;
+                                                    }
+                                                }
+
+                                                //check if value is integer
+                                                if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                                {
+                                                    if (stoi(decryption(jason["table_data"][i][l])) <= stoi(values[tempForValue + 1]))
+                                                    {
+                                                        counterCompareOp++;
+                                                        boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
+                                                    } else {
+                                                        boolStr.insert(boolStr.end(),false); // insert boolean value(false) in vector<bool>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    return ErrorShouldBeInt[0];
                                                 }
                                             }
 
