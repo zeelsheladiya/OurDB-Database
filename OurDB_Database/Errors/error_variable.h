@@ -189,7 +189,7 @@ inline string ErrorDeleteColumnSyntax[2] = {"Error index : 59 := syntax error in
 //column does not exist
 inline string ErrorColumnNotExist[2] = {"Error index : 60 := column does not exist into table ","60"};
 
-//you should delete table instead of column
-inline string ErrorOnlyOneCoulmnLeft[2] = {"Error index : 61 := only one column is left. you should delete table instead of delete column ","61"};
+// error if adding two new columns having same name (while adding new cols)
+inline string ErrAddingSameColName[2] = {"Error index := 61 , Error := Same column name error! Columns cant have same name!!","61"};
 
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H
