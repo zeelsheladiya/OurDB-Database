@@ -361,20 +361,18 @@ string query_process(vector<string> query)
     }
     else if(syntaxCompare(query[0],update))
     {
-         if(query_size > 5)
+         if(query_size > 6)
          {
-             if(syntaxCompare(query[1],into))
+             if(syntaxCompare(query[1],colSymbol))
              {
-                 if(syntaxCompare(query[3],colSymbol))
-                 {
-                     if(syntaxCompare(query[4],setx))
+                     if(syntaxCompare(query[3],setx))
                      {
                          map <string,string> mx;
                          StoreTempString = "";
-                         int j = 5;
+                         int j = 4;
                          regex fb("[a-z0-9_']{0,}");
-                         vector <string> cutter = InputStringSeparation(query);
 
+                         vector <string> strsep;
                          int l = 0;
                          while(query[j] != "where")
                          {
@@ -389,19 +387,47 @@ string query_process(vector<string> query)
                            }
 
                          }
-                      if(l == cutter.size()) {
-                          if (cutter.size() % 2 == 0) {
-                              for (int jl = 0; jl < cutter.size(); jl = jl + 2) {
-                                  mx.insert(pair<string, string>(cutter[jl], cutter[jl + 1]));
-                              }
-                          } else {
-                              return ErrUpdateQuerySyntax[0];
-                          }
-                      }else
-                      {
-                          return ErrUpdateQuerySyntax[0];
-                      }
+                         j = 4;
+                         while(query[j] != "where")
+                         {
+                             strsep.insert(strsep.end(),query[j]);
+                             j++;
+                         }
 
+                         regex rl("[a-z0-9_]{0,}");
+                         regex rf("'([^']*)'");
+                         int cntf=0,cntl=0;
+                         for(int i=0;i<strsep.size();i++)
+                         {
+                             if(i % 2 == 0)
+                             {
+                                 if(regex_match(strsep[i].c_str(),rl))
+                                 {
+                                     cntf++;
+                                 }else
+                                 {
+                                     return ErrorInColumnName[0];
+                                 }
+                             }else if(i % 2 != 0)
+                             {
+                                 if(regex_match(strsep[i].c_str(),rf))
+                                 {
+                                     cntl++;
+                                 }else
+                                 {
+                                     return ErrUpdateQuerySyntax[0];
+                                 }
+                             }
+                         }
+                         if(strsep.size() == (cntl + cntf)) {
+                             for (int i = 0; i < strsep.size(); i = i + 2) {
+                                 mx.insert(pair<string, string>(strsep[i], string_quote_cutter(strsep[i + 1])));
+                             }
+                         }
+                         else
+                         {
+                             return ErrUpdateQuerySyntax[0];;
+                         }
                           j++;
                          for(int i = j; i<query_size;i++)
                          {
@@ -416,11 +442,7 @@ string query_process(vector<string> query)
                          return ErrUpdateQuerySyntax[0];
                      }
 
-                 }
-                 else
-                 {
-                     return ErrUpdateQuerySyntax[0];
-                 }
+
 
              }else
              {

@@ -156,6 +156,11 @@ vector <string> InputStringSeparation(vector <string> arr)
     }
 }
 
+string string_quote_cutter(string strx)
+{
+    strx.erase(std::remove(strx.begin(),strx.end(),'\''),strx.end());
+    return strx;
+}
 
 
 #endif //OURDB_DATABASE_GLOBAL_FUNCTION_H
