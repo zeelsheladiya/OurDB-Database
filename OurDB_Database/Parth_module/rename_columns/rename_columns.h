@@ -88,6 +88,7 @@ string rename_column(string table_name,vector<string>key)
             }
             else
             {
+                
                 return errorSpecialchaTable[0]; // error for special character found..
             }
         }else
