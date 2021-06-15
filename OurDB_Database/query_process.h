@@ -26,18 +26,12 @@
 #include "Parth_module/rename_columns/rename_columns.h"
 #include "zeel_module/delete_column_query/delete_column_query.h"
 #include "mihir_module/add_column/add_column.h"
+#include "select_module/select_module.h"
 
 using namespace std;
 
 #ifndef OURDB_DATABASE_QUERY_PROCESS_H
 #define OURDB_DATABASE_QUERY_PROCESS_H
-
-// check world with global world variable
-template<class Element, class Container>
-bool syntaxCompare(const Element & keyvalue ,const Container & variablearray)
-{
-    return find(begin(variablearray), end(variablearray), keyvalue) != end(variablearray);
-}
 
 // function for query process
 string query_process(vector<string> query)
@@ -165,18 +159,23 @@ string query_process(vector<string> query)
     else if(syntaxCompare(query[0],select_db_query))
     {
         // select database query
-        if(query_size == 3) {
-
+        if(query_size == 3)
+        {
             if (syntaxCompare(query[1], database))//check for database's word
             {
                 return selectDatabase(query[2]);
 
-            } else {
-
+            } else
+            {
                 return errorSelectingDatabase[0];
             }
         }
-        else{
+        else if(query_size > 3)
+        {
+            return SelectQuery(query);
+        }
+        else
+        {
             return ExtraWordInselectDatabaseSyntax[0];
         }
 

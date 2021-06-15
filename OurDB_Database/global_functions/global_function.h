@@ -27,6 +27,12 @@ using namespace std;
 
 //---------------------------------------------------------------------------------------------
 
+// check word with global word variable
+template<class Element, class Container>
+bool syntaxCompare(const Element & keyvalue ,const Container & variablearray)
+{
+    return find(begin(variablearray), end(variablearray), keyvalue) != end(variablearray);
+}
 
 // string validation in terms of name
 inline string validation(string dbname,string ferror,string serror)

@@ -201,4 +201,7 @@ inline string ErrSyntaxAddColumn[2] = {"Error index := 63 , Error := Wrong synta
 // error Can not use < and > with string value
 inline string ErrorShouldBeInt[2] = {"Error index := 64 , Error := Can not use < , > , <= , >= with string value ","64"};
 
+//error column name cant be of any banned keywords
+inline string ErrorBannedKeywords[2] = {"Error index := 65 , Error := Can not use banned keywords in column name!!","65"};
+
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

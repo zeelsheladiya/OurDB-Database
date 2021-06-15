@@ -11,6 +11,7 @@
 #include "../../External_Libraries/json.hpp"
 #include "../../global_functions/encryption.h"
 #include "../../global_functions/decryption.h"
+#include "../../global_functions/keywords_checker.h"
 
 using namespace std;
 using ourdb = nlohmann::json;
@@ -22,6 +23,7 @@ string createTable(string tablename ,vector <string> a)
 {
     int count = 0;
     int samecol = 0;  //var to check if there is a col with same name as another col
+    int keycheck = 0;
 
     if(!(databaseSelectGlobal.empty()))
     {
@@ -40,6 +42,10 @@ string createTable(string tablename ,vector <string> a)
                              regex c("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
                              if (regex_match(a[i], c))
                              {
+                                 if(keywords_checker(a[i]))
+                                 {
+                                     keycheck++;
+                                 }
                                  for(int j=i+1;j<a.size();j++)
                                  {
                                      if(a[i] == a[j])
@@ -55,7 +61,7 @@ string createTable(string tablename ,vector <string> a)
                          }
                      }
 
-                     if(count == a.size())
+                     if(count == a.size() && samecol==0 && keycheck==0)
                      {
                          int cnt = 0;
                          tbname = databaseSavePath +"/"+ tablename+".Ourdb"; // it adds the selected database path with tablename
@@ -91,6 +97,10 @@ string createTable(string tablename ,vector <string> a)
                      else if(samecol!=0)
                      {
                          return ErrSameColName[0];      // error if 2 or more cols have same name
+                     }
+                     else if(keycheck!=0)
+                     {
+                         return ErrorBannedKeywords[0];      // error if col name = banned keyboards
                      }
                      else
                      {

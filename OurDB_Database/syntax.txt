@@ -33,7 +33,7 @@
     -> update
 
     ------------------------------------------------------------------------------
-    update into <table_name> @ set/put <table_field> <field_value> where <table_field1>(=|!)<field_value1>
+    update @ <table_name> set/put <table_field> '<field_value>' where <table_field1>(=|!)<field_value1>
 
 
 
@@ -59,7 +59,7 @@
              ->choose
              -------------------------------------------------------------
              -> select database <database_name> // parth module
-             -> choose table <table_name>
+             -> select where from tb1 where id=1
 
 6 rename database : -
          words for rename
