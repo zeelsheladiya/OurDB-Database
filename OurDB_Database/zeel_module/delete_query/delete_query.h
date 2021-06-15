@@ -5,7 +5,7 @@
 #include <string>
 #include <regex>
 #include <filesystem>
-#include "../../global_functions/AfterWhereProcess.h";
+#include "../../global_functions/AfterWhereProcess.h"
 
 using namespace std;
 

@@ -3,7 +3,6 @@
 //
 #include <iostream>
 #include <ostream>
-#include <iostream>
 #include <string>
 #include <stdio.h>
 #include <fstream>
@@ -13,6 +12,7 @@
 #include "../../External_Libraries/json.hpp"
 #include "../../global_functions/encryption.h"
 #include "../../global_functions/decryption.h"
+#include "../../global_functions/keywords_checker.h"
 
 using namespace std;
 using ourdb = nlohmann::json;
@@ -23,10 +23,26 @@ string rename_column(string table_name,vector<string>key)
 {
     if(!(databaseSelectGlobal.empty()))
     {
+        int keycheck = 0;
+
+        for(int i=1; i<key.size();i+=2)
+        {
+            if(keywords_checker(key[i]))
+            {
+                keycheck++;     //keyword var incremented if banned keyword found
+            }
+        }
+
+        if(keycheck!=0)
+        {
+            return ErrorBannedKeywords[0];     //error for checking rename column with banned keywords
+        }
+
         validate = validation(table_name,errorSpecialchaTable[0],errFirstLetterNumeric[0]);
 
         if(validate == "true_true")
         {
+
             regex nl("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
             if(regex_match(table_name,nl))
             {
@@ -40,8 +56,8 @@ string rename_column(string table_name,vector<string>key)
                    ourdb odb;
                    fstream fs(tbname);
                    fs >> odb;
-                   remove(tbname.c_str());
-                   string svPth1 =  databaseSavePath  + "/" + tname + ".Ourdb";
+                   //remove(tbname.c_str());
+                   //string svPth1 =  databaseSavePath  + "/" + tname + ".Ourdb";
                    int cunt = 0;
                   for(int i=0;i<odb["records"]["col_names"].size();i++)
                   {
@@ -53,8 +69,9 @@ string rename_column(string table_name,vector<string>key)
                           }
                       }
                   }
-                  fstream fsm(svPth1);
-                  odb >> fsm;
+
+                  ofstream fsm(tbname);
+                  fsm << odb;
 
                    if(cunt > 0) {
                        return SuccessInRenamingColumn[0];

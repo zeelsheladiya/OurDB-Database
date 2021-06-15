@@ -29,6 +29,8 @@ string addColumn(string tablename,vector<string> a)
         {
             int samecol = 0;
             int colaldthere = 0;
+            int keycheck = 0;
+
             string path = databaseSavePath + "/" + tablename + ".Ourdb";       //path where table is stored
 
             if(filesystem::exists(path))        //checks if table exists or not
@@ -40,23 +42,27 @@ string addColumn(string tablename,vector<string> a)
                 in >> coldata;      //taking json data from table into coldata variable
                 for(int i=0;i<a.size();i++)
                 {
+                    if(keywords_checker(a[i]))
+                    {
+                        keycheck++;     //increments if banned keyword found in col name
+                    }
                     for(auto & newcol : coldata["records"]["col_names"])
                     {
                         if(newcol == a[i])
                         {
-                            colaldthere++;
+                            colaldthere++;      //increments if col already there in table
                         }
                     }
                     for(int j=i+1;j<a.size();j++)
                     {
                         if(a[i] == a[j])
                         {
-                            samecol++;
+                            samecol++;      //increments if tries to add same col name
                         }
                     }
                 }
 
-                if(samecol==0 && colaldthere==0)
+                if(samecol==0 && colaldthere==0 && keycheck==0)
                 {
                     int tc = coldata["records"]["total_cols"];      //var to store total cols in table
                     int lastind = coldata["records"]["last_col_index"];
@@ -85,15 +91,19 @@ string addColumn(string tablename,vector<string> a)
                     ofstream o(path);
                     o << coldata;       //parsing the json data to table
 
-                    return SuccessAddColumnMsg[0];
+                    return SuccessAddColumnMsg[0];      //column added successfully
                 }
                 else if(samecol!=0)
                 {
-                    return ErrAddingSameColName[0];
+                    return ErrAddingSameColName[0];        //error adding same column name
+                }
+                else if(keycheck!=0)
+                {
+                    return ErrorBannedKeywords[0];      //error adding banned keywords as column name
                 }
                 else
                 {
-                    return ErrSameColName[0];
+                    return ErrSameColName[0];       //error column already there in table
                 }
             }
             else
