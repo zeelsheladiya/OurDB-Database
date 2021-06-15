@@ -101,7 +101,14 @@ inline string filetbReturnValue = "";
 //'from' variable (in syntax) to check from which table we want to manipulate the column/s
 inline string from[1] = {"from"};
 
-//keywords
+//banned keywords
 inline string bannedkeywords[20] = {"database","table","db","where","column","col","set","put","into","default"};
+
+//'where' variable (in syntax) of select
+inline string where[1] = {"where"};
+
+//variable for all in select query
+inline string var_for_func_inselect[1] = {"*"};
+
 
 #endif //OURDB_DATABASE_QUERY_VARIABLES_H
