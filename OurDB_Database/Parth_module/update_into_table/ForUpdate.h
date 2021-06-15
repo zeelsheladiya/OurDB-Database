@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <stdio.h>
+#include <ostream>
 #include <filesystem>
 #include "../../variables/query_variables.h"
 #include "../../global_functions/global_function.h"
@@ -20,8 +21,6 @@ void ForUpdate(int index,map<string,string>set_data,string table_name)
   ourdb odb;
   fstream fs1(table_name);
   fs1 >> odb;
-  remove(table_name.c_str());
-  string svPth = databaseSavePath + "/" + tname + ".Ourdb";
 
   map<string, string>::iterator itr;
   for( itr = set_data.begin(); itr != set_data.end(); ++itr) {
@@ -38,8 +37,8 @@ void ForUpdate(int index,map<string,string>set_data,string table_name)
 
     }
 
-   fstream fs2(svPth);
-   odb >> fs2;
-   fs2.close();
+   ofstream fsm(table_name);
+    fsm << odb;
+
 }
 #endif //OURDB_DATABASE_FORUPDATE_H

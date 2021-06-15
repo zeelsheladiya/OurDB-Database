@@ -56,19 +56,31 @@ string rename_column(string table_name,vector<string>key)
                    ourdb odb;
                    fstream fs(tbname);
                    fs >> odb;
-                   //remove(tbname.c_str());
-                   //string svPth1 =  databaseSavePath  + "/" + tname + ".Ourdb";
                    int cunt = 0;
-                  for(int i=0;i<odb["records"]["col_names"].size();i++)
-                  {
-                      for (int j = 0; j < key.size(); j=j+2) {
-                          if(odb["records"]["col_names"][i] == key[j])
-                          {
-                              odb["records"]["col_names"][i] = key[j+1];
-                              cunt++;
-                          }
-                      }
-                  }
+                   int cuntx = 0;
+                   for(int i=0;i<odb["records"]["col_names"].size();i++)
+                   {
+                       for (int j = 0; j < key.size(); j=j+2) {
+                           if(key[j+1]==odb["records"]["col_names"][i])
+                           {
+                               cuntx++;
+                           }
+                       }
+                   }
+
+               if(cuntx == 0) {
+                   for (int i = 0; i < odb["records"]["col_names"].size(); i++) {
+                       for (int j = 0; j < key.size(); j = j + 2) {
+                           if (odb["records"]["col_names"][i] == key[j]) {
+                               odb["records"]["col_names"][i] = key[j + 1];
+                               cunt++;
+                           }
+                       }
+                   }
+               }else
+               {
+                   return ErrSameColumnNameExit[0];
+               }
 
                   ofstream fsm(tbname);
                   fsm << odb;
