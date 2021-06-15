@@ -148,6 +148,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
     vector<string> values; // vector string for storing actual value (column name and value as vector array).
     filterRegexInstring(h,values,regexForOperation,-1); //it will call the above defined function...
     regex regexForInteger("[0-9]{0,}"); // regex for integer
+    regex regexForFloat("[0-9]*\\.?[0-9]{1,}");// regex for Float
 
     for(int i = 0 ; i < values.size() ; i++)
     {
@@ -281,9 +282,9 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                             }
 
                                             //check if value is integer
-                                            if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                            if(regex_match(decryption(jason["table_data"][i][l]),regexForFloat) && regex_match(values[tempForValue + 1],regexForFloat))
                                             {
-                                                if (stoi(decryption(jason["table_data"][i][l])) > stoi(values[tempForValue + 1]))
+                                                if (stof(decryption(jason["table_data"][i][l])) > stof(values[tempForValue + 1]))
                                                 {
                                                     counterCompareOp++;
                                                     boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
@@ -312,9 +313,9 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                             }
 
                                             //check if value is integer
-                                            if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                            if(regex_match(decryption(jason["table_data"][i][l]),regexForFloat) && regex_match(values[tempForValue + 1],regexForFloat))
                                             {
-                                                if (stoi(decryption(jason["table_data"][i][l])) < stoi(values[tempForValue + 1]))
+                                                if (stof(decryption(jason["table_data"][i][l])) < stof(values[tempForValue + 1]))
                                                 {
                                                     counterCompareOp++;
                                                     boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
@@ -343,9 +344,9 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                             }
 
                                             //check if value is integer
-                                            if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                            if(regex_match(decryption(jason["table_data"][i][l]),regexForFloat) && regex_match(values[tempForValue + 1],regexForFloat))
                                             {
-                                                if (stoi(decryption(jason["table_data"][i][l])) >= stoi(values[tempForValue + 1]))
+                                                if (stof(decryption(jason["table_data"][i][l])) >= stof(values[tempForValue + 1]))
                                                 {
                                                     counterCompareOp++;
                                                     boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
@@ -374,9 +375,9 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                             }
 
                                             //check if value is integer
-                                            if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                            if(regex_match(decryption(jason["table_data"][i][l]),regexForFloat) && regex_match(values[tempForValue + 1],regexForFloat))
                                             {
-                                                if (stoi(decryption(jason["table_data"][i][l])) <= stoi(values[tempForValue + 1]))
+                                                if (stof(decryption(jason["table_data"][i][l])) <= stof(values[tempForValue + 1]))
                                                 {
                                                     counterCompareOp++;
                                                     boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
@@ -504,6 +505,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
     vector<string> values; // vector string for storing actual value (column name and value as vector array).
     filterRegexInstring(h,values,regexForOperation,-1); //it will call the above defined function...
     regex regexForInteger("[0-9]{0,}"); // regex for integer
+    regex regexForFloat("[0-9]*\\.?[0-9]{1,}");// regex for Float
 
     for(int i = 0 ; i < values.size() ; i++)
     {
@@ -644,9 +646,9 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                                 }
 
                                                 //check if value is integer
-                                                if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                                if(regex_match(decryption(jason["table_data"][i][l]),regexForFloat) && regex_match(values[tempForValue + 1],regexForFloat))
                                                 {
-                                                    if (stoi(decryption(jason["table_data"][i][l])) > stoi(values[tempForValue + 1]))
+                                                    if (stof(decryption(jason["table_data"][i][l])) > stof(values[tempForValue + 1]))
                                                     {
                                                         counterCompareOp++;
                                                         boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
@@ -675,9 +677,9 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                                 }
 
                                                 //check if value is integer
-                                                if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                                if(regex_match(decryption(jason["table_data"][i][l]),regexForFloat) && regex_match(values[tempForValue + 1],regexForFloat))
                                                 {
-                                                    if (stoi(decryption(jason["table_data"][i][l])) < stoi(values[tempForValue + 1]))
+                                                    if (stof(decryption(jason["table_data"][i][l])) < stof(values[tempForValue + 1]))
                                                     {
                                                         counterCompareOp++;
                                                         boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
@@ -707,9 +709,9 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                                 }
 
                                                 //check if value is integer
-                                                if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                                if(regex_match(decryption(jason["table_data"][i][l]),regexForFloat) && regex_match(values[tempForValue + 1],regexForFloat))
                                                 {
-                                                    if (stoi(decryption(jason["table_data"][i][l])) >= stoi(values[tempForValue + 1]))
+                                                    if (stof(decryption(jason["table_data"][i][l])) >= stof(values[tempForValue + 1]))
                                                     {
                                                         counterCompareOp++;
                                                         boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
@@ -738,9 +740,9 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                                 }
 
                                                 //check if value is integer
-                                                if(regex_match(decryption(jason["table_data"][i][l]),regexForInteger) && regex_match(values[tempForValue + 1],regexForInteger))
+                                                if(regex_match(decryption(jason["table_data"][i][l]),regexForFloat) && regex_match(values[tempForValue + 1],regexForFloat))
                                                 {
-                                                    if (stoi(decryption(jason["table_data"][i][l])) <= stoi(values[tempForValue + 1]))
+                                                    if (stof(decryption(jason["table_data"][i][l])) <= stof(values[tempForValue + 1]))
                                                     {
                                                         counterCompareOp++;
                                                         boolStr.insert(boolStr.end(),true); // insert boolean value(true) in vector<bool>
