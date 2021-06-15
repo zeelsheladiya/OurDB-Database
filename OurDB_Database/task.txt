@@ -1,2 +1,7 @@
 
  --> replace searching operation by hash based search in all of the programmes / for all member
+ --> select for * data / mihir
+ --> select for cols data / parth
+ --> select for * data with where / zeel
+ --> select for cols data with where / zeel
+ --> make return select structure / mihir
