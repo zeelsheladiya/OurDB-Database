@@ -59,7 +59,6 @@
              ->choose
              -------------------------------------------------------------
              -> select database <database_name> // parth module
-             -> select where from tb1 where id=1
              -> select */<col1> <col2> .... @ <table_name> where condition
 
 6 rename database : -

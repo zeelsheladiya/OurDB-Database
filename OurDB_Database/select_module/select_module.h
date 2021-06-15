@@ -85,7 +85,7 @@ string SelectQuery(vector <string> query)
                 }
                 else if(afterat.size()>2)
                 {
-                    if(afterat[1]==where[0])
+                    if(syntaxCompare(afterat[1],where))
                     {
                         //select query for all data with where
                         return SelectFuncForAllWithWhere(tablename,afterat);
@@ -122,7 +122,7 @@ string SelectQuery(vector <string> query)
                     }
                     else if(afterat.size()>2)
                     {
-                        if(afterat[1]==where[0])
+                        if(syntaxCompare(afterat[1],where))
                         {
                             //select query for cols data with where
                             return SelectFuncForColsWithWhere(tablename,beforeat,afterat);

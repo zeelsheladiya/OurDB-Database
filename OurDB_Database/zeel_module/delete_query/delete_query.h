@@ -22,8 +22,8 @@ string DeleteQuery(string table_name , string whereKeyword , string afterWherest
 
             if (filesystem::exists(table.c_str())) {
 
-                if (whereKeyword == "where") {
-
+                if (syntaxCompare(whereKeyword,where))
+                {
                     return globalFuncForWhereClouse(afterWherestr,table_name,1);
 
                 } else {

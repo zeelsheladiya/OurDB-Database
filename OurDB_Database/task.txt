@@ -5,3 +5,4 @@
  --> select for * data with where / zeel
  --> select for cols data with where / zeel
  --> make return select structure / mihir
+ --> add comment in update part in query_process.h / parth

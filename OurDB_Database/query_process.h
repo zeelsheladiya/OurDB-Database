@@ -373,7 +373,7 @@ string query_process(vector<string> query)
 
                          vector <string> strsep;
                          int l = 0;
-                         while(query[j] != "where")
+                         while(syntaxCompare(query[j],where))
                          {
                            if(regex_match(query[j].c_str(),fb))
                            {
@@ -387,7 +387,7 @@ string query_process(vector<string> query)
 
                          }
                          j = 4;
-                         while(query[j] != "where")
+                         while(syntaxCompare(query[j],where))
                          {
                              strsep.insert(strsep.end(),query[j]);
                              j++;
