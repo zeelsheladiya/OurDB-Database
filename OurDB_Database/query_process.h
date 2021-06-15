@@ -159,15 +159,15 @@ string query_process(vector<string> query)
     else if(syntaxCompare(query[0],select_db_query))
     {
         // select database query
-        if(query_size == 3)
+        if (syntaxCompare(query[1], database))//check for database's word
         {
-            if (syntaxCompare(query[1], database))//check for database's word
+            if(query_size == 3)
             {
                 return selectDatabase(query[2]);
-
-            } else
+            }
+            else
             {
-                return errorSelectingDatabase[0];
+                return ExtraWordInselectDatabaseSyntax[0];
             }
         }
         else if(query_size > 3)
