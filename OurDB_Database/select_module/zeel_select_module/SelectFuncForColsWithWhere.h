@@ -7,7 +7,7 @@
 
 string SelectFuncForAllWithWhere(string tablename,vector <string> afterat)
 {
-
+    return "";
 }
 
 #endif //OURDB_DATABASE_SELECTFUNCFORCOLSWITHWHERE_H
