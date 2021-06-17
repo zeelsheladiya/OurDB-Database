@@ -126,6 +126,9 @@ vector <string> InputStringSeparation(vector <string> arr)
             temp += arr[i] + " ";       //stores data into string after separating them by space
         }
 
+        temp = regex_replace(temp,regex("' "),"'"); // trim the left side of the space into single quote
+        temp = regex_replace(temp,regex(" '"),"'"); // trim the right side of the space into single quote
+
         float count = std::count(temp.begin(), temp.end(), '\'');     //counts the number of occurrence of ' for separating data that is to be inserted
 
         vector <string> data;       //vector string to return inserted data
