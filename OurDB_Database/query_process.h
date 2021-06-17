@@ -113,7 +113,7 @@ string query_process(vector<string> query)
                 StoreTempString = "";
                 for(int i=4;i<query_size;i++)
                 {
-                    StoreTempString += query[i];
+                    StoreTempString += query[i] + " ";
                 }
 
                 return DeleteQuery(query[2],query[3],StoreTempString);
@@ -430,7 +430,7 @@ string query_process(vector<string> query)
                           j++;
                          for(int i = j; i<query_size;i++)
                          {
-                             StoreTempString += query[i];
+                             StoreTempString += query[i] + " ";
                          }
 
                              return updateTable(query[2], mx, StoreTempString);

@@ -129,8 +129,7 @@ string r_regextrim(const std::string &s) {
 // it will filter with the help of regex and stores it into a vector string from string..
 void filterRegexInstring(string h , vector<string> &op , regex r , int filter)
 {
-    sregex_token_iterator iter1(h.begin(),h.end(),r,filter);
-    sregex_token_iterator end1;
+    sregex_token_iterator iter1{h.begin(),h.end(),r,filter} , end1;
     for ( ; iter1 != end1; ++iter1)
     {
         op.insert(op.end(),*iter1);

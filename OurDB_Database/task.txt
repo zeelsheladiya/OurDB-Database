@@ -6,5 +6,6 @@
  --> select for cols data with where / zeel
  --> make return select structure / mihir
  --> add comment in update part in query_process.h / parth
- --> change in afterwhereprocess to process data with space /zeel
  --> change in update query to be able to update new data value with space /parth
+ --> fix insert left and right trim / mihir
+ --> direct insert query fire problem / mihir
