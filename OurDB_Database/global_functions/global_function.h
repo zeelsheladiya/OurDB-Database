@@ -24,6 +24,7 @@ using namespace std;
 // trim function to trim both side
 // botharespacies function to check multiple spaces in string
 // split function for string into string array
+// function for remove null values into vector string
 
 //---------------------------------------------------------------------------------------------
 
@@ -179,6 +180,20 @@ string string_quote_cutter(string strx)
 {
     strx.erase(std::remove(strx.begin(),strx.end(),'\''),strx.end());
     return strx;
+}
+
+void nullRomoverFromVectorString(vector<string> &vec)
+{
+    if(vec.size() > 0)
+    {
+        for(int i = 0 ; i < vec.size() ; i++)
+        {
+            if(vec[i].empty()) // it will check whether the  element in vector array is empty or not
+            {
+                vec.erase(vec.begin()+i); // if it is empty then it will erase..
+            }
+        }
+    }
 }
 
 

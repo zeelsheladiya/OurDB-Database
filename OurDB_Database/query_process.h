@@ -367,95 +367,123 @@ string query_process(vector<string> query)
                      if(syntaxCompare(query[3],setx))
                      {
                          map <string,string> mx;
-                         StoreTempString = "";
-                         int j = 4;
+                         StoreTempString = ""; // it will store the value for after where process
+                         int j = 4; // index for after set keyword...
                          regex fb("[a-z0-9_']{0,}");
+                         regex rl("[a-z0-9_]{0,}"); // regex for checking alphanumericals values
+                         regex rf("'[^']*'"); // checking the value which resides in  ''
 
+                         string setString;
+                         vector <string> strsep1;
+                         vector <string> strsep2;
                          vector <string> strsep;
                          int l = 0;
-                         while(!syntaxCompare(query[j],where))
+                         while(!syntaxCompare(query[j],where)) // iterate until where comes
                          {
-                           if(regex_match(query[j].c_str(),fb))
+                           if(regex_match(query[j].c_str(),fb)) // it will check whether the format is right or wrong..
                            {
                                l++;
                                j++;
 
                            }else
                            {
-                               return ErrUpdateQuerySyntax[0];
+                               return ErrUpdateQuerySyntax[0]; // it will give error for syntax..
                            }
 
                          }
-                         j = 4;
+                         j = 4; // again set the j=4 for operation
                          while(!syntaxCompare(query[j],where))
                          {
-                             strsep.insert(strsep.end(),query[j]);
-                             j++;
+                             setString += query[j] + " "; // stores the value in the string  set .......... where
+                             j++; // increment j for the further process for getting index of j
                          }
 
-                         regex rl("[a-z0-9_]{0,}");
-                         regex rf("'([^']*)'");
-                         int cntf=0,cntl=0;
-                         for(int i=0;i<strsep.size();i++)
+                         filterRegexInstring(setString,strsep1,rl,0); // it will filter with the regex and stores the value in the vector string
+                         filterRegexInstring(setString,strsep2,rf,0); // it will filter with the regex and stores the value in the vector string
+
+                         nullRomoverFromVectorString(strsep1); // removes the null value from the vector
+                         nullRomoverFromVectorString(strsep2);
+
+                         if(strsep1.size() >= strsep2.size())
                          {
-                             if(i % 2 == 0)
+                             for(int i = 0 ; i < strsep2.size() ; i++) // iterate through strsep2
                              {
-                                 if(regex_match(strsep[i].c_str(),rl))
-                                 {
-                                     cntf++;
-                                 }else
-                                 {
-                                     return ErrorInColumnName[0];
-                                 }
-                             }else if(i % 2 != 0)
-                             {
-                                 if(regex_match(strsep[i].c_str(),rf))
-                                 {
-                                     cntl++;
-                                 }else
-                                 {
-                                     return ErrUpdateQuerySyntax[0];
-                                 }
-                             }
-                         }
-                         if(strsep.size() == (cntl + cntf)) {
-                             for (int i = 0; i < strsep.size(); i = i + 2) {
-                                 mx.insert(pair<string, string>(strsep[i], string_quote_cutter(strsep[i + 1])));
+                                 strsep.insert(strsep.end(),strsep1[i]); // insert the strsep1(column name) in strsep vector.
+                                 strsep.insert(strsep.end(),strsep2[i]); // insert the strsep2(column value) in strsep vector.
                              }
                          }
                          else
                          {
-                             return ErrUpdateQuerySyntax[0];;
+                             for(int i = 0 ; i < strsep1.size() ; i++)
+                             {
+                                 strsep.insert(strsep.end(),strsep1[i]); // insert the strsep1(column name) in strsep vector.
+                                 strsep.insert(strsep.end(),strsep2[i]); // insert the strsep2(column value) in strsep vector.
+                             }
                          }
-                          j++;
+
+                         int cntf=0,cntl=0;
+
+                         for(int i=0;i<strsep.size();i++) // iterate through strsep
+                         {
+                             if(i % 2 == 0) // check for the index at even value
+                             {
+                                 if(regex_match(strsep[i].c_str(),rl)) // matches the regex
+                                 {
+                                     cntf++;
+                                 }else
+                                 {
+                                     return ErrorInColumnName[0]; // error in giving column name
+                                 }
+                             }else if(i % 2 != 0)
+                             {
+                                 if(regex_match(strsep[i].c_str(),rf)) //matches the regex
+                                 {
+                                     cntl++;
+                                 }else
+                                 {
+                                     return ErrUpdateQuerySyntax[0]; // error in update query syntax
+                                 }
+                             }
+                         }
+                         if(strsep.size() == (cntl + cntf)) { // strsep size should match (cntl+cntf)
+                             for (int i = 0; i < strsep.size(); i = i + 2) {
+                                 mx.insert(pair<string, string>(strsep[i], string_quote_cutter(strsep[i + 1]))); // string_quote_cutter removes the quote from the string
+                              // stores the vector in the map
+                             }
+                         }
+                         else
+                         {
+                             return ErrUpdateQuerySyntax[0]; //error in update query syntax
+                         }
+                          j++; // increment to pass the 'where' into the query.
                          for(int i = j; i<query_size;i++)
                          {
-                             StoreTempString += query[i] + " ";
+                             StoreTempString += query[i] + " "; // stores the string for the after where process
                          }
 
                              return updateTable(query[2], mx, StoreTempString);
-
+                           // return the string  from the function updateTable
                      }
                      else
                      {
-                         return ErrUpdateQuerySyntax[0];
+                         return ErrUpdateQuerySyntax[0]; //error in update query syntax
                      }
 
 
 
              }else
              {
-                return ErrUpdateQuerySyntax[0];
+                return ErrUpdateQuerySyntax[0]; // error in update query syntax
              }
 
          }else
          {
-            return inSufficientWordInUpdateSyntax[0];
+            return inSufficientWordInUpdateSyntax[0]; //less word in the update syntax
          }
     }
     else
     {
-        return querySyntaxError[0];
+        return querySyntaxError[0]; // syntax erroe
     }
 }
 

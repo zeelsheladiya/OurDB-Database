@@ -204,4 +204,7 @@ inline string ErrorShouldBeInt[2] = {"Error index := 64 , Error := Can not use <
 //error column name cant be of any banned keywords
 inline string ErrorBannedKeywords[2] = {"Error index := 65 , Error := Can not use banned keywords in column name!!","65"};
 
+//
+inline string ErrorDoestNotExistInSetCondition[2] = {"Error index := 68 , Error := Column which you are trying to update does not exist ","68"};
+
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

@@ -47,55 +47,55 @@ string rename_column(string table_name,vector<string>key)
             if(regex_match(table_name,nl))
             {
                 tbname = "";
-                tbname = databaseSavePath  + "/" + table_name + ".Ourdb";
+                tbname = databaseSavePath  + "/" + table_name + ".Ourdb"; // table path where it exists..
                 tname = "";
-                tname=table_name;
+                tname=table_name; // tablename
 
-               if(filesystem::exists(tbname))
+               if(filesystem::exists(tbname))  // if filesystem exists then goes into the
                {
-                   ourdb odb;
-                   fstream fs(tbname);
-                   fs >> odb;
+                   ourdb odb;  //json object..
+                   fstream fs(tbname);  // filpointer points to file
+                   fs >> odb; // fs data into the json object odb
                    int cunt = 0;
-                   int cuntx = 0;
-                   for(int i=0;i<odb["records"]["col_names"].size();i++)
+                   int cuntx = 0; //
+                   for(int i=0;i<odb["records"]["col_names"].size();i++) //iterate through col_names in file
                    {
                        for (int j = 0; j < key.size(); j=j+2) {
-                           if(key[j+1]==odb["records"]["col_names"][i])
+                           if(key[j+1]==odb["records"]["col_names"][i]) //checks the column in the key with the column in  the file
                            {
-                               cuntx++;
+                               cuntx++; // increment the counter if matches..
                            }
                        }
                    }
 
-               if(cuntx == 0) {
-                   for (int i = 0; i < odb["records"]["col_names"].size(); i++) {
-                       for (int j = 0; j < key.size(); j = j + 2) {
-                           if (odb["records"]["col_names"][i] == key[j]) {
-                               odb["records"]["col_names"][i] = key[j + 1];
-                               cunt++;
+                   if(cuntx == 0) {
+                       for (int i = 0; i < odb["records"]["col_names"].size(); i++) {
+                           for (int j = 0; j < key.size(); j = j + 2) {
+                               if (odb["records"]["col_names"][i] == key[j]) {
+                                   odb["records"]["col_names"][i] = key[j + 1];
+                                   cunt++;
+                               }
                            }
                        }
-                   }
-               }else
-               {
-                   return ErrSameColumnNameExit[0];
-               }
-
-                  ofstream fsm(tbname);
-                  fsm << odb;
-
-                   if(cunt > 0) {
-                       return SuccessInRenamingColumn[0];
                    }else
                    {
-                     return ErrorInRenameOp[0];
+                       return ErrSameColumnNameExit[0]; // gives error when same name of column in tabble
                    }
+
+                      ofstream fsm(tbname); //ofstream object
+                      fsm << odb; // fsm data into the fsm
+
+                       if(cunt > 0) {
+                           return SuccessInRenamingColumn[0]; // success in renaming column
+                       }else
+                       {
+                         return ErrorInRenameOp[0]; // renaming operation error;
+                       }
 
                }
                else
                {
-                  return tableDoesNotExist[0];
+                  return tableDoesNotExist[0]; // gives error if table does not exists
                }
             }
             else
