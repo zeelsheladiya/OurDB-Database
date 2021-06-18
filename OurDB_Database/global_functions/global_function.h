@@ -114,44 +114,54 @@ inline void split(string const &str, const char delim,vector<string> &out)
 //separate the query after specific position (after '@' to be precise)
 vector <string> InputStringSeparation(vector <string> arr)
 {
-    string tbname = arr[2];       //var to store table name and check if it exists or not!
-    string path = databaseSavePath + "/" + tbname + ".Ourdb";       //path where table is stored
-
-    if(filesystem::exists(path.c_str()))        //checks if the path is valid i.e. if table exists or not
+    if(!(databaseSelectGlobal.empty()))
     {
-        string temp;        //string to store vector string array
+        string tbname = arr[2];       //var to store table name and check if it exists or not!
+        string path = databaseSavePath + "/" + tbname + ".Ourdb";       //path where table is stored
 
-        for(int i=0;i<arr.size();i++)
+        if(filesystem::exists(path.c_str()))        //checks if the path is valid i.e. if table exists or not
         {
-            temp += arr[i] + " ";       //stores data into string after separating them by space
-        }
+            string temp;        //string to store vector string array
 
-        temp = regex_replace(temp,regex("' "),"'"); // trim the left side of the space into single quote
-        temp = regex_replace(temp,regex(" '"),"'"); // trim the right side of the space into single quote
+            for(int i=0;i<arr.size();i++)
+            {
+                temp += arr[i] + " ";       //stores data into string after separating them by space
+            }
 
-        float count = std::count(temp.begin(), temp.end(), '\'');     //counts the number of occurrence of ' for separating data that is to be inserted
+            temp = regex_replace(temp,regex("' "),"'"); // trim the left side of the space into single quote
+            temp = regex_replace(temp,regex(" '"),"'"); // trim the right side of the space into single quote
 
-        vector <string> data;       //vector string to return inserted data
+            float count = std::count(temp.begin(), temp.end(), '\'');     //counts the number of occurrence of ' for separating data that is to be inserted
 
-        regex words_regex("'(.*?)'");       //regex to remove ' ' from the data
+            vector <string> data;       //vector string to return inserted data
 
-        for(sregex_iterator it = sregex_iterator(
-                temp.begin(), temp.end(), words_regex);
-            it != sregex_iterator(); it++)
-        {
-            smatch match = *it;
-            string match_str = match.str(1);
-            data.insert(data.end(),match_str);      //data inserted after separating into vector string
-        }
+            regex words_regex("'(.*?)'");       //regex to remove ' ' from the data
 
-        if(data.size() == count/2)    //checks if the data is equal to no. of data inserted by user
-        {
-            return data;        //returning vector string that contains records for inserting
+            for(sregex_iterator it = sregex_iterator(
+                    temp.begin(), temp.end(), words_regex);
+                it != sregex_iterator(); it++)
+            {
+                smatch match = *it;
+                string match_str = match.str(1);
+                data.insert(data.end(),match_str);      //data inserted after separating into vector string
+            }
+
+            if(data.size() == count/2)    //checks if the data is equal to no. of data inserted by user
+            {
+                return data;        //returning vector string that contains records for inserting
+            }
+            else
+            {
+                vector <string> error;
+                error.insert(error.end(),ErrImproperData[0]);   //error if improper insertion of data
+
+                return error;    //return error
+            }
         }
         else
         {
             vector <string> error;
-            error.insert(error.end(),ErrImproperData[0]);   //error if improper insertion of data
+            error.insert(error.end(),errNoSuchTableExist[0]);   //error if table doesnt exists
 
             return error;    //return error
         }
@@ -159,7 +169,7 @@ vector <string> InputStringSeparation(vector <string> arr)
     else
     {
         vector <string> error;
-        error.insert(error.end(),errNoSuchTableExist[0]);   //error if table doesnt exists
+        error.insert(error.end(),SelectTheDatabase[0]);   //error if database not selected
 
         return error;    //return error
     }

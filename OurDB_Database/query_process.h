@@ -306,9 +306,9 @@ string query_process(vector<string> query)
                     {
                         return ErrImproperData[0];    //error if there is improper data insertion
                     }
-                    else if(a[0] == errNoSuchTableExist[0])
+                    else if(a[0] == errNoSuchTableExist[0] || a[0] == SelectTheDatabase[0])
                     {
-                        return errNoSuchTableExist[0];
+                        return a[0];    //error if table doesnt exist or database not selected
                     }
                     else
                     {
