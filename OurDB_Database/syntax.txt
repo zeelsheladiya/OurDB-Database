@@ -59,7 +59,7 @@
              ->choose
              -------------------------------------------------------------
              -> select database <database_name> // parth module
-             -> select */<col1> <col2> .... @ <table_name> where condition
+             -> select */<col1> <col2> .... @ <table_name> Coniditinal_symbol where condition
 
 6 rename database : -
          words for rename

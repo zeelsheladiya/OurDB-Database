@@ -204,7 +204,18 @@ inline string ErrorShouldBeInt[2] = {"Error index := 64 , Error := Can not use <
 //error column name cant be of any banned keywords
 inline string ErrorBannedKeywords[2] = {"Error index := 65 , Error := Can not use banned keywords in column name!!","65"};
 
-//
+//column which you are trying to update is not available
 inline string ErrorDoestNotExistInSetCondition[2] = {"Error index := 68 , Error := Column which you are trying to update does not exist ","68"};
 
+// syntax of select query is wrong
+inline string ErrSyntaxInSelectQuery[2] = {"Error index := 69 , Error := Syntax of  select query is wrong ","69"} ;
+
+//column does not match with the table columns
+inline string ErrorColumnDoesNotMatchFromTable[2] = {"Error index := 70 , Error := column doest not match with the table column ","70"};
+
+// @ symbol shouldn't be here wrong syntax
+inline string ErrAtSymbol[2] = {"Error index := 71 , Error := @ symbol shouldn't be here wrong syntax ","71"};
+
+//updation query syntax is not proper..
+inline string ErrInUpdateSyntaxForAt[2] = {"Error index := 72 , Error := wrong updation query ...\n elect */<col1> <col2> .... @ <table_name> Coniditinal_symbol where condition ","72"};
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H
