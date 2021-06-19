@@ -37,11 +37,11 @@ string SelectQueryStructureCreater(vector<string> vect,vector<vector<string>>vec
     // it will return string like ......
     // col1_name,col2_name,co3_name
     // <space>
-    // col1_value,col2_value,co3_value
+    // col1_value\ncol2_value\nco3_value
     // <space>
-    // col1_value,col2_value,co3_value
+    // col1_value\ncol2_value\nco3_value
     // <space>
-    // col1_value,col2_value,co3_value
+    // col1_value\ncol2_value\nco3_value
     // <space>
 
 }
