@@ -19,7 +19,7 @@ string SelectQueryStructureCreater(vector<string> vect,vector<vector<string>>vec
             ml += vect[i] + ","; // adds the column name (data in vector) of vector to the string except last
         }
     }
-    ml += "\n*"; // adds * to the new line
+    ml += "\n "; // adds space to the new line
     ml += "\n"; // adds newline
     for (int i = 0; i < vectl.size(); i++)  // iterate through whole 2d vector
     {
@@ -28,7 +28,7 @@ string SelectQueryStructureCreater(vector<string> vect,vector<vector<string>>vec
             ml += vectl[i][j] + "\n"; // add the value of column
         }
 
-        ml += "*\n"; // adds the * after every 1d string vector..
+        ml += " \n"; // adds the space,newline after every 1d string vector..
 
     }
 
@@ -36,13 +36,13 @@ string SelectQueryStructureCreater(vector<string> vect,vector<vector<string>>vec
 
     // it will return string like ......
     // col1_name,col2_name,co3_name
-    // *
+    // <space>
     // col1_value,col2_value,co3_value
-    // *
+    // <space>
     // col1_value,col2_value,co3_value
-    // *
+    // <space>
     // col1_value,col2_value,co3_value
-    // *
+    // <space>
 
 }
 #endif //OURDB_DATABASE_GLOBALFUNCTIONFORSELECTQUERY_H
