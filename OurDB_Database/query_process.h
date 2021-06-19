@@ -45,7 +45,6 @@ string query_process(vector<string> query)
             if (syntaxCompare(query[1], database))//check for database's word
             { //for create database
                 return createDatabase(query[2]); // parth's part
-
             }
             else
             {
