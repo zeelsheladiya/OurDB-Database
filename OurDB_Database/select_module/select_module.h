@@ -120,7 +120,7 @@ string SelectQuery(vector <string> query)
                         return ErrSyntaxInSelectQuery[0];
                     }
                 }
-                else if(afterat.size()>2)
+                else if(afterat.size()>3)
                 {
                     if(syntaxCompare(afterat[1],where))
                     {
@@ -175,7 +175,7 @@ string SelectQuery(vector <string> query)
                             return ErrSyntaxInSelectQuery[0];
                         }
                     }
-                    else if(afterat.size()>2)
+                    else if(afterat.size()>3)
                     {
                         if(syntaxCompare(afterat[1],where))
                         {
