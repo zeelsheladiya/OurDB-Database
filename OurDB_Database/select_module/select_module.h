@@ -98,7 +98,7 @@ string SelectQuery(vector <string> query)
             int countforcolcheck = 0;       //counter to check if select column name is present in table
 
             // regex for additional functions alt + 24 = ↑ and alt + 25 = ↓
-            regex regexForConditionalOperation("[↑↓]");
+            regex regexForConditionalOperation("[<>]{1}");
 
             // allocation of select query
             if(beforeat[0] == var_for_func_inselect[0] && beforeat.size()==1)
@@ -110,7 +110,7 @@ string SelectQuery(vector <string> query)
                 }
                 else if(afterat.size()==2)
                 {
-                    if(regex_match(afterat[1],regexForConditionalOperation))
+                    if(regex_match(afterat[1],regexForConditionalOperation)==1)
                     {
                         //select query with where condition and function with additional function
                         return SelectFuncForAllwithAdditionalFunc(tablename,afterat[1]);
