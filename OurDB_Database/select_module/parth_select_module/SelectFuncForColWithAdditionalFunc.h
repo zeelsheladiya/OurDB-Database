@@ -29,10 +29,10 @@ string SelectFuncForColswithAdditionalFunc(string tablename , string AdditionalF
             data.push_back(newvec); // it will push beck data newvec into data vector..
         }
 
-        if(AdditionalFunc == "↑")
+        if(AdditionalFunc == "<")
         {
             sort(data.begin(),data.end());
-        }else if(AdditionalFunc == "↑")
+        }else if(AdditionalFunc == ">")
         {
             sort(data.end(),data.begin());
         }
