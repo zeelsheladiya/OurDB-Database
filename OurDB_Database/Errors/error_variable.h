@@ -218,8 +218,4 @@ inline string ErrAtSymbol[2] = {"Error index := 71 , Error := @ symbol shouldn't
 
 //updation query syntax is not proper..
 inline string ErrInUpdateSyntaxForAt[2] = {"Error index := 72 , Error := wrong updation query ...\n elect */<col1> <col2> .... @ <table_name> Coniditinal_symbol where condition ","72"};
-
-//no data found in table
-inline string ErrNoDataFoundInTable[2] = {"Error index := 73 , Error := No data Found Into table " , "73"};
-
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

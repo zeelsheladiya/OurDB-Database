@@ -120,17 +120,17 @@ string SelectQuery(vector <string> query)
                         return ErrSyntaxInSelectQuery[0];
                     }
                 }
-                else if(afterat.size()>=3)
+                else if(afterat.size()>3)
                 {
                     if(syntaxCompare(afterat[1],where))
                     {
                         //select query for all data with where
-                        return SelectFuncForAllWithWhere(afterat[0],afterat);
+                        return SelectFuncForAllWithWhere(tablename,afterat);
                     }
                     else if(regex_match(afterat[1],regexForConditionalOperation) && syntaxCompare(afterat[1],where))
                     {
                         //select query with where condition and function with additional function
-                        return SelectFuncForAllWithWhereWithAdditionalFunc(afterat[0],afterat[1],afterat);
+                        return SelectFuncForAllWithWhereWithAdditionalFunc(tablename,afterat[1],afterat);
                     }
                     else
                     {
@@ -175,17 +175,17 @@ string SelectQuery(vector <string> query)
                             return ErrSyntaxInSelectQuery[0];
                         }
                     }
-                    else if(afterat.size()>=3)
+                    else if(afterat.size()>3)
                     {
                         if(syntaxCompare(afterat[1],where))
                         {
                             //select query for cols data with where
-                            return SelectFuncForColsWithWhere(afterat[0],beforeat,afterat);
+                            return SelectFuncForColsWithWhere(tablename,beforeat,afterat);
                         }
                         else if(regex_match(afterat[1],regexForConditionalOperation) && syntaxCompare(afterat[1],where))
                         {
                             //select query with where condition and function with additional function
-                            return SelectFuncForColsWithWhereWithAdditionalFunc(afterat[0],afterat[1],beforeat,afterat);
+                            return SelectFuncForColsWithWhereWithAdditionalFunc(tablename,afterat[1],beforeat,afterat);
                         }
                         else
                         {
