@@ -127,7 +127,7 @@ string SelectQuery(vector <string> query)
                         //select query for all data with where
                         return SelectFuncForAllWithWhere(afterat[0],afterat);
                     }
-                    else if(regex_match(afterat[1],regexForConditionalOperation) && syntaxCompare(afterat[1],where))
+                    else if(regex_match(afterat[1],regexForConditionalOperation) && syntaxCompare(afterat[2],where))
                     {
                         //select query with where condition and function with additional function
                         return SelectFuncForAllWithWhereWithAdditionalFunc(afterat[0],afterat[1],afterat);
@@ -182,7 +182,7 @@ string SelectQuery(vector <string> query)
                             //select query for cols data with where
                             return SelectFuncForColsWithWhere(afterat[0],beforeat,afterat);
                         }
-                        else if(regex_match(afterat[1],regexForConditionalOperation) && syntaxCompare(afterat[1],where))
+                        else if(regex_match(afterat[1],regexForConditionalOperation) && syntaxCompare(afterat[2],where))
                         {
                             //select query with where condition and function with additional function
                             return SelectFuncForColsWithWhereWithAdditionalFunc(afterat[0],afterat[1],beforeat,afterat);
