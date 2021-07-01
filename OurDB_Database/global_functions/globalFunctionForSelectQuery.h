@@ -45,4 +45,15 @@ string SelectQueryStructureCreater(vector<string> vect,vector<vector<string>>vec
     // <space>
 
 }
+
+void ascending_sort(vector<vector<string>> &data)
+{
+    sort(data.begin(),data.end());
+}
+
+void descending_sort(vector<vector<string>> &data)
+{
+    sort(data.begin(),data.end(),greater <>());
+}
+
 #endif //OURDB_DATABASE_GLOBALFUNCTIONFORSELECTQUERY_H
