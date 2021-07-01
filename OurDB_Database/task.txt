@@ -9,3 +9,4 @@
  --> select for cols data with where with additional function / zeel
  --> make return select structure / mihir
  --> make return select structure with additional function / mihir
+ --> add float calculation into afterwhereprocess.h / zeel

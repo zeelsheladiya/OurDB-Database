@@ -506,6 +506,8 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
     regex regexForInteger("[0-9]{0,}"); // regex for integer
     regex regexForFloat("[0-9]*\\.?[0-9]{1,}");// regex for Float
 
+    string stringOfIndexies = "";
+
     for(int i = 0 ; i < values.size() ; i++)
     {
         if(values[i].empty()) // it will check whether the  element in vector array is empty or not
@@ -795,6 +797,13 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                                     processCounter++;
                                                     break;
 
+                                                case 2:
+
+                                                    // get indexies which will going to have fill the given condition
+                                                    stringOfIndexies += to_string(i);
+                                                    processCounter++;
+                                                    break;
+
                                                 default:
 
                                                     break;
@@ -819,11 +828,19 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
 
                             if(processCounter > 0)
                             {
+                                if(mode == 2)
+                                {
+                                    return stringOfIndexies;
+                                }
                                 //success process massage with rows are affected
                                 return SuccessDeleteDataTableMsg[0] + " " + to_string(processCounter) + " Rows are affected !";
                             }
                             else
                             {
+                                if(mode == 2)
+                                {
+                                    return stringOfIndexies;
+                                }
                                 //success process massage without rows are affected
                                 return SuccessDeleteDataTableMsg[0] + " " + to_string(processCounter) + " Row affected !";
                             }
@@ -856,4 +873,5 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
     }
 
 }
+
 #endif //OURDB_DATABASE_AFTERWHEREPROCESS_H
