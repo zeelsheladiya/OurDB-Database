@@ -10,6 +10,12 @@
 #include "query_process.h"
 #include <cctype>
 #include "global_functions/global_function.h"
+#include "External_Libraries/json.hpp"
+#include "mihir_module/return_object/m_to_json.h"
+#include "Parth_module/return_object/p_to_stringTable.h"
+#include "zeel_module/return_object/z_to_map.h"
+
+using ourdb = nlohmann::json;
 
 using namespace std;
 
@@ -43,5 +49,19 @@ string run_query(string query)
 
 }
 
+ourdb To_Json(string result)
+{
+    return m_to_json(result);
+}
+
+string To_StringTable(string result)
+{
+    return p_to_stringTable(result);
+}
+
+map<string , string > To_Map(string result)
+{
+    return z_to_map(result);
+}
 
 #endif //OURDB_DATABASE_OURDB_DATABASE_H
