@@ -10,7 +10,7 @@
 #include <iostream>
 #include <regex>
 #include "AfterWhereProcess.h"
-#inlcude "global_function.h"
+#include "global_function.h"
 
 using namespace std;
 
