@@ -59,7 +59,7 @@ string To_StringTable(string result)
     return p_to_stringTable(result);
 }
 
-map<string , string > To_Map(string result)
+map<string,vector<string>>  To_Map(string result)
 {
     return z_to_map(result);
 }
