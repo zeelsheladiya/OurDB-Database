@@ -50,6 +50,10 @@ string insertIntoTable(string tbname,vector<string> a)
                 for (int i = 0; i < a.size(); i++)
                 {
                     //tbdata["table_data"][to_string(i+1)] = encryption(a[i]);       //data encrypted and added to tbdata
+                    if(a[i].empty())
+                    {
+                        a[i] = "null";
+                    }
                     tbdata["table_data"][st[i]] = encryption(a[i]);       //data encrypted and added to tbdata
                 }
 

@@ -48,7 +48,9 @@ string SelectFuncForAllWithWhere(string tablename,vector <string> afterat)
         vector<vector<string>> data;    //vector of vector string for table data
 
         for (auto& x : coldata["records"]["col_names"].items())
-            colname.insert(colname.end(), to_string(x.value()));    //col name inserted to vector colname
+        {
+            colname.insert(colname.end(), string_quote_cutter(to_string(x.value()),'\"'));    //col name inserted to vector colname
+        }
 
         for(int i=0; i < ind.size();i++)
         {

@@ -182,6 +182,12 @@ string string_quote_cutter(string strx)
     return strx;
 }
 
+string string_quote_cutter(string strx, char cut)
+{
+    strx.erase(std::remove(strx.begin(),strx.end(),cut),strx.end());
+    return strx;
+}
+
 void nullRomoverFromVectorString(vector<string> &vec)
 {
     if(vec.size() > 0)
