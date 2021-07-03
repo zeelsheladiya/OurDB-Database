@@ -53,7 +53,7 @@ bool SyntaxCheckerForResultString(string result)
             }
         }
 
-        if(coldata.size() >= datastring.size()-3) // minimum value comparision with col data
+        if(coldata.size() > datastring.size()-3) // minimum value comparision with col data
         {
             return false; // return false
         }
