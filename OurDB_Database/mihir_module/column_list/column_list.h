@@ -20,22 +20,34 @@ string columnList(string tablename)
 
         if(filesystem::exists(path))
         {
-            string collist;
-            ifstream in(path);
-
-            ourdb coldata;      //var to store json data
-
-            in >> coldata;      //taking json data from table into coldata variable
-
-            collist += "Columns in table " + tablename + " are :\n\t";
-
-            for(auto &i : coldata["records"]["col_names"])
+            if(tablename == "default")
             {
-                collist += i;
-                collist += "\n\t";
+                return "Can't access default table!!";
             }
+            else
+            {
+                string collist;
+                ifstream in(path);
 
-            return collist;
+                ourdb coldata;      //var to store json data
+
+                in >> coldata;      //taking json data from table into coldata variable
+
+                if(coldata["records"]["col_names"].empty())
+                {
+                    return ErrNoDataFoundInTable[0];
+                }
+
+                collist += "Columns in table " + tablename + " are :\n\t";
+
+                for(auto &i : coldata["records"]["col_names"])
+                {
+                    collist += i;
+                    collist += "\n\t";
+                }
+
+                return collist;
+            }
         }
         else
         {
