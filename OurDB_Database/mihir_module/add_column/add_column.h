@@ -78,7 +78,7 @@ string addColumn(string tablename,vector<string> a)
                     {
                         for (int j = 1; j <= a.size(); j++)        //loop to check how many new column/s data we need to add
                         {
-                            i[to_string(j + lastind)] = "";        //setting the newly added column/s data as NULL
+                            i[to_string(j + lastind)] = encryption("null");        //setting the newly added column/s data as NULL
                         }
                     }
 

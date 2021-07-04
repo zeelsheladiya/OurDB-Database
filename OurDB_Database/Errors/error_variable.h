@@ -73,7 +73,7 @@ inline string sameNameDatabaseErr[2]= {"Error index := 20 ,Error :=  Same name o
 inline string syntaxErrShowList[2] = {"Error index := 21 ,Error := Syntax of displaying database/table list is wrong..\n \tSyntax : show/view/display all database/table ","21"};
 
 //extra words in delete query syntax
-inline string errExtraWordInShowListSyntax[2] = {"Error index := 22 , Error := there are some extra words or invalid word in show database list syntax","22"};
+inline string errExtraWordInShowListSyntax[2] = {"Error index := 22 , Error := there are some extra words or invalid word in show database/table/column list syntax","22"};
 
 //if no database exist and the list is empty
 inline string errDatabaseListIsEmpty[2] = {"Error index := 23 ,Error := No database exists!! Please create a database and then try again..","23"};
@@ -221,5 +221,8 @@ inline string ErrInUpdateSyntaxForAt[2] = {"Error index := 72 , Error := wrong u
 
 //no data found in table
 inline string ErrNoDataFoundInTable[2] = {"Error index := 73 , Error := No data Found Into table " , "73"};
+
+//syntax error in displaying all columns from a table
+inline string syntaxErrShowCols[2] = {"Error index := 74 , Error := Wrong syntax of displaying columns from a table \n\t Correct Syntax : show/display/view all col/column @ <table_name> " , "74"};
 
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

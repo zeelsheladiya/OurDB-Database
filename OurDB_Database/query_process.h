@@ -27,6 +27,7 @@
 #include "zeel_module/delete_column_query/delete_column_query.h"
 #include "mihir_module/add_column/add_column.h"
 #include "select_module/select_module.h"
+#include "mihir_module/column_list/column_list.h"
 
 using namespace std;
 
@@ -270,6 +271,31 @@ string query_process(vector<string> query)
             else
             {
                 return syntaxErrShowList[0];
+            }
+        }
+        else if(query_size == 5)
+        {
+            if(syntaxCompare(query[1],all))     //checks if second word in query is 'all'
+            {
+                if(syntaxCompare(query[2],column))    //checks if third word in query is 'col'/'column'
+                {
+                    if(syntaxCompare(query[3],colSymbol))    //checks if 4th word is colSymbol
+                    {
+                        return columnList(query[4]);    //returns columnList() func
+                    }
+                    else
+                    {
+                        return syntaxErrShowCols[0];    //syntax error in column list
+                    }
+                }
+                else
+                {
+                    return syntaxErrShowCols[0];    //syntax error in column list
+                }
+            }
+            else
+            {
+                return syntaxErrShowCols[0];
             }
         }
         else

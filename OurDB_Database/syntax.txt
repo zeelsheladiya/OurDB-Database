@@ -72,7 +72,7 @@
       note: - database must be selected before renaming...
 
 
-7. database list :-
+7. database/table/column list :-
         words :
         -> show
         -> display
@@ -80,6 +80,7 @@
         -------------------------------------------------------------------
         syntax :- show all db
                :- show all table
+               :- show all col @ <table_name>
 
 8. current database :-
         words :
