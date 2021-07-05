@@ -1,9 +1,27 @@
 #include "OurDB_Database.h"
 #include <iostream>
 #include <string>
+#include "variables/query_variables.h"
+#include "global_functions/global_function.h"
 
 
 using namespace std;
+
+template<class Element, class Container>
+bool selectChecker(const Element & s ,const Container & s1)
+{
+    for(string i : s1)
+    {
+        //cout << i << endl << s.find(i) << endl;
+        if(s.find(i) != -1)
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 
 int main() {
 
@@ -13,7 +31,22 @@ int main() {
 
         cout << "Enter Your query :  ";
         getline(cin, s);
-        cout << run_query(s) << endl;
+
+        if(selectChecker(s,select_db_query))
+        {
+            if(selectChecker(s,colSymbol))
+            {
+                cout << endl << To_StringTable(run_query(s)) << endl;
+            }
+            else
+            {
+                cout << endl << run_query(s) << endl;
+            }
+        }
+        else
+        {
+            cout << endl << run_query(s) << endl;
+        }
 
     }
 

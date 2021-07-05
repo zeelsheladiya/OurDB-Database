@@ -19,7 +19,7 @@ string databaseList()
 
     if(!filesystem::is_empty(path))     //checks if the current path to database is empty or not
     {
-        cout << "Databases are : \n";
+        list += "Databases are : \n";
         for (auto &i : filesystem::directory_iterator(path))    //increments the existing folders(databases) at given path
         {
             list += i.path().filename().string() + "\n";   //store the names of all the folders(databases) in list string

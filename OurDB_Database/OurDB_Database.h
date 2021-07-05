@@ -14,6 +14,7 @@
 #include "mihir_module/return_object/m_to_json.h"
 #include "Parth_module/return_object/p_to_stringTable.h"
 #include "zeel_module/return_object/z_to_map.h"
+#include "Errors/error_variable.h"
 
 using ourdb = nlohmann::json;
 
@@ -24,6 +25,14 @@ using namespace std;
 
 string run_query(string query)
 {
+    //query should not be null
+    if(query.empty())
+    {
+        return querySyntaxError[0];
+    }
+
+    replace(query.begin(),query.end(),'\n',' ');
+
     //trim space from string
     trim(query);
 
