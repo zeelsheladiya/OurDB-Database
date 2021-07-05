@@ -25,6 +25,10 @@ string SelectFuncForColsWithWhereWithAdditionalFunc(string tablename, string add
 
     if(regex_match(indexies,regexForOnlyInt))
     {
+        if(selectingSameColsMulTimes(beforeat))     //checks if same column is selected more than once
+        {
+            return ErrSelectSameColName[0];
+        }
 
         string tablepath = databaseSavePath +"/"+ tablename +".Ourdb";
 

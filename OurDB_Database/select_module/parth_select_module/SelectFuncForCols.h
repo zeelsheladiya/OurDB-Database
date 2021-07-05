@@ -19,6 +19,11 @@ string SelectFuncForCols(string tablePath,vector <string> beforeat)
     if(our1["table_data"].size() > 0)
     {   // check whether there is data in table or not
 
+        if(selectingSameColsMulTimes(beforeat))     //checks if same column is selected more than once
+        {
+            return ErrSelectSameColName[0];
+        }
+
         for(int k=0 ;k<our1["table_data"].size();k++)
         {  // iterate through every row in [table_data]
             vector<string> newvec;  // create new string vector for storing single row data in it...

@@ -56,4 +56,30 @@ void descending_sort(vector<vector<string>> &data)
     sort(data.begin(),data.end(),greater <>());
 }
 
+bool selectingSameColsMulTimes(vector <string> beforeat)
+{
+    int colcounter = 0;
+
+    for(int i=0;i<beforeat.size()-1;i++)
+    {
+        for(int j=i+1;j<beforeat.size();j++)
+        {
+            if(beforeat[i] == beforeat[j])
+            {
+                cout << ErrSelectSameColName[0] << endl;
+                colcounter++;
+            }
+        }
+    }
+
+    if(colcounter==0)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
 #endif //OURDB_DATABASE_GLOBALFUNCTIONFORSELECTQUERY_H

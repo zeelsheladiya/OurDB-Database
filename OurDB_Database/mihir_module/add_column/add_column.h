@@ -95,7 +95,7 @@ string addColumn(string tablename,vector<string> a)
                 }
                 else if(samecol!=0)
                 {
-                    return ErrAddingSameColName[0];        //error adding same column name
+                    return ErrSameColName[0];        //error adding same column name
                 }
                 else if(keycheck!=0)
                 {

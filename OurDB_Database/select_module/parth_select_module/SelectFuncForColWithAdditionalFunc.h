@@ -21,6 +21,12 @@ string SelectFuncForColswithAdditionalFunc(string tablename , string AdditionalF
             { // iterate through beforeat(column name) vector
                 for (int i = 0; i < our1["records"]["col_names"].size(); i++)
                 { //
+
+                    if(selectingSameColsMulTimes(beforeat))     //checks if same column is selected more than once
+                    {
+                        return ErrSelectSameColName[0];
+                    }
+
                     if (our1["records"]["col_names"][i] == beforeat[j])
                     { // it checks data are same in beforeat and json object
                         string l = to_string(our1["records"]["col_index"][i]); // takes the value from column index ..
