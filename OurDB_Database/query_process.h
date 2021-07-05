@@ -395,19 +395,20 @@ string query_process(vector<string> query)
                          StoreTempString = ""; // it will store the value for after where process
                          int j = 4; // index for after set keyword...
                          regex fb("[a-z0-9_']{0,}");
-                         regex rl("[a-z0-9_]{0,}"); // regex for checking alphanumericals values
+                         regex rl("[a-z0-9_]{1,}"); // regex for checking alphanumericals values
                          regex rf("'[^']*'"); // checking the value which resides in  ''
 
                          string setString;
                          vector <string> strsep1;
                          vector <string> strsep2;
+                         vector <string> strsep3;
                          vector <string> strsep;
-                         int l = 0;
+                         //int l = 0;
                          while(!syntaxCompare(query[j],where)) // iterate until where comes
                          {
                            if(regex_match(query[j].c_str(),fb)) // it will check whether the format is right or wrong..
                            {
-                               l++;
+                               //l++;
                                j++;
 
                            }else
@@ -425,13 +426,15 @@ string query_process(vector<string> query)
 
                          filterRegexInstring(setString,strsep1,rl,0); // it will filter with the regex and stores the value in the vector string
                          filterRegexInstring(setString,strsep2,rf,0); // it will filter with the regex and stores the value in the vector string
-
+                         filterRegexInstring(setString,strsep3,rf,-1); // it will filter ' ' and gives the vector array without it
                          nullRomoverFromVectorString(strsep1); // removes the null value from the vector
                          nullRomoverFromVectorString(strsep2);
+                         nullRomoverFromVectorString(strsep3);
+
 
                          if(strsep1.size() >= strsep2.size())
                          {
-                             for(int i = 0 ; i < strsep2.size() ; i++) // iterate through strsep2
+                             for(int i=0 ; i<strsep2.size() ; i++) // iterate through strsep2
                              {
                                  strsep.insert(strsep.end(),strsep1[i]); // insert the strsep1(column name) in strsep vector.
                                  strsep.insert(strsep.end(),strsep2[i]); // insert the strsep2(column value) in strsep vector.
@@ -471,22 +474,24 @@ string query_process(vector<string> query)
                              }
                          }
                          if(strsep.size() == (cntl + cntf)) { // strsep size should match (cntl+cntf)
-                             for (int i = 0; i < strsep.size(); i = i + 2) {
-                                 mx.insert(pair<string, string>(strsep[i], string_quote_cutter(strsep[i + 1]))); // string_quote_cutter removes the quote from the string
+                             for (int i = 0; i < strsep1.size(); i = i + 2) {
+                                 mx.insert(pair<string, string>(strsep1[i], string_quote_cutter(strsep1[i + 1]))); // string_quote_cutter removes the quote from the string
                               // stores the vector in the map
+
                              }
                          }
                          else
                          {
                              return ErrUpdateQuerySyntax[0]; //error in update query syntax
                          }
+
                           j++; // increment to pass the 'where' into the query.
                          for(int i = j; i<query_size;i++)
                          {
                              StoreTempString += query[i] + " "; // stores the string for the after where process
                          }
 
-                             return updateTable(query[2], mx, StoreTempString);
+                             return updateTable(query[2], mx, StoreTempString,strsep3);
                            // return the string  from the function updateTable
                      }
                      else

@@ -139,7 +139,7 @@ void filterRegexInstring(string h , vector<string> &op , regex r , int filter)
 // where function for process where condition in string
 // note :- here table_path parameter means table's path and h is a string after the where keyword and mode for switch statement
 // note :- this function search from the front to the backward
-string  globalFuncForWhereClouse(string h , string table_path , map<string,string> set_data,int mode)
+string  globalFuncForWhereClouse(string h , string table_path , map<string,string> set_data,int mode,vector <string> strsep3)
 {
 
     regex regexForOperation("[&!=|]|<=|>=|>|<"); // regex  defined for operator..
@@ -429,7 +429,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                             case 1:
 
                                                 // update query function
-                                                ForUpdate(i, set_data, table_path);
+                                                ForUpdate(i, set_data, table_path,strsep3);
                                                 processCounter++;
                                                 break;
 
