@@ -1,3 +1,0 @@
-B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/CMakeFiles/OurDB_Database.dir
-B:/project/OurDB/OurDB-Database/OurDB_Database/cmake-build-debug/CMakeFiles/edit_cache.dir
