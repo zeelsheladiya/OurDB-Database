@@ -5,7 +5,7 @@
 #ifndef OURDB_DATABASE_M_TO_JSON_H
 #define OURDB_DATABASE_M_TO_JSON_H
 
-#include "../../global_functions/SyntaxCheckerForResultString.h";
+#include "../../global_functions/SyntaxCheckerForResultString.h"
 
 ourdb m_to_json(string result)
 {

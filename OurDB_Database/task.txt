@@ -2,5 +2,3 @@
  --> replace searching operation by hash based search in all of the programmes / for all member
  --> change errors to appropriate error (testing stage) // for everyone
  --> documentation // parth
- --> update multiple columns // parth
- --> select query multiple columns problem // parth
