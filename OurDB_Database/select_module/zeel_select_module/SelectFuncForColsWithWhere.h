@@ -44,9 +44,9 @@ string SelectFuncForColsWithWhere(string tablename,vector <string> beforeat,vect
         for(int k=0 ;k<ind.size();k++)      //loop for data that satisfies after where condition
         {
             vector<string> newvec;
-            for (int i = 0; i < our1["records"]["col_names"].size(); i++)   //loop for checking col names with col indexes
+            for (int j = 0; j < beforeat.size(); j++)   //loop for checking cols that are specified by user before '@'
             {
-                for (int j = 0; j < beforeat.size(); j++)   //loop for checking cols that are specified by user before '@'
+                for (int i = 0; i < our1["records"]["col_names"].size(); i++)   //loop for checking col names with col indexes
                 {
                     if (our1["records"]["col_names"][i] == beforeat[j])     //checks user specified col with col in table
                     {
@@ -54,7 +54,6 @@ string SelectFuncForColsWithWhere(string tablename,vector <string> beforeat,vect
                         newvec.insert(newvec.end(), decryption(our1["table_data"][stoi(ind[k])][l]));
                     }
                 }
-
             }
             data.push_back(newvec);     //inserting vector 'newvec' into vector of vector 'data'
         }

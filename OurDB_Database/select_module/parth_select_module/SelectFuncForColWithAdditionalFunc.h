@@ -17,12 +17,10 @@ string SelectFuncForColswithAdditionalFunc(string tablename , string AdditionalF
         for(int k=0 ;k<our1["table_data"].size();k++)
         {  // iterate through every row in [table_data]
             vector<string> newvec;  // create new string vector for storing single row data in it...
-            for (int i = 0; i < our1["records"]["col_names"].size(); i++)
-            { //
-
-                for (int j = 0; j < beforeat.size(); j++)
-                { // iterate through beforeat(column name) vector
-
+            for (int j = 0; j < beforeat.size(); j++)
+            { // iterate through beforeat(column name) vector
+                for (int i = 0; i < our1["records"]["col_names"].size(); i++)
+                { //
                     if (our1["records"]["col_names"][i] == beforeat[j])
                     { // it checks data are same in beforeat and json object
                         string l = to_string(our1["records"]["col_index"][i]); // takes the value from column index ..
