@@ -30,9 +30,6 @@ string p_to_stringTable(string result)
             }
         }
 
-        //myobj = datastring;
-        //myobj["col_names"] = coldata;
-
         map<string,vector<string>> tabledata;   //map to store table data
 
         for(int i=0;i<coldata.size();i++)
@@ -43,16 +40,6 @@ string p_to_stringTable(string result)
             }
         }
 
-        vector<string> firstVec;
-        vector<string> secondVec;
-        for(auto itr = tabledata.begin();itr != tabledata.end();itr++)
-        {
-            firstVec.push_back(itr->first);
-            for(auto itrn : itr->second)
-            {
-                secondVec.push_back(itrn);
-            }
-        }
 
         TextTable t( '-', '|', '+' );
 

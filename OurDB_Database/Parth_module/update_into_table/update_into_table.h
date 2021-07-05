@@ -15,7 +15,7 @@ using ourdb = nlohmann::json;
 #ifndef OURDB_DATABASE_UPDATE_INTO_TABLE_H
 #define OURDB_DATABASE_UPDATE_INTO_TABLE_H
 
-string updateTable(string table_name,map<string,string> vc,string storedStringAfterWhere)
+string updateTable(string table_name,map<string,string> vc,string storedStringAfterWhere,vector<string>strsep3)
 {
     if(!(databaseSelectGlobal.empty())) // checks whether database is selected or not
     {
@@ -51,11 +51,12 @@ string updateTable(string table_name,map<string,string> vc,string storedStringAf
                                    CounterForCol++; // increment the counter
                                }
                            }
+                             cout<<"lkey : "<<lkey.first<<endl;
                        }
 
-                       if(CounterForCol > 0) // if counter greater zero then access this function else give error
+                       if(CounterForCol == vc.size()) // i
                        {
-                           return globalFuncForWhereClouse(storedStringAfterWhere, tbname, vc, 1);
+                              return globalFuncForWhereClouse(storedStringAfterWhere, tbname, vc, 1, strsep3);
                        }
                        else
                        {
