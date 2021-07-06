@@ -66,7 +66,6 @@ bool selectingSameColsMulTimes(vector <string> beforeat)
         {
             if(beforeat[i] == beforeat[j])
             {
-                cout << ErrSelectSameColName[0] << endl;
                 colcounter++;
             }
         }
