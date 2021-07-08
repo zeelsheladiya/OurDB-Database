@@ -7,9 +7,9 @@
 #include <iostream>
 #include <string>
 #include <filesystem>
-#include "../../variables/query_variables.h"
-#include "../../global_functions/global_function.h"
-#include "../../External_Libraries/json.hpp"
+#include "../variables/query_variables.h"
+#include "../global_functions/global_function.h"
+#include "../External_Libraries/json.hpp"
 
 using namespace std;
 using ourdb = nlohmann::json;
