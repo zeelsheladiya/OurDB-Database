@@ -18,7 +18,7 @@ string DeleteQuery(string table_name , string whereKeyword , string afterWherest
     if(databaseSelectGlobal != "") {
 
         if(table_name != "default") {
-            string table = "../Databases/" + databaseSelectGlobal + "/" + table_name + ".Ourdb";
+            string table = databaseSavePath + "/" + table_name + ".Ourdb";
 
             if (filesystem::exists(table.c_str())) {
 

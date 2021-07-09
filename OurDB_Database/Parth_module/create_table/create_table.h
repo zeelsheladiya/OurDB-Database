@@ -3,7 +3,6 @@
 //
 #include <iostream>
 #include <ostream>
-#include <iostream>
 #include <string>
 #include <filesystem>
 #include "../../variables/query_variables.h"

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <regex>
+#include <filesystem>
 
 using namespace std;
 
@@ -84,7 +85,7 @@ inline string colSymbol[1] = {"@"};
 inline string update[1] = {"update"};
 
 //path for string...
-inline string strPath[1] = {"../../OurDB_Database/Databases/"};
+inline string strPath[1] = {""+ filesystem::current_path().parent_path().generic_string() + "/Databases/"};
 
 // set for the update query purpose..
 inline string setx[2] = {"set","put"};

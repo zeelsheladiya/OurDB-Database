@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include <string>
-#include <filesystem>
 #include "../../variables/query_variables.h"
 
 #ifndef CONSOLE_CPP_CURRENT_DATABASE_H

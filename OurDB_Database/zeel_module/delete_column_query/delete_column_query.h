@@ -17,7 +17,7 @@ string DeleteColumnQuery(string table_name,string column_name)
         if(table_name != "default") // check, table should not be default
         {
             // table path into string
-            string table_path = "../Databases/" + databaseSelectGlobal + "/" + table_name + ".Ourdb";
+            string table_path = databaseSavePath + "/" + table_name + ".Ourdb";
 
             // check whether file is exist or not
             if (filesystem::exists(table_path.c_str()))

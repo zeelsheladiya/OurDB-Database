@@ -3,9 +3,7 @@
 //
 #include <iostream>
 #include <string>
-#include <stdio.h>
 #include <ostream>
-#include <filesystem>
 #include "../../variables/query_variables.h"
 #include "../../Errors/error_variable.h"
 #include "../../global_functions/global_function.h"

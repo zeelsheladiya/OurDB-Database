@@ -6,7 +6,6 @@
 #include <ostream>
 #include <iostream>
 #include <string>
-#include <filesystem>
 #include "../variables/query_variables.h"
 #include "../global_functions/global_function.h"
 #include "../External_Libraries/json.hpp"

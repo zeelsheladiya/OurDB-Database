@@ -19,11 +19,11 @@ string tableList()
     else
     {
         string path = strPath[0] + databaseSelectGlobal + "./";   //path to current database where our tables are created and stored
-        string list = "";   //string to store the list of tables
+        string list;   //string to store the list of tables
 
         if (!filesystem::is_empty(path))     //checks if the current path to table is empty or not
         {
-            cout << "Tables are : \n";
+            list += "Tables are : \n";
             for (auto &i : filesystem::directory_iterator(path))    //increments the existing files(tables) at given path
             {
                 list += i.path().filename().stem().string() + "\n";   //store the names of all the files(tables) in list string without extension

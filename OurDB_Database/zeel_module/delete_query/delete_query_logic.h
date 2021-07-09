@@ -15,13 +15,13 @@ using json = nlohmann::json;
 
 void DeleteColumnFunc(string table_name , int index)
 {
-    ifstream i("../Databases/" + databaseSelectGlobal + "/" + table_name + ".Ourdb");
+    ifstream i(databaseSavePath + "/" + table_name + ".Ourdb");
     json j;
     i >> j;
 
     j["table_data"].erase(index);
 
-    ofstream o("../Databases/" + databaseSelectGlobal + "/" + table_name + ".Ourdb");
+    ofstream o(databaseSavePath + "/" + table_name + ".Ourdb");
     o << j << endl;
 }
 

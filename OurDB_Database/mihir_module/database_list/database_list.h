@@ -14,15 +14,18 @@ using namespace std;
 
 string databaseList()
 {
-    string path = strPath[0];   //path where all our databases are created and stored
-    string list = "";   //string to store the list of databases
-
+    filesystem::path path(strPath[0]);   //path where all our databases are created and stored
+    string list;   //string to store the list of databases
+    
     if(!filesystem::is_empty(path))     //checks if the current path to database is empty or not
     {
         list += "Databases are : \n";
         for (auto &i : filesystem::directory_iterator(path))    //increments the existing folders(databases) at given path
         {
-            list += i.path().filename().string() + "\n";   //store the names of all the folders(databases) in list string
+            if(i.is_directory())
+            {
+                list += i.path().filename().string() + "\n";   //store the names of all the folders(databases) in list string
+            }
         }
         return list;    //returns the list string which has all the database's name
     }
