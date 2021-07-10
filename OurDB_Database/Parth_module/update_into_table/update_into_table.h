@@ -23,7 +23,7 @@ string updateTable(string table_name,map<string,string> vc,string storedStringAf
 
         if(validate == "true_true")
         {
-            regex nl("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
+            regex nl("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
            if(regex_match(table_name,nl))
            {
                tbname = "";
@@ -34,9 +34,9 @@ string updateTable(string table_name,map<string,string> vc,string storedStringAf
                {
                    if( table_name == "default") // user can't perform the action in default table
                    {
-                       return "default table can't be created";
-                   }else {
-
+                       return errUpdatingDefaultTable[0];
+                   }else
+                   {
                        int CounterForCol = 0; // counter for column
                        ourdb odb; // json object
                        ifstream fs1(tbname);
@@ -46,12 +46,11 @@ string updateTable(string table_name,map<string,string> vc,string storedStringAf
                        {
                            for (auto key : odb["records"]["col_names"]) // iterate through col_names in json
                            {
-                               if(to_string(key) == ('"' + lkey.first + '"').c_str())  // if map value and value in column matches
+                               if(to_string(key) == '"'+lkey.first+'"')  // if map value and value in column matches
                                {
                                    CounterForCol++; // increment the counter
                                }
                            }
-                             cout<<"lkey : "<<lkey.first<<endl;
                        }
 
                        if(CounterForCol == vc.size()) // i

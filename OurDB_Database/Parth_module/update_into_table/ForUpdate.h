@@ -31,7 +31,6 @@ void ForUpdate(int index,map<string,string>set_data,string table_name,vector <st
             {
 
                 string l = to_string(odb["records"]["col_index"][i]); // takes the value from column index ..
-                cout << "ll : " << l << endl;
                 odb["table_data"][index][l] = encryption(
                         itr.second); // insert the new value in the particular filed..
 
