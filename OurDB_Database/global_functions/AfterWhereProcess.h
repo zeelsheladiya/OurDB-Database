@@ -416,7 +416,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                             }
                                         }
 
-                                        tempForLogicalOp += 2; //temp value counter by 2
+                                        tempForLogicalOp += 1; //temp value counter by 1
 
                                     }
                                 }
@@ -780,7 +780,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                                 }
                                             }
 
-                                            tempForLogicalOp += 2; //temp value counter by 2
+                                            tempForLogicalOp += 1; //temp value counter by 1
                                         }
                                     }
 
