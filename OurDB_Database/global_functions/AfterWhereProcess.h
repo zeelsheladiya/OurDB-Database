@@ -86,8 +86,7 @@ bool isOpeatorsAreInOrder(vector<string> value)
         }
 
 
-        if (value[value.size() - 1] == "!" ||
-            value[value.size() - 1] == "=") //at last position there should be (!=) comparision operator
+        if (value[value.size() - 1] == "!" || value[value.size() - 1] == "=" || value[value.size() - 1] == "<" || value[value.size() - 1] == ">" || value[value.size() - 1] == ">=" || value[value.size() - 1] == "<=") //at last position there should be (!=) comparision operator
         {
             n++;
         } else {

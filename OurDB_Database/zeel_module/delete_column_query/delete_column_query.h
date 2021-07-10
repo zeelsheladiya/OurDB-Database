@@ -41,7 +41,7 @@ string DeleteColumnQuery(string table_name,string column_name)
                     }
                 }
 
-                if(column_index > 0)
+                if(column_index >= 0)
                 {
                     // column exist so process toward the delete column from the table
                     return delete_column_query_logic_1(table_path,column_name,column_index);
