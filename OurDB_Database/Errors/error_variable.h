@@ -160,7 +160,7 @@ inline string  ErrColumnDoesNotExists[2] = {"Error index : 49, Error := columns 
 inline string insufficientWordInUpdateSyntax[2] = {"Error index := 50 , Error := there are insufficient words and invalid world in update syntax","50"};
 
 // error in update query syntx
-inline string ErrUpdateQuerySyntax[2] = {"Error index := 51 , Error := Error in update query syntax .. update @ <table_name> @ set/put <table_field> '<field_value>' where <table_field1>(=/|)<field_value1> ","51"};
+inline string ErrUpdateQuerySyntax[2] = {"Error index := 51 , Error := Error in update query syntax .. update @ <table_name> set/put <table_field> '<field_value>' where <table_field1>(=/|)<field_value1> ","51"};
 
 // table does not exists error
 inline string tableDoesNotExist[2] = {"Error index := 52 , Error := table does not exists  ","52"};
@@ -217,12 +217,15 @@ inline string ErrorColumnDoesNotMatchFromTable[2] = {"Error index := 70 , Error 
 inline string ErrAtSymbol[2] = {"Error index := 71 , Error := @ symbol shouldn't be here wrong syntax ","71"};
 
 //updation query syntax is not proper..
-inline string ErrInUpdateSyntaxForAt[2] = {"Error index := 72 , Error := wrong updation query ...\n elect */<col1> <col2> .... @ <table_name> Coniditinal_symbol where condition ","72"};
+inline string ErrInUpdateSyntaxForAt[2] = {"Error index := 72 , Error := wrong updation query ...\nselect */<col1> <col2> .... @ <table_name> Coniditinal_symbol where condition ","72"};
 
 //no data found in table
 inline string ErrNoDataFoundInTable[2] = {"Error index := 73 , Error := No data Found Into table " , "73"};
 
 //syntax error in displaying all columns from a table
 inline string syntaxErrShowCols[2] = {"Error index := 74 , Error := Wrong syntax of displaying columns from a table \n\t Correct Syntax : show/display/view all col/column @ <table_name> " , "74"};
+
+// not allowing to update the default.Ourdb file
+inline string errUpdatingDefaultTable[2] = {"Error index := 75 ,Error := You cannot update default table!!","75"};
 
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H

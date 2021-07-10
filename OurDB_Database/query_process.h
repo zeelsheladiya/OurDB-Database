@@ -395,7 +395,7 @@ string query_process(vector<string> query)
                          StoreTempString = ""; // it will store the value for after where process
                          int j = 4; // index for after set keyword...
                          regex fb("[a-z0-9_']{0,}");
-                         regex rl("[a-z0-9_]{1,}"); // regex for checking alphanumericals values
+                         regex rl("[a-z0-9_ ]{1,}"); // regex for checking alphanumericals values
                          regex rf("'[^']*'"); // checking the value which resides in  ''
 
                          string setString;
@@ -403,20 +403,7 @@ string query_process(vector<string> query)
                          vector <string> strsep2;
                          vector <string> strsep3;
                          vector <string> strsep;
-                         //int l = 0;
-                         while(!syntaxCompare(query[j],where)) // iterate until where comes
-                         {
-                           if(regex_match(query[j].c_str(),fb)) // it will check whether the format is right or wrong..
-                           {
-                               //l++;
-                               j++;
-
-                           }else
-                           {
-                               return ErrUpdateQuerySyntax[0]; // it will give error for syntax..
-                           }
-
-                         }
+                         
                          j = 4; // again set the j=4 for operation
                          while(!syntaxCompare(query[j],where))
                          {
@@ -424,13 +411,17 @@ string query_process(vector<string> query)
                              j++; // increment j for the further process for getting index of j
                          }
 
-                         filterRegexInstring(setString,strsep1,rl,0); // it will filter with the regex and stores the value in the vector string
+                         filterRegexInstring(setString,strsep1,rf,-1); // it will filter with the regex and stores the value in the vector string
                          filterRegexInstring(setString,strsep2,rf,0); // it will filter with the regex and stores the value in the vector string
                          filterRegexInstring(setString,strsep3,rf,-1); // it will filter ' ' and gives the vector array without it
                          nullRomoverFromVectorString(strsep1); // removes the null value from the vector
                          nullRomoverFromVectorString(strsep2);
                          nullRomoverFromVectorString(strsep3);
 
+                         for(auto & i : strsep1)
+                         {
+                             trim(i," ");
+                         }
 
                          if(strsep1.size() >= strsep2.size())
                          {
@@ -467,17 +458,16 @@ string query_process(vector<string> query)
                                  if(regex_match(strsep[i].c_str(),rf)) //matches the regex
                                  {
                                      cntl++;
-                                 }else
-                                 {
+                                 }else {
                                      return ErrUpdateQuerySyntax[0]; // error in update query syntax
                                  }
                              }
                          }
-                         if(strsep.size() == (cntl + cntf)) { // strsep size should match (cntl+cntf)
-                             for (int i = 0; i < strsep1.size(); i = i + 2) {
-                                 mx.insert(pair<string, string>(strsep1[i], string_quote_cutter(strsep1[i + 1]))); // string_quote_cutter removes the quote from the string
-                              // stores the vector in the map
 
+                         if(strsep.size() == (cntl + cntf)) { // strsep size should match (cntl+cntf)
+                             for (int i = 0; i < strsep1.size() & i < strsep2.size(); i++) {
+                                 mx.insert(pair<string, string>(strsep1[i], string_quote_cutter(strsep2[i]))); // string_quote_cutter removes the quote from the string
+                              // stores the vector in the map
                              }
                          }
                          else
@@ -498,9 +488,6 @@ string query_process(vector<string> query)
                      {
                          return ErrUpdateQuerySyntax[0]; //error in update query syntax
                      }
-
-
-
              }else
              {
                 return ErrUpdateQuerySyntax[0]; // error in update query syntax

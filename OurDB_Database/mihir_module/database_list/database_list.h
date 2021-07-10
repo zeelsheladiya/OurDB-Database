@@ -16,7 +16,7 @@ string databaseList()
 {
     filesystem::path path(strPath[0]);   //path where all our databases are created and stored
     string list;   //string to store the list of databases
-    
+
     if(!filesystem::is_empty(path))     //checks if the current path to database is empty or not
     {
         list += "Databases are : \n";
