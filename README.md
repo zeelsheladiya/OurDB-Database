@@ -31,6 +31,10 @@ light weight Database. Created using c++ for every type of machine. Scalable as 
 
  - You can watch the video of how to use ourdb database on ourdb youtube channel.
  - here is the link :- [click here](https://www.youtube.com/watch?v=2e2Mfs0TdUI)
+
+## Other Syantax related help
+ - you can check ourdb_database/syntax.txt where you can find all updated syntax.
+
 ## Features
 
 - Light weight (size less than 2mb)
