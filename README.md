@@ -404,6 +404,6 @@ int main() {
 
 - If you need any help regarding this project feel free to contact us on our social media link and github account.
 
-## contribution
+## Contribution
 
 - Tf you want to contribite in this then read contribution.txt 
