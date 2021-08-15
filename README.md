@@ -27,7 +27,10 @@ light weight Database. Created using c++ for every type of machine. Scalable as 
 
 [Documentation](https://github.com/zeelsheladiya/OurDB-Database/blob/main/OurDB_Database_Documentation.pdf)
 
-  
+## Video Tutorial
+
+ - You can watch the video of how to use ourdb database on ourdb youtube channel.
+ - here is the link :- [click here](https://www.youtube.com/watch?v=2e2Mfs0TdUI)
 ## Features
 
 - Light weight (size less than 2mb)
@@ -40,8 +43,7 @@ light weight Database. Created using c++ for every type of machine. Scalable as 
 - It is combination (NoSQL + SQL) because it doesn’t have schema for storing table but it has perfect syntax for creating query like SQL
 
 
-  
-## Run Locally
+  ## Run Locally
 
 Clone the project
 
@@ -149,7 +151,7 @@ rename database parthx
 show all db
 ``` 
 
-![Show databases](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_105.jpg?raw=true)
+![Show databases](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_107.jpg?raw=true)
 
 - it is advisable to run query prior to any other query so that you can see all the database exists in the system
 
