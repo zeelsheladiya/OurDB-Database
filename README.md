@@ -406,4 +406,4 @@ int main() {
 
 ## Contribution
 
-- Tf you want to contribite in this then read contribution.txt 
+- If you want to contribite in this then read contribution.txt 
