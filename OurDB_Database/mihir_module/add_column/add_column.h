@@ -11,7 +11,7 @@
 #include "../../global_functions/global_function.h"
 #include "../../External_Libraries/json.hpp"
 
-using namespace std;
+//using namespace std;
 using ourdb = nlohmann::json;
 
 #ifndef OURDB_DATABASE_ADD_COLUMN_H

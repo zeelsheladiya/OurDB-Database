@@ -5,7 +5,7 @@
 #include "../../global_functions/globalFunctionForSelectQuery.h"
 
 
-using namespace std;
+//using namespace std;
 using ourdb = nlohmann::json;
 #ifndef OURDB_DATABASE_SELECTFORCOLS_H
 #define OURDB_DATABASE_SELECTFORCOLS_H

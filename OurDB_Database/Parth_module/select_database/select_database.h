@@ -6,7 +6,7 @@
 #include <filesystem>
 #include "../../variables/query_variables.h"
 #include "../../global_functions/global_function.h"
-using namespace std;
+//using namespace std;
 
 #ifndef OURDB_DATABASE_SELECT_DATABASE_H
 #define OURDB_DATABASE_SELECT_DATABASE_H

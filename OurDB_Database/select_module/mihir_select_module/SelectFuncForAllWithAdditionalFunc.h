@@ -7,7 +7,7 @@
 
 #include "../../global_functions/globalFunctionForSelectQuery.h"
 
-using namespace std;
+//using namespace std;
 using ourdb = nlohmann::json;
 
 string SelectFuncForAllwithAdditionalFunc(string tablepath , string additionalFunc)

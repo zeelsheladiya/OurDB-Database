@@ -29,7 +29,7 @@
 #include "select_module/select_module.h"
 #include "mihir_module/column_list/column_list.h"
 
-using namespace std;
+//using namespace std;
 
 #ifndef OURDB_DATABASE_QUERY_PROCESS_H
 #define OURDB_DATABASE_QUERY_PROCESS_H
@@ -393,7 +393,7 @@ string query_process(vector<string> query)
                      {
                          map <string,string> mx;
                          StoreTempString = ""; // it will store the value for after where process
-                         int j = 4; // index for after set keyword...
+                         //int j = 4; // index for after set keyword...
                          regex fb("[a-z0-9_']{0,}");
                          regex rl("[a-z0-9_ ]{1,}"); // regex for checking alphanumericals values
                          regex rf("'[^']*'"); // checking the value which resides in  ''
@@ -404,7 +404,7 @@ string query_process(vector<string> query)
                          vector <string> strsep3;
                          vector <string> strsep;
                          
-                         j = 4; // again set the j=4 for operation
+                         int j = 4; // again set the j=4 for operation
                          while(!syntaxCompare(query[j],where))
                          {
                              setString += query[j] + " "; // stores the value in the string  set .......... where

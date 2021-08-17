@@ -9,7 +9,7 @@
 #include "../../global_functions/AfterWhereProcess.h"
 #include "../../External_Libraries/json.hpp"
 
-using namespace std;
+//using namespace std;
 using ourdb = nlohmann::json;
 
 #ifndef OURDB_DATABASE_UPDATE_INTO_TABLE_H

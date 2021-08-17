@@ -7,7 +7,7 @@
 #include <filesystem>
 #include "../../variables/query_variables.h"
 
-using namespace std;
+//using namespace std;
 
 #ifndef OURDB_DATABASE_DATABASE_LIST_H
 #define OURDB_DATABASE_DATABASE_LIST_H

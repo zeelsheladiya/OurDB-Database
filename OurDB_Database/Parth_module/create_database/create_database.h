@@ -10,7 +10,7 @@
 #include <filesystem>
 #include "../../global_functions/global_function.h"
 
-using namespace std;
+//using namespace std;
 
 #ifndef OURDB_DATABASE_CREATE_DATABASE_H
 #define OURDB_DATABASE_CREATE_DATABASE_H

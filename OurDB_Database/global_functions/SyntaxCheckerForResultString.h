@@ -12,7 +12,7 @@
 #include "AfterWhereProcess.h"
 #include "global_function.h"
 
-using namespace std;
+//using namespace std;
 
 #ifndef OURDB_DATABASE_SYNTAXCHECKERFORRESULTSTRING_H
 #define OURDB_DATABASE_SYNTAXCHECKERFORRESULTSTRING_H

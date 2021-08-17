@@ -6,7 +6,7 @@
 #include <regex>
 #include <filesystem>
 
-using namespace std;
+//using namespace std;
 
 #ifndef OURDB_DATABASE_QUERY_VARIABLES_H
 #define OURDB_DATABASE_QUERY_VARIABLES_H
@@ -55,7 +55,7 @@ inline string enc_dec = "";
 inline string database[2] = {"database","db"};
 
 //table variable
-inline string table[1] = {"table"};
+inline string table[2] = {"table","tb"};
 
 //column variable
 inline string column[2] = {"column","col"};

@@ -7,7 +7,7 @@
 #include <filesystem>
 #include "../../External_Libraries/json.hpp"
 
-using namespace std;
+//using namespace std;
 using json = nlohmann::json;
 
 #ifndef OURDB_DATABASE_DELETE_QUERY_LOGIC_H

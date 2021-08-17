@@ -7,7 +7,7 @@
 #include <filesystem>
 #include "../../global_functions/AfterWhereProcess.h"
 
-using namespace std;
+//using namespace std;
 
 #ifndef OURDB_DATABASE_DELETE_QUERY_H
 #define OURDB_DATABASE_DELETE_QUERY_H

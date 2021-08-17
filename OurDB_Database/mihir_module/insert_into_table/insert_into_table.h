@@ -13,7 +13,7 @@
 #include "../../global_functions/encryption.h"
 #include "../../global_functions/decryption.h"
 
-using namespace std;
+//using namespace std;
 using ourdb = nlohmann::json;
 
 #ifndef OURDB_DATABASE_INSERT_INTO_TABLE_H

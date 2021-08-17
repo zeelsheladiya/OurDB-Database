@@ -14,7 +14,7 @@
 #include "../zeel_module/delete_query/delete_query_logic.h"
 #include "decryption.h"
 #include "External_Libraries/json.hpp"
-using namespace std;
+//using namespace std;
 using json = nlohmann::json;
 #ifndef OURDB_DATABASE_AFTERWHEREPROCESS_H
 #define OURDB_DATABASE_AFTERWHEREPROCESS_H

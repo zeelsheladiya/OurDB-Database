@@ -14,7 +14,7 @@
 #include "../../global_functions/decryption.h"
 #include "../../global_functions/keywords_checker.h"
 
-using namespace std;
+//using namespace std;
 using ourdb = nlohmann::json;
 #ifndef OURDB_DATABASE_UPDATE_COLUMNS_H
 #define OURDB_DATABASE_UPDATE_COLUMNS_H

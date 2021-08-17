@@ -4,7 +4,7 @@
 
 #include <string>
 
-using namespace std;
+//using namespace std;
 #ifndef OURDB_DATABASE_PARTH_ERRORS_H
 #define OURDB_DATABASE_PARTH_ERRORS_H
 
