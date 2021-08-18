@@ -1,9 +1,9 @@
 //
 // Created by dabhe on 02-Jun-21.
 //
-#include <iostream>
-#include <string>
-#include <filesystem>
+//#include <iostream>
+//#include <string>
+//#include <filesystem>
 #include "../../variables/query_variables.h"
 #include "../../global_functions/global_function.h"
 #include "../../global_functions/AfterWhereProcess.h"
@@ -15,7 +15,7 @@ using ourdb = nlohmann::json;
 #ifndef OURDB_DATABASE_UPDATE_INTO_TABLE_H
 #define OURDB_DATABASE_UPDATE_INTO_TABLE_H
 
-string updateTable(string table_name,map<string,string> vc,string storedStringAfterWhere,vector<string>strsep3)
+std::string updateTable(std::string table_name,std::map<std::string,std::string> vc,std::string storedStringAfterWhere,std::vector<std::string>strsep3)
 {
     if(!(databaseSelectGlobal.empty())) // checks whether database is selected or not
     {
@@ -23,14 +23,14 @@ string updateTable(string table_name,map<string,string> vc,string storedStringAf
 
         if(validate == "true_true")
         {
-            regex nl("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
+            std::regex nl("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
            if(regex_match(table_name,nl))
            {
                tbname = "";
                tbname = databaseSavePath  + "/" + table_name + ".Ourdb"; //saved table path
                   tname = "";
                   tname=table_name; // table name
-               if(filesystem::exists(tbname.c_str()))
+               if(std::filesystem::exists(tbname.c_str()))
                {
                    if( table_name == "default") // user can't perform the action in default table
                    {
@@ -39,7 +39,7 @@ string updateTable(string table_name,map<string,string> vc,string storedStringAf
                    {
                        int CounterForCol = 0; // counter for column
                        ourdb odb; // json object
-                       ifstream fs1(tbname);
+                       std::ifstream fs1(tbname);
                        fs1 >> odb;
 
                        for(auto lkey : vc) // iterate through map

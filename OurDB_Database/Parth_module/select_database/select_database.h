@@ -1,9 +1,9 @@
 //
 // Created by dabhe on 19-Apr-21.
 //
-#include <iostream>
-#include <string>
-#include <filesystem>
+//#include <iostream>
+//#include <string>
+//#include <filesystem>
 #include "../../variables/query_variables.h"
 #include "../../global_functions/global_function.h"
 //using namespace std;
@@ -14,7 +14,7 @@
 // this function helps for validation..
 
 
-string selectDatabase(string databaseName)
+std::string selectDatabase(std::string databaseName)
 {
  validate = validation(databaseName,errorSpecialchaDatabase[0],errFirstLetterNumeric[0]);
  if(validate == "true_true")
@@ -25,7 +25,7 @@ string selectDatabase(string databaseName)
 
      databaseName = strPath[0] + databaseName; // concatnat the databasename with path..
 
-     if (filesystem::exists(databaseName.c_str()))  // it checks whether directory exist or not
+     if (std::filesystem::exists(databaseName.c_str()))  // it checks whether directory exist or not
      {
          if(!(databaseSelectGlobal == dName)) { // check if dummy variable != databaseGlobal then execute these..
 

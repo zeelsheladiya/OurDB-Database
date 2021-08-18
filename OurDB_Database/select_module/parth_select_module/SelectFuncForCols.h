@@ -10,11 +10,11 @@ using ourdb = nlohmann::json;
 #ifndef OURDB_DATABASE_SELECTFORCOLS_H
 #define OURDB_DATABASE_SELECTFORCOLS_H
 
-string SelectFuncForCols(string tablePath,vector <string> beforeat)
+std::string SelectFuncForCols(std::string tablePath,std::vector <std::string> beforeat)
 {
     ourdb our1; // object of json
-    fstream fs(tablePath);  // file pointer points to tablePath
-    vector <vector<string>> data; //2d vector array...
+    std::fstream fs(tablePath);  // file pointer points to tablePath
+    std::vector <std::vector<std::string>> data; //2d vector array...
     fs >> our1; // data of tablePath to json object..
     if(our1["table_data"].size() > 0)
     {   // check whether there is data in table or not
@@ -26,14 +26,14 @@ string SelectFuncForCols(string tablePath,vector <string> beforeat)
 
         for(int k=0 ;k<our1["table_data"].size();k++)
         {  // iterate through every row in [table_data]
-            vector<string> newvec;  // create new string vector for storing single row data in it...
+            std::vector<std::string> newvec;  // create new string vector for storing single row data in it...
             for (int j = 0; j < beforeat.size(); j++)
             {// iterate through beforeat(column name) vector
                 for (int i = 0; i < our1["records"]["col_names"].size(); i++)
                 { //
                   if (our1["records"]["col_names"][i] == beforeat[j])
                   { // it checks data are same in beforeat and json object
-                      string l = to_string(our1["records"]["col_index"][i]); // takes the value from column index ..
+                      std::string l = to_string(our1["records"]["col_index"][i]); // takes the value from column index ..
                       newvec.insert(newvec.end(), decryption(our1["table_data"][k][l])); //insert decrypted data in newvec
                       break;
                   }

@@ -1,10 +1,10 @@
 //
 // Created by dabhe on 05-May-21.
 //
-#include <iostream>
-#include <ostream>
-#include <string>
-#include <filesystem>
+//#include <iostream>
+//#include <ostream>
+//#include <string>
+//#include <filesystem>
 #include "../../variables/query_variables.h"
 #include "../../global_functions/global_function.h"
 #include "../../External_Libraries/json.hpp"
@@ -18,7 +18,7 @@ using ourdb = nlohmann::json;
 #ifndef OURDB_DATABASE_CREATE_TABLE_H
 #define OURDB_DATABASE_CREATE_TABLE_H
 
-string createTable(string tablename ,vector <string> a)
+std::string createTable(std::string tablename ,std::vector <std::string> a)
 {
     int count = 0;
     int samecol = 0;  //var to check if there is a col with same name as another col
@@ -30,7 +30,7 @@ string createTable(string tablename ,vector <string> a)
         // variable for storing string value which is returned by validate function
              if ( validate == "true_true")
              {
-                 regex b("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
+                 std::regex b("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
                  if ( regex_match(tablename, b) )
                  {
                      for(int i=0;i<a.size();i++)
@@ -38,7 +38,7 @@ string createTable(string tablename ,vector <string> a)
                          validate = validation(a[i],errorSpecialchaTable[0],errFirstLetterNumeric[0]);
                          if ( validate == "true_true")
                          {
-                             regex c("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
+                             std::regex c("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
                              if (regex_match(a[i], c))
                              {
                                  if(keywords_checker(a[i]))
@@ -65,7 +65,7 @@ string createTable(string tablename ,vector <string> a)
                          int cnt = 0;
                          tbname = databaseSavePath +"/"+ tablename+".Ourdb"; // it adds the selected database path with tablename
                          // and also store in tbname
-                         if(!(filesystem::exists(tbname.c_str()))) // if file already exist then return error..
+                         if(!(std::filesystem::exists(tbname.c_str()))) // if file already exist then return error..
                          {
                              FileTable(tbname); // call the filetable function which is in global_function.h
 
@@ -82,8 +82,8 @@ string createTable(string tablename ,vector <string> a)
 
                              col["records"]["last_col_index"] = cnt;
 
-                             ofstream o(tbname);
-                             o << col << endl;      // writing col data into table
+                             std::ofstream o(tbname);
+                             o << col << std::endl;      // writing col data into table
 
                              validate = "";
                              return  SuccessCreatingFileMsg[0];     //successfully created table

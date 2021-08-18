@@ -5,9 +5,9 @@
 #ifndef OURDB_DATABASE_GLOBALFUNCTIONFORSELECTQUERY_H
 #define OURDB_DATABASE_GLOBALFUNCTIONFORSELECTQUERY_H
 
-string SelectQueryStructureCreater(vector<string> vect,vector<vector<string>>vectl)
+std::string SelectQueryStructureCreater(std::vector<std::string> vect,std::vector<std::vector<std::string>>vectl)
 {
-    string ml=""; // string which will strings
+    std::string ml=""; // string which will strings
     for(int i=0;i<vect.size();i++) // iterate  through the string vect
     {
         if(i == vect.size()-1)   // last value of vector string
@@ -46,17 +46,17 @@ string SelectQueryStructureCreater(vector<string> vect,vector<vector<string>>vec
 
 }
 
-void ascending_sort(vector<vector<string>> &data)
+void ascending_sort(std::vector<std::vector<std::string>> &data)
 {
     sort(data.begin(),data.end());
 }
 
-void descending_sort(vector<vector<string>> &data)
+void descending_sort(std::vector<std::vector<std::string>> &data)
 {
-    sort(data.begin(),data.end(),greater <>());
+    sort(data.begin(),data.end(),std::greater <>());
 }
 
-bool selectingSameColsMulTimes(vector <string> beforeat)
+bool selectingSameColsMulTimes(std::vector<std::string> beforeat)
 {
     int colcounter = 0;
 

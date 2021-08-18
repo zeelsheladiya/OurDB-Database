@@ -3,9 +3,9 @@
 //
 
 
-#include <iostream>
-#include <string>
-#include <filesystem>
+//#include <iostream>
+//#include <string>
+//#include <filesystem>
 #include "../../variables/query_variables.h"
 //using namespace std;
 
@@ -55,16 +55,16 @@ string deleteDatabase(string databaseName)
  }
 */
 
-string deleteDatabase(string databaseName)
+std::string deleteDatabase(std::string databaseName)
 {
     validate = validation(databaseName,errorSpecialchaDatabase[0],errFirstLetterNumeric[0]);
     if( validate == "true_true")
     {
-        regex l("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
+        std::regex l("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
         if ( regex_match(databaseName, l) ) {
             databaseName = strPath[0] + databaseName; //strpath[0]="path" defined in  variables/query_variables.h
-            if(filesystem::exists(databaseName.c_str())) {
-                if (!(filesystem::remove_all(databaseName)))  //from the filesystem function to remove directory
+            if(std::filesystem::exists(databaseName.c_str())) {
+                if (!(std::filesystem::remove_all(databaseName)))  //from the filesystem function to remove directory
                 {
                     return errorDeletingDatabase[0]; // errorDeletingDatabase[0] defined in   Errors/error_variable.h
                 } else {

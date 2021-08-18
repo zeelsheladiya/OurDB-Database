@@ -13,7 +13,7 @@
 #ifndef OURDB_DATABASE_DECRYPTION_H
 #define OURDB_DATABASE_DECRYPTION_H
 
-string decryption(string data) // code for decryption
+std::string decryption(std::string data) // code for decryption
 {
     //here goes decryption code..
     enc_dec=""; // variable resides in variable.h

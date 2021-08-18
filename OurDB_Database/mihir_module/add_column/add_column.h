@@ -2,11 +2,10 @@
 // Created by Mihir on 10-06-2021.
 //
 
-#include <iostream>
-#include <ostream>
-#include <iostream>
-#include <string>
-#include <filesystem>
+//#include <iostream>
+//#include <ostream>
+//#include <string>
+//#include <filesystem>
 #include "../../variables/query_variables.h"
 #include "../../global_functions/global_function.h"
 #include "../../External_Libraries/json.hpp"
@@ -17,7 +16,7 @@ using ourdb = nlohmann::json;
 #ifndef OURDB_DATABASE_ADD_COLUMN_H
 #define OURDB_DATABASE_ADD_COLUMN_H
 
-string addColumn(string tablename,vector<string> a)
+std::string addColumn(std::string tablename,std::vector<std::string> a)
 {
     if(!(databaseSelectGlobal.empty()))
     {
@@ -31,11 +30,11 @@ string addColumn(string tablename,vector<string> a)
             int colaldthere = 0;
             int keycheck = 0;
 
-            string path = databaseSavePath + "/" + tablename + ".Ourdb";       //path where table is stored
+            std::string path = databaseSavePath + "/" + tablename + ".Ourdb";       //path where table is stored
 
-            if(filesystem::exists(path))        //checks if table exists or not
+            if(std::filesystem::exists(path))        //checks if table exists or not
             {
-                ifstream in(path);
+                std::ifstream in(path);
 
                 ourdb coldata;      //var to store json data
 
@@ -78,7 +77,7 @@ string addColumn(string tablename,vector<string> a)
                     {
                         for (int j = 1; j <= a.size(); j++)        //loop to check how many new column/s data we need to add
                         {
-                            i[to_string(j + lastind)] = encryption("null");        //setting the newly added column/s data as NULL
+                            i[std::to_string(j + lastind)] = encryption("null");        //setting the newly added column/s data as NULL
                         }
                     }
 
@@ -88,7 +87,7 @@ string addColumn(string tablename,vector<string> a)
                     coldata["records"]["total_cols"] = tc;
                     coldata["records"]["last_col_index"] = lastind;
 
-                    ofstream o(path);
+                    std::ofstream o(path);
                     o << coldata;       //parsing the json data to table
 
                     return SuccessAddColumnMsg[0];      //column added successfully

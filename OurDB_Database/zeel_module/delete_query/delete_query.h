@@ -1,26 +1,26 @@
 //
 // Created by dabhe on 02-Jun-21.
 //
-#include <iostream>
-#include <string>
-#include <regex>
-#include <filesystem>
+//#include <iostream>
+//#include <string>
+//#include <regex>
+//#include <filesystem>
 #include "../../global_functions/AfterWhereProcess.h"
 
-//using namespace std;
+
 
 #ifndef OURDB_DATABASE_DELETE_QUERY_H
 #define OURDB_DATABASE_DELETE_QUERY_H
 
-string DeleteQuery(string table_name , string whereKeyword , string afterWherestr)
+std::string DeleteQuery(std::string table_name ,std::string whereKeyword ,std::string afterWherestr)
 {
     //check whether database is selected or not
     if(databaseSelectGlobal != "") {
 
         if(table_name != "default") {
-            string table = databaseSavePath + "/" + table_name + ".Ourdb";
+            std::string table = databaseSavePath + "/" + table_name + ".Ourdb";
 
-            if (filesystem::exists(table.c_str())) {
+            if (std::filesystem::exists(table.c_str())) {
 
                 if (syntaxCompare(whereKeyword,where))
                 {

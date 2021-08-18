@@ -21,10 +21,10 @@ using json = nlohmann::json;
 
 
 // this function is check that, is given column name available or not in given table path
-bool isColumnAvailable(string colname , string tablepath)
+bool isColumnAvailable(std::string colname ,std::string tablepath)
 {
     json jason;
-    fstream fs1(tablepath);
+    std::fstream fs1(tablepath);
     fs1 >> jason;
 
     int counter = 0;
@@ -52,7 +52,7 @@ bool isColumnAvailable(string colname , string tablepath)
 }
 
 //checks whether operator are in order or not
-bool isOpeatorsAreInOrder(vector<string> value)
+bool isOpeatorsAreInOrder(std::vector<std::string> value)
 {
     int n = 0;
     if(value[0] == "!" || value[0] == "=" || value[0] == ">" || value[0] == "<"  || value[0] == ">=" || value[0] == "<=") // first value should be of comparision operator
@@ -105,30 +105,30 @@ bool isOpeatorsAreInOrder(vector<string> value)
 }
 
 // count the matches in regex..
-int countMatchInRegex(string s, string re)
+int countMatchInRegex(std::string s, std::string re)
 {
-    regex words_regex(re);
-    auto words_begin = sregex_iterator(
+    std::regex words_regex(re);
+    auto words_begin = std::sregex_iterator(
             s.begin(), s.end(), words_regex);
-    auto words_end = sregex_iterator();
+    auto words_end = std::sregex_iterator();
     // it will return count (matches in string) using regex.
     return distance(words_begin, words_end);
 }
 
 // it will trim a string from the left(remove space from left) using regex
-string l_regextrim(const string &s) {
-    return regex_replace(s, regex("^\\s+"), string(""));
+std::string l_regextrim(const std::string &s) {
+    return regex_replace(s, std::regex("^\\s+"), std::string(""));
 }
 
 // it will trim a string from the right(remove space from right) using regex
-string r_regextrim(const std::string &s) {
-    return regex_replace(s, regex("\\s+$"), string(""));
+std::string r_regextrim(const std::string &s) {
+    return regex_replace(s, std::regex("\\s+$"), std::string(""));
 }
 
 // it will filter with the help of regex and stores it into a vector string from string..
-void filterRegexInstring(string h , vector<string> &op , regex r , int filter)
+void filterRegexInstring(std::string h , std::vector<std::string> &op , std::regex r , int filter)
 {
-    sregex_token_iterator iter1{h.begin(),h.end(),r,filter} , end1;
+    std::sregex_token_iterator iter1{h.begin(),h.end(),r,filter} , end1;
     for ( ; iter1 != end1; ++iter1)
     {
         op.insert(op.end(),*iter1);
@@ -138,15 +138,15 @@ void filterRegexInstring(string h , vector<string> &op , regex r , int filter)
 // where function for process where condition in string
 // note :- here table_path parameter means table's path and h is a string after the where keyword and mode for switch statement
 // note :- this function search from the front to the backward
-string  globalFuncForWhereClouse(string h , string table_path , map<string,string> set_data,int mode,vector <string> strsep3)
+std::string  globalFuncForWhereClouse(std::string h ,std::string table_path , std::map<std::string,std::string> set_data,int mode,std::vector <std::string> strsep3)
 {
 
-    regex regexForOperation("[&!=|]|<=|>=|>|<"); // regex  defined for operator..
-    vector<string> operation; // vector string for storing operator.
-    vector<string> values; // vector string for storing actual value (column name and value as vector array).
+    std::regex regexForOperation("[&!=|]|<=|>=|>|<"); // regex  defined for operator..
+    std::vector<std::string> operation; // vector string for storing operator.
+    std::vector<std::string> values; // vector string for storing actual value (column name and value as vector array).
     filterRegexInstring(h,values,regexForOperation,-1); //it will call the above defined function...
-    regex regexForInteger("[0-9]{0,}"); // regex for integer
-    regex regexForFloat("[0-9]*\\.?[0-9]{1,}");// regex for Float
+    std::regex regexForInteger("[0-9]{0,}"); // regex for integer
+    std::regex regexForFloat("[0-9]*\\.?[0-9]{1,}");// regex for Float
 
     for(int i = 0 ; i < values.size() ; i++)
     {
@@ -165,7 +165,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
 
     filterRegexInstring(h,operation,regexForOperation,0); // defined in above function.
 
-    string opstring; // store the value which are converted from vector to string
+    std::string opstring; // store the value which are converted from vector to string
     for (auto const& s : operation) { opstring += s; } //it will convert vector string to string.
     int op1 = countMatchInRegex(opstring,"[|&]"); // it will count the logical operator in 'opstring'
     int op2 = countMatchInRegex(opstring,"[!=]|<=|>=|>|<"); // it will count the comparision operator in 'opstring'
@@ -190,20 +190,20 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
 
                     if(values.size()/2 == tempCheckForColumn) // column from json should match with column from string
                     {
-                        string strOperation; // stores the value from vector to string.
+                        std::string strOperation; // stores the value from vector to string.
 
                         for (const auto &piece : operation) {strOperation += piece;} // conversation vector string into string
 
-                        vector<string> compareOp; // stores the comparision operator.
-                        vector<string> logicalOp; // stores the logical operator.
+                        std::vector<std::string> compareOp; // stores the comparision operator.
+                        std::vector<std::string> logicalOp; // stores the logical operator.
 
-                        regex reg("[&|]"); // regex
+                        std::regex reg("[&|]"); // regex
 
                         filterRegexInstring(strOperation,compareOp,reg,-1); //  filter regex in string defined in above string
 
                         filterRegexInstring(strOperation,logicalOp,reg,0); //  filter regex in string defined in above string
 
-                        vector<bool> boolStr; // stores the boolean value
+                        std::vector<bool> boolStr; // stores the boolean value
 
                         int tempForValue = 0; // tempForVale for the index value of vector string
                         int tempForLogicalOp = 0;// tempForLogicalOp for the index value of vector string
@@ -211,7 +211,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                         int counterCompareOp = 0;// counter for the compareOp variable
 
                         json jason; // json object
-                        fstream  fs(table_path); // read the file
+                        std::fstream  fs(table_path); // read the file
                         fs >> jason; // inport file data into json object
 
                         int processCounter = 0; // counter for process
@@ -225,7 +225,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                     {
                                         if (compareOp[j] == "=") // compare (=) operator with the compareOp
                                         {
-                                            string l = "";
+                                            std::string l = "";
                                             for (int k = 0; k < jason["records"]["col_names"].size(); k++) {
                                                 // compare column name from json file to query string
                                                 if (values[tempForValue] == jason["records"]["col_names"][k]) {
@@ -246,7 +246,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                         if (compareOp[j] == "!") // compare (!) operator with the compareOp
                                         {
 
-                                            string l = "";
+                                            std::string l = "";
                                             for (int m = 0; m < jason["records"]["col_names"].size(); m++)
                                             {
                                                 // compare column name from json file to query string
@@ -268,7 +268,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                         if (compareOp[j] == ">") // compare (!) operator with the compareOp
                                         {
 
-                                            string l = "";
+                                            std::string l = "";
                                             for (int m = 0; m < jason["records"]["col_names"].size(); m++)
                                             {
                                                 // compare column name from json file to query string
@@ -299,7 +299,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                         if (compareOp[j] == "<") // compare (!) operator with the compareOp
                                         {
 
-                                            string l = "";
+                                            std::string l = "";
                                             for (int m = 0; m < jason["records"]["col_names"].size(); m++)
                                             {
                                                 // compare column name from json file to query string
@@ -330,7 +330,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                         if (compareOp[j] == ">=") // compare (!) operator with the compareOp
                                         {
 
-                                            string l = "";
+                                            std::string l = "";
                                             for (int m = 0; m < jason["records"]["col_names"].size(); m++)
                                             {
                                                 // compare column name from json file to query string
@@ -361,7 +361,7 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                                         if (compareOp[j] == "<=") // compare (!) operator with the compareOp
                                         {
 
-                                            string l = "";
+                                            std::string l = "";
                                             for (int m = 0; m < jason["records"]["col_names"].size(); m++)
                                             {
                                                 // compare column name from json file to query string
@@ -456,11 +456,11 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
                         if (processCounter > 0)
                         {
                             //success process massage with rows are affected
-                            return SuccessUpdateDataTableMsg[0] + " " + to_string(processCounter) +" Rows are affected !";
+                            return SuccessUpdateDataTableMsg[0] + " " + std::to_string(processCounter) +" Rows are affected !";
                         } else
                         {
                             //success process massage without rows are affected
-                            return SuccessUpdateDataTableMsg[0] + " " + to_string(processCounter) +" Row affected !";
+                            return SuccessUpdateDataTableMsg[0] + " " + std::to_string(processCounter) +" Row affected !";
                         }
                     }
                     else
@@ -495,17 +495,17 @@ string  globalFuncForWhereClouse(string h , string table_path , map<string,strin
 // where function for process where condition in string
 // note :- here table_name is name of the table and h is a string after the where keyword and mode for switch statement
 // note :- this function search from the backward to the front
-string globalFuncForWhereClouse(string h , string table_name ,int mode)
+std::string globalFuncForWhereClouse(std::string h , std::string table_name ,int mode)
 {
 
-    regex regexForOperation("[&!=|]|<=|>=|>|<"); // regex  defined for operator..
-    vector<string> operation; // vector string for storing operator.
-    vector<string> values; // vector string for storing actual value (column name and value as vector array).
+    std::regex regexForOperation("[&!=|]|<=|>=|>|<"); // regex  defined for operator..
+    std::vector<std::string> operation; // vector string for storing operator.
+    std::vector<std::string> values; // vector string for storing actual value (column name and value as vector array).
     filterRegexInstring(h,values,regexForOperation,-1); //it will call the above defined function...
-    regex regexForInteger("[0-9]{0,}"); // regex for integer
-    regex regexForFloat("[0-9]*\\.?[0-9]{1,}");// regex for Float
+    std::regex regexForInteger("[0-9]{0,}"); // regex for integer
+    std::regex regexForFloat("[0-9]*\\.?[0-9]{1,}");// regex for Float
 
-    string stringOfIndexies = "";
+    std::string stringOfIndexies = "";
 
     for(int i = 0 ; i < values.size() ; i++)
     {
@@ -523,7 +523,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
 
     filterRegexInstring(h,operation,regexForOperation,0); // defined in above function.
 
-    string opstring; // store the value which are converted from vector to string
+    std::string opstring; // store the value which are converted from vector to string
     for (auto const& s : operation) { opstring += s; } //it will convert vector string to string.
     int op1 = countMatchInRegex(opstring,"[|&]"); // it will count the logical operator in 'opstring'
     int op2 = countMatchInRegex(opstring,"[!=]|<=|>=|>|<"); // it will count the comparision operator in 'opstring'
@@ -538,7 +538,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                 {
                         int tempCheckForColumn = 0; // temp variable to count of available column
 
-                        string tablepath = databaseSavePath + "/" + table_name + ".Ourdb";  // path of the table
+                    std::string tablepath = databaseSavePath + "/" + table_name + ".Ourdb";  // path of the table
 
                         for(int i = 0; i < values.size() ; i+=2)
                         {
@@ -550,20 +550,20 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
 
                         if(values.size()/2 == tempCheckForColumn) // column from json should match with column from string
                         {
-                            string strOperation; // stores the value from vector to string.
+                            std::string strOperation; // stores the value from vector to string.
 
                             for (const auto &piece : operation) {strOperation += piece;} // conversation vector string into string
 
-                            vector<string> compareOp; // stores the comparision operator.
-                            vector<string> logicalOp; // stores the logical operator.
+                            std::vector<std::string> compareOp; // stores the comparision operator.
+                            std::vector<std::string> logicalOp; // stores the logical operator.
 
-                            regex reg("[&|]"); // regex
+                            std::regex reg("[&|]"); // regex
 
                             filterRegexInstring(strOperation,compareOp,reg,-1); //  filter regex in string defined in above string
 
                             filterRegexInstring(strOperation,logicalOp,reg,0); //  filter regex in string defined in above string
 
-                            vector<bool> boolStr; // stores the boolean value
+                            std::vector<bool> boolStr; // stores the boolean value
 
                             int tempForValue = 0; // tempForVale for the index value of vector string
                             int tempForLogicalOp = 0;// tempForLogicalOp for the index value of vector string
@@ -571,7 +571,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                             int counterCompareOp = 0;// counter for the compareOp variable
 
                             json jason; // json object
-                            fstream  fs(tablepath); // read the file
+                            std::fstream  fs(tablepath); // read the file
                             fs >> jason; // inport file data into json object
 
                             int processCounter = 0; // counter for process
@@ -586,7 +586,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                         {
                                             if (compareOp[j] == "=") // compare (=) operator with the compareOp
                                             {
-                                                string l = "";
+                                                std::string l = "";
                                                 for (int k = 0; k < jason["records"]["total_cols"]; k++)
                                                 {
                                                     // compare column name from json file to query string
@@ -609,7 +609,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
 
                                             if (compareOp[j] == "!") // compare (!) operator with the compareOp
                                             {
-                                                string l = "";
+                                                std::string l = "";
                                                 for (int m = 0; m < jason["records"]["col_names"].size(); m++)
                                                 {
                                                     // compare column name from json file to query string
@@ -634,7 +634,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                             if (compareOp[j] == ">") // compare (!) operator with the compareOp
                                             {
 
-                                                string l = "";
+                                                std::string l = "";
                                                 for (int m = 0; m < jason["records"]["col_names"].size(); m++)
                                                 {
                                                     // compare column name from json file to query string
@@ -665,7 +665,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                             if (compareOp[j] == "<") // compare (!) operator with the compareOp
                                             {
 
-                                                string l = "";
+                                                std::string l = "";
                                                 for (int m = 0; m < jason["records"]["col_names"].size(); m++)
                                                 {
                                                     // compare column name from json file to query string
@@ -697,7 +697,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                             if (compareOp[j] == ">=") // compare (!) operator with the compareOp
                                             {
 
-                                                string l = "";
+                                                std::string l = "";
                                                 for (int m = 0; m < jason["records"]["col_names"].size(); m++)
                                                 {
                                                     // compare column name from json file to query string
@@ -728,7 +728,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                             if (compareOp[j] == "<=") // compare (!) operator with the compareOp
                                             {
 
-                                                string l = "";
+                                                std::string l = "";
                                                 for (int m = 0; m < jason["records"]["col_names"].size(); m++)
                                                 {
                                                     // compare column name from json file to query string
@@ -799,7 +799,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                                 case 2:
 
                                                     // get indexies which will going to have fill the given condition
-                                                    stringOfIndexies += to_string(i);
+                                                    stringOfIndexies += std::to_string(i);
                                                     processCounter++;
                                                     break;
 
@@ -832,7 +832,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                     return stringOfIndexies;
                                 }
                                 //success process massage with rows are affected
-                                return SuccessDeleteDataTableMsg[0] + " " + to_string(processCounter) + " Rows are affected !";
+                                return SuccessDeleteDataTableMsg[0] + " " + std::to_string(processCounter) + " Rows are affected !";
                             }
                             else
                             {
@@ -841,7 +841,7 @@ string globalFuncForWhereClouse(string h , string table_name ,int mode)
                                     return stringOfIndexies;
                                 }
                                 //success process massage without rows are affected
-                                return SuccessDeleteDataTableMsg[0] + " " + to_string(processCounter) + " Row affected !";
+                                return SuccessDeleteDataTableMsg[0] + " " + std::to_string(processCounter) + " Row affected !";
                             }
 
                         }

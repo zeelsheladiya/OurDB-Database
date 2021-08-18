@@ -2,12 +2,12 @@
 // Created by zeel,mihir,parth,pranav on 13/04/2021.
 //
 
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <direct.h>
-#include <conio.h>
-#include <filesystem>
+//#include <iostream>
+//#include <string>
+//#include <fstream>
+//#include <direct.h>
+//#include <conio.h>
+//#include <filesystem>
 #include "../../global_functions/global_function.h"
 
 //using namespace std;
@@ -56,15 +56,15 @@ string createDatabase(string databaseName)
 
 }
 */
-string createDatabase(string databaseName)
+std::string createDatabase(std::string databaseName)
 {
     validate = validation(databaseName,errorSpecialchaDatabase[0],errFirstLetterNumeric[0]);
      if( validate == "true_true")
      {
-         regex l("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
+         std::regex l("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
          if ( regex_match(databaseName, l) ) {
              databaseName = strPath[0] + databaseName; //strpath[0]="path" defined in  variables/query_variables.h
-             if (!(filesystem::exists(databaseName.c_str()))) // checks for database that has already been created
+             if (!(std::filesystem::exists(databaseName.c_str()))) // checks for database that has already been created
              {
 
                  if (mkdir(databaseName.c_str()) ==-1)  // cretae directory, mkdir function defined in direct.h header file

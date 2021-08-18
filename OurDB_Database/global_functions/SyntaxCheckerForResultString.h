@@ -2,22 +2,22 @@
 // Created by Micron on 19/06/2021.
 //
 
-#include <fstream>
+//#include <fstream>
+//#include <string>
+//#include <ostream>
+//#include <vector>
+//#include <iostream>
+//#include <regex>
 #include <stdio.h>
-#include <string>
-#include <ostream>
-#include <vector>
-#include <iostream>
-#include <regex>
 #include "AfterWhereProcess.h"
 #include "global_function.h"
 
-//using namespace std;
+
 
 #ifndef OURDB_DATABASE_SYNTAXCHECKERFORRESULTSTRING_H
 #define OURDB_DATABASE_SYNTAXCHECKERFORRESULTSTRING_H
 
-bool SyntaxCheckerForResultString(string result)
+bool SyntaxCheckerForResultString(std::string result)
 {
     if(result == "")
     {
@@ -25,11 +25,11 @@ bool SyntaxCheckerForResultString(string result)
     }
     else
     {
-        vector<string> datastring; // for storing string data in vector
-        regex r1("\n"); // regex for checking new line
+        std::vector<std::string> datastring; // for storing string data in vector
+        std::regex r1("\n"); // regex for checking new line
         filterRegexInstring(result,datastring,r1,-1); // gives vector string which does not match with regex(newline separater)
-        vector<string> coldata; // for storing string column data
-        regex r2(","); // regex for separation with ,
+        std::vector<std::string> coldata; // for storing string column data
+        std::regex r2(","); // regex for separation with ,
         filterRegexInstring(datastring[0],coldata,r2,-1); // gives the vector string with  , separated data
 
         if(datastring.size() < 3) // if datastring  vector array is less than 3

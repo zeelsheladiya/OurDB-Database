@@ -5,7 +5,7 @@
 #ifndef OURDB_DATABASE_KEYWORDS_CHECKER_H
 #define OURDB_DATABASE_KEYWORDS_CHECKER_H
 
-bool keywords_checker(string s)
+bool keywords_checker(std::string s)
 {
     if(syntaxCompare(s,bannedkeywords))
     {

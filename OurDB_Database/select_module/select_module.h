@@ -15,13 +15,13 @@
 #define OURDB_DATABASE_SELECT_MODULE_H
 
 // function for allocating select query
-string SelectQuery(vector <string> query)
+std::string SelectQuery(std::vector <std::string> query)
 {
     // check whether database is selected or not
     if(!(databaseSelectGlobal.empty()))
     {
         // string for after @ symbol
-        string afterselect = "";
+        std::string afterselect = "";
 
         // check for @ symbol
         if(query[1]==colSymbol[0])
@@ -30,7 +30,7 @@ string SelectQuery(vector <string> query)
         }
 
         // regex for separation using @
-        regex regexforat("^[^@]*@[^@]*$");
+        std::regex regexforat("^[^@]*@[^@]*$");
 
         // add space in after select word
         for(int i=1;i<query.size();i++)
@@ -45,8 +45,8 @@ string SelectQuery(vector <string> query)
         }
 
         //variables
-        vector <string> beforeafterat;       //vector string to return inserted data
-        regex regexat("@");
+        std::vector <std::string> beforeafterat;       //vector string to return inserted data
+        std::regex regexat("@");
 
         // will return unmatched vector string array
         filterRegexInstring(afterselect,beforeafterat,regexat,-1);
@@ -58,10 +58,10 @@ string SelectQuery(vector <string> query)
         }
 
         // variable allocation for after and before @
-        vector <string> afterat;
-        vector <string> beforeat;
+        std::vector <std::string> afterat;
+        std::vector <std::string> beforeat;
 
-        regex regexspaceforat(" ");
+        std::regex regexspaceforat(" ");
 
         // will return unmatched values in terms of vector string array
         filterRegexInstring(beforeafterat[0],beforeat,regexspaceforat,-1);
@@ -86,19 +86,19 @@ string SelectQuery(vector <string> query)
         }
 
         // path for table
-        string tablename = databaseSavePath +"/"+ afterat[0] +".Ourdb";
+        std::string tablename = databaseSavePath +"/"+ afterat[0] +".Ourdb";
 
         // check table is exist or not
-        if(filesystem::exists(tablename))
+        if(std::filesystem::exists(tablename))
         {
             // table reading
-            ifstream file(tablename);
+            std::ifstream file(tablename);
             json ourdb;
             file >> ourdb;
             int countforcolcheck = 0;       //counter to check if select column name is present in table
 
             // regex for additional functions alt + 24 = ↑ and alt + 25 = ↓
-            regex regexForConditionalOperation("[<>]{1}");
+            std::regex regexForConditionalOperation("[<>]{1}");
 
             // allocation of select query
             if(beforeat[0] == var_for_func_inselect[0] && beforeat.size()==1)

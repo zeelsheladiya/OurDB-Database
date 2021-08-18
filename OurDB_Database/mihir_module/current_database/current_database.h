@@ -2,16 +2,16 @@
 // Created by Mihir on 04-05-2021.
 //
 
-#include <iostream>
-#include <string>
+//#include <iostream>
+//#include <string>
 #include "../../variables/query_variables.h"
 
 #ifndef CONSOLE_CPP_CURRENT_DATABASE_H
 #define CONSOLE_CPP_CURRENT_DATABASE_H
 
-string currentDatabase()
+std::string currentDatabase()
 {
-    string a = databaseSelectGlobal;
+    std::string a = databaseSelectGlobal;
 
     if(a == "")
     {

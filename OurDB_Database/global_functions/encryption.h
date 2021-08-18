@@ -16,7 +16,7 @@ using ourdb = nlohmann::json;
 #ifndef OURDB_DATABASE_ENCRYPTION_H
 #define OURDB_DATABASE_ENCRYPTION_H
 
-string encryption(string data) // code for encryption
+std::string encryption(std::string data) // code for encryption
 {
     //here goes encryption code..
     enc_dec=""; // variable in variable.h file

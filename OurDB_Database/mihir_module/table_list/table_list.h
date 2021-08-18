@@ -2,15 +2,15 @@
 // Created by Mihir on 05-05-2021.
 //
 
-#include <iostream>
-#include <string>
-#include <filesystem>
+//#include <iostream>
+//#include <string>
+//#include <filesystem>
 #include "../../variables/query_variables.h"
 
 #ifndef OURDB_DATABASE_TABLE_LIST_H
 #define OURDB_DATABASE_TABLE_LIST_H
 
-string tableList()
+std::string tableList()
 {
     if(databaseSelectGlobal == "")
     {
@@ -18,13 +18,13 @@ string tableList()
     }
     else
     {
-        string path = strPath[0] + databaseSelectGlobal + "./";   //path to current database where our tables are created and stored
-        string list;   //string to store the list of tables
+        std::string path = strPath[0] + databaseSelectGlobal + "./";   //path to current database where our tables are created and stored
+        std::string list;   //string to store the list of tables
 
-        if (!filesystem::is_empty(path))     //checks if the current path to table is empty or not
+        if (!std::filesystem::is_empty(path))     //checks if the current path to table is empty or not
         {
             list += "Tables are : \n";
-            for (auto &i : filesystem::directory_iterator(path))    //increments the existing files(tables) at given path
+            for (auto &i : std::filesystem::directory_iterator(path))    //increments the existing files(tables) at given path
             {
                 list += i.path().filename().stem().string() + "\n";   //store the names of all the files(tables) in list string without extension
             }

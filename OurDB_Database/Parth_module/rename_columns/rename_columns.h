@@ -1,12 +1,12 @@
 //
 // Created by dabhe on 10-Jun-21.
 //
-#include <iostream>
-#include <ostream>
-#include <string>
-#include <stdio.h>
-#include <fstream>
-#include <filesystem>
+//#include <iostream>
+//#include <ostream>
+//#include <string>
+//#include <stdio.h>
+//#include <fstream>
+//#include <filesystem>
 #include "../../variables/query_variables.h"
 #include "../../global_functions/global_function.h"
 #include "../../External_Libraries/json.hpp"
@@ -19,7 +19,7 @@ using ourdb = nlohmann::json;
 #ifndef OURDB_DATABASE_UPDATE_COLUMNS_H
 #define OURDB_DATABASE_UPDATE_COLUMNS_H
 
-string rename_column(string table_name,vector<string>key)
+std::string rename_column(std::string table_name,std::vector<std::string>key)
 {
     if(!(databaseSelectGlobal.empty()))
     {
@@ -43,7 +43,7 @@ string rename_column(string table_name,vector<string>key)
         if(validate == "true_true")
         {
 
-            regex nl("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
+            std::regex nl("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed betwwen letters..
             if(regex_match(table_name,nl))
             {
                 tbname = "";
@@ -51,10 +51,10 @@ string rename_column(string table_name,vector<string>key)
                 tname = "";
                 tname=table_name; // tablename
 
-               if(filesystem::exists(tbname))  // if filesystem exists then goes into the
+               if(std::filesystem::exists(tbname))  // if filesystem exists then goes into the
                {
                    ourdb odb;  //json object..
-                   fstream fs(tbname);  // filpointer points to file
+                   std::fstream fs(tbname);  // filpointer points to file
                    fs >> odb; // fs data into the json object odb
                    int cunt = 0;
                    int cuntx = 0; //
@@ -82,7 +82,7 @@ string rename_column(string table_name,vector<string>key)
                        return ErrSameColumnNameExit[0]; // gives error when same name of column in tabble
                    }
 
-                      ofstream fsm(tbname); //ofstream object
+                   std::ofstream fsm(tbname); //ofstream object
                       fsm << odb; // fsm data into the fsm
 
                        if(cunt > 0) {
@@ -112,11 +112,4 @@ string rename_column(string table_name,vector<string>key)
         return SelectTheDatabase[0];
     }
 }
-
-
-
-
-
-
-
 #endif //OURDB_DATABASE_UPDATE_COLUMNS_H

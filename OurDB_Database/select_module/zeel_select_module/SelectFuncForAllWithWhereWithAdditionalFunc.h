@@ -5,10 +5,10 @@
 #ifndef OURDB_DATABASE_SELECTFUNCFORALLWITHWHEREWITHADDITIONALFUNC_H
 #define OURDB_DATABASE_SELECTFUNCFORALLWITHWHEREWITHADDITIONALFUNC_H
 
-string SelectFuncForAllWithWhereWithAdditionalFunc(string tablename, string additionalFunc , vector<string> afterat)
+std::string SelectFuncForAllWithWhereWithAdditionalFunc(std::string tablename,std::string additionalFunc ,std::vector<std::string> afterat)
 {
     //string for where condition
-    string whereConditionString;
+    std::string whereConditionString;
 
     // convert vector into string
     for(int i = 3 ; i < afterat.size(); i++ )
@@ -17,33 +17,33 @@ string SelectFuncForAllWithWhereWithAdditionalFunc(string tablename, string addi
     }
 
     // string of index where condition mathed
-    string indexies = globalFuncForWhereClouse(whereConditionString,tablename,2);
+    std::string indexies = globalFuncForWhereClouse(whereConditionString,tablename,2);
 
     // regex for onliy number
-    regex regexForOnlyInt("[0-9]{1,}");
+    std::regex regexForOnlyInt("[0-9]{1,}");
 
 
     if(regex_match(indexies,regexForOnlyInt))
     {
         //main logic
 
-        string tablepath = databaseSavePath +"/"+ tablename +".Ourdb";
+        std::string tablepath = databaseSavePath +"/"+ tablename +".Ourdb";
 
-        ifstream in(tablepath);
+        std::ifstream in(tablepath);
 
         ourdb coldata;
 
         in >> coldata;
 
-        vector<string> ind;
+        std::vector<std::string> ind;
 
         for(auto zeel : indexies)
         {
-            ind.insert(ind.end(),to_string(zeel-48));
+            ind.insert(ind.end(),std::to_string(zeel-48));
         }
 
-        vector<string> colname;     //vector string for col names
-        vector<vector<string>> data;    //vector of vector string for table data
+        std::vector<std::string> colname;     //vector string for col names
+        std::vector<std::vector<std::string>> data;    //vector of vector string for table data
 
         for (auto& x : coldata["records"]["col_names"].items())
         {
@@ -52,7 +52,7 @@ string SelectFuncForAllWithWhereWithAdditionalFunc(string tablename, string addi
 
         for(int i=0; i < ind.size();i++)
         {
-            vector<string> jval;    //temporary vector to store value to add into vector of vector 'data'
+            std::vector<std::string> jval;    //temporary vector to store value to add into vector of vector 'data'
             for(auto &j : coldata["table_data"][stoi(ind[i])].items())
             {
                 jval.push_back(decryption(j.value()));      //value pushed to vector of vector string 'data'

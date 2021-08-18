@@ -36,7 +36,7 @@ bool syntaxCompare(const Element & keyvalue ,const Container & variablearray)
 }
 
 // string validation in terms of name
-inline string validation(string dbname,string ferror,string serror)
+inline std::string validation(std::string dbname,std::string ferror,std::string serror)
 {
     firstLetterStore = dbname.front();  //store the first character of string
     lastLetterStore = dbname.back(); // stores last character of string
@@ -63,10 +63,10 @@ inline string validation(string dbname,string ferror,string serror)
 }
 
 // create file in terms of table
-inline string FileTable(string nm)
+inline std::string FileTable(std::string nm)
 {
-    fstream tb; // creats the object of class "fstream"...   here "tb" obj is created
-    tb.open(nm,ios::in | ios::out | ios::trunc ); // in for writing , out for writing and trunc
+    std::fstream tb; // creats the object of class "fstream"...   here "tb" obj is created
+    tb.open(nm,std::ios::in | std::ios::out | std::ios::trunc ); // in for writing , out for writing and trunc
     if(!tb.is_open()) // is_open is defined in "fstream" which check file is created or not if created then open it
     {
         return errorCreatingFile[0]; // defined in Errors/error_variable.h
@@ -77,21 +77,21 @@ inline string FileTable(string nm)
 }
 
 //function for trimming string from front
-inline string& ltrim(string& str, const string& chars = "\t\n\v\f\r ")
+inline std::string& ltrim(std::string& str, const std::string& chars = "\t\n\v\f\r ")
 {
     str.erase(0, str.find_first_not_of(chars));
     return str;
 }
 
 //function for trimming string from end
-inline string& rtrim(string& str, const string& chars = "\t\n\v\f\r ")
+inline std::string& rtrim(std::string& str, const std::string& chars = "\t\n\v\f\r ")
 {
     str.erase(str.find_last_not_of(chars) + 1);
     return str;
 }
 
 //function for trimming string from the both side
-inline string& trim(string& str, const string& chars = "\t\n\v\f\r ")
+inline std::string& trim(std::string& str, const std::string& chars = "\t\n\v\f\r ")
 {
     return ltrim(rtrim(str, chars), chars);
 }
@@ -100,12 +100,12 @@ inline string& trim(string& str, const string& chars = "\t\n\v\f\r ")
 inline bool BothAreSpaces(char lhs, char rhs) { return (lhs == rhs) && (lhs == ' '); }
 
 // split function for string into string array
-inline void split(string const &str, const char delim,vector<string> &out)
+inline void split(std::string const &str, const char delim,std::vector<std::string> &out)
 {
     size_t start;
     size_t end = 0;
 
-    while ((start = str.find_first_not_of(delim, end)) != string::npos)
+    while ((start = str.find_first_not_of(delim, end)) != std::string::npos)
     {
         end = str.find(delim, start);
         out.push_back(str.substr(start, end - start));
@@ -113,37 +113,37 @@ inline void split(string const &str, const char delim,vector<string> &out)
 }
 
 //separate the query after specific position (after '@' to be precise)
-vector <string> InputStringSeparation(vector <string> arr)
+std::vector <std::string> InputStringSeparation(std::vector <std::string> arr)
 {
     if(!(databaseSelectGlobal.empty()))
     {
-        string tbname = arr[2];       //var to store table name and check if it exists or not!
-        string path = databaseSavePath + "/" + tbname + ".Ourdb";       //path where table is stored
+        std::string tbname = arr[2];       //var to store table name and check if it exists or not!
+        std::string path = databaseSavePath + "/" + tbname + ".Ourdb";       //path where table is stored
 
-        if(filesystem::exists(path.c_str()))        //checks if the path is valid i.e. if table exists or not
+        if(std::filesystem::exists(path.c_str()))        //checks if the path is valid i.e. if table exists or not
         {
-            string temp;        //string to store vector string array
+            std::string temp;        //string to store vector string array
 
             for(int i=0;i<arr.size();i++)
             {
                 temp += arr[i] + " ";       //stores data into string after separating them by space
             }
 
-            temp = regex_replace(temp,regex("' "),"'"); // trim the left side of the space into single quote
-            temp = regex_replace(temp,regex(" '"),"'"); // trim the right side of the space into single quote
+            temp = regex_replace(temp,std::regex("' "),"'"); // trim the left side of the space into single quote
+            temp = regex_replace(temp,std::regex(" '"),"'"); // trim the right side of the space into single quote
 
             float count = std::count(temp.begin(), temp.end(), '\'');     //counts the number of occurrence of ' for separating data that is to be inserted
 
-            vector <string> data;       //vector string to return inserted data
+            std::vector <std::string> data;       //vector string to return inserted data
 
-            regex words_regex("'(.*?)'");       //regex to remove ' ' from the data
+            std::regex words_regex("'(.*?)'");       //regex to remove ' ' from the data
 
-            for(sregex_iterator it = sregex_iterator(
+            for(std::sregex_iterator it = std::sregex_iterator(
                     temp.begin(), temp.end(), words_regex);
-                it != sregex_iterator(); it++)
+                it != std::sregex_iterator(); it++)
             {
-                smatch match = *it;
-                string match_str = match.str(1);
+                std::smatch match = *it;
+                std::string match_str = match.str(1);
                 data.insert(data.end(),match_str);      //data inserted after separating into vector string
             }
 
@@ -153,7 +153,7 @@ vector <string> InputStringSeparation(vector <string> arr)
             }
             else
             {
-                vector <string> error;
+                std::vector <std::string> error;
                 error.insert(error.end(),ErrImproperData[0]);   //error if improper insertion of data
 
                 return error;    //return error
@@ -161,7 +161,7 @@ vector <string> InputStringSeparation(vector <string> arr)
         }
         else
         {
-            vector <string> error;
+            std::vector <std::string> error;
             error.insert(error.end(),errNoSuchTableExist[0]);   //error if table doesnt exists
 
             return error;    //return error
@@ -169,26 +169,26 @@ vector <string> InputStringSeparation(vector <string> arr)
     }
     else
     {
-        vector <string> error;
+        std::vector <std::string> error;
         error.insert(error.end(),SelectTheDatabase[0]);   //error if database not selected
 
         return error;    //return error
     }
 }
 
-string string_quote_cutter(string strx)
+std::string string_quote_cutter(std::string strx)
 {
     strx.erase(std::remove(strx.begin(),strx.end(),'\''),strx.end());
     return strx;
 }
 
-string string_quote_cutter(string strx, char cut)
+std::string string_quote_cutter(std::string strx, char cut)
 {
     strx.erase(std::remove(strx.begin(),strx.end(),cut),strx.end());
     return strx;
 }
 
-void nullRomoverFromVectorString(vector<string> &vec)
+void nullRomoverFromVectorString(std::vector<std::string> &vec)
 {
     if(vec.size() > 0)
     {

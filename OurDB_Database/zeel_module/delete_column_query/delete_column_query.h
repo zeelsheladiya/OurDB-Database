@@ -1,29 +1,29 @@
 //
 // Created by zeel,pranav on 10/06/2021.
 //
-#include <iostream>
-#include <string>
-#include <regex>
-#include <filesystem>
+//#include <iostream>
+//#include <string>
+//#include <regex>
+//#include <filesystem>
 #include "delete_column_query_logic.h"
 
 #ifndef OURDB_DATABASE_DELETE_COLUMN_QUERY_H
 #define OURDB_DATABASE_DELETE_COLUMN_QUERY_H
 
-string DeleteColumnQuery(string table_name,string column_name)
+std::string DeleteColumnQuery(std::string table_name,std::string column_name)
 {
     if(databaseSelectGlobal != "") // check, is datebase selected or not
     {
         if(table_name != "default") // check, table should not be default
         {
             // table path into string
-            string table_path = databaseSavePath + "/" + table_name + ".Ourdb";
+            std::string table_path = databaseSavePath + "/" + table_name + ".Ourdb";
 
             // check whether file is exist or not
-            if (filesystem::exists(table_path.c_str()))
+            if (std::filesystem::exists(table_path.c_str()))
             {
                 // read .ourdb file
-                ifstream file(table_path);
+                std::ifstream file(table_path);
                 json j;
                 file >> j;
 

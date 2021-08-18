@@ -2,7 +2,7 @@
 // Created by Mihir on 04-07-2021.
 //
 
-#include <filesystem>
+//#include <filesystem>
 #include "../../variables/query_variables.h"
 #include "../../External_Libraries/json.hpp"
 
@@ -12,13 +12,13 @@ using ourdb = nlohmann::json;
 #ifndef OURDB_DATABASE_COLUMN_LIST_H
 #define OURDB_DATABASE_COLUMN_LIST_H
 
-string columnList(string tablename)
+std::string columnList(std::string tablename)
 {
     if(!(databaseSelectGlobal.empty()))
     {
-        string path = databaseSavePath + "/" + tablename + ".Ourdb";       //path where table is stored
+        std::string path = databaseSavePath + "/" + tablename + ".Ourdb";       //path where table is stored
 
-        if(filesystem::exists(path))
+        if(std::filesystem::exists(path))
         {
             if(tablename == "default")
             {
@@ -26,8 +26,8 @@ string columnList(string tablename)
             }
             else
             {
-                string collist;
-                ifstream in(path);
+                std::string collist;
+                std::ifstream in(path);
 
                 ourdb coldata;      //var to store json data
 

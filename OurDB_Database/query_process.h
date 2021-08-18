@@ -35,7 +35,7 @@
 #define OURDB_DATABASE_QUERY_PROCESS_H
 
 // function for query process
-string query_process(vector<string> query)
+std::string query_process(std::vector<std::string> query)
 {
     //check for create's queries
     if(syntaxCompare(query[0],create_query))
@@ -60,7 +60,7 @@ string query_process(vector<string> query)
 
                 if(syntaxCompare(query[3],colSymbol))
                 {
-                    vector <string> a;
+                    std::vector <std::string> a;
                     int j = 4;
 
                     for(int i=0;i<query_size - 4;i++)
@@ -68,7 +68,7 @@ string query_process(vector<string> query)
                         a.insert(a.end(),query[j]);
                         j++;
                     }
-                    //cout << a[0];
+
 
                     return createTable(query[2],a); // return table creation
                 }
@@ -213,8 +213,8 @@ string query_process(vector<string> query)
                 {
                     if(syntaxCompare(query[4],colSymbol))       //checks for colsymbol
                     {
-                        vector <string> vc;
-                        regex fb("[a-z0-9_]{0,}");
+                        std::vector <std::string> vc;
+                        std::regex fb("[a-z0-9_]{0,}");
                         for(int i = 5;i<query_size;i++)
                         {
                             if(regex_match(query[i].c_str(),fb)) {
@@ -326,7 +326,7 @@ string query_process(vector<string> query)
             {
                 if(syntaxCompare(query[3],colSymbol))
                 {
-                    vector <string> a = InputStringSeparation(query); //vector string separated by ''
+                    std::vector <std::string> a = InputStringSeparation(query); //vector string separated by ''
                     if(a.empty() || a[0] == ErrImproperData[0])
                     {
                         return ErrImproperData[0];    //error if there is improper data insertion
@@ -353,7 +353,7 @@ string query_process(vector<string> query)
                 {
                     if(syntaxCompare(query[4],colSymbol))
                     {
-                        vector <string> a;
+                        std::vector <std::string> a;
 
                         for(int i=5;i < query_size;i++)
                         {
@@ -391,18 +391,18 @@ string query_process(vector<string> query)
              {
                      if(syntaxCompare(query[3],setx))
                      {
-                         map <string,string> mx;
+                         std::map <std::string,std::string> mx;
                          StoreTempString = ""; // it will store the value for after where process
                          //int j = 4; // index for after set keyword...
-                         regex fb("[a-z0-9_']{0,}");
-                         regex rl("[a-z0-9_ ]{1,}"); // regex for checking alphanumericals values
-                         regex rf("'[^']*'"); // checking the value which resides in  ''
+                         std::regex fb("[a-z0-9_']{0,}");
+                         std::regex rl("[a-z0-9_ ]{1,}"); // regex for checking alphanumericals values
+                         std::regex rf("'[^']*'"); // checking the value which resides in  ''
 
-                         string setString;
-                         vector <string> strsep1;
-                         vector <string> strsep2;
-                         vector <string> strsep3;
-                         vector <string> strsep;
+                         std::string setString;
+                         std::vector <std::string> strsep1;
+                         std::vector <std::string> strsep2;
+                         std::vector <std::string> strsep3;
+                         std::vector <std::string> strsep;
                          
                          int j = 4; // again set the j=4 for operation
                          while(!syntaxCompare(query[j],where))
@@ -466,7 +466,7 @@ string query_process(vector<string> query)
 
                          if(strsep.size() == (cntl + cntf)) { // strsep size should match (cntl+cntf)
                              for (int i = 0; i < strsep1.size() & i < strsep2.size(); i++) {
-                                 mx.insert(pair<string, string>(strsep1[i], string_quote_cutter(strsep2[i]))); // string_quote_cutter removes the quote from the string
+                                 mx.insert(std::pair<std::string, std::string>(strsep1[i], string_quote_cutter(strsep2[i]))); // string_quote_cutter removes the quote from the string
                               // stores the vector in the map
                              }
                          }

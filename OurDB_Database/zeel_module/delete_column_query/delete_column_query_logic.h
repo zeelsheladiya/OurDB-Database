@@ -5,10 +5,10 @@
 #ifndef OURDB_DATABASE_DELETE_COLUMN_QUERY_LOGIC_H
 #define OURDB_DATABASE_DELETE_COLUMN_QUERY_LOGIC_H
 
-string delete_column_query_logic_1(string table_path,string column_name,int column_index)
+std::string delete_column_query_logic_1(std::string table_path,std::string column_name,int column_index)
 {
     // read .ourdb file
-    ifstream file(table_path);
+    std::ifstream file(table_path);
     json ourdb;
     file >> ourdb;
 
@@ -32,13 +32,13 @@ string delete_column_query_logic_1(string table_path,string column_name,int colu
             for (int i = 0; i < ourdb["table_data"].size(); i++)
             {
                 //delete the value of related column
-                ourdb["table_data"][i].erase(to_string(col_key_index));
+                ourdb["table_data"][i].erase(std::to_string(col_key_index));
             }
         }
 
         // writing into .ourdb file
-        ofstream o(table_path);
-        o << ourdb << endl;
+        std::ofstream o(table_path);
+        o << ourdb << std::endl;
 
         // deletion completed
         return SuccessDeleteColumn[0];

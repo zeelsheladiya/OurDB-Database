@@ -1,23 +1,23 @@
 //
 // Created by dabhe on 29-Apr-21.
 //
-#include <iostream>
-#include <string>
-#include <filesystem>
+//#include <iostream>
+//#include <string>
+//#include <filesystem>
 #include "../../variables/query_variables.h"
 //using namespace std;
 
 #ifndef OURDB_DATABASE_RENAME_DATABASE_H
 #define OURDB_DATABASE_RENAME_DATABASE_H
 
-string renameDatabase(string databaseName)
+std::string renameDatabase(std::string databaseName)
 {
     if(!(databaseSelectGlobal.empty()))
     {
         validate = validation(databaseName,errorSpecialchaDatabase[0],errFirstLetterNumeric[0]);
         if(validate == "true_true")
         {
-            regex l("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
+            std::regex l("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
             if ( regex_match(databaseName, l) )
             {
                 databaseName = strPath[0] + databaseName; //strpath[0]="path" defined in  variables/query_variables.h

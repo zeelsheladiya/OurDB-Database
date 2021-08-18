@@ -2,9 +2,9 @@
 // Created by  zeel,mihir,parth,pranav on 08/05/2021.
 //
 
-#include <iostream>
-#include <string>
-#include <filesystem>
+//#include <iostream>
+//#include <string>
+//#include <filesystem>
 #include "../../variables/query_variables.h"
 
 //using namespace std;
@@ -13,7 +13,7 @@
 #ifndef OURDB_DATABASE_DELETE_TABLE_H
 #define OURDB_DATABASE_DELETE_TABLE_H
 
-string deleteTable(string tableName)
+std::string deleteTable(std::string tableName)
 {
     if(!(databaseSelectGlobal.empty())) // database selected or not
     {
@@ -27,7 +27,7 @@ string deleteTable(string tableName)
         validate = validation(tableName,errorSpecialchaTable[0],errFirstLetterNumeric[0]);    //validating old table name
         if(validate == "true_true")
         {
-            regex l("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
+            std::regex l("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
             if ( regex_match(tableName, l) )
             {
 
@@ -35,10 +35,10 @@ string deleteTable(string tableName)
                 if(validate == "true_true")
                 {
                     tableName = strPath[0] + databaseSelectGlobal + "/" + tableName + ".Ourdb";
-                    if(filesystem::exists(tableName.c_str()))     // checks if file already exist or not
+                    if(std::filesystem::exists(tableName.c_str()))     // checks if file already exist or not
                     {
                         //delete table logic
-                        if (!(filesystem::remove_all(tableName)))  //from the filesystem function to remove directory
+                        if (!(std::filesystem::remove_all(tableName)))  //from the filesystem function to remove directory
                         {
                             return errorDeletingTable[0]; // errorDeletingDatabase[0] defined in   Errors/error_variable.h
                         } else {

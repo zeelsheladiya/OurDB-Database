@@ -5,10 +5,10 @@
 #ifndef OURDB_DATABASE_SELECTFUNCFORCOLSWITHWHEREWITHADDITIONALFUNC_H
 #define OURDB_DATABASE_SELECTFUNCFORCOLSWITHWHEREWITHADDITIONALFUNC_H
 
-string SelectFuncForColsWithWhereWithAdditionalFunc(string tablename, string additionalFunc , vector<string> beforeat , vector<string> afterat)
+std::string SelectFuncForColsWithWhereWithAdditionalFunc(std::string tablename,std::string additionalFunc ,std::vector<std::string> beforeat , std::vector<std::string> afterat)
 {
     //string for where condition
-    string whereConditionString;
+    std::string whereConditionString;
 
     // convert vector into string
     for(int i = 3 ; i < afterat.size(); i++ )
@@ -17,10 +17,10 @@ string SelectFuncForColsWithWhereWithAdditionalFunc(string tablename, string add
     }
 
     // string of index where condition mathed
-    string indexies = globalFuncForWhereClouse(whereConditionString,tablename,2);
+    std::string indexies = globalFuncForWhereClouse(whereConditionString,tablename,2);
 
     // regex for onliy number
-    regex regexForOnlyInt("[0-9]{0,}");
+    std::regex regexForOnlyInt("[0-9]{0,}");
 
 
     if(regex_match(indexies,regexForOnlyInt))
@@ -30,31 +30,31 @@ string SelectFuncForColsWithWhereWithAdditionalFunc(string tablename, string add
             return ErrSelectSameColName[0];
         }
 
-        string tablepath = databaseSavePath +"/"+ tablename +".Ourdb";
+        std::string tablepath = databaseSavePath +"/"+ tablename +".Ourdb";
 
         ourdb our1;
-        fstream fs(tablepath);
-        vector <vector<string>> data;
-        string ml;
+        std::fstream fs(tablepath);
+        std::vector <std::vector<std::string>> data;
+        std::string ml;
         fs >> our1;
 
-        vector<string> ind;
+        std::vector<std::string> ind;
 
         for(auto zeel : indexies)
         {
-            ind.insert(ind.end(),to_string(zeel-48));
+            ind.insert(ind.end(),std::to_string(zeel-48));
         }
 
         for(int k=0 ;k<ind.size();k++)      //loop for data that satisfies after where condition
         {
-            vector<string> newvec;
+            std::vector<std::string> newvec;
             for (int j = 0; j < beforeat.size(); j++)   //loop for checking cols that are specified by user before '@'
             {
                 for (int i = 0; i < our1["records"]["col_names"].size(); i++)   //loop for checking col names with col indexes
                 {
                     if (our1["records"]["col_names"][i] == beforeat[j])     //checks user specified col with col in table
                     {
-                        string l = to_string(our1["records"]["col_index"][i]); // takes the value from column index ..
+                        std::string l = to_string(our1["records"]["col_index"][i]); // takes the value from column index ..
                         newvec.insert(newvec.end(), decryption(our1["table_data"][stoi(ind[k])][l]));
                     }
                 }

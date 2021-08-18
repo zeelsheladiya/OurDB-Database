@@ -2,11 +2,11 @@
 // Created by zeel,mihir,parth,pranav on 17/05/2021.
 //
 
-#include <iostream>
-#include <ostream>
-#include <iostream>
-#include <string>
-#include <filesystem>
+//#include <iostream>
+//#include <ostream>
+//#include <iostream>
+//#include <string>
+//#include <filesystem>
 #include "../../variables/query_variables.h"
 #include "../../global_functions/global_function.h"
 #include "../../External_Libraries/json.hpp"
@@ -19,7 +19,7 @@ using ourdb = nlohmann::json;
 #ifndef OURDB_DATABASE_INSERT_INTO_TABLE_H
 #define OURDB_DATABASE_INSERT_INTO_TABLE_H
 
-string insertIntoTable(string tbname,vector<string> a)
+std::string insertIntoTable(std::string tbname,std::vector<std::string> a)
 {
     if(!(databaseSelectGlobal.empty()))
     {
@@ -29,9 +29,9 @@ string insertIntoTable(string tbname,vector<string> a)
         }
         else
         {
-            string path = databaseSavePath + "/" + tbname + ".Ourdb";       //path where table is stored
+            std::string path = databaseSavePath + "/" + tbname + ".Ourdb";       //path where table is stored
 
-            ifstream in(path);
+            std::ifstream in(path);
 
             ourdb coldata;
             ourdb tbdata;
@@ -40,8 +40,8 @@ string insertIntoTable(string tbname,vector<string> a)
 
             if (a.size() == coldata["records"]["total_cols"])       //checks if no. of data inserted is equals to no. of columns in the table
             {
-                string tmp;
-                vector <string> st;
+                std::string tmp;
+                std::vector <std::string> st;
 
                 for (auto& x : coldata["records"]["col_index"].items())
                     st.insert(st.end(), to_string(x.value()));
@@ -58,8 +58,8 @@ string insertIntoTable(string tbname,vector<string> a)
                 }
 
                 coldata["table_data"] += tbdata["table_data"];      //data appended to table from tbdata
-                ofstream o(path);
-                o << coldata << endl;
+                std::ofstream o(path);
+                o << coldata << std::endl;
 
                 return SuccessInsertDataTableMsg[0];       //successfully inserted data into table
             }

@@ -10,10 +10,10 @@
 //using namespace std;
 using ourdb = nlohmann::json;
 
-string SelectFuncForAllwithAdditionalFunc(string tablepath , string additionalFunc)
+std::string SelectFuncForAllwithAdditionalFunc(std::string tablepath ,std::string additionalFunc)
 {
 
-    ifstream in(tablepath);
+    std::ifstream in(tablepath);
 
     ourdb coldata;
 
@@ -21,8 +21,8 @@ string SelectFuncForAllwithAdditionalFunc(string tablepath , string additionalFu
 
     if(coldata["table_data"].size()>0)
     {
-        vector<string> colname;     //vector string for col names
-        vector<vector<string>> data;    //vector of vector string for table data
+        std::vector<std::string> colname;     //vector string for col names
+        std::vector<std::vector<std::string>> data;    //vector of vector string for table data
 
         for (auto& x : coldata["records"]["col_names"].items())
         {
@@ -31,7 +31,7 @@ string SelectFuncForAllwithAdditionalFunc(string tablepath , string additionalFu
 
         for(int i=0; i < coldata["table_data"].size();i++)
         {
-            vector<string> jval;    //temporary vector to store value to add into vector of vector 'data'
+            std::vector<std::string> jval;    //temporary vector to store value to add into vector of vector 'data'
             for(auto &j : coldata["table_data"][i].items())
             {
                 jval.push_back(decryption(j.value()));      //value pushed to vector of vector string 'data'

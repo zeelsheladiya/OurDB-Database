@@ -2,15 +2,15 @@
 // Created by Mihir on 07-05-2021.
 //
 
-#include <iostream>
-#include <string>
-#include <filesystem>
+//#include <iostream>
+//#include <string>
+//#include <filesystem>
 #include "../../variables/query_variables.h"
 
 #ifndef OURDB_DATABASE_RENAME_TABLE_H
 #define OURDB_DATABASE_RENAME_TABLE_H
 
-string renameTable(string oldName, string newName)
+std::string renameTable(std::string oldName,std::string newName)
 {
     if(!(databaseSelectGlobal.empty()))
     {
@@ -24,7 +24,7 @@ string renameTable(string oldName, string newName)
         validate = validation(oldName,errorSpecialchaTable[0],errFirstLetterNumeric[0]);    //validating old table name
         if(validate == "true_true")
         {
-            regex l("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
+            std::regex l("[a-zA-Z0-9_]{0,}"); // alphabet numeric and _ allowed between letters..
             if ( regex_match(oldName, l) )
             {
 
@@ -32,9 +32,9 @@ string renameTable(string oldName, string newName)
                 if(validate == "true_true")
                 {
                     oldName = strPath[0] + databaseSelectGlobal + "/" + oldName + ".Ourdb";
-                    if(filesystem::exists(oldName.c_str()))     // checks if file already exist or not
+                    if(std::filesystem::exists(oldName.c_str()))     // checks if file already exist or not
                     {
-                        regex l("[a-zA-Z0-9_]{0,}");    // alphabet numeric and _ allowed between letters..
+                        std::regex l("[a-zA-Z0-9_]{0,}");    // alphabet numeric and _ allowed between letters..
                         if (regex_match(newName, l))
                         {
                             newName = strPath[0] + databaseSelectGlobal + "/" + newName + ".Ourdb";
