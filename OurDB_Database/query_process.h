@@ -1,10 +1,10 @@
 //
 // Created by zeel,mihir,parth,pranav on 13/04/2021.
 //
-#include <iostream>
-#include <string>
+//#include <iostream>
+//#include <string>
 #include <regex>
-#include <vector>
+//#include <vector>
 #include "Errors/error_variable.h"
 #include "parth_errors/parth_errors.h"
 #include "variables/query_variables.h"
