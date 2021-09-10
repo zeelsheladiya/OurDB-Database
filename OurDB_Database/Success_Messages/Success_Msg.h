@@ -40,9 +40,12 @@ inline std::string SuccessDeleteDataTableMsg[2] = {"Success index := 110 , Succe
 inline std::string SuccessAddColumnMsg[2] = {"Success index := 111 , Success := Column/s addded successfully :) : ","111"};
 
 //table column renmed successfully
-inline std::string SuccessInRenamingColumn[2] = {"Success index := 113 , Success := table column renamed successfully :) : ","113"};
+inline std::string SuccessInRenamingColumn[2] = {"Success index := 112 , Success := table column renamed successfully :) : ","112"};
 
 //table column delete successfully
-inline std::string SuccessDeleteColumn[2] = {"Success index := 112 , Success := table column deleted successfully :) : ","112"};
+inline std::string SuccessDeleteColumn[2] = {"Success index := 113 , Success := table column deleted successfully :) : ","113"};
+
+//primary key added successfully
+inline std::string SuccessPrimaryKey[2] = {"Success index := 114 , Success := Primary key added successfully :) : ","114"};
 
 #endif //OURDB_DATABASE_SUCCESS_MSG_H

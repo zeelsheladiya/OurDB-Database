@@ -28,6 +28,7 @@
 #include "mihir_module/add_column/add_column.h"
 #include "select_module/select_module.h"
 #include "mihir_module/column_list/column_list.h"
+#include "mihir_module/primary_key/add_primary_key.h"
 
 //using namespace std;
 
@@ -497,6 +498,31 @@ std::string query_process(std::vector<std::string> query)
          {
             return inSufficientWordInUpdateSyntax[0]; //less word in the update syntax
          }
+    }
+    else if(syntaxCompare(query[0],setx))
+    {
+        if(query_size == 5)
+        {
+            if(syntaxCompare(query[1],pkey))
+            {
+                if(syntaxCompare(query[3],colSymbol))
+                {
+                    return addPrimaryKey(query[2],query[4]);
+                }
+                else
+                {
+                    return ErrSyntaxPrimaryKey[0];
+                }
+            }
+            else
+            {
+                return ErrSyntaxPrimaryKey[0];
+            }
+        }
+        else
+        {
+            return ErrSyntaxPrimaryKey[0];
+        }
     }
     else
     {

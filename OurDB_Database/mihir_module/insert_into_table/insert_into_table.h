@@ -13,7 +13,6 @@
 #include "../../global_functions/encryption.h"
 #include "../../global_functions/decryption.h"
 
-//using namespace std;
 using ourdb = nlohmann::json;
 
 #ifndef OURDB_DATABASE_INSERT_INTO_TABLE_H
@@ -46,6 +45,31 @@ std::string insertIntoTable(std::string tbname,std::vector<std::string> a)
                 for (auto& x : coldata["records"]["col_index"].items())
                     st.insert(st.end(), to_string(x.value()));
 
+                if(!coldata["records"]["primary_key"].empty())
+                {
+                    std::string primarykey = coldata["records"]["primary_key"];
+
+                    int count=0;
+                    for(auto & i : coldata["records"]["col_names"])
+                    {
+                        if(i == primarykey)
+                        {
+                            break;
+                        }
+                        count++;
+                    }
+
+                    int colindex = coldata["records"]["col_index"][count];
+                    std::string colindexstr = std::to_string(colindex);
+
+                    for(auto & i : coldata["table_data"])
+                    {
+                        if(a[count] == decryption(i[colindexstr]))
+                        {
+                            return ErrPrimaryKeyConstraintViolation[0];
+                        }
+                    }
+                }
 
                 for (int i = 0; i < a.size(); i++)
                 {

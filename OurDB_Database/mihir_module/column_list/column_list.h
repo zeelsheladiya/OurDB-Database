@@ -35,7 +35,7 @@ std::string columnList(std::string tablename)
 
                 if(coldata["records"]["col_names"].empty())
                 {
-                    return ErrNoDataFoundInTable[0];
+                    return ErrNoColsFoundInTable[0];
                 }
 
                 collist += "Columns in table " + tablename + " are :\n\t";

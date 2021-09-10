@@ -152,7 +152,7 @@ inline std::string  ErrorConditionNotInAppropriateOrder[2] = {"Error index : 47 
 inline std::string  ErrorDontHaveEnoughOperator[2] = {"Error index : 48 , Error := value don't have sufficient oprator","48"};
 
 // column does not exists...
-inline std::string  ErrColumnDoesNotExists[2] = {"Error index : 49, Error := columns are not exist into table","49"};
+inline std::string  ErrColumnDoesNotExists[2] = {"Error index : 49, Error := column/s does not exist in the table","49"};
 
 // insufficient word in update query suntax
 inline std::string insufficientWordInUpdateSyntax[2] = {"Error index := 50 , Error := there are insufficient words and invalid world in update syntax","50"};
@@ -225,5 +225,18 @@ inline std::string syntaxErrShowCols[2] = {"Error index := 74 , Error := Wrong s
 
 // not allowing to update the default.Ourdb file
 inline std::string errUpdatingDefaultTable[2] = {"Error index := 75 ,Error := You cannot update default table!!","75"};
+
+//no column found in table
+inline std::string ErrNoColsFoundInTable[2] = {"Error index := 76 , Error := No column Found Into table " , "76"};
+
+//primary key constraint violated
+inline std::string ErrPrimaryKeyConstraintViolation[2] = {"Error index := 77 , Error := Violation of primary key constraint!! " , "77"};
+
+//does not allows to set primary key to column that has duplicate data
+inline std::string ErrPrimaryKeyDuplData[2] = {"Error index := 78 , Error := Cannot make this column as primary key because it contains duplicate data!! " , "78"};
+
+//syntax error in add primary key
+inline std::string ErrSyntaxPrimaryKey[2] = {"Error index := 79 , Error := Wrong syntax for adding primary key \n\t Correct Syntax : set $ <col_name> @ <table_name>!! " , "79"};
+
 
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H
