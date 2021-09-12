@@ -2,11 +2,6 @@
 // Created by zeel,mihir,parth,pranav on 17/05/2021.
 //
 
-//#include <iostream>
-//#include <ostream>
-//#include <iostream>
-//#include <string>
-//#include <filesystem>
 #include "../../variables/query_variables.h"
 #include "../../global_functions/global_function.h"
 #include "../../External_Libraries/json.hpp"
@@ -45,11 +40,11 @@ std::string insertIntoTable(std::string tbname,std::vector<std::string> a)
                 for (auto& x : coldata["records"]["col_index"].items())
                     st.insert(st.end(), to_string(x.value()));
 
-                if(!coldata["records"]["primary_key"].empty())
+                if(!coldata["records"]["primary_key"].empty())      //checks if primary key is set on table or not
                 {
                     std::string primarykey = coldata["records"]["primary_key"];
 
-                    int count=0;
+                    int count=0;        //counter for index of column_name
                     for(auto & i : coldata["records"]["col_names"])
                     {
                         if(i == primarykey)
@@ -59,14 +54,19 @@ std::string insertIntoTable(std::string tbname,std::vector<std::string> a)
                         count++;
                     }
 
-                    int colindex = coldata["records"]["col_index"][count];
-                    std::string colindexstr = std::to_string(colindex);
+                    if(a[count].empty())    //if user tries to insert null data in primary key
+                    {
+                        return ErrPrimaryKeyConstraintViolation[0];     //primary key constraint violated
+                    }
+
+                    int colindex = coldata["records"]["col_index"][count];      //to store column index of the primary key column
+                    std::string colindexstr = std::to_string(colindex);     //converting it to string
 
                     for(auto & i : coldata["table_data"])
                     {
-                        if(a[count] == decryption(i[colindexstr]))
+                        if(a[count] == decryption(i[colindexstr]))      //checks if duplicate data is being added to the primary key
                         {
-                            return ErrPrimaryKeyConstraintViolation[0];
+                            return ErrPrimaryKeyConstraintViolation[0];     //primary key constraint violated
                         }
                     }
                 }

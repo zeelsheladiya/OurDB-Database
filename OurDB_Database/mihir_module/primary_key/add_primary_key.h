@@ -31,12 +31,12 @@ std::string addPrimaryKey(std::string colname , std::string tbname)
 
             if(coldata["records"]["col_names"].empty())
             {
-                return ErrNoColsFoundInTable[0];
+                return ErrNoColsFoundInTable[0];        //no columns exist in the table
             }
 
             if(coldata["records"]["primary_key"] == colname)
             {
-                return "This col is already a primary key!!";
+                return ErrAlreadyAPrimaryKey[0];       //if the column is already the primary key
             }
 
             for(auto & i : coldata["records"]["col_names"])
@@ -45,62 +45,67 @@ std::string addPrimaryKey(std::string colname , std::string tbname)
                 {
                     break;
                 }
-                count++;
+                count++;        //to store position of the column
             }
 
             if(count >= coldata["records"]["col_names"].size())
             {
-                return ErrColumnDoesNotExists[0];
+                return ErrColumnDoesNotExists[0];   //if column doesnt exist in the table
             }
             else
             {
-                //std::cout <<count << std::endl;
                 if(!coldata["table_data"].empty())
                 {
-                    //std::cout << "2"<< std::endl;
                     int countforduplicatedata = 0;
+                    int countfornulldata = 0;
 
-                    int colindex = coldata["records"]["col_index"][count];
-                    std::string colindexstr = std::to_string(colindex);
+                    int colindex = coldata["records"]["col_index"][count];      //to store column index of the primary key column
+                    std::string colindexstr = std::to_string(colindex);     //converting it to string
 
-                    for(int i=0;i<coldata["table_data"].size()-1;i++)
+                    for(int i=0;i<coldata["table_data"].size();i++)
                     {
+                        if(decryption(coldata["table_data"][i][colindexstr])=="null")
+                        {
+                            countfornulldata++;     //if it contains null data
+                        }
+
                         for(int j=i+1;j<coldata["table_data"].size();j++)
                         {
                             if(decryption(coldata["table_data"][i][colindexstr]) == decryption(coldata["table_data"][j][colindexstr]) )
+                            //if the column contains duplicate data
                             {
-                                //std::cout << "mul data found!"<< std::endl;
-                                if(decryption(coldata["table_data"][i][colindexstr]) != "null")
-                                {
-                                    countforduplicatedata++;
-                                }
+                                countforduplicatedata++;
                             }
                         }
                     }
 
-                    if(countforduplicatedata==0)
+                    if(countforduplicatedata==0 && countfornulldata==0)
                     {
-                        coldata["records"]["primary_key"] = colname;
+                        coldata["records"]["primary_key"] = colname;    //sets the column as primary key
+                    }
+                    else if(countforduplicatedata!=0)
+                    {
+                        return ErrPrimaryKeyDuplData[0];        //error duplicate data exists in the column
                     }
                     else
                     {
-                        return ErrPrimaryKeyDuplData[0];
+                        return ErrPrimaryKeyNullData[0];        //error NULL data exists in the column
                     }
                 }
                 else
                 {
-                    coldata["records"]["primary_key"] = colname;
+                    coldata["records"]["primary_key"] = colname;        //sets the column as primary key
                 }
 
                 std::ofstream o(tbname);
                 o << coldata << std::endl;
 
-                return SuccessPrimaryKey[0];
+                return SuccessPrimaryKey[0];    //succesfully added primary key
             }
         }
         else
         {
-            return errNoSuchTableExist[0];
+            return errNoSuchTableExist[0];      //if table doesnt exists
         }
     }
     else

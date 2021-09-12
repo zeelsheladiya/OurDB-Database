@@ -1,8 +1,6 @@
 //
 // Created by zeel,mihir,parth,pranav on 13/04/2021.
 //
-//#include <iostream>
-//#include <string>
 
 #ifndef OURDB_DATABASE_ERROR_VARIABLE_H
 #define OURDB_DATABASE_ERROR_VARIABLE_H
@@ -237,6 +235,12 @@ inline std::string ErrPrimaryKeyDuplData[2] = {"Error index := 78 , Error := Can
 
 //syntax error in add primary key
 inline std::string ErrSyntaxPrimaryKey[2] = {"Error index := 79 , Error := Wrong syntax for adding primary key \n\t Correct Syntax : set $ <col_name> @ <table_name>!! " , "79"};
+
+//does not allows to set primary key to column that has duplicate data
+inline std::string ErrPrimaryKeyNullData[2] = {"Error index := 80 , Error := Cannot make this column as primary key because it contains NULL data!! " , "80"};
+
+//if you try to set the primary key to a column that is already a primary key
+inline std::string ErrAlreadyAPrimaryKey[2] = {"Error index := 81 , Error := This column is already the primary key!! " , "81"};
 
 
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H
