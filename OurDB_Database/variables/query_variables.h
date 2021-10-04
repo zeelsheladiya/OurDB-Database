@@ -113,4 +113,7 @@ inline std::string var_for_func_inselect[1] = {"*"};
 //variable for symbol for primary key
 inline std::string pkey[1] = {"$"};
 
+//variable for symbol for foreign key
+inline std::string frkey[1] = {"#"};
+
 #endif //OURDB_DATABASE_QUERY_VARIABLES_H

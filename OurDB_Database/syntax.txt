@@ -96,3 +96,10 @@
         -> put
         -----------------------------------------------------------------------
         syntax :- set $ <col_name> @ <table_name>
+
+10. set foreign key :-
+        words :
+        -> set
+        -> put
+        ------------------------------------------------------------------------
+        syntax :- set # <col_name> @ <table_name> $ <primary_table_name>

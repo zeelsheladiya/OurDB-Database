@@ -44,29 +44,94 @@ std::string insertIntoTable(std::string tbname,std::vector<std::string> a)
                 {
                     std::string primarykey = coldata["records"]["primary_key"];
 
-                    int count=0;        //counter for index of column_name
+                    int prcount=0;        //counter for index of column_name
                     for(auto & i : coldata["records"]["col_names"])
                     {
                         if(i == primarykey)
                         {
                             break;
                         }
-                        count++;
+                        prcount++;
                     }
 
-                    if(a[count].empty())    //if user tries to insert null data in primary key
+                    if(a[prcount].empty())    //if user tries to insert null data in primary key
                     {
                         return ErrPrimaryKeyConstraintViolation[0];     //primary key constraint violated
                     }
 
-                    int colindex = coldata["records"]["col_index"][count];      //to store column index of the primary key column
+                    int colindex = coldata["records"]["col_index"][prcount];      //to store column index of the primary key column
                     std::string colindexstr = std::to_string(colindex);     //converting it to string
 
                     for(auto & i : coldata["table_data"])
                     {
-                        if(a[count] == decryption(i[colindexstr]))      //checks if duplicate data is being added to the primary key
+                        if(a[prcount] == decryption(i[colindexstr]))      //checks if duplicate data is being added to the primary key
                         {
                             return ErrPrimaryKeyConstraintViolation[0];     //primary key constraint violated
+                        }
+                    }
+                }
+
+                if(!coldata["records"]["foreign_key"].empty())      //checks if foreign key is set on table or not
+                {
+                    for(auto & i : coldata["records"]["foreign_key"])
+                    {
+                        std::string foreignkey = i[0];      //stores foreign key for checking
+                        std::string prtbname = i[1];
+                        ourdb prtabledata;
+
+                        std::string prtbpath = strPath[0] + databaseSelectGlobal + "/" + prtbname + ".Ourdb";
+
+                        if(!std::filesystem::exists(prtbpath.c_str()))
+                        {
+                            return errNoSuchTableExist[0];
+                        }
+
+                        std::ifstream prin(prtbpath);
+
+                        prin >> prtabledata;
+
+                        int frcount=0;        //counter for index of foreign key column_name
+                        for(auto & j : coldata["records"]["col_names"])
+                        {
+                            if(j == foreignkey)
+                            {
+                                break;
+                            }
+                            frcount++;
+                        }
+
+                        std::string prtbprimarykey = prtabledata["records"]["primary_key"];     //primary table's primary key
+
+                        int prcount=0;        //counter for index of primary column_name
+                        for(auto & j : prtabledata["records"]["col_names"])
+                        {
+                            if(j == prtbprimarykey)
+                            {
+                                break;
+                            }
+                            prcount++;
+                        }
+
+                        int frcolindex = coldata["records"]["col_index"][frcount];      //to store column index of the foreign key column
+                        std::string frcolindexstr = std::to_string(frcolindex);     //converting it to string
+
+                        int prcolindex = prtabledata["records"]["col_index"][prcount];      //to store column index of the primary key column
+                        std::string prcolindexstr = std::to_string(prcolindex);     //converting it to string
+
+                        int frdatachecker = 0;
+
+                        for(auto & k : prtabledata["table_data"])
+                        {
+                            if(a[frcount] == decryption(k[prcolindexstr]))      //checks if duplicate data is being added to the primary key
+                            {
+                                break;
+                            }
+                            frdatachecker++;
+                        }
+
+                        if(frdatachecker == prtabledata["table_data"].size())
+                        {
+                            return ErrForeignKeyConstraintViolated[0];      //if data in foreign key is not found in the primary key it is asociated with
                         }
                     }
                 }

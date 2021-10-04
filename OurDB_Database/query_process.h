@@ -29,6 +29,7 @@
 #include "select_module/select_module.h"
 #include "mihir_module/column_list/column_list.h"
 #include "mihir_module/primary_key/add_primary_key.h"
+#include "mihir_module/foreign_key/add_foreign_key.h"
 
 //using namespace std;
 
@@ -499,34 +500,60 @@ std::string query_process(std::vector<std::string> query)
             return inSufficientWordInUpdateSyntax[0]; //less word in the update syntax
          }
     }
-    else if(syntaxCompare(query[0],setx))
+    else if(syntaxCompare(query[0],setx))       // checks for set/put keyword
     {
-        if(query_size == 5)
+        if(syntaxCompare(query[1],pkey))    //checks for primary key symbol '$'
         {
-            if(syntaxCompare(query[1],pkey))
+            if(query_size == 5)
             {
-                if(syntaxCompare(query[3],colSymbol))
+                if(syntaxCompare(query[3],colSymbol))       //checks for '@'
                 {
                     return addPrimaryKey(query[2],query[4]);
                 }
                 else
                 {
-                    return ErrSyntaxPrimaryKey[0];
+                    return ErrSyntaxPrimaryKey[0];      //primary key syntax error
                 }
             }
             else
             {
-                return ErrSyntaxPrimaryKey[0];
+                return ErrSyntaxPrimaryKey[0];      //primary key syntax error
+            }
+        }
+        if(syntaxCompare(query[1],frkey))    //checks for foreign key symbol '#'
+        {
+            //set # <col_name> @ <table_name> $ <primary_table_name>
+            if(query_size == 7)
+            {
+                if(syntaxCompare(query[3],colSymbol))   //checks syntax for colsymbol '@'
+                {
+                    if(syntaxCompare(query[5],pkey))    //checks syntax for primary key symbol '$'
+                    {
+                        return addForeignKey(query[2],query[4],query[6]);   //calls addForeignKey method that takes column_name, table_name & primary_table_name
+                    }
+                    else
+                    {
+                        return ErrSyntaxForeignKey[0];  //foreign key syntax error
+                    }
+                }
+                else
+                {
+                    return ErrSyntaxForeignKey[0];  //foreign key syntax error
+                }
+            }
+            else
+            {
+                return ErrSyntaxForeignKey[0];  //foreign key syntax error
             }
         }
         else
         {
-            return ErrSyntaxPrimaryKey[0];
+            return querySyntaxError[0];      // syntax error
         }
     }
     else
     {
-        return querySyntaxError[0]; // syntax erroe
+        return querySyntaxError[0]; // syntax error
     }
 }
 

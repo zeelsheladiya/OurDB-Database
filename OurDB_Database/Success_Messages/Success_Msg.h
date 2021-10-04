@@ -48,4 +48,7 @@ inline std::string SuccessDeleteColumn[2] = {"Success index := 113 , Success := 
 //primary key added successfully
 inline std::string SuccessPrimaryKey[2] = {"Success index := 114 , Success := Primary key added successfully :) : ","114"};
 
+//foreign key added successfully
+inline std::string SuccessForeignKey[2] = {"Success index := 115 , Success := Foreign key added successfully :) : ","115"};
+
 #endif //OURDB_DATABASE_SUCCESS_MSG_H

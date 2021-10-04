@@ -110,7 +110,7 @@ std::string addPrimaryKey(std::string colname , std::string tbname)
     }
     else
     {
-        return SelectTheDatabase[0]; // if database is not selected before renaming then it gives error..
+        return SelectTheDatabase[0]; // if database is not selected then it gives error..
     }
 
 }

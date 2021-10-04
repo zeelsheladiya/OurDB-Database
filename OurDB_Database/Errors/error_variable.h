@@ -228,19 +228,34 @@ inline std::string errUpdatingDefaultTable[2] = {"Error index := 75 ,Error := Yo
 inline std::string ErrNoColsFoundInTable[2] = {"Error index := 76 , Error := No column Found Into table " , "76"};
 
 //primary key constraint violated
-inline std::string ErrPrimaryKeyConstraintViolation[2] = {"Error index := 77 , Error := Violation of primary key constraint!! " , "77"};
+inline std::string ErrPrimaryKeyConstraintViolation[2] = {"Error index := 77 , Error := Violation of primary key constraint!!" , "77"};
 
 //does not allows to set primary key to column that has duplicate data
-inline std::string ErrPrimaryKeyDuplData[2] = {"Error index := 78 , Error := Cannot make this column as primary key because it contains duplicate data!! " , "78"};
+inline std::string ErrPrimaryKeyDuplData[2] = {"Error index := 78 , Error := Cannot make this column as primary key because it contains duplicate data!!" , "78"};
 
 //syntax error in add primary key
-inline std::string ErrSyntaxPrimaryKey[2] = {"Error index := 79 , Error := Wrong syntax for adding primary key \n\t Correct Syntax : set $ <col_name> @ <table_name>!! " , "79"};
+inline std::string ErrSyntaxPrimaryKey[2] = {"Error index := 79 , Error := Wrong syntax for adding primary key \n\t Correct Syntax : set $ <col_name> @ <table_name>!!" , "79"};
 
 //does not allows to set primary key to column that has duplicate data
 inline std::string ErrPrimaryKeyNullData[2] = {"Error index := 80 , Error := Cannot make this column as primary key because it contains NULL data!! " , "80"};
 
 //if you try to set the primary key to a column that is already a primary key
-inline std::string ErrAlreadyAPrimaryKey[2] = {"Error index := 81 , Error := This column is already the primary key!! " , "81"};
+inline std::string ErrAlreadyAPrimaryKey[2] = {"Error index := 81 , Error := This column is already the primary key!!" , "81"};
+
+//if you try to set foreign key to a table that does not have any primary key
+inline std::string ErrNoPrimaryKeyFound[2] = {"Error index := 82 , Error := No primary key found! Please add a primary key first!!" , "82"};
+
+//if you try to set foreign key to a table that does not have any primary key
+inline std::string ErrForeignKeyConstraintViolated[2] = {"Error index := 83 , Error := Violation of foreign key constraint!!" , "83"};
+
+//syntax error in add foreign key
+inline std::string ErrSyntaxForeignKey[2] = {"Error index := 84 , Error := Wrong syntax for adding foreign key \n\t Correct Syntax : set # <col_name> @ <table_name> $ <primary_table_name>!!" , "84"};
+
+//syntax error in add foreign key
+inline std::string ErrCantAddForeignKey[2] = {"Error index := 85 , Error := Cannot make this column a foreign key as it violates foreign key constraints!!" , "85"};
+
+//if you try to set foreign key to a column that is already a foreign key
+inline std::string ErrAlreadyAForeignKey[2] = {"Error index := 85 , Error := Cannot make this column a foreign key as it violates foreign key constraints!!" , "85"};
 
 
 #endif //OURDB_DATABASE_ERROR_VARIABLE_H
