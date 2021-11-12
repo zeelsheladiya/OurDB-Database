@@ -333,7 +333,7 @@ select * @ tb
 
 [comment]: <> (primery key to table ------------------------------------------------)
 
-## To set primary key:
+## To set primary and foreign key:
 - Now ourdb has schema such as primary key nad foreign key.
 - Syntax [primary key] : set $ <col_name> @ <table_name>
 - Syntax [foreign key] : set # <col_name> @ <table_name> $ <primary_table_name>
