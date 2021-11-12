@@ -62,7 +62,7 @@ Clone the project
 
 - Add or include OurDB_Database.h in your colnsole or gui program file
 
-```javascript
+```c++
 #include "OurDB_Database.h"
 ```
 
@@ -74,7 +74,7 @@ Clone the project
 - First step to enter in the database system is to create database. A physical storage area where all table resides.
 - Syntax : create/make database/db <database_name>
 
-```javascript
+```c++
 create database zeel
 ``` 
 
@@ -89,7 +89,7 @@ create database zeel
 - Syntax : select/choose database/db <database_name>
 - After creating database you have to compulsory select the database in order to create table and perform some action/operations.
 
-```javascript
+```c++
 select database zeel
 ``` 
 
@@ -104,7 +104,7 @@ select database zeel
 - Syntax : create/make table <table_name> @ <column1_name> <column2_name>…
 - After creating database you have to compulsory select the database in order to create table and perform some action/operations.
 
-```javascript
+```c++
 create table mark @ id name age 
 ``` 
 
@@ -118,7 +118,7 @@ create table mark @ id name age
 - it will show the selected database/the database you are in right now.
 - Syntax : current/present database/db
 
-```javascript
+```c++
 current database
 ``` 
 
@@ -133,11 +133,11 @@ current database
 - first you have to select the database then and then you can perform rename query.and after renaming you have to again select the database to perform the operation.
 - Syntax : rename database <database_name>
 
-```javascript
+```c++
 select database parth
 ``` 
 
-```javascript
+```c++
 rename database parthx
 ``` 
 
@@ -151,7 +151,7 @@ rename database parthx
 - It will show all the database resides in the system.
 - Syntax : show/display/view all db/database
 
-```javascript
+```c++
 show all db
 ``` 
 
@@ -166,7 +166,7 @@ show all db
 - first we have to select the database so that we can see the table resides in it.
 - Syntax : show/display/view all table
 
-```javascript
+```c++
 show all table
 ``` 
 
@@ -179,7 +179,7 @@ show all table
 - After selecting database , create table and then you will be able to use this feature.
 - Syntax : show all col @ <table_name>
 
-```javascript
+```c++
 show all col @ tb1
 ``` 
 
@@ -194,7 +194,7 @@ show all col @ tb1
 - make sure that table must exist before renaming the table.
 - Syntax : rename table <old_table_name> <new_table_name>
 
-```javascript
+```c++
 reaname table tbn tb1
 ``` 
 
@@ -207,7 +207,7 @@ reaname table tbn tb1
 - make sure to check that column exist in the table by show all column @ table.
 - Syntax :rename column/col from <table_name> @ <old_col_name> <new_col_name>
 
-```javascript
+```c++
 rename col from tb1 @ age agex
 ``` 
 
@@ -223,7 +223,7 @@ rename col from tb1 @ age agex
 - insert or add both will be accepted but not simultaneously.
 - Syntax : insert into <table_name> @ '<col1_value>' '<col2_value>' ...
 
-```javascript
+```c++
 insert into mark @ '1' 'zeel' '20' 
 ``` 
 
@@ -240,7 +240,7 @@ insert into mark @ '1' 'zeel' '20'
 - insert or add both will be accepted but not simultaneously.
 - Syntax : insert/add col/column into <table_name> @ <col_name>
 
-```javascript
+```c++
 insert col into mark @ gender
 ``` 
 
@@ -255,7 +255,7 @@ insert col into mark @ gender
 - It's also support < , > , <= , >= operators.
 - Syntax : update @ <table_name> set/put <table_field> '<field_value>' where <table_field1>(=|!)<field_value1> & <table_field2>(=|!)<field_value2>
 
-```javascript
+```c++
 update @ mark set gender 'female' where id=1 & name=zeel
 ``` 
 
@@ -268,7 +268,7 @@ update @ mark set gender 'female' where id=1 & name=zeel
 - delete or destroy both are accepted but not simultaneously
 - Syntax : delete/destroy database <database_name>
 
-```javascript
+```c++
 delete db dbn
 ``` 
 
@@ -283,7 +283,7 @@ delete db dbn
 - make sure to select the database before deleting table.
 - Syntax : delete table <table_name>
 
-```javascript
+```c++
 delete table tb
 ``` 
 
@@ -300,7 +300,7 @@ delete table tb
 - It's also support < , > , <= , >= operators.
 - Syntax : delete/destroy @ <table_name> where <column_name> (=/!) <column_value> (&/|) <column_name1> (=/!) <column_value1>
 
-```javascript
+```c++
 delete @ tb1 where id=4
 ``` 
 
@@ -313,7 +313,7 @@ delete @ tb1 where id=4
 - make sure in which table you are going to insert the column ,that must be created before insertion of column.
 - Syntax : delete/destroy column/col from <table_name> @ <col_name>
 
-```javascript
+```c++
 delete col from tb1 @ pass
 ``` 
 
@@ -325,7 +325,7 @@ delete col from tb1 @ pass
 - It will select and display the the data into the table format.
 - Syntax : select/choose col1 col2 @ <table_name> where <column_name> (=/!) <column_value> (&/|) <column_name1> (=/!) <column_value1>
 
-```javascript
+```c++
 select * @ tb
 ``` 
 
@@ -338,12 +338,12 @@ select * @ tb
 - Syntax [primary key] : set $ <col_name> @ <table_name>
 - Syntax [foreign key] : set # <col_name> @ <table_name> $ <primary_table_name>
 
-```javascript
+```c++
 // to set primary key
 set $ id @ testTable
 ``` 
 
-```javascript
+```c++
 // to set foreign key
 set # id @ testTable $ mainTable
 ``` 
@@ -354,17 +354,17 @@ set # id @ testTable $ mainTable
 - Syntax [ output as a map object ] : To_Map(run_query("your query"))
 - Syntax [ output as a json object ] : To_Json(run_query("your query"))
 
-```javascript
+```c++
 // to get table string
 To_StringTable(run_query("select * @ testTable"))
 ``` 
 
-```javascript
+```c++
 // to get map object
 To_Map(run_query("select * @ testTable"))
 ``` 
 
-```javascript
+```c++
 // to get json object
 To_Json(run_query("select * @ testTable"))
 ``` 
