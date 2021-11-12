@@ -375,7 +375,7 @@ To_Json(run_query("select * @ testTable"))
 
 - this example's code also can be seen in OurDB_Database/console.cpp.
 
-```javascript
+```c++
 #include "OurDB_Database.h"
 #include <iostream>
 #include <string>
