@@ -331,6 +331,44 @@ select * @ tb
 
 ![Select data from table](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_119.jpg?raw=true)
 
+[comment]: <> (primery key to table ------------------------------------------------)
+
+## To set primary key:
+- Now ourdb has schema such as primary key nad foreign key.
+- Syntax [primary key] : set $ <col_name> @ <table_name>
+- Syntax [foreign key] : set # <col_name> @ <table_name> $ <primary_table_name>
+
+```javascript
+// to set primary key
+set $ id @ testTable
+``` 
+
+```javascript
+// to set foreign key
+set # id @ testTable $ mainTable
+``` 
+
+## Functions for output:
+- there are mainly three functions to get better formatted output such as output as a string , map , json.
+- Syntax [ output as a table string for console app ] : To_StringTable(run_query("your query"))
+- Syntax [ output as a map object ] : To_Map(run_query("your query"))
+- Syntax [ output as a json object ] : To_Json(run_query("your query"))
+
+```javascript
+// to get table string
+To_StringTable(run_query("select * @ testTable"))
+``` 
+
+```javascript
+// to get map object
+To_Map(run_query("select * @ testTable"))
+``` 
+
+```javascript
+// to get json object
+To_Json(run_query("select * @ testTable"))
+``` 
+
 ## Other updates will be added after new commits...
 
 ## Examples of console app with ourdb database
