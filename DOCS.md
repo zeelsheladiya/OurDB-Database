@@ -7,7 +7,7 @@
   "MD041": false
 } -->
 
-# OurDB database
+# Oikos database
 
 [<img src="./img/logo.png" align="center" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
 
