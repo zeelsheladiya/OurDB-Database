@@ -1,35 +1,14 @@
-﻿
+# Project Documentation OurDB DataBase
 
+### Authrs
+- Zeel sheladiya ( Rollno : 97 ) 
+- Mihir Surati ( Rollno : 99 ) 
+- Parth Dabheliya ( Rollno : 13 )
+- Pranav patel ( Rollno : 74 )
 
-
-
-Project Documentation
-OurDB DataBase
-
-
-
-
-Zeel sheladiya ( Rollno : 97 ) 
-Mihir Surati ( Rollno : 99 ) 
-Parth Dabheliya ( Rollno : 13 ) 
-Pranav patel ( Rollno : 74 )
-
-
-
-
-Introduction
-
-
-
-
-Sr .no
-Topic Name:
-Page no
-1
-Scope Of The Project
-3
-2
-Overview Of Existing Systems and Technologies
+### Introduction
+- Scope Of The Project
+- Overview Of Existing Systems and Technologies
 4
 3
 Overview Of the Project
@@ -576,23 +555,14 @@ Note: make sure to select the database before deleting table.
 
 
 
+## Delete the particular table data :
+Delete the data from the table at particular row/rows . Note: make sure to select the database before deleting table.
 
+> Here at particular row/rows you can delete a data.
+> Here after where table field and value connected with the =  operator.
+> Or !(not equal) operator.
 
-
-	Delete the particular table data :
-Delete the data from the table at particular row/rows .
-
-Note: make sure to select the database before deleting table.
-
-Here at particular row/rows you can delete a data.
-
-Here after where table field and value connected with the = 
-operator.
-Or !(not equal) operator.
-
-And for more than one condition you can concatenation condition 
-with either &(and) or |(or)
-
+And for more than one condition you can concatenation condition  with either &(and) or |(or)
 
 Syntax : delete/destroy @ <table_name> where <column_name>
 (=/!) <column_value> (&/|) <column_name1> (=/!)
@@ -607,71 +577,25 @@ Syntax : delete/destroy @ <table_name> where <column_name>
 
 
 
-	Delete the column :
-This will delete the column from the table .
-Note : make sure in which table you are going to insert the column ,that must 
-be created before insertion of column.
+## Delete the column
+This will delete the column from the table. Note : make sure in which table you are going to insert the column ,that must be created before insertion of column.
 
-
-
-
-
-
-
-
-	Select data from table:
+## Select data from table:
 It will select and display the the data into the table format.
 
-
-
-
-
-Syntax : select/choose col1 col2 @ <table_name> where
-
+## Syntax 
+```
+: select/choose col1 col2 @ <table_name> where
 <column_name> (=/!) <column_value> (&/|) <column_name1>
-(=/!) <column_value1>
+(=/!) <column_value1>```
 
+## Encryption And Decryption
+The data stored in the database should be secure and can’t be read by  the user or any other ,While they are stored in the database. So that we created our own encryption and decryption method to encrypt and  decrypt data respectively.
 
+The encryption and decryption use in this we gave name as 69Cryption. This 69Cryption method encrypt the data before stored in the json format  And decrypt the data after user ask to retrieve it. So that user can see the  encrypted data.
 
+## How actually data stored in the table
+The Encrypted data are stored in to the <file_name>.Ourdb (here Ourdb extension is especially for our database system). While user run query “create table” , the <file_name>.Ourdb is stored in specified database. Which was previously selected by the user. While user uses “insert into” query, the data stored in the file as Json  format.
 
-
-
-Encryption And Decryption:
-     The data stored in the database should be secure and can’t be read by 
-the user or any other ,While they are stored in the database.
-
-So that we created our own encryption and decryption method to encrypt and 
-decrypt data respectively.
-
-The encryption and decryption use in this we gave name as 69Cryption.
-
-This 69Cryption method encrypt the data before stored in the json format 
-And decrypt the data after user ask to retrieve it. So that user can see the 
-encrypted data.
-
-
-How actually data stored in the table :
-    The Encrypted data are stored in to the <file_name>.Ourdb (here 
-Ourdb extension is especially for our database system).
-
-While user run query “create table” , the <file_name>.Ourdb is stored in 
-specified database. Which was previously selected by the user.
-
-While user uses “insert into” query, the data stored in the file as Json 
-format.
-
-
-Future Enhancement :
-           We have code in our github directory.we will put 
-directory as public so every one will be able to take advantage of 
-database and also then can add more feature . we have created in 
-such a way that , changes can be easily made.
-
-So that we want to create a big community which can enhance the 
-code.
-
-
-
-
-
-
+## Future Enhancement
+We have code in our github directory.we will put  directory as public so every one will be able to take advantage of  database and also then can add more feature . we have created in such a way that , changes can be easily made. So that we want to create a big community which can enhance the  code.
