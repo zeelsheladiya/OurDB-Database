@@ -36,7 +36,7 @@ To run Locally, clone this open project/repo:
 - You can make your own query syntax very easily . it’s make your querycode super protected.
 - It has all data files in encrypted format.
 - Connect this database with your application with just onelineofcode.
-- This database works in both application console and GUI.
+- Database works in both application console and GUI.
 - Database import and export is super easy.
 - Shared database without any connection string or anyextra connection.
 - Add your own module in the database for the query process.
