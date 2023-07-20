@@ -18,17 +18,8 @@ Database Management systems are widely used by companies and organizations to ma
 
 ## Overview Of The Existing Systems And Technologies
 
-#### Types of Database Management Systems
-There are several types of database management systems. Here is a list of seven  common database management systems:
-
-1. Hierarchical databases
-2. Network databases
-3. Relational databases
-4. Object-oriented databases
-5. Graph databases
-6. ER model databases
-7. Document databases
-8. NoSQL databases
+### Types of Database Management Systems
+There are several types of database management systems. Here is a list of seven  common database management systems: Hierarchical databases, Network databases, Relational databases, Object-oriented databases, Graph databases, ER model databases, Document databases, NoSQL databases etc.
 
 #### List Of The Top Database Management Software
 - SolarWinds Database Performance Analyzer
