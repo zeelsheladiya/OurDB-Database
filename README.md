@@ -11,9 +11,8 @@
 
 # Oikos database
 
-[Oikos-db](https://github.com/zeelsheladiya/OurDB-Database) is an lightweight database, created with c++ for every type of machine. An database scalable, easy to use and licensed under the MIT by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav Patel and contributors. 
+This is documentation to [Oikos-db](https://github.com/zeelsheladiya/OurDB-Database) which is created and licensed by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav Patel and contributors. [Oikos-db](https://github.com/zeelsheladiya/OurDB-Database) is an lightweight database, created with c++ for every type of machine. An database scalable, easy to use and portable too.
 
-This is documentation to [Oikos-db](https://github.com/zeelsheladiya/OurDB-Database) which is created and licensed by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav Patel and contributors.
 
 ## Contributing
 1. When you update something or add new module make sure you out comment so others can understand you update or new module
