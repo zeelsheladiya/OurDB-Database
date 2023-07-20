@@ -49,9 +49,7 @@
 ## Contributions
 Oikos-db is open to contributions, but I recommend creating an issue or replying in a comment to let me know what you are working on first that way we don't overwrite each other.
 
-If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
-
-Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on this open project. If you have any questions, feel free to open an issue. And feel free to improve this open project by contributing! 
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)  for details on this open project. If you have any questions, feel free to open an issue. And feel free to improve this open project by contributing! 
 
 ## Contributors
 <a href="https://github.com/zeelsheladiya/OurDB/graphs/contributors">
