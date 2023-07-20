@@ -11,9 +11,22 @@
 
 [<img src="./img/logo.png" align="right" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
 
-This is documentation to [OurDatabase](https://github.com/zeelsheladiya/OurDB-Database) which is created and licensed by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav patel and contributors.
+This is documentation to [Oikos-db](https://github.com/zeelsheladiya/OurDB-Database) which is created and licensed by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav patel and contributors.
 
-## Overview Of The Project
+# Overview Of The Project
+
+## Scope Of The Project
+Database Management systems are widely used by companies and organizations to maintain and manage their knowledge and information resources. After completing a database management course, students might work in any number of industries including: Automotive, Banking, Education, Legal, Insurance, Government, Pharmaceutical, Retail, Data Science, NGO etc.
+
+## Overview Of The Existing Systems And Technologies
+
+### Types of Database Management Systems
+There are several types of database management systems. Here is a list of seven  common database management systems: Hierarchical databases, Network databases, Relational databases, Object-oriented databases, Graph databases, ER model databases, Document databases, NoSQL databases etc.
+
+### Database Management Software
+There are several types of database management softwares. Here is a list of seven common database management softwares: SolarWinds Database Performance Analyzer, DbVisualizer, ManageEngine Application Manager, Altibase, Oracle RDBMS, IBM DB2, Microsoft SQL Server, SAP Sybase ASE, Teradata, ADABAS, MySQL, FileMaker, Microsoft Access, Informix, SQLite, PostgresSQL, AmazonRDS, MongoDB, Redis, CouchDB, Neo4j, OrientDB, Couchbase, phpMyAdmin, SQL Developer, MariaDB etc.
+
+
 ### Architecture Of OurDB
 
 #### Process Flow Of OurDB
