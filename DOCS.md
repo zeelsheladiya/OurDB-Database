@@ -32,41 +32,31 @@ In this Database management system , after connecting the database with your app
 OurDB_Database.h to query_process.h . In the query processor your query gets some operation  on it and through these operations, it will be selected by three main modules. After the module operation if there is data for insertion or updation, it will write in encrypted form into the physical storage area. However , if there is data for viewing purpose then the module will perform operation on actual data and then present you in the form of string.
 
 #### Objectives Of The Project
-●	You don’t need to install this database to use. It’s make this database 
-super portable.
-●	You can make your own query syntax very easily . it’s make your query 
-code super protected.
-●	It has all data files in encrypted format.
-●	You can connect this database with your application with just one line of 
-code.
-●	This database works in both application console and GUI.
-●	Database import and export is super easy.
-●	You can make a shared database without any connection string or any 
-extra connection.
-●	You can add your own module in the database for the query process.
-●	It’s very lite in terms of size.
-●	To run this database you don’t need any extra speciﬁcation requirement 
-in your system. So it can work smoothly in low specs machines.
+- You don’t need to install this database to use. It’s make this database super portable.
+- You can make your own query syntax very easily . it’s make your query code super protected.
+- It has all data files in encrypted format.
+- You can connect this database with your application with just one line of code.
+- This database works in both application console and GUI.
+- Database import and export is super easy.
+- You can make a shared database without any connection string or any extra connection.
+- You can add your own module in the database for the query process.
+- It’s very lite in terms of size.
+- To run this database you don’t need any extra speciﬁcation requirement in your system. So it can work smoothly in low specs machines.
 
 ## Feasibility Study
 
-1.	Financial Feasibility :
+### 1. Financial Feasibility
 It is too light weight and it doesn't need any high end requirements to run. So it can be too cheap or very affordable for all kinds of developers.
 
-
-3.	Technical feasibility :
+### 2. Technical feasibility
 OurDB is a completely data operation based application. The main  technologies and tools that are associated with OurDB are ,
-●	C++ Compiler
+
+- C++ Compiler
 
 This technology is freely available and technical skills required are manageable. From These it’s clear that the project OurDB is technically feasible.
 
-
-3.	Resource and Time Feasibility :
-Resource that are required for the OurDB project includes,
-
-1.	C++ compiler
-2.	Space in physical disk to record the data
-3.	C and C++ supported environment
+### 3. Resource and Time Feasibility
+Resource that are required for the OurDB project includes, C++ compiler, Space in physical disk to record the data, C and C++ supported environment
 
 ## Consideration
 1.	Performance
@@ -81,39 +71,26 @@ Resource that are required for the OurDB project includes,
 This will tell you about the OurDB database. And how to use it.Its so simple to use this database system you don’t need to install whole database  system like any other. But just add some database files not more than(under 1.5	MB) and need to install c++17 compiler(minimum requirement).
 
 ## We need to follow some step to get started with database..
+1. You have to include Ourdb_Database.h header file to your application so that you can use database.
+2. Then you have to create a database.
+3. After creating database, you can create table and do all table related operation.
+4. Then you can insert into the the table.
+5. Even you can perform update and delete operation with & and | operators.
 
-1.		You have to include Ourdb_Database.h header file to your application 
-so that you can use database.
+## Additional functionality:
+a) We have added functionality for the developer to convert data to json object.
 
-2.	Then you have to create a database.
+b) Convert the data to stringTable(represent data in table format in console application)
 
-3.	After creating database, you can create table and do all table related 
-operation.
+c) Convert the data to map
 
-4.	Then you can insert into the the table.
-
-5.	Even you can perform update and delete operation with & and | 
-operators.
-
-	Additional functionality:
-
-   a)	We have added functionality for the developer to convert data to json 
-object.
-
-   b)	Convert the data to stringTable(represent data in table format in 
-console application)
-
-c)	Convert the data to map
-
-	Developer can easily change the filter to convert to the above three format, 
-by default it is string.
+	Developer can easily change the filter to convert to the above three format, by default it is string.
 
 
 ## Syntax and uses
 
 ### Create database:
 First step to enter in the database system is to create database. A physical storage area where all table resides.
-
 
 > Above example shows that it is very simple to create a database..
 
