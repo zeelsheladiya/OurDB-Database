@@ -11,7 +11,13 @@
 
 [<img src="img/logo.png" align="right" width="100">](https://github.com/zeelsheladiya/OurDB-Database) 
 
-[Oikos](https://github.com/zeelsheladiya/OurDB-Database) is created and licensed with MIT by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav Patel and contributors. 
+[Oikos](https://github.com/zeelsheladiya/OurDB-Database) is created and licensed with MIT by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav Patel and contributors.  
+
+OurDB-Database is open to contributions, but I recommend creating an issue or replying in a comment to let me know what you are working on first that way we don't overwrite each other.
+
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on this open project. If you have any questions, feel free to open an issue. And feel free to improve this open project by contributing! 
+
+If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
 
 ## What does "Oikos" mean?
 
@@ -31,9 +37,6 @@ There are different types of databases, each database has a different purpose an
 Commercially speaking, when we think about making something that people will use, and that in a way there is some concern on the part of developers, users or companies. In a way, we are involved for many philosophical, financial or intellectual reasons. Such a concept on the part is the idea of "Oikos", which is the idea of individual and social responsibility. The idea of having an individualistic social responsibility has always been the basis of the open source movement. The idea that people are driven by common interests linked to certain values or social ties. This creates conditions to help people around us with the problems we are willing to help, contribute, improve or change.
 
 Also, an open source project should have an easy to speak name. The idea of this name is "easy" for different types of language. Because each language would just associate the term oikos with its more specific, targeted, correct term. oikos is the same as "home", "individualistic social responsibility", "open source", "database" or "someone who cares about people and the community". Or you could translate this as "love of neighbor", "mutual respect", "volunteer work"
-
-## How can I contact them for any queries?
-If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
 
 ## Table of Contents
 - [Scope Of The Project](docs/#scope-of-the-project)
