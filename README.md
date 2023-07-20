@@ -15,13 +15,18 @@
 
 ## What does "Oikos" mean?
 
-> According to philosopher Roger Scruton: "Human beings, in their settled condition, are animated by oikophilia: the love of the oikos, which means not only the home but the people contained in it, and the surrounding settlements that endow that home with lasting contours and an enduring smile.
+According to philosopher Roger Scruton: 
+>  "Human beings, in their settled condition, are animated by oikophilia: the love of the oikos, which means not only the home but the people contained in it, and the surrounding settlements that endow that home with lasting contours and an enduring smile.
 >
 > The oikos is the place that is not just mine and yours but ours. It is the stage-set for the first-person plural of politics, the locus, both real and imagined, where ‘it all takes place’.
 > 
 > Virtues like thrift and self-sacrifice, the habit of offering and receiving respect, the sense of responsibility – all those aspects of the human condition that shape us as stewards and guardians of our common inheritance – arise through our growth as persons, by creating islands of value in the sea of price.
 >
 > To acquire these virtues we must circumscribe the ‘instrumental reasoning’ that governs the life of Homo oeconomicus. We must vest our love and desire in things to which we assign an intrinsic, rather than an instrumental, value, so that the pursuit of means can come to rest, for us, in a place of ends. That is what we mean by settlement: putting the oikos back in the oikonomia. And that is what conservatism is about."
+
+## Why is the database name Oikos?
+- There are different types of databases, each database has a different purpose and different use cases or application. The definition of oikos is close to "database" we are developing, creating and maintaining. Because the idea of ​​creating a database is a philosophical idea: In a way we have to "keep" certain data for some time and we worry about how to keep it. These philosophical concerns are close to the "Oikos" concept of Roger Scruton.
+- Commercially speaking, an open source or closed source project should have a name that is popular and easy to talk about. So oikos is easier to pronounce and conforms to open source values. Someone who cares about people and the community has an Oikos feeling. 
 
 ## Documentation
 See our documentation: [pdf](), [markdown](), [word]() 
