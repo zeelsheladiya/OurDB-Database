@@ -16,7 +16,7 @@ This is documentation to [OurDatabase](https://github.com/zeelsheladiya/OurDB-Da
 This database is very portable, user friendly and also in this database you can make your own syntax to execute the queries. there are lot's of feature there that you can use in this database. However, the main feature is that you can connect this database with this.
  
 ## Table of Contents
-- [Scope Of The Project](#Scope Of The Project)
+- [Scope Of The Project](#scope-of-the-project)
 - [Overview Of Existing Systems and Technologies](#Overview Of Existing Systems and Technologies)
 - [Overview Of the Project](#Overview Of the Project)
 - [Process flow of Ourdb](#Process flow of Ourdb)
