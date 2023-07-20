@@ -72,7 +72,7 @@ Oikos-db is open to contributions, but I recommend creating an issue or replying
 
 Please read [CONTRIBUTING.md](./CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)  for details on this open project. If you have any questions, feel free to open an issue. And feel free to improve this open project by contributing! 
 
-## Contributors
-<a href="https://github.com/zeelsheladiya/OurDB/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=zeelsheladiya/OurDB-Database"/>
-</a>
+## Related work
+- LiteDB
+- SQLite
+- FireDB
