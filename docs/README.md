@@ -93,6 +93,18 @@ However , if there is data for viewing purpose then the module will perform oper
 - It’s very lite in terms of size.
 - To run this database you don’t need any extra speciﬁcation requirement in your system. So it can work smoothly in low specs machines.
 
+## 3.3 Features
+This database is very portable, user friendly and also in this database you can make your own syntax to execute the queries. there are lot's of feature there that you can use in this database. However, the main feature is that you can connect this database with this:
+- Light weight (size less than 2mb)
+- scalable
+- Can run cross platform (Windows ,Mac ,Linux)
+- Dynamically made database. Any developer can easily made changes
+- Files with own encryption and own extension .Ourdb
+- Even low end device like Arduino , raspberry pi can also run it.
+- It requires minimum c++ 17 standard compiler or above to run on any system
+- It is combination (NoSQL + SQL) because it doesn’t have schema for storing table but it has perfect syntax for creating query like SQL
+
+
 # 4. Feasibility Study
 
 ## 4.1. Financial Feasibility
