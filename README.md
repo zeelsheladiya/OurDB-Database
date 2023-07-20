@@ -29,7 +29,7 @@ To run Locally, clone this open project/repo:
 - Can run cross platform (Windows ,Mac ,Linux)
 - Dynamically made database. Any developer can easily made changes
 - Files with own encryption and own extension .Ourdb
-- Even low end device like Arduino , raspberry pi can also run it.
+- Low end device like Arduino , raspberry pi can also run it.
 - Requires minimum c++ 17 standard compiler or above to run on any system
 - Combination (NoSQL + SQL) because it doesn’t have schema for storing table but it has perfect syntax for creating query like SQL
 - Don't need to install this database to use. It’s make this databasesuper portable.
