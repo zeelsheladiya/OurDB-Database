@@ -37,7 +37,7 @@ To run Locally, clone this open project/repo:
 - All data files in encrypted format
 - Connect this database with your application with just onelineofcode
 - Works in both application console and GUI
-- Database import and export is super easy
+- Database import and export is easy
 - Shared database without any connection string or anyextra connection
 - Add your own module in the database for the query process
 - Run this database
