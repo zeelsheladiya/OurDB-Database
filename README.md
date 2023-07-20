@@ -11,7 +11,7 @@
 
 [<img src="img/logo.png" align="right" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
 
-[Oikos](https://github.com/zeelsheladiya/OurDB-Database) is created and licensed with MIT by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab) and contributors. Please, see our documentation: [pdf](), [markdown](), [word]() 
+[Oikos](https://github.com/zeelsheladiya/OurDB-Database) is created and licensed with MIT by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab) and contributors. 
 
 ## What does "Oikos" mean?
 
@@ -20,6 +20,9 @@
 > Virtues like thrift and self-sacrifice, the habit of offering and receiving respect, the sense of responsibility – all those aspects of the human condition that shape us as stewards and guardians of our common inheritance – arise through our growth as persons, by creating islands of value in the sea of price.
 >
 > To acquire these virtues we must circumscribe the ‘instrumental reasoning’ that governs the life of Homo oeconomicus. We must vest our love and desire in things to which we assign an intrinsic, rather than an instrumental, value, so that the pursuit of means can come to rest, for us, in a place of ends. That is what we mean by settlement: putting the oikos back in the oikonomia. And that is what conservatism is about."
+
+## Documentation
+See our documentation: [pdf](), [markdown](), [word]() 
 
 ## Contact
 If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
