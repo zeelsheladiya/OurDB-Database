@@ -1,6 +1,21 @@
-# Project Documentation OurDB DataBase
+<!-- markdownlint-configure-file {
+  "MD013": {
+    "code_blocks": false,
+    "tables": false
+  },
+  "MD033": false,
+  "MD041": false
+} -->
 
-### Authrs
+# OurDB database
+
+[<img src="https://pics.freeicons.io/uploads/icons/png/12952461721636528504-512.png" align="right" width="100">](https://electronjs.org)
+
+> Documentation to OurDatabase
+
+This is [Database](https://github.com/zeelsheladiya/OurDB-Database) which is created by [zeel sheladiya](), [mihir surati]() and [parth dabheliya](). This database is very portable , user friendly and also in this database you can make your own syntax to execute the queries. there are lot's of feature there that you can use in this database. However, the main feature is that you can connect this database with this.
+
+### Authors
 - Zeel sheladiya ( Rollno : 97 ) 
 - Mihir Surati ( Rollno : 99 ) 
 - Parth Dabheliya ( Rollno : 13 )
