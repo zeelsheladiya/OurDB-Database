@@ -7,11 +7,11 @@
   "MD041": false
 } -->
 
-# OurDB database
+# Oikophilia database
 
 [<img src="img/logo.png" align="right" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
 
-[OurDatabase](https://github.com/zeelsheladiya/OurDB-Database) is created and licensed with MIT by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab) and contributors. Please, see our documentation: [pdf](), [markdown](), [word]() 
+[Oikophilia](https://github.com/zeelsheladiya/OurDB-Database) is created and licensed with MIT by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab) and contributors. Please, see our documentation: [pdf](), [markdown](), [word]() 
 
 If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
 
