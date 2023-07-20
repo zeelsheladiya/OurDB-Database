@@ -1,4 +1,4 @@
-![OurDB Database](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/logo.png?raw=true)
+![OurDB Database] <img src="logo.png" width="100px">
 
 
 
