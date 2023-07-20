@@ -9,7 +9,7 @@
 
 # OurDB database
 
-[<img src="logo.png" align="right" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
+[<img src="./img/logo.png" align="right" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
 
 This is documentation to [OurDatabase](https://github.com/zeelsheladiya/OurDB-Database) which is created by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab).
 
