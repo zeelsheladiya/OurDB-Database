@@ -15,7 +15,7 @@
 
 This is [Database](https://github.com/zeelsheladiya/OurDB-Database) which is created by [zeel sheladiya](), [mihir surati]() and [parth dabheliya](). This database is very portable , user friendly and also in this database you can make your own syntax to execute the queries. there are lot's of feature there that you can use in this database. However, the main feature is that you can connect this database with this.
 
-### Authors
+## Authors
 - Zeel sheladiya ( Rollno : 97 ) 
 - Mihir Surati ( Rollno : 99 ) 
 - Parth Dabheliya ( Rollno : 13 )
