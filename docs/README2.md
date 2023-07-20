@@ -14,9 +14,6 @@
 This is documentation to [OurDatabase](https://github.com/zeelsheladiya/OurDB-Database) which is created by [zeel sheladiya](), [mihir surati]() and [parth dabheliya](). This database is very portable , user friendly and also in this database you can make your own syntax to execute the queries. there are lot's of feature there that you can use in this database. However, the main feature is that you can connect this database with this.
 
 ## Table of Contents
-
-
-### TOPICS
 - [Scope Of The Project]()
 - [Overview Of Existing Systems and Technologies]()
 - [Overview Of the Project]()
