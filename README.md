@@ -32,7 +32,7 @@ Commercially speaking, when we think about making something that people will use
 
 Also, an open source project should have an easy to speak name. The idea of this name is "easy" for different types of language. Because each language would just associate the term oikos with its more specific, targeted, correct term. oikos is the same as "home", "individualistic social responsibility", "open source", "database" or "someone who cares about people and the community". Or you could translate this as "love of neighbor", "mutual respect", "volunteer work"
 
-## Is there any more detailed documentation about this open project?
+## Is there documentation about this open project?
 See our documentation: [pdf](), [markdown](), [word]() 
 
 ## How can I contact them for any queries?
