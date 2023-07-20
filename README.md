@@ -21,6 +21,15 @@ To clone this project, repo:
   git clone https://github.com/zeelsheladiya/OurDB-Database.git
 ```
 
+## Features
+- Light weight (size less than 2mb)
+- scalable
+- Can run cross platform (Windows ,Mac ,Linux)
+- Dynamically made database. Any developer can easily made changes
+- Files with own encryption and own extension .Ourdb
+- Even low end device like Arduino , raspberry pi can also run it.
+- It requires minimum c++ 17 standard compiler or above to run on any system
+- It is combination (NoSQL + SQL) because it doesn’t have schema for storing table but it has perfect syntax for creating query like SQL
 
 ## Contributing
 **1** When you update something or add new module make sure you out comment so others can understand you update or new module
