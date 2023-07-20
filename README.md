@@ -40,7 +40,6 @@ To run Locally, clone this open project/repo:
 - Database import and export is super easy.
 - Shared database without any connection string or anyextra connection.
 - Add your own module in the database for the query process.
-- It’s very lite in terms of size.
 - Run this database you don’t need any extra specification requirementin your system. So it can work smoothly in
 
 ## Contributing
