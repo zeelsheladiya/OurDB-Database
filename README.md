@@ -19,6 +19,38 @@ See our documentation: [pdf](), [markdown](), [word]()
 
 If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
 
+## Table of Contents
+- [Scope Of The Project](#scope-of-the-project)
+- [Overview Of Existing Systems and Technologies](#scope-of-the-project)
+- [Overview Of the Project](#scope-of-the-project)
+- [Process flow of Ourdb](#scope-of-the-project)
+- [Objectives of Ourdb](#scope-of-the-project)
+- [Feasibility](#scope-of-the-project)
+- [Consideration](#scope-of-the-project)
+- [Getting Started](#getting-started)
+  - [Syntax and Uses (create database)](#scope-of-the-project)
+  - [Select database](#scope-of-the-project)
+  - [Create table](#scope-of-the-project)
+  - [Current database](#scope-of-the-project)
+  - [Rename database](#scope-of-the-project)
+  - [Show database](#scope-of-the-project)
+  - [Show table](#scope-of-the-project)
+  - [Show column in table](#scope-of-the-project)
+  - [Rename table in database](#scope-of-the-project)
+  - [Rename column in table](#scope-of-the-project)
+  - [Insert data into the table](#scope-of-the-project)
+  - [Adding new column in to the table](#scope-of-the-project)
+  - [Updating a data in to the table](#scope-of-the-project)
+  - [Delete the database](#scope-of-the-project)
+  - [Delete the table](#scope-of-the-project)
+  - [Delete the particular table data](#scope-of-the-project)
+  - [Delete the column](#scope-of-the-project)
+  - [Select data from table](#scope-of-the-project)
+  - [Implementation of database as console GUI](#scope-of-the-project)
+  - [Encryption and Decryption](#scope-of-the-project)
+  - [How actually data stored in table](#scope-of-the-project)
+  - [Future Enhancement](#scope-of-the-project)
+
 ## Contributions
 OurDB-Database is open to contributions, but I recommend creating an issue or replying in a comment to let me know what you are working on first that way we don't overwrite each other.
 
