@@ -25,14 +25,14 @@ Oikos is open for contribution from all people around the world. Whoever your ar
 If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
 
 ## Contributing
-- When you update something or add new module make sure you out comment so others can understand you update or new module
-- When you make new syntax make sure to add all syntax varibles in variables/query_variables.h.
-- All new query should be dynamic.
-- do not commit direct any new update first contact with author than they will test your module and they will commit.
-- make sure all error and success message have to registered in Errors/error_variable.h and success_message/Success_Msg.h respectivly.
-- do not make static query.
-- function should be in globle_functions folder.
-- select related query should be in select_module folder.
+**1** When you update something or add new module make sure you out comment so others can understand you update or new module
+**2** When you make new syntax make sure to add all syntax varibles in variables/query_variables.h.
+**3** All new query should be dynamic.
+**4** do not commit direct any new update first contact with author than they will test your module and they will commit.
+**5** make sure all error and success message have to registered in Errors/error_variable.h and success_message/Success_Msg.h respectivly.
+**6** do not make static query.
+**7** function should be in globle_functions folder.
+**8** select related query should be in select_module folder.
 
 ## Contributions
 Oikos-db is open to contributions, but I recommend creating an issue or replying in a comment to let me know what you are working on first that way we don't overwrite each other.
