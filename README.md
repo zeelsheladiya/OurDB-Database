@@ -900,5 +900,5 @@ If you want to contribite in this then read contribution.txt
 
 ## Contributors
 <a href="https://github.com/zeelsheladiya/OurDB/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=zeelsheladiya/OurDB"/>
+  <img src="https://contrib.rocks/image?repo=zeelsheladiya/OurDB-Database"/>
 </a>
