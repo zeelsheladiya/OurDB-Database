@@ -41,7 +41,7 @@ To run Locally, clone this open project/repo:
 - You can make a shared database without any connection string or anyextra connection.
 - You can add your own module in the database for the query process.
 - It’s very lite in terms of size.
-- To run this database you don’t need any extra specification requirementin your system. So it can work smoothly in
+- Run this database you don’t need any extra specification requirementin your system. So it can work smoothly in
 
 ## Contributing
 **1** When you update something or add new module make sure you out comment so others can understand you update or new module
