@@ -41,7 +41,7 @@ To run Locally, clone this open project/repo:
 - Shared database without any connection string or anyextra connection
 - Add your own module in the database for the query process
 - Run this database
-- Don’t need any extra specification requirementin your system. So it can work smoothly in
+- Don’t need any extra specification requirementin your system, so it can work smoothly
 
 ## Contributing
 **1** When you update something or add new module make sure you out comment so others can understand you update or new module
