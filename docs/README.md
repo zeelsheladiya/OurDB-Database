@@ -1,26 +1,4 @@
 
-# 4. Feasibility Study
-
-## 4.1. Financial Feasibility
-It is too light weight and it doesn't need any high end requirements to run. So it can be too cheap or very affordable for all kinds of developers.
-
-## 4.2. Technical feasibility
-OurDB is a completely data operation based application. The main  technologies and tools that are associated with OurDB are ,
-
-- C++ Compiler
-
-This technology is freely available and technical skills required are manageable. From These it’s clear that the project OurDB is technically feasible.
-
-## 4.3. Resource and Time Feasibility
-Resource that are required for the OurDB project includes, C++ compiler, Space in physical disk to record the data, C and C++ supported environment
-
-## 5. Consideration
-1.	Performance
-2.	Security
-3.	Usability and ease of use
-4.	Capacity and Scalability
-5.	Availability
-6.	Maintainability
 
 ## 6. GETTING STARTED
 This will tell you about the OurDB database. And how to use it.Its so simple to use this database system you don’t need to install whole database  system like any other. But just add some database files not more than(under 1.5	MB) and need to install c++17 compiler(minimum requirement).
@@ -732,24 +710,3 @@ int main() {
     return 0;
 }
 ``` 
-
-# 8. FAQ
-
-## 8.1 What does "Oikos" mean?
-
-According to philosopher Roger Scruton: 
->  "Human beings, in their settled condition, are animated by oikophilia: the love of the oikos, which means not only the home but the people contained in it, and the surrounding settlements that endow that home with lasting contours and an enduring smile.
->
-> The oikos is the place that is not just mine and yours but ours. It is the stage-set for the first-person plural of politics, the locus, both real and imagined, where ‘it all takes place’.
-> 
-> Virtues like thrift and self-sacrifice, the habit of offering and receiving respect, the sense of responsibility – all those aspects of the human condition that shape us as stewards and guardians of our common inheritance – arise through our growth as persons, by creating islands of value in the sea of price.
->
-> To acquire these virtues we must circumscribe the ‘instrumental reasoning’ that governs the life of Homo oeconomicus. We must vest our love and desire in things to which we assign an intrinsic, rather than an instrumental, value, so that the pursuit of means can come to rest, for us, in a place of ends. That is what we mean by settlement: putting the oikos back in the oikonomia. And that is what conservatism is about."
-
-## 8.2 Why is the database name Oikos?
-
-There are different types of databases, each database has a different purpose and different use cases or application. The definition of oikos is close to "database" we are developing, creating and maintaining. Because the idea of ​​creating a database is a philosophical idea: In a way we have to "keep" certain data for some time and we worry about how to keep it. These philosophical concerns are close to the "Oikos" concept of Roger Scruton.
-
-Commercially speaking, when we think about making something that people will use, and that in a way there is some concern on the part of developers, users or companies. In a way, we are involved for many philosophical, financial or intellectual reasons. Such a concept on the part is the idea of "Oikos", which is the idea of individual and social responsibility. The idea of having an individualistic social responsibility has always been the basis of the open source movement. The idea that people are driven by common interests linked to certain values or social ties. This creates conditions to help people around us with the problems we are willing to help, contribute, improve or change.
-
-Also, an open source project should have an easy to speak name. The idea of this name is "easy" for different types of language. Because each language would just associate the term oikos with its more specific, targeted, correct term. oikos is the same as "home", "individualistic social responsibility", "open source", "database" or "someone who cares about people and the community". Or you could translate this as "brotherly love", "mutual respect", "volunteer work", "individualistic common good"
