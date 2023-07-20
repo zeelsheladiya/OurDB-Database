@@ -889,9 +889,16 @@ int main() {
 ``` 
 
 ## Contact
-
-- If you need any help regarding this project feel free to contact us on our social media link and github account.
+If you need any help regarding this project feel free to contact us on our social media link and github account.
 
 ## Contribution
+If you want to contribite in this then read contribution.txt
 
-- If you want to contribite in this then read contribution.txt 
+## License
+* Inspired by the [awesome](https://github.com/sindresorhus/awesome) list.
+* OurDB is licensed with MIT by  zeel sheladiya, mihir surati and parth dabheliya and contributors
+
+## Contributors
+<a href="https://github.com/sudhakar3697/electron-alternatives/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sudhakar3697/electron-alternatives"/>
+</a>
