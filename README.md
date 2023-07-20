@@ -30,8 +30,8 @@ To run Locally, clone this open project/repo:
 - Dynamically made database. Any developer can easily made changes
 - Files with own encryption and own extension .Ourdb
 - Even low end device like Arduino , raspberry pi can also run it.
-- It requires minimum c++ 17 standard compiler or above to run on any system
-- It is combination (NoSQL + SQL) because it doesn’t have schema for storing table but it has perfect syntax for creating query like SQL
+- Requires minimum c++ 17 standard compiler or above to run on any system
+- Combination (NoSQL + SQL) because it doesn’t have schema for storing table but it has perfect syntax for creating query like SQL
 - You don’t need to install this database to use. It’s make this databasesuper portable.
 - You can make your own query syntax very easily . it’s make your querycode super protected.
 - It has all data files in encrypted format.
