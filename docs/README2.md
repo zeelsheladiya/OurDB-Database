@@ -9,104 +9,24 @@
 ### Introduction
 - Scope Of The Project
 - Overview Of Existing Systems and Technologies
-4
-3
-Overview Of the Project
-5
-4
-Process flow of Ourdb
-6
-5
-Objectives of Ourdb
-6
-6
-Feasibility
-7
-7
-Consideration	
-8
-8
-Getting started
-9
-
-
-
-
-
-
-
-
-
-
-
-
-9
- Syntax and Uses 
-(create database)
-
-
-
-
-
-
-
-
-
-
-
-
-10
-
-Topic name
-Page no
-
-
-Select database
-11
-
-
-Create table
-12
-
-
-Current database
-13
-
-
-Rename database
-14
-
-
-Show database
-15
-
-
-Show table
-16
-
-
-Show column in table
-17
-
-
-Rename table in 
-database
-18
-
-
-Rename column in 
-table
-19
-
-
-Insert data into the 
-table
-20
-
-
-Adding new column in 
-to the table
-21
+- Overview Of the Project
+- Process flow of Ourdb
+- Objectives of Ourdb
+- Feasibility
+- Consideration
+- Getting started
+    - Syntax and Uses (create database)
+    - Select database
+    - Create table
+    - Current database
+    - Rename database
+    - Show database
+    - Show table
+    - Show column in table
+    - Rename table in database
+    - Rename column in table
+    - Insert data into the table
+    - Adding new column in to the table
 
 
 Updating a data in to 
