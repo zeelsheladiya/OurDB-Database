@@ -25,8 +25,12 @@ According to philosopher Roger Scruton:
 > To acquire these virtues we must circumscribe the ‘instrumental reasoning’ that governs the life of Homo oeconomicus. We must vest our love and desire in things to which we assign an intrinsic, rather than an instrumental, value, so that the pursuit of means can come to rest, for us, in a place of ends. That is what we mean by settlement: putting the oikos back in the oikonomia. And that is what conservatism is about."
 
 ## Why is the database name Oikos?
-- There are different types of databases, each database has a different purpose and different use cases or application. The definition of oikos is close to "database" we are developing, creating and maintaining. Because the idea of ​​creating a database is a philosophical idea: In a way we have to "keep" certain data for some time and we worry about how to keep it. These philosophical concerns are close to the "Oikos" concept of Roger Scruton.
-- Commercially speaking, an open source or closed source project should have a name that is popular and easy to talk about. So oikos is easier to pronounce and conforms to open source values. Someone who cares about people and the community has an Oikos feeling. 
+
+There are different types of databases, each database has a different purpose and different use cases or application. The definition of oikos is close to "database" we are developing, creating and maintaining. Because the idea of ​​creating a database is a philosophical idea: In a way we have to "keep" certain data for some time and we worry about how to keep it. These philosophical concerns are close to the "Oikos" concept of Roger Scruton.
+
+Commercially speaking, when we think about making something that people will use, and that in a way there is some concern on the part of developers, users or companies. In a way, we are involved for many philosophical, financial or intellectual reasons. Such a concept on the part is the idea of "Oikos", which is the idea of individual and social responsibility. The idea of having an individualistic social responsibility has always been the basis of the open source movement. The idea that people are driven by common interests linked to certain values or social ties. This creates conditions to help people around us with the problems we are willing to help, contribute, improve or change.
+
+Also, an open source project should have an easy to speak name. The idea of this name is "easy" for different types of language. Because each language would just associate the term oikos with its more specific, targeted, correct term. oikos is the same as "home", "individualistic social responsibility", "open source", "database" or "someone who cares about people and the community".
 
 ## Documentation
 See our documentation: [pdf](), [markdown](), [word]() 
