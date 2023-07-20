@@ -38,8 +38,8 @@ To run Locally, clone this open project/repo:
 - Connect this database with your application with just onelineofcode.
 - This database works in both application console and GUI.
 - Database import and export is super easy.
-- You can make a shared database without any connection string or anyextra connection.
-- You can add your own module in the database for the query process.
+- Shared database without any connection string or anyextra connection.
+- Add your own module in the database for the query process.
 - It’s very lite in terms of size.
 - Run this database you don’t need any extra specification requirementin your system. So it can work smoothly in
 
