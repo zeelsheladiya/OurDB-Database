@@ -9,12 +9,14 @@
 
 # OurDB database
 
-[<img src="./img/logo.png" align="right" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
+[<img src="./img/logo.png" align="center" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
 
-# Overview Of The Project
 This is documentation to [Oikos-db](https://github.com/zeelsheladiya/OurDB-Database) which is created and licensed by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav patel and contributors.
 
-## Scope Of The Project
+
+# 1. Overview Of The Project
+
+## 1.1 Scope Of The Project
 Database Management systems are widely used by companies and organizations to maintain and manage their knowledge and information resources. After completing a database management course, students might work in any number of industries including: 
 - Automotive
 - Banking
