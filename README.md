@@ -30,7 +30,7 @@ There are different types of databases, each database has a different purpose an
 
 Commercially speaking, when we think about making something that people will use, and that in a way there is some concern on the part of developers, users or companies. In a way, we are involved for many philosophical, financial or intellectual reasons. Such a concept on the part is the idea of "Oikos", which is the idea of individual and social responsibility. The idea of having an individualistic social responsibility has always been the basis of the open source movement. The idea that people are driven by common interests linked to certain values or social ties. This creates conditions to help people around us with the problems we are willing to help, contribute, improve or change.
 
-Also, an open source project should have an easy to speak name. The idea of this name is "easy" for different types of language. Because each language would just associate the term oikos with its more specific, targeted, correct term. oikos is the same as "home", "individualistic social responsibility", "open source", "database" or "someone who cares about people and the community".
+Also, an open source project should have an easy to speak name. The idea of this name is "easy" for different types of language. Because each language would just associate the term oikos with its more specific, targeted, correct term. oikos is the same as "home", "individualistic social responsibility", "open source", "database" or "someone who cares about people and the community". Or you could translate this as "love of neighbor", "mutual respect", "volunteer work"
 
 ## Documentation
 See our documentation: [pdf](), [markdown](), [word]() 
