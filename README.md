@@ -35,17 +35,6 @@ Also, an open source project should have an easy to speak name. The idea of this
 ## How can I contact them for any queries?
 If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
 
-## Features
-This database is very portable, user friendly and also in this database you can make your own syntax to execute the queries. there are lot's of feature there that you can use in this database. However, the main feature is that you can connect this database with this:
-- Light weight (size less than 2mb)
-- scalable
-- Can run cross platform (Windows ,Mac ,Linux)
-- Dynamically made database. Any developer can easily made changes
-- Files with own encryption and own extension .Ourdb
-- Even low end device like Arduino , raspberry pi can also run it.
-- It requires minimum c++ 17 standard compiler or above to run on any system
-- It is combination (NoSQL + SQL) because it doesn’t have schema for storing table but it has perfect syntax for creating query like SQL
-
 ## Table of Contents
 - [Scope Of The Project](#scope-of-the-project)
 - [Overview Of Existing Systems and Technologies](#scope-of-the-project)
@@ -78,16 +67,16 @@ This database is very portable, user friendly and also in this database you can 
   - [How actually data stored in table](#scope-of-the-project)
   - [Future Enhancement](#scope-of-the-project)
 
-# Scope Of The Project
-Database Management systems are widely used by companies and organizations to maintain and manage their knowledge and information resources. After completing a database management course, students might work in any number of industries including: Automotive, Banking, Education, Legal, Insurance, Government, Pharmaceutical, Retail, Data Science, NGO etc.
-
-## Overview Of The Existing Systems And Technologies
-
-### Types of Database Management Systems
-There are several types of database management systems. Here is a list of seven  common database management systems: Hierarchical databases, Network databases, Relational databases, Object-oriented databases, Graph databases, ER model databases, Document databases, NoSQL databases etc.
-
-### Database Management Software
-There are several types of database management softwares. Here is a list of seven common database management softwares: SolarWinds Database Performance Analyzer, DbVisualizer, ManageEngine Application Manager, Altibase, Oracle RDBMS, IBM DB2, Microsoft SQL Server, SAP Sybase ASE, Teradata, ADABAS, MySQL, FileMaker, Microsoft Access, Informix, SQLite, PostgresSQL, AmazonRDS, MongoDB, Redis, CouchDB, Neo4j, OrientDB, Couchbase, phpMyAdmin, SQL Developer, MariaDB etc.
+## Features
+This database is very portable, user friendly and also in this database you can make your own syntax to execute the queries. there are lot's of feature there that you can use in this database. However, the main feature is that you can connect this database with this:
+- Light weight (size less than 2mb)
+- scalable
+- Can run cross platform (Windows ,Mac ,Linux)
+- Dynamically made database. Any developer can easily made changes
+- Files with own encryption and own extension .Ourdb
+- Even low end device like Arduino , raspberry pi can also run it.
+- It requires minimum c++ 17 standard compiler or above to run on any system
+- It is combination (NoSQL + SQL) because it doesn’t have schema for storing table but it has perfect syntax for creating query like SQL
 
 ## Contributions
 OurDB-Database is open to contributions, but I recommend creating an issue or replying in a comment to let me know what you are working on first that way we don't overwrite each other.
