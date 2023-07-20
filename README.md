@@ -31,7 +31,7 @@ To run Locally, clone this open project/repo:
 - Files with own encryption and own extension .Ourdb
 - Low end device like Arduino , raspberry pi can also run it
 - Requires minimum c++ 17 standard compiler or above to run on any system
-- Combination (NoSQL + SQL), doesn’t have schema for storing table but it has perfect syntax for creating query like SQL
+- Combination NoSQL+SQL, doesn’t have schema for storing table but it has perfect syntax for creating query like SQL
 - Don't need to install this database to use, portable
 - Make your own query syntax very easily, it’s make your querycode super protected
 - All data files in encrypted format
