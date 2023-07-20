@@ -15,15 +15,6 @@
 
 This is documentation to [Oikos-db](https://github.com/zeelsheladiya/OurDB-Database) which is created and licensed by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav Patel and contributors too.
 
-## Code of Conduct
-Oikos is open for contribution from all people around the world. Whoever your are and whatever your background: nationality, gender, religion, we welcome you. Things to keep in mind:
-
-- Show empathy
-- Be patient
-- Accept constructive feedback
-
-If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
-
 ## Contributing
 **1** When you update something or add new module make sure you out comment so others can understand you update or new module
 
@@ -40,6 +31,15 @@ If you need any help regarding this project feel free to contact us on our [Link
 **7** function should be in globle_functions folder.
 
 **8** select related query should be in select_module folder.
+
+## Code of Conduct
+Oikos is open for contribution from all people around the world. Whoever your are and whatever your background: nationality, gender, religion, we welcome you. Things to keep in mind:
+
+- Show empathy
+- Be patient
+- Accept constructive feedback
+
+If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
 
 ## Contributions
 Oikos-db is open to contributions, but I recommend creating an issue or replying in a comment to let me know what you are working on first that way we don't overwrite each other.
