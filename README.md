@@ -82,11 +82,6 @@ This database is very portable, user friendly and also in this database you can 
 - It requires minimum c++ 17 standard compiler or above to run on any system
 - It is combination (NoSQL + SQL) because it doesn’t have schema for storing table but it has perfect syntax for creating query like SQL
 
-## Contributions
-OurDB-Database is open to contributions, but I recommend creating an issue or replying in a comment to let me know what you are working on first that way we don't overwrite each other.
-
-Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on this open project. If you have any questions, feel free to open an issue. And feel free to improve this open project by contributing! 
-
 ## Contributors
 <a href="https://github.com/zeelsheladiya/OurDB/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=zeelsheladiya/OurDB-Database"/>
