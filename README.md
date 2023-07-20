@@ -11,15 +11,12 @@
 
 [<img src="img/logo.png" align="right" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
 
-[OurDatabase](https://github.com/zeelsheladiya/OurDB-Database) is created and licensed with MIT by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab) and contributors 
-
-This database is very portable, user friendly and also in this database you can make your own syntax to execute the queries. there are lot's of feature there that you can use in this database. However, the main feature is that you can connect this database with this.
-
-See our documentation: [pdf](), [markdown](), [word]()
+[OurDatabase](https://github.com/zeelsheladiya/OurDB-Database) is created and licensed with MIT by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab) and contributors. Please, see our documentation: [pdf](), [markdown](), [word]() 
 
 If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
 
 ## Features
+This database is very portable, user friendly and also in this database you can make your own syntax to execute the queries. there are lot's of feature there that you can use in this database. However, the main feature is that you can connect this database with this:
 - Light weight (size less than 2mb)
 - scalable
 - Can run cross platform (Windows ,Mac ,Linux)
