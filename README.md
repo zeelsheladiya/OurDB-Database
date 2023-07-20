@@ -1,16 +1,7 @@
-![OurDB Database] <img src="logo.png" width="100px">
-
-
-
-# OurDB Database 
-
-light weight Database. Created using c++ for every type of machine. Scalable as well as easy to use Database. 
-
-
-
+# OurDB Database <img src="nwse.png" width="150px">
+Light weight Database. Created using c++ for every type of machine. Scalable as well as easy to use Database. 
 
 ## Authors
-
  - [Zeel Sheladiya](https://github.com/zeelsheladiya)
  - [Mihir Surati](https://github.com/mihirsurati)
  - [Parth Dabheliya](https://github.com/Parth-Dab)
