@@ -6,7 +6,7 @@
 - Parth Dabheliya ( Rollno : 13 )
 - Pranav patel ( Rollno : 74 )
 
-### Introduction
+### TOPICS
 - Scope Of The Project
 - Overview Of Existing Systems and Technologies
 - Overview Of the Project
@@ -27,124 +27,82 @@
     - Rename column in table
     - Insert data into the table
     - Adding new column in to the table
+    - Updating a data in to the table
+    - Delete the database
+    - Delete the table
+    - Delete the particular table data
+    - Delete the column
+    - Select data from table
+    - Implementation of database as console GUI
+    - Encryption and Decryption
+    - How actually data stored in table
+    - Future Enhancement
 
+## Scope Of The Project
+Database Management systems are widely used by companies and organizations to maintain and manage their knowledge and information resources. After completing a database management course, students might work in any number of industries including:
 
-Updating a data in to 
-the table
-22
+1. Automotive
+2. Banking
+3. Education
+4. Legal
+5. Insurance
+6. Government
+7. Pharmaceutical
+8. Retail
+9. Data Science
+10. NGO
 
+## Overview Of The Existing Systems And Technologies
 
-Delete the database
-23
+#### Types of Database Management Systems
+There are several types of database management systems. Here is a list of seven  common database management systems:
 
+1. Hierarchical databases
+2. Network databases
+3. Relational databases
+4. Object-oriented databases
+5. Graph databases
+6. ER model databases
+7. Document databases
+8. NoSQL databases
 
-Delete the table
-24
+#### List Of The Top Database Management Software
+- SolarWinds Database Performance Analyzer
+- DbVisualizer
+- ManageEngine Applications
+- Manager
+- Altibase
+- Oracle RDBMS
+- IBM DB2
+- Microsoft SQL Server
+- SAP Sybase ASE ,
+- Teradata
+- ADABAS
+- MySQL
+- FileMaker
+- Microsoft Access
+- Informix
+- SQLite
+- PostgresSQL
+- AmazonRDS
+- MongoDB
+- Redis
+- CouchDB
+- Neo4j
+- OrientDB
+- Couchbase
+- phpMyAdmin
+- SQL Developer
+- MariaDB and many more.
 
+## Overview Of The Project
+### Architecture Of OurDB
 
-Delete the particular 
-table data
-25
+#### Process Flow Of OurDB
+In this Database management system , after connecting the database with your application.  Whenever you use run_query() , through this function your query will be gone for process via 
+OurDB_Database.h to query_process.h . In the query processor your query gets some operation  on it and through these operations, it will be selected by three main modules. After the module operation if there is data for insertion or updation, it will write in encrypted form into the physical storage area. However , if there is data for viewing purpose then the module will perform operation on actual data and then present you in the form of string.
 
-
-Delete the column
-26
-
-
-Select data from table
-27
-
-
-
-
-10
-Implementation of database as console GUI
-28
-11
-Encryption and Decryption
-31
-12
-How actually data stored in table
-31
-13
-Future Enhancement
-32
-
-
-
-
-Scope Of The Project
-
-Database Management systems are widely used by companies and organizations to 
-maintain and manage their knowledge and information resources. After completing a 
-database management course, students might work in any number of industries 
-including,
-
-1.	Automotive
-2.	Banking
-3.	Education
-4.	Legal
-5.	Insurance
-6.	Government
-7.	Pharmaceutical
-8.	Retail
-
-
-
-
-Overview Of The Existing Systems And Technologies
-
-Types of Database Management Systems
-
-There are several types of database management systems. Here is a list of seven 
-common database management systems:
-
-1.	Hierarchical databases
-2.	Network databases
-3.	Relational databases
-4.	Object-oriented databases
-5.	Graph databases
-6.	ER model databases
-7.	Document databases
-8.	NoSQL databases
-
-
-
-List Of The Top Database Management Software
-
-SolarWinds Database Performance Analyzer , DbVisualizer , ManageEngine Applications 
-Manager , Altibase , Oracle RDBMS , IBM DB2 , Microsoft SQL Server , SAP Sybase ASE , 
-Teradata , ADABAS , MySQL , FileMaker , Microsoft Access , Informix , SQLite , 
-PostgresSQL , AmazonRDS , MongoDB , Redis , CouchDB , Neo4j , OrientDB , Couchbase
-, phpMyAdmin , SQL Developer , MariaDB and many more.
-
-
-
-
-Overview Of The Project
-
-
-
-
-
-
-Architecture Of OurDB
-
-
-
-
-Process Flow Of OurDB
-In this Database management system , after connecting the database with your application. 
-Whenever you use run_query() , through this function your query will be gone for process via 
-OurDB_Database.h to query_process.h . In the query processor your query gets some operation 
-on it and through these operations, it will be selected by three main modules. After the module 
-operation if there is data for insertion or updation, it will write in encrypted form into the physical 
-storage area. However , if there is data for viewing purpose then the module will perform 
-operation on actual data and then present you in the form of string.
-
-
-
-Objectives Of The Project
+#### Objectives Of The Project
 ●	You don’t need to install this database to use. It’s make this database 
 super portable.
 ●	You can make your own query syntax very easily . it’s make your query 
@@ -161,41 +119,27 @@ extra connection.
 ●	To run this database you don’t need any extra speciﬁcation requirement 
 in your system. So it can work smoothly in low specs machines.
 
-
-
-Feasibility Study
-
+## Feasibility Study
 
 1.	Financial Feasibility :
-
-                            It is too light weight and it doesn't need any high end requirements 
-to run. So it can be too cheap or very affordable for all kinds of developers.
+It is too light weight and it doesn't need any high end requirements to run. So it can be too cheap or very affordable for all kinds of developers.
 
 
-2.	Technical feasibility :
-
-                         OurDB is a completely data operation based application. The main 
-technologies and tools that are associated with OurDB are ,
+3.	Technical feasibility :
+OurDB is a completely data operation based application. The main  technologies and tools that are associated with OurDB are ,
 ●	C++ Compiler
 
-
-This technology is freely available and technical skills required are manageable. From 
-These it’s clear that the project OurDB is technically feasible.
+This technology is freely available and technical skills required are manageable. From These it’s clear that the project OurDB is technically feasible.
 
 
 3.	Resource and Time Feasibility :
-
 Resource that are required for the OurDB project includes,
 
 1.	C++ compiler
 2.	Space in physical disk to record the data
 3.	C and C++ supported environment
 
-
-
-Consideration
-
-
+## Consideration
 1.	Performance
 2.	Security
 3.	Usability and ease of use
@@ -204,19 +148,10 @@ Consideration
 6.	Maintainability
 
 
+## GETTING STARTED
+This will tell you about the OurDB database. And how to use it.Its so simple to use this database system you don’t need to install whole database  system like any other. But just add some database files not more than(under 1.5	MB) and need to install c++17 compiler(minimum requirement).
 
-
-
-
-
-
-GETTING STARTED
-      This will tell you about the OurDB database. And how to use it.Its so 
-simple to use this database system you don’t need to install whole database 
-system like any other. But just add some database files not more than(under
-1.5	MB) and need to install c++17 compiler(minimum requirement).
-
-	We need to follow some step to get started with database..
+## We need to follow some step to get started with database..
 
 1.		You have to include Ourdb_Database.h header file to your application 
 so that you can use database.
@@ -245,38 +180,22 @@ c)	Convert the data to map
 by default it is string.
 
 
+## Syntax and uses
+
+### Create database:
+First step to enter in the database system is to create database. A physical storage area where all table resides.
 
 
-Syntax and uses
+> Above example shows that it is very simple to create a database..
 
-	Create database:
-First step to enter in the database system is to create database.
-A physical storage area where all table resides.
+Even you can change the (create) keyword in the code(instruction for developer). its  dynamic add or remove keyword etc.
 
 
+### Select database :
+select the database among the existing databases else returns the error.
 
 
-
-Above example shows that it is very simple to create a database..
-
-Even you can change the (create) keyword in the code(instruction for developer). its 
-dynamic add or remove keyword etc.
-
-
-	Select database :
-select the database among the existing databases else returns the
-error.
-
-
-    After creating database you have to compulsory select the database in order to create 
-table and perform some action/operations.
-
-
-
-
-
-
-
+> After creating database you have to compulsory select the database in order to create table and perform some action/operations.
 
 Note : database is so flexible that developer can change any keyword..
 
