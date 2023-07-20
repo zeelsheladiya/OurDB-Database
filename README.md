@@ -899,6 +899,6 @@ If you want to contribite in this then read contribution.txt
 * OurDB is licensed with MIT by  zeel sheladiya, mihir surati and parth dabheliya and contributors
 
 ## Contributors
-<a href="https://github.com/sudhakar3697/electron-alternatives/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=sudhakar3697/electron-alternatives"/>
+<a href="https://github.com/zeelsheladiya/OurDB/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=zeelsheladiya/OurDB"/>
 </a>
