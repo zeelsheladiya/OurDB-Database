@@ -11,6 +11,8 @@
 
 [<img src="img/logo.png" align="right" width="100">](https://github.com/zeelsheladiya/OurDB-Database) 
 
+[Oikos-db](https://github.com/zeelsheladiya/OurDB-Database) is created and licensed under the MIT by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav Patel and contributors.  
+
 ## Table of Contents
 - [Scope Of The Project](docs/#scope-of-the-project)
 - [Overview Of Existing Systems and Technologies](#scope-of-the-project)
@@ -43,9 +45,6 @@
   - [How actually data stored in table](#scope-of-the-project)
   - [Future Enhancement](#scope-of-the-project)
 - [FAQ](docs/#faq)
-
-## License
-[Oikos-db](https://github.com/zeelsheladiya/OurDB-Database) is created and licensed under the MIT by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav Patel and contributors.  
 
 ## Contributions
 Oikos-db is open to contributions, but I recommend creating an issue or replying in a comment to let me know what you are working on first that way we don't overwrite each other.
