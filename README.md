@@ -50,6 +50,7 @@ If you need any help regarding this project feel free to contact us on our [Link
   - [Encryption and Decryption](#scope-of-the-project)
   - [How actually data stored in table](#scope-of-the-project)
   - [Future Enhancement](#scope-of-the-project)
+- [FAQ](docs/#faq)
 
 ## Contributors
 <a href="https://github.com/zeelsheladiya/OurDB/graphs/contributors">
