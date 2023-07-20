@@ -19,8 +19,10 @@ See our documentation: [pdf](), [markdown](), [word]()
 
 If you need any help regarding this project feel free to contact us on our [social media link]() and [GitHub]() account.
 
-## Contribution
-If you want to contribite in this then read contribution.txt
+## Contributions
+OurDB-Database is open to contributions, but I recommend creating an issue or replying in a comment to let me know what you are working on first that way we don't overwrite each other.
+
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on this open project. If you have any questions, feel free to open an issue. And feel free to improve this list by contributing! 
 
 ## Contributors
 <a href="https://github.com/zeelsheladiya/OurDB/graphs/contributors">
