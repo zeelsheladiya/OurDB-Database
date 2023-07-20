@@ -11,28 +11,10 @@
 
 [<img src="./img/logo.png" align="right" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
 
-This is documentation to [OurDatabase](https://github.com/zeelsheladiya/OurDB-Database) which is created and licensed by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab) and contributors.
-
-## Authors
-- Zeel sheladiya ( Rollno : 97 ) 
-- Mihir Surati ( Rollno : 99 ) 
-- Parth Dabheliya ( Rollno : 13 )
-- Pranav patel ( Rollno : 74 )
-
+This is documentation to [OurDatabase](https://github.com/zeelsheladiya/OurDB-Database) which is created and licensed by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav patel and contributors.
 
 ## Scope Of The Project
-Database Management systems are widely used by companies and organizations to maintain and manage their knowledge and information resources. After completing a database management course, students might work in any number of industries including:
-
-1. Automotive
-2. Banking
-3. Education
-4. Legal
-5. Insurance
-6. Government
-7. Pharmaceutical
-8. Retail
-9. Data Science
-10. NGO
+Database Management systems are widely used by companies and organizations to maintain and manage their knowledge and information resources. After completing a database management course, students might work in any number of industries including: Automotive, Banking, Education, Legal, Insurance, Government, Pharmaceutical, Retail, Data Science, NGO etc.
 
 ## Overview Of The Existing Systems And Technologies
 
