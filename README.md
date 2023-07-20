@@ -1,4 +1,4 @@
-![OurDB Database](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/logo-mini.png?raw=true)
+![OurDB Database](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/logo.png?raw=true)
 
 
 
