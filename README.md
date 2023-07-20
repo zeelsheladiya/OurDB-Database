@@ -17,7 +17,7 @@ This database is very portable, user friendly and also in this database you can 
 
 See our documentation: [pdf](), [markdown](), [word]()
 
-**Contact:** If you need any help regarding this project feel free to contact us on our [social media link]() and [GitHub]() account.
+If you need any help regarding this project feel free to contact us on our [social media link]() and [GitHub]() account.
 
 ## Contribution
 If you want to contribite in this then read contribution.txt
