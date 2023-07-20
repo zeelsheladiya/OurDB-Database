@@ -9,7 +9,7 @@
 
 # Oikos database
 
-[<img src="./img/logo.png" align="center" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
+[<img src="../img/logo.png" align="center" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
 
 # 1. Overview Of The Project
 This is documentation to [Oikos-db](https://github.com/zeelsheladiya/OurDB-Database) which is created and licensed by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav patel and contributors.
