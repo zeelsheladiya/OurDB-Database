@@ -11,47 +11,49 @@
 
 [<img src="logo.png" align="right" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
 
-> Documentation to OurDatabase
+This is documentation to [OurDatabase](https://github.com/zeelsheladiya/OurDB-Database) which is created by [zeel sheladiya](), [mihir surati]() and [parth dabheliya](). This database is very portable , user friendly and also in this database you can make your own syntax to execute the queries. there are lot's of feature there that you can use in this database. However, the main feature is that you can connect this database with this.
 
-This is [Database](https://github.com/zeelsheladiya/OurDB-Database) which is created by [zeel sheladiya](), [mihir surati]() and [parth dabheliya](). This database is very portable , user friendly and also in this database you can make your own syntax to execute the queries. there are lot's of feature there that you can use in this database. However, the main feature is that you can connect this database with this.
+## Table of Contents
 
+
+### TOPICS
+- [Scope Of The Project]()
+- [Overview Of Existing Systems and Technologies]()
+- [Overview Of the Project]()
+- [Process flow of Ourdb]()
+- [Objectives of Ourdb]()
+- [Feasibility]()
+- [Consideration]()
+- [Getting Started](#getting-started)
+  - Syntax and Uses (create database)
+  - Select database
+  - Create table
+  - Current database
+  - Rename database
+  - Show database
+  - Show table
+  - Show column in table
+  - Rename table in database
+  - Rename column in table
+  - Insert data into the table
+  - Adding new column in to the table
+  - Updating a data in to the table
+  - Delete the database
+  - Delete the table
+  - Delete the particular table data
+  - Delete the column
+  - Select data from table
+  - Implementation of database as console GUI
+  - Encryption and Decryption
+  - How actually data stored in table
+  - Future Enhancement
+ 
 ## Authors
 - Zeel sheladiya ( Rollno : 97 ) 
 - Mihir Surati ( Rollno : 99 ) 
 - Parth Dabheliya ( Rollno : 13 )
 - Pranav patel ( Rollno : 74 )
 
-### TOPICS
-- Scope Of The Project
-- Overview Of Existing Systems and Technologies
-- Overview Of the Project
-- Process flow of Ourdb
-- Objectives of Ourdb
-- Feasibility
-- Consideration
-- Getting started
-    - Syntax and Uses (create database)
-    - Select database
-    - Create table
-    - Current database
-    - Rename database
-    - Show database
-    - Show table
-    - Show column in table
-    - Rename table in database
-    - Rename column in table
-    - Insert data into the table
-    - Adding new column in to the table
-    - Updating a data in to the table
-    - Delete the database
-    - Delete the table
-    - Delete the particular table data
-    - Delete the column
-    - Select data from table
-    - Implementation of database as console GUI
-    - Encryption and Decryption
-    - How actually data stored in table
-    - Future Enhancement
 
 ## Scope Of The Project
 Database Management systems are widely used by companies and organizations to maintain and manage their knowledge and information resources. After completing a database management course, students might work in any number of industries including:
