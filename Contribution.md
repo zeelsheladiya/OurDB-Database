@@ -1,4 +1,3 @@
-
 ## Rules
 1. When you update something or add new module make sure you out comment so others can understand you update or new module
 2. When you make new syntax make sure to add all syntax varibles in variables/query_variables.h.
