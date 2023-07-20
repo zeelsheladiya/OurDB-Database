@@ -35,7 +35,7 @@ To run Locally, clone this open project/repo:
 - Don't need to install this database to use. It’s make this databasesuper portable.
 - You can make your own query syntax very easily . it’s make your querycode super protected.
 - It has all data files in encrypted format.
-- You can connect this database with your application with just onelineofcode.
+- Connect this database with your application with just onelineofcode.
 - This database works in both application console and GUI.
 - Database import and export is super easy.
 - You can make a shared database without any connection string or anyextra connection.
