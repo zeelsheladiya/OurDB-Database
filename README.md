@@ -30,6 +30,16 @@ To run Locally, clone this open project/repo:
 - Even low end device like Arduino , raspberry pi can also run it.
 - It requires minimum c++ 17 standard compiler or above to run on any system
 - It is combination (NoSQL + SQL) because it doesn’t have schema for storing table but it has perfect syntax for creating query like SQL
+- You don’t need to install this database to use. It’s make this databasesuper portable.
+- You can make your own query syntax very easily . it’s make your querycode super protected.
+- It has all data files in encrypted format.
+- You can connect this database with your application with just onelineofcode.
+- This database works in both application console and GUI.
+- Database import and export is super easy.
+- You can make a shared database without any connection string or anyextra connection.
+- You can add your own module in the database for the query process.
+- It’s very lite in terms of size.
+- To run this database you don’t need any extra specification requirementin your system. So it can work smoothly in
 
 ## Contributing
 **1** When you update something or add new module make sure you out comment so others can understand you update or new module
