@@ -11,7 +11,7 @@
 
 [<img src="img/logo.png" align="right" width="100">](https://github.com/zeelsheladiya/OurDB-Database) 
 
-[Oikos-db](https://github.com/zeelsheladiya/OurDB-Database) is created and licensed under the MIT by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav Patel and contributors.  
+[Oikos-db](https://github.com/zeelsheladiya/OurDB-Database) is an lightweight database, created using c++ for every type of machine, scalable as well as easy to use database, created and licensed under the MIT by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav Patel and contributors. 
 
 ## Table of Contents
 - [Scope Of The Project](docs/#scope-of-the-project)
