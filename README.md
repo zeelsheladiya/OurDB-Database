@@ -28,6 +28,3 @@ Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on this open projec
 <a href="https://github.com/zeelsheladiya/OurDB/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=zeelsheladiya/OurDB-Database"/>
 </a>
-
-## License
-Inspired by the [awesome](https://github.com/sindresorhus/awesome) list this README.md
