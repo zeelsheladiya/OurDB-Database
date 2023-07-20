@@ -30,5 +30,4 @@ Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on this open projec
 </a>
 
 ## License
-* Inspired by the [awesome](https://github.com/sindresorhus/awesome) list.
-* OurDB is licensed with MIT by  zeel sheladiya, mihir surati and parth dabheliya and contributors
+Inspired by the [awesome](https://github.com/sindresorhus/awesome) list this README.md
