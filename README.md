@@ -15,6 +15,13 @@
 
 This is documentation to [Oikos-db](https://github.com/zeelsheladiya/OurDB-Database) which is created and licensed by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav Patel and contributors too.
 
+Clone the project: 
+
+```bash
+  git clone https://github.com/zeelsheladiya/OurDB-Database.git
+```
+
+
 ## Contributing
 **1** When you update something or add new module make sure you out comment so others can understand you update or new module
 
