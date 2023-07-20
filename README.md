@@ -55,7 +55,7 @@ This database is very portable, user friendly and also in this database you can 
 - [Feasibility](#scope-of-the-project)
 - [Consideration](#scope-of-the-project)
 - [Getting Started](#getting-started)
-  - [Syntax and Uses (create database)](#scope-of-the-project)
+- [Syntax and Uses (create database)](#scope-of-the-project)
   - [Select database](#scope-of-the-project)
   - [Create table](#scope-of-the-project)
   - [Current database](#scope-of-the-project)
