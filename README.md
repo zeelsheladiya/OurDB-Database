@@ -29,9 +29,6 @@ If you need any help regarding this project feel free to contact us on our [Link
 - It requires minimum c++ 17 standard compiler or above to run on any system
 - It is combination (NoSQL + SQL) because it doesn’t have schema for storing table but it has perfect syntax for creating query like SQL
 
-## Scope Of The Project
-Database Management systems are widely used by companies and organizations to maintain and manage their knowledge and information resources. After completing a database management course, students might work in any number of industries including: Automotive, Banking, Education, Legal, Insurance, Government, Pharmaceutical, Retail, Data Science, NGO etc.
-
 ## Table of Contents
 - [Scope Of The Project](#scope-of-the-project)
 - [Overview Of Existing Systems and Technologies](#scope-of-the-project)
@@ -63,6 +60,9 @@ Database Management systems are widely used by companies and organizations to ma
   - [Encryption and Decryption](#scope-of-the-project)
   - [How actually data stored in table](#scope-of-the-project)
   - [Future Enhancement](#scope-of-the-project)
+
+# Scope Of The Project
+Database Management systems are widely used by companies and organizations to maintain and manage their knowledge and information resources. After completing a database management course, students might work in any number of industries including: Automotive, Banking, Education, Legal, Insurance, Government, Pharmaceutical, Retail, Data Science, NGO etc.
 
 ## Overview Of The Existing Systems And Technologies
 
