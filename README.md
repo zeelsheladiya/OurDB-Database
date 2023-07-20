@@ -15,7 +15,9 @@
 
 ## What does "Oikos" mean?
 
-> According to philosopher Roger Scruton: "Human beings, in their settled condition, are animated by oikophilia: the love of the oikos, which means not only the home but the people contained in it, and the surrounding settlements that endow that home with lasting contours and an enduring smile.4 The oikos is the place that is not just mine and yours but ours. It is the stage-set for the first-person plural of politics, the locus, both real and imagined, where ‘it all takes place’.
+> According to philosopher Roger Scruton: "Human beings, in their settled condition, are animated by oikophilia: the love of the oikos, which means not only the home but the people contained in it, and the surrounding settlements that endow that home with lasting contours and an enduring smile.
+>
+> The oikos is the place that is not just mine and yours but ours. It is the stage-set for the first-person plural of politics, the locus, both real and imagined, where ‘it all takes place’.
 > 
 > Virtues like thrift and self-sacrifice, the habit of offering and receiving respect, the sense of responsibility – all those aspects of the human condition that shape us as stewards and guardians of our common inheritance – arise through our growth as persons, by creating islands of value in the sea of price.
 >
