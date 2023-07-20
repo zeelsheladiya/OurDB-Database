@@ -1,25 +1,3 @@
-
-
-## 6. GETTING STARTED
-This will tell you about the OurDB database. And how to use it.Its so simple to use this database system you don’t need to install whole database  system like any other. But just add some database files not more than(under 1.5	MB) and need to install c++17 compiler(minimum requirement).
-
-## 6.1 We need to follow some step to get started with database..
-1. You have to include Ourdb_Database.h header file to your application so that you can use database.
-2. Then you have to create a database.
-3. After creating database, you can create table and do all table related operation.
-4. Then you can insert into the the table.
-5. Even you can perform update and delete operation with & and | operators.
-
-## 6.2 Additional functionality:
-a) We have added functionality for the developer to convert data to json object.
-
-b) Convert the data to stringTable(represent data in table format in console application)
-
-c) Convert the data to map
-
-	Developer can easily change the filter to convert to the above three format, by default it is string.
-
-
 ## 7. Syntax and uses
 
 ## 7.1 Create database:
