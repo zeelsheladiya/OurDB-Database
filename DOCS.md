@@ -21,34 +21,8 @@ Database Management systems are widely used by companies and organizations to ma
 ### Types of Database Management Systems
 There are several types of database management systems. Here is a list of seven  common database management systems: Hierarchical databases, Network databases, Relational databases, Object-oriented databases, Graph databases, ER model databases, Document databases, NoSQL databases etc.
 
-#### List Of The Top Database Management Software
-- SolarWinds Database Performance Analyzer
-- DbVisualizer
-- ManageEngine Applications
-- Manager
-- Altibase
-- Oracle RDBMS
-- IBM DB2
-- Microsoft SQL Server
-- SAP Sybase ASE ,
-- Teradata
-- ADABAS
-- MySQL
-- FileMaker
-- Microsoft Access
-- Informix
-- SQLite
-- PostgresSQL
-- AmazonRDS
-- MongoDB
-- Redis
-- CouchDB
-- Neo4j
-- OrientDB
-- Couchbase
-- phpMyAdmin
-- SQL Developer
-- MariaDB and many more.
+### Database Management Software
+There are several types of database management softwares. Here is a list of seven common database management softwares: SolarWinds Database Performance Analyzer, DbVisualizer, ManageEngine Application Manager, Altibase, Oracle RDBMS, IBM DB2, Microsoft SQL Server, SAP Sybase ASE, Teradata, ADABAS, MySQL, FileMaker, Microsoft Access, Informix, SQLite, PostgresSQL, AmazonRDS, MongoDB, Redis, CouchDB, Neo4j, OrientDB, Couchbase, phpMyAdmin, SQL Developer, MariaDB etc.
 
 ## Overview Of The Project
 ### Architecture Of OurDB
