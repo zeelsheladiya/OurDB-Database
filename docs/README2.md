@@ -9,7 +9,7 @@
 
 # OurDB database
 
-[<img src="https://pics.freeicons.io/uploads/icons/png/12952461721636528504-512.png" align="right" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
+[<img src="logo.png" align="right" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
 
 > Documentation to OurDatabase
 
