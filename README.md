@@ -13,8 +13,6 @@
 
 [Oikos](https://github.com/zeelsheladiya/OurDB-Database) is created and licensed with MIT by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab) and contributors. Please, see our documentation: [pdf](), [markdown](), [word]() 
 
-If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
-
 ## What does "Oikos" mean?
 
 > "Human beings, in their settled condition, are animated by oikophilia: the love of the oikos, which means not only the home but the people contained in it, and the surrounding settlements that endow that home with lasting contours and an enduring smile.4 The oikos is the place that is not just mine and yours but ours. It is the stage-set for the first-person plural of politics, the locus, both real and imagined, where ‘it all takes place’.
@@ -23,6 +21,8 @@ If you need any help regarding this project feel free to contact us on our [Link
 >
 > To acquire these virtues we must circumscribe the ‘instrumental reasoning’ that governs the life of Homo oeconomicus. We must vest our love and desire in things to which we assign an intrinsic, rather than an instrumental, value, so that the pursuit of means can come to rest, for us, in a place of ends. That is what we mean by settlement: putting the oikos back in the oikonomia. And that is what conservatism is about."
 
+## Contact
+If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
 
 ## Features
 This database is very portable, user friendly and also in this database you can make your own syntax to execute the queries. there are lot's of feature there that you can use in this database. However, the main feature is that you can connect this database with this:
