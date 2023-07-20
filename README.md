@@ -23,7 +23,7 @@ To run Locally, clone this open project/repo:
 
 ## Features
 - Light weight (size less than 2mb)
-- scalable
+- Scalable
 - Can run cross platform (Windows ,Mac ,Linux)
 - Dynamically made database. Any developer can easily made changes
 - Files with own encryption and own extension .Ourdb
