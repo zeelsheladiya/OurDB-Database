@@ -38,15 +38,15 @@ To run Locally, clone this open project/repo:
 
 **3** All new query should be dynamic.
 
-**4** do not commit direct any new update first contact with author than they will test your module and they will commit.
+**4** Do not commit direct any new update first contact with author than they will test your module and they will commit.
 
-**5** make sure all error and success message have to registered in Errors/error_variable.h and success_message/Success_Msg.h respectivly.
+**5** Make sure all error and success message have to registered in Errors/error_variable.h and success_message/Success_Msg.h respectivly.
 
-**6** do not make static query.
+**6** Do not make static query.
 
-**7** function should be in globle_functions folder.
+**7** Function should be in globle_functions folder.
 
-**8** select related query should be in select_module folder.
+**8** Select related query should be in select_module folder.
 
 ## Code of Conduct
 Oikos is open for contribution from all people around the world. Whoever your are and whatever your background: nationality, gender, religion, we welcome you. Things to keep in mind:
