@@ -26,7 +26,7 @@ To run Locally, clone this open project/repo:
 ## Features
 - Light weight (size less than 2mb)
 - Scalable
-- Crossplatform (Windows, Mac, Linux)
+- Crossplatform, works in Windows, Mac, Linux
 - Dynamically made database, any developer can easily made changes
 - Files with own encryption and own extension .Ourdb
 - Low end device like Arduino , raspberry pi can also run it
