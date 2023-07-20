@@ -27,7 +27,7 @@ To run Locally, clone this open project/repo:
 - Light weight (size less than 2mb)
 - Scalable
 - Crossplatform (Windows, Mac, Linux)
-- Dynamically made database. Any developer can easily made changes
+- Dynamically made database, any developer can easily made changes
 - Files with own encryption and own extension .Ourdb
 - Low end device like Arduino , raspberry pi can also run it
 - Requires minimum c++ 17 standard compiler or above to run on any system
