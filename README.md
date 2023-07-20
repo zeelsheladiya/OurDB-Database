@@ -17,7 +17,7 @@ This database is very portable, user friendly and also in this database you can 
 
 See our documentation: [pdf](), [markdown](), [word]()
 
-If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176) and [GitHub](https://github.com/zeelsheladiya) account.
+If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
 
 ## Contributions
 OurDB-Database is open to contributions, but I recommend creating an issue or replying in a comment to let me know what you are working on first that way we don't overwrite each other.
