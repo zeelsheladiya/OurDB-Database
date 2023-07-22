@@ -1,447 +1,78 @@
-![OurDB Database](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/logo-mini.png?raw=true)
+<!-- markdownlint-configure-file {
+  "MD013": {
+    "code_blocks": false,
+    "tables": false
+  },
+  "MD033": false,
+  "MD041": false
+} -->
 
+[<img src="https://raw.githubusercontent.com/degaur/Oikos-db/patch-1/img/logo.png" align="center" width="100">](https://github.com/zeelsheladiya/OurDB-Database)
 
+# Oikos-db
 
-# OurDB Database 
+[Oikos-db](https://github.com/zeelsheladiya/OurDB-Database) is an lightweight database, created with c++ for every type of machine. An database scalable, easy to use and portable  which is created and licensed by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav Patel and contributors.
 
-light weight Database. Created using c++ for every type of machine. Scalable as well as easy to use Database. 
+If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
 
+This is documentation to [Oikos-db](https://github.com/zeelsheladiya/OurDB-Database) which is created and licensed by [Zeel Sheladiya](https://github.com/zeelsheladiya), [Mihir Surati](https://github.com/mihirsurati), [Parth Dabheliya](https://github.com/Parth-Dab), Pranav Patel and contributors too.
 
-
-
-## Authors
-
- - [Zeel Sheladiya](https://github.com/zeelsheladiya)
- - [Mihir Surati](https://github.com/mihirsurati)
- - [Parth Dabheliya](https://github.com/Parth-Dab)
-
-  
-## 🔗 Social Media Links
-
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://in.linkedin.com/in/zeel-sheladiya-772513176)
-
-[![github](https://img.shields.io/badge/github-5000AD?style=for-the-badge&logo=github&logoColor=white)](https://github.com/zeelsheladiya)
-
-  
-## Documentation
-
-[Documentation](https://github.com/zeelsheladiya/OurDB-Database/blob/main/OurDB_Database_Documentation.pdf)
-
-## Video Tutorial
-
- - You can watch the video of how to use ourdb database on ourdb youtube channel.
- - here is the link :- [click here](https://www.youtube.com/watch?v=2e2Mfs0TdUI)
-
-## Other Syantax related help
- - you can check ourdb_database/syntax.txt where you can find all updated syntax.
-
-## Features
-
-- Light weight (size less than 2mb)
-- scalable
-- Can run cross platform (Windows ,Mac ,Linux)
-- Dynamically made database. Any developer can easily made changes
-- Files with own encryption and own extension .Ourdb
-- Even low end device like Arduino , raspberry pi can also run it.
-- It requires minimum c++ 17 standard compiler or above to run on any system
-- It is combination (NoSQL + SQL) because it doesn’t have schema for storing table but it has perfect syntax for creating query like SQL
-
-
-  ## Run Locally
-
-Clone the project
+To run Locally, clone this open project/repo: 
 
 ```bash
   git clone https://github.com/zeelsheladiya/OurDB-Database.git
 ```
 
-  
-## Usage/Examples
+## Features
+- Light weight (size less than 2mb)
+- Scalable
+- Crossplatform, works in Windows, Mac, Linux
+- Dynamically made database, any developer can easily made changes
+- Files with own encryption and own extension .Ourdb
+- Low end device like Arduino , raspberry pi can also run it
+- Requires minimum c++ 17 standard compiler or above to run on any system
+- NoSQL+SQL, doesn’t have schema for storing table but it has perfect syntax for creating query like SQL
+- Don't need to install this database to use, portable
+- Make your own query syntax very easily, make your querycode super protected
+- All data files in encrypted format
+- Connect this database with your application with just onelineofcode
+- Works in both application console and GUI
+- Database import and export is easy
+- Shared database without any connection string or anyextra connection
+- Add your own module in the database for the query process
+- Run this database
+- Don’t need any extra specification requirementin your system, so it can work smoothly
 
--> Add Database to your project
+## Contributing
+**1** When you update something or add new module make sure you out comment so others can understand you update or new module
 
-- Add or include OurDB_Database.h in your colnsole or gui program file
+**2** When you make new syntax make sure to add all syntax varibles in variables/query_variables.h.
 
-```c++
-#include "OurDB_Database.h"
-```
+**3** All new query should be dynamic.
 
-## How To Use OurDB Database
+**4** Do not commit direct any new update first contact with author than they will test your module and they will commit.
 
-[comment]: <> (create database ------------------------------------------------)
+**5** Make sure all error and success message have to registered in Errors/error_variable.h and success_message/Success_Msg.h respectivly.
 
-## Create database:
-- First step to enter in the database system is to create database. A physical storage area where all table resides.
-- Syntax : create/make database/db <database_name>
+**6** Do not make static query.
 
-```c++
-create database zeel
-``` 
+**7** Function should be in globle_functions folder.
 
-![Create Database](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_101.jpg?raw=true)
+**8** Select related query should be in select_module folder.
 
-- Even you can change the (create) keyword in the code(instruction for developer) its dynamic add or remove keyword etc.
+## Code of Conduct
+Oikos is open for contribution from all people around the world. Whoever your are and whatever your background: nationality, gender, religion, we welcome you. Things to keep in mind:
 
-[comment]: <> (select database ------------------------------------------------)
+- Show empathy
+- Be patient
+- Accept constructive feedback
 
-## Select database:
-- select the database among the existing databases else returns the error.
-- Syntax : select/choose database/db <database_name>
-- After creating database you have to compulsory select the database in order to create table and perform some action/operations.
+If you need any help regarding this project feel free to contact us on our [LinkedIn](https://in.linkedin.com/in/zeel-sheladiya-772513176), [GitHub](https://github.com/zeelsheladiya) or [YouTube](https://www.youtube.com/watch?v=2e2Mfs0TdUI) account.
 
-```c++
-select database zeel
-``` 
+## Contributions
+Oikos-db is open to contributions, but I recommend creating an issue or replying in a comment to let me know what you are working on first that way we don't overwrite each other.
 
-![select Database](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_102.jpg?raw=true)
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)  for details on this open project. If you have any questions, feel free to open an issue. And feel free to improve this open project by contributing! 
 
-- database is so flexible that developer can change any keyword.
-
-[comment]: <> (create table ------------------------------------------------)
-
-## Create Table:
-- Creates table in the database along with the column in it.
-- Syntax : create/make table <table_name> @ <column1_name> <column2_name>…
-- After creating database you have to compulsory select the database in order to create table and perform some action/operations.
-
-```c++
-create table mark @ id name age 
-``` 
-
-![create table](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_104.jpg?raw=true)
-
-- with this simple syntax we can easily create the table in database.
-
-[comment]: <> (Current database ------------------------------------------------)
-
-## Current database:
-- it will show the selected database/the database you are in right now.
-- Syntax : current/present database/db
-
-```c++
-current database
-``` 
-
-![current database](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_105.jpg?raw=true)
-
-- this query used when you don’t know what database you are in right now.
-
-[comment]: <> (Rename database ------------------------------------------------)
-
-## Rename database:
-- It will rename the database in the system.
-- first you have to select the database then and then you can perform rename query.and after renaming you have to again select the database to perform the operation.
-- Syntax : rename database <database_name>
-
-```c++
-select database parth
-``` 
-
-```c++
-rename database parthx
-``` 
-
-![Rename database](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_106.jpg?raw=true)
-
-- we have given this facility who wants to change the name of the database but it is not good practice to do so..
-
-[comment]: <> (Show databases ------------------------------------------------)
-
-## Show databases:
-- It will show all the database resides in the system.
-- Syntax : show/display/view all db/database
-
-```c++
-show all db
-``` 
-
-![Show databases](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_107.jpg?raw=true)
-
-- it is advisable to run query prior to any other query so that you can see all the database exists in the system
-
-[comment]: <> (Show tables ------------------------------------------------)
-
-## Show tables:
-- It will show all the tables resides in the selected database.
-- first we have to select the database so that we can see the table resides in it.
-- Syntax : show/display/view all table
-
-```c++
-show all table
-``` 
-
-![Show tables](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_108.jpg?raw=true)
-
-[comment]: <> (Show column in table ------------------------------------------------)
-
-## Show column in table:
-- It will list out all the column which is present in the table
-- After selecting database , create table and then you will be able to use this feature.
-- Syntax : show all col @ <table_name>
-
-```c++
-show all col @ tb1
-``` 
-
-![Show column in table](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_109.jpg?raw=true)
-
-- show column in table never return null value because column in the table decide at the creation of table.
-
-[comment]: <> (Rename table in database ------------------------------------------------)
-
-## Rename table in database:
-- This command will rename the table exist in the particular database.
-- make sure that table must exist before renaming the table.
-- Syntax : rename table <old_table_name> <new_table_name>
-
-```c++
-reaname table tbn tb1
-``` 
-
-![Rename table in database](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_110.jpg?raw=true)
-
-[comment]: <> (Rename column in table ------------------------------------------------)
-
-## Rename column in table:
-- This command will rename the column in the particular table
-- make sure to check that column exist in the table by show all column @ table.
-- Syntax :rename column/col from <table_name> @ <old_col_name> <new_col_name>
-
-```c++
-rename col from tb1 @ age agex
-``` 
-
-![Rename column in table](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_111.jpg?raw=true)
-
-- this feature looks so simple but most important while working with the database.
-
-[comment]: <> (Insert data in to the table ------------------------------------------------)
-
-## Insert data in to the table:
-- Insert query is used to enter the data in the empty column which was created with the table during creation of table
-- make sure in which table you are going to insert the data ,that must be created before insertion of data.
-- insert or add both will be accepted but not simultaneously.
-- Syntax : insert into <table_name> @ '<col1_value>' '<col2_value>' ...
-
-```c++
-insert into mark @ '1' 'zeel' '20' 
-``` 
-
-![Insert data in to the table](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_112.jpg?raw=true)
-
-- you can see the data in the table by select command we will look for it later on.
-- Single quote is necessary for inserting the value in to the table.
-
-[comment]: <> (Adding new column in the table ------------------------------------------------)
-
-## Adding new column in the table:
-- This command will add a new column in the existing table.
-- make sure in which table you are going to insert the column ,that must be created before insertion of column.
-- insert or add both will be accepted but not simultaneously.
-- Syntax : insert/add col/column into <table_name> @ <col_name>
-
-```c++
-insert col into mark @ gender
-``` 
-
-![Adding new column in the table](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_113.jpg?raw=true)
-
-[comment]: <> (Updating a data in to the table ------------------------------------------------)
-
-## Updating a data in to the table:
-- It used to update a data in to the table.
-- Here after where table field and value connected with the = operator. Or !(not equal) operator.
-- And for more than one condition you can concatenation condition with either &(and) or |(or)
-- It's also support < , > , <= , >= operators.
-- Syntax : update @ <table_name> set/put <table_field> '<field_value>' where <table_field1>(=|!)<field_value1> & <table_field2>(=|!)<field_value2>
-
-```c++
-update @ mark set gender 'female' where id=1 & name=zeel
-``` 
-
-![Updating a data in to the table](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_114.jpg?raw=true)
-
-[comment]: <> (Delete the database ------------------------------------------------)
-
-## Delete the database:
-- It will delete the database from the system.
-- delete or destroy both are accepted but not simultaneously
-- Syntax : delete/destroy database <database_name>
-
-```c++
-delete db dbn
-``` 
-
-![Delete the database](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_115.jpg?raw=true)
-
-- Before deleting the database always make sure that your all the tables are deleted or you may loss important data.
-
-[comment]: <> (Delete the table ------------------------------------------------)
-
-## Delete the table:
-- Delete the table from the database.
-- make sure to select the database before deleting table.
-- Syntax : delete table <table_name>
-
-```c++
-delete table tb
-``` 
-
-![Delete the table](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_116.jpg?raw=true)
-
-[comment]: <> (Delete the particular table data ------------------------------------------------)
-
-## Delete the particular table data:
-- Delete the data from the table at particular row/rows.
-- make sure to select the database before deleting table.
-- Here at particular row/rows you can delete a data.
-- Here after where table field and value connected with the = operator. Or !(not equal) operator.
-- And for more than one condition you can concatenation condition with either &(and) or |(or)
-- It's also support < , > , <= , >= operators.
-- Syntax : delete/destroy @ <table_name> where <column_name> (=/!) <column_value> (&/|) <column_name1> (=/!) <column_value1>
-
-```c++
-delete @ tb1 where id=4
-``` 
-
-![Delete the particular table data](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_117.jpg?raw=true)
-
-[comment]: <> (Delete the column ------------------------------------------------)
-
-## Delete the column:
-- This will delete the column from the table.
-- make sure in which table you are going to insert the column ,that must be created before insertion of column.
-- Syntax : delete/destroy column/col from <table_name> @ <col_name>
-
-```c++
-delete col from tb1 @ pass
-``` 
-
-![Delete the column](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_118.jpg?raw=true)
-
-[comment]: <> (Select data from table ------------------------------------------------)
-
-## Select data from table:
-- It will select and display the the data into the table format.
-- Syntax : select/choose col1 col2 @ <table_name> where <column_name> (=/!) <column_value> (&/|) <column_name1> (=/!) <column_value1>
-
-```c++
-select * @ tb
-``` 
-
-![Select data from table](https://github.com/zeelsheladiya/OurDB-Database/blob/main/images/PrtScr%20capture_119.jpg?raw=true)
-
-[comment]: <> (primery key to table ------------------------------------------------)
-
-## To set primary and foreign key:
-- Now ourdb has schema such as primary key nad foreign key.
-- Syntax [primary key] : set $ <col_name> @ <table_name>
-- Syntax [foreign key] : set # <col_name> @ <table_name> $ <primary_table_name>
-
-```c++
-// to set primary key
-set $ id @ testTable
-``` 
-
-```c++
-// to set foreign key
-set # id @ testTable $ mainTable
-``` 
-
-## Functions for output:
-- there are mainly three functions to get better formatted output such as output as a string , map , json.
-- Syntax [ output as a table string for console app ] : To_StringTable(run_query("your query"))
-- Syntax [ output as a map object ] : To_Map(run_query("your query"))
-- Syntax [ output as a json object ] : To_Json(run_query("your query"))
-
-```c++
-// to get table string
-To_StringTable(run_query("select * @ testTable"))
-``` 
-
-```c++
-// to get map object
-To_Map(run_query("select * @ testTable"))
-``` 
-
-```c++
-// to get json object
-To_Json(run_query("select * @ testTable"))
-``` 
-
-## Other updates will be added after new commits...
-
-## Examples of console app with ourdb database
-
-- this example's code also can be seen in OurDB_Database/console.cpp.
-
-```c++
-#include "OurDB_Database.h"
-#include <iostream>
-#include <string>
-#include "variables/query_variables.h"
-#include "global_functions/global_function.h"
-#include "global_functions/SyntaxCheckerForResultString.h"
-
-using namespace std;
-
-template<class Element, class Container>
-bool selectChecker(const Element & s ,const Container & s1)
-{
-    for(string i : s1)
-    {
-        //cout << i << endl << s.find(i) << endl;
-        if(s.find(i) != -1)
-        {
-            return true;
-        }
-    }
-
-    return false;
-}
-
-
-int main() {
-
-    string s;
-
-    while(true) {
-
-        cout << "Enter Your query :  ";
-        getline(cin, s);
-
-        if(selectChecker(s,select_db_query))
-        {
-            if(selectChecker(s,colSymbol))
-            {
-                string check = run_query(s);
-
-                if(SyntaxCheckerForResultString(check))
-                {
-                    cout << endl << To_StringTable(run_query(s)) << endl;
-                }
-                else
-                    cout << endl << run_query(s) << endl;
-            }
-            else
-            {
-                cout << endl << run_query(s) << endl;
-            }
-        }
-        else
-        {
-            cout << endl << run_query(s) << endl;
-        }
-    }
-
-    return 0;
-}
-``` 
-
-## Contact
-
-- If you need any help regarding this project feel free to contact us on our social media link and github account.
-
-## Contribution
-
-- If you want to contribite in this then read contribution.txt 
+## Related work
+LiteDB, SQLite, FireDB
